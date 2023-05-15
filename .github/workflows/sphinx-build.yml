@@ -55,7 +55,7 @@ jobs:
     - test
     - sphinx
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.repository == 'jameshughes89/cs101'
+    if: github.event_name == 'push' && github.repository == 'jameshughes89/cs340'
     concurrency: deploying
     steps: 
     - name: Create Site Directory
