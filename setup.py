@@ -23,9 +23,9 @@ def run_sphinx_build():
 
 if __name__ == "__main__":
     setup(
-        name="cs101",
+        name="cs340",
         version="1.0",
-        url="https://github.com/jameshughes89/cs101",
+        url="https://github.com/jameshughes89/cs340",
         python_requires=">=3.10",
         packages=find_packages(),
         install_requires=[
