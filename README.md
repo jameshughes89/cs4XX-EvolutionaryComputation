@@ -7,6 +7,7 @@ The course can be found [here](http://modsurski.com/csci340)
 Class covering:
 
 - General evolutionary computation things
+- Problem-solving with evolutionary computation
 - Genetic algorithms
 - Genetic programming
 - Swarm intelligence
