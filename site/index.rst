@@ -8,8 +8,7 @@ computer science. Course topics include combinatorial optimization, genetic algo
 search space analysis, multi-objective optimization, and neuroevolution. Research practices and technical writing will
 be emphasized for course assignments/projects.
 
-
-`The content used to generate the course can be found on GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_ 
+`The content used to generate the course can be found on GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_
 
 
 Professors
@@ -28,7 +27,6 @@ Lecture
 * Tue 11:15 - 12:05 (K4), MULH 2070
 * Wed 13:15 - 14:05 (K5), MULH 2070
 * Fri 12:15 - 13:05 (K6), MULH 2070
-
 
 
 `Office Hours <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
@@ -59,5 +57,3 @@ YouTube
     :maxdepth: 1
  
     /outline/outline
-
-
