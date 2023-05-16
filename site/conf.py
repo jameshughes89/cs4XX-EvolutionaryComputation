@@ -130,7 +130,7 @@ html_css_files = ["css/custom.css"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = "%b %d, %Y"
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -226,7 +226,15 @@ man_pages = [("index", "CSCI 340", "CSCI 340 Documentation", ["James Hughes"], 1
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ("index", "CSCI 340", "CSCI 340 Documentation", "James Hughes", "CSCI 340", "Evolutionary Computation.", "Miscellaneous"),
+    (
+        "index",
+        "CSCI 340",
+        "CSCI 340 Documentation",
+        "James Hughes",
+        "CSCI 340",
+        "Evolutionary Computation.",
+        "Miscellaneous",
+    ),
 ]
 
 # Documents to append as an appendix to all manuals.
