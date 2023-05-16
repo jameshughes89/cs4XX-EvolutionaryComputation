@@ -6,8 +6,20 @@ The course can be found [here](http://modsurski.com/csci340)
 
 Class covering:
 
-- Things
+- General evolutionary computation things
+- Problem-solving with evolutionary computation
+- Genetic algorithms
+- Genetic programming
+- Swarm intelligence
+- EC operators
+- Representations
+- Selection strategies
+- Fitness functions
+- Multi-objective optimization
+- Current trends in EC
 
+The course is designed to be an upper year undergraduate/graduate level course that assumes sufficient expertise in data
+structures and algorithms. Experience with AI, machine learning, and data analysis is an asset but not required.
 
 # Setup
 
