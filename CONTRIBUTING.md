@@ -2,7 +2,7 @@
 
 ## The course is designed as an upper year undergraduate/graduate level course
 
-This course assumes expertise with data structures and related algorithms. 
+This course assumes expertise with data structures and related algorithms.
 
 The main learning objectives of this course are:
 
@@ -11,7 +11,6 @@ The main learning objectives of this course are:
 - Swarm intelligence
 - Problem-solving with evolutionary computation
 - Current trends in EC
-
 
 ## Content Categories
 
