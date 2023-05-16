@@ -55,7 +55,7 @@ jobs:
     - test
     - sphinx
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.repository == 'jameshughes89/cs101'
+    if: github.event_name == 'push' && github.repository == 'jameshughes89/cs4XX-EvolutionaryComputation'
     concurrency: deploying
     steps: 
     - name: Create Site Directory
@@ -67,7 +67,7 @@ jobs:
         path: out
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v2
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

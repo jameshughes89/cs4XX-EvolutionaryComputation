@@ -23,22 +23,22 @@ def run_sphinx_build():
 
 if __name__ == "__main__":
     setup(
-        name="cs101",
+        name="cs340",
         version="1.0",
-        url="https://github.com/jameshughes89/cs101",
+        url="https://github.com/jameshughes89/cs340",
         python_requires=">=3.10",
         packages=find_packages(),
         install_requires=[
-            "black[jupyter]==22.10.0",
+            "black[jupyter]==23.3.0",
             "flake8==6.0.0",
-            "flake8-black==0.3.5",
-            "flake8-isort==5.0.3",
-            "isort==5.10.1",
+            "flake8-black==0.3.6",
+            "flake8-isort==6.0.0",
+            "isort==5.12.0",
             "mdformat==0.7.16",
             "mdformat-gfm==0.3.5",
             "mdformat-black==0.1.1",
             "sphinx==7.0.1",
-            "sphinx-rtd-theme==1.1.1",
+            "sphinx-rtd-theme==1.2.0",
         ],
         entry_points={
             "console_scripts": [

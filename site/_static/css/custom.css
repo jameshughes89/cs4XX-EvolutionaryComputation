@@ -1,14 +1,14 @@
 /* Left Navigation bar colour */
 .wy-side-nav-search {
-    background-color: ##5DA3A6;
+    background-color: #bdba06;
 }
 
 /* Top mobile view bar colour */
 .wy-nav-top {
-    background-color: ##5DA3A6;
+    background-color: #bdba06;
 }
 
 /* Left Navigation bar caption colour */
 .wy-menu-vertical header, .wy-menu-vertical p.caption {
-    color: #036266;
+    color: #d9d507;
 }
