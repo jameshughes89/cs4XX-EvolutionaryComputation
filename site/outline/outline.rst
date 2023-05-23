@@ -2,18 +2,26 @@
 Computer Science 340 --- Evolutionary Computation
 =================================================
 
+
 Fall 2023
 =========
+
 
 Course Description
 ==================
 
-
+Evolutionary computation is a family of powerful optimization algorithms often used to find solutions to computationally
+intractable problems. The study of these algorithms and their application to problems is a large research area within
+computer science. Course topics include combinatorial optimization, genetic algorithms, particle swarm optimization,
+search space analysis, multi-objective optimization, and neuroevolution. Research practices and technical writing will
+be emphasized for course assignments/projects.
 
 
 Prerequisites
 =============
 
+* CSCI  255
+* CSCI 223 or CSCI 275
 
 
 Instructor
@@ -30,7 +38,6 @@ Lecture Section 11
     * Friday, 10:00am -- 11:00am
     
 * Email: jhughes at stfx.ca
-
 
 
 Class Times
@@ -52,16 +59,43 @@ Website
 Textbook and Lecture Notes
 ==========================
 
+Lecture notes will be posted to the website. They are provided as a courtesy by the professor. Possessing and reading
+these notes are not a suitable substitute for attending lectures.
+
+The textbook for this class is:
+
+Eiben, Agoston E., and James E. Smith.
+*Introduction to Evolutionary Computing. Vol. 53.*
+Berlin: springer, 2003.
+
 
 Topics
 ======
 
+Below is a list of topics in no particular order that may or may not be covered in the course:
+
+* Evolutionary Algorithms
+
+  * Genetic Algorithms
+  * Genetic Programming
+
+
+* Swarm Intelligence
+* Representation/Encoding
+* Common Algorithm Improvements
+* Application Areas
+* Search Space Analysis
+* Evolving Neural Networks
+* Technical Communication
+
+    * Lecture
+    * Written Reports
 
 
 Student Evaluation (Tentative Dates) 
 ====================================
 
-
+TBD
 
 
 Assignments
@@ -75,7 +109,7 @@ to read and follow the instructions. Failure to follow the submission instructio
 receiving a mark of zero.
 
 You will be required to submit each programming assignment electronically. Details will be given in the assignment
-descriptions. We reserve the right to use similarity detection software to detect possible cheating cases.
+descriptions. Similarity detection software to detect possible cheating cases will be used.
 
 
 Due Dates
@@ -112,45 +146,21 @@ constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the a
 a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
 
 Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
-of the change as soon as possible. 
+of the change as soon as possible.
 
 
-Missed Midterm
---------------
+Missed Tests
+------------
 
-There are no make-up midterms. If a student is unable to write the midterm, the weight of their midterm will be added to
-the weight of the final exam; the final exam will be worth 50% of the student's final grade,
-
-
-Labs
-====
-
-The purpose of the weekly labs is to give students hands-on experience. Labs will have required assigned work and will
-revolve around `Kattis <https://open.kattis.com/>`_.
-
-Labs begin on the 1st week of class for lab sections 11 and 12. Lab sections 13 and 14 begin week 2.
-
-Pre lab exercises must be completed before the start of the lab. Students who have not completed the pre-lab exercises
-will be asked to leave.
-
-Lab exercises must be completed for marks; attendance and lab completion is mandatory. Each completed lab is worth 1% of
-the final grade (to a maximum of 10%). It is your responsibility to ensure your attendance and exercise completion is
-recorded.
-
-There is a total of 11 labs, however there is potential that some labs may be cancelled. In the case where there are
-less than 10 labs, your individual grades will be adjusted such that each lab is wroth the amount necessary to ensure
-the lab portion of the final grade is still 10%.
-
-You may only attend the lab session for which you are registered. Students must bring their student identification to
-all labs.
+There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
+following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
+the final exam.
 
 
 Email Contact
 =============
 
 **Email etiquette** --- Emails should be addressed to Dr./Prof. Hughes.
-
-Emails can be sent to csci-161@stfx.ca. By using this address, both professors and TAs obtain a copy of the email. 
 
 I may need to send email messages to the whole class or to students individually. Email will be sent to the StFX email
 address assigned to students. It is the responsibility of the student to read this email on a regular basis. You may
@@ -163,7 +173,7 @@ email is not an acceptable excuse for not knowing about the information that was
 Students are encouraged to contact their course instructor via email with brief, email appropriate questions regarding
 lecture materials or clarification of assignments. However, before sending email to an instructor, the student should
 check the course website to see if the requested information is already there. Students must send email from their StFX
-account and include CSCI 161 in the subject line of the email. Lengthy and in-depth questions are to be asked during
+account and include CSCI 340 in the subject line of the email. Lengthy and in-depth questions are to be asked during
 office hours.
 
 
@@ -176,7 +186,7 @@ Students must understand that the professors and TAs are not there to provide th
 students solving their problems.
 
 As per university policy, masking and proper social distancing is required. Students refusing to follow this policy will
-be asked to leave.
+be required to leave.
 
 
 Attendance
@@ -185,18 +195,18 @@ Attendance
 Students missing three classes without reasonable cause will be reported to the Associate Dean. See section 3.7 of the
 academic calendar for more details.
 
-You will be reported to Dr. Cathy MacDonald, Associate Dean, Academic Affairs' Office if you are repeatedly delinquent
-in assignments or attendance at classes or laboratories.
+You will be reported to the Associate Vice President, Academic Affairs' Office if you are repeatedly delinquent in
+assignments or attendance at classes or laboratories.
 
 
 Copyright Policy
 ================
 
-The materials in CSCI 161 at StFX are the property of the instructor, unless stated otherwise by the instructor. Online
-posting or selling this material to third parties for distribution without permission is subject to Canadian Copyright
-law and is strictly prohibited.
+The materials in CSCI 340 at StFX are the property of the instructor or the textbook published, unless stated otherwise
+by the instructor. Online posting or selling this material to third parties for distribution without permission is
+subject to Canadian Copyright law and is strictly prohibited.
 
-The course copyright policy will be aggressively enforced. 
+The course copyright policy will be aggressively enforced.
 
 
 Class Recording Policy
@@ -300,4 +310,4 @@ Preferred Pronouns
 Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with
 differences of race, culture, religion, politics, sexual orientation, gender, gender variance, and nationalities. Class
 rosters are provided to the instructor with the student's legal name. Please advise me of this preference early in the
-semester. See policies at http://www2.mystfx.ca/equity/policies
+semester. See policies at http://www2.mystfx.ca/equity/policies.
