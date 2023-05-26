@@ -119,6 +119,43 @@ The date and exact time assignments are due will be given in the assignment spec
 after the due date; there are no late submissions. No extensions will be given for assignments.
 
 
+Breakdown
+---------
+
+The majority of the marks will come from applying what was learned in class and independent research in a series of
+assignments and projects. Most of these marks will be awarded for sufficiently completing tasks as opposed to a
+traditional method of losing marks for mistakes.
+
+Given that this is a more senior course, I am not that interested in your code as you should all be capable of getting
+your assignments and projects working. You receive marks for completing the coding portions correctly, however only a
+few marks are awarded for a working implementation. Implementing various enhancements on top of the base assignment
+will give you additional marks. These enhancements are not required; however you only receive the associated marks if
+you complete the corresponding enhancement. The writeup/report accounts for a significant portion of the assignment and
+the writeup/report also has various enhancements. Again, the writeup/report is not necessary for all
+assignments, but the associated marks will only be awarded if the report is done.
+
+Unlike the rest of the course deliverables, the base writeups/reports, lecture, and class participation will be marked
+in a more conventional way where a mark reflecting the quality of the submitted work will be awarded. Things like
+grammar, prose, clarity, and effectiveness will be evaluated.
+
+Participation and the final project are the only course deliverables that are required; however, if students receive
+perfect grades on all required submissions, then the highest final grade obtainable is 45% which would be a fail. All
+other deliverables are "optional", but completion is encouraged. It is not possible to pass the course without doing
+some number of optional deliverables.
+
+You will notice that the total marks available is 125. Each mark is worth 1% of your final grade. The maximum grade one
+can receive in the course is 100. Although it is possible to obtain 125/100, the final grade will be reported as 100%
+(or 99%). This course is designed for you to decide which learning objectives you want to complete. It is entirely
+possible to obtain all 125 marks in the course; however, this would require a significant amount of work. This
+effectively means you could decide on day one of the course which grade in the course you will more-or-less obtain by
+picking which deliverables you will complete.
+
+If any of this description is unclear, please ask the professor for clarification.
+
+If you prefer a conventional grading paradigm with a typical mark breakdown, please see the professor to make
+arrangements in the first two weeks of the course.
+
+
 Marking
 -------
 
@@ -135,6 +172,28 @@ It is each student's responsibility to keep up-to-date backups of assignment dis
 inadvertently erased files. Students must keep disk copies of all material submitted, as well as the actual graded
 assignment, to guard against the possibility of errors in recording marks. It is not safe to discard these materials
 until you are satisfied that your final mark for the course has been computed properly.
+
+
+Project
+=======
+
+Each student will complete a final project. The topic and enhancements will be decided on by the student in consultation
+with the professor.
+
+
+Lecture
+=======
+
+Each student may choose to complete a lecture. A decision to do a lecture must occur early in the semester for planning
+purposes. The student, in consultation with the professor, will decide on the topic. The lecture will include the
+creation of the content, adding the content to the course website, and giving the lecture to the class.
+
+
+In Class Participation
+======================
+
+Attendance and class participation are required. Participation will be in the form of being present, asking questions,
+answering questions, and participating in discussions.
 
 
 Tests
