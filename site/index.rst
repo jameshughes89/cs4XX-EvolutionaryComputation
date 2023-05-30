@@ -49,7 +49,7 @@ YouTube
     :numbered:
    
     topics/intro/intro
-
+    topics/problems/problems
 
 
 .. toctree::
