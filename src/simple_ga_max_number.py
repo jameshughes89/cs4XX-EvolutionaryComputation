@@ -5,10 +5,11 @@ The integer is encoded as a bit string (list of 0s or 1s). Fitness is calculated
 or the number of 1s in the bit string (both are included for a comparison). Crossover is a single point crossover and
 mutation is a bit flip mutation.
 """
+from random import choices, randrange, random
 
-BIT_STRING_LENGTH = 32
-POPULATION_SIZE = 100
-GENERATIONS = 1000
+BIT_STRING_LENGTH = 16
+POPULATION_SIZE = 10
+GENERATIONS = 100
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 
@@ -75,3 +76,46 @@ def ones_fitness(chromosome):
     for bit in chromosome:
         number_of_ones += bit
     return number_of_ones
+
+
+# Initialize
+population = []
+population_fitness = []
+for _ in range(POPULATION_SIZE):
+    chromosome = choices([0,1], k=BIT_STRING_LENGTH)
+    population.append(chromosome)
+
+for generation in range(GENERATIONS):
+    # Evaluate
+    population_fitness = []
+    for chromosome in population:
+        fitness = value_fitness(chromosome)
+        population_fitness.append(fitness)
+
+    # Selection
+    new_population = []
+    for _ in range(POPULATION_SIZE):
+        select_1 = randrange(len(population_fitness))
+        select_2 = randrange(len(population_fitness))
+        chromosome_index = select_1 if population_fitness[select_1] > population_fitness[select_2] else select_2
+        chromosome = population[chromosome_index][:]
+        new_population.append(chromosome)
+
+    # Variation (Crossover)
+    for i in range(0, POPULATION_SIZE, 2):
+        if random() < CROSSOVER_RATE:
+            crossover_point = randrange(BIT_STRING_LENGTH)
+            chromosome_1, chromosome_2 = one_point_crossover(new_population[i], new_population[i+1], crossover_point)
+            new_population[i] = chromosome_1
+            new_population[i+1] = chromosome_2
+
+    # Variation (Mutation)
+    for i in range(POPULATION_SIZE):
+        if random() < MUTATION_RATE:
+            mutation_point = randrange(BIT_STRING_LENGTH)
+            chromosome = bit_flip_mutation(new_population[i], mutation_point)
+            new_population[i] = chromosome
+
+    population = new_population
+
+print(population_fitness)
