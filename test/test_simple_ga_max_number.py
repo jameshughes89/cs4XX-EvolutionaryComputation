@@ -1,6 +1,11 @@
 import unittest
 
-from src.simple_ga_max_number import bit_flip_mutation, one_point_crossover
+from src.simple_ga_max_number import (
+    bit_flip_mutation,
+    one_point_crossover,
+    ones_fitness,
+    value_fitness,
+)
 
 
 class TestSimpleGAMaxNumber(unittest.TestCase):
@@ -69,3 +74,17 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
             with self.subTest(mutation_point=mutation_point):
                 with self.assertRaises(ValueError):
                     bit_flip_mutation(chromosome, mutation_point)
+
+    def test_value_fitness_various_cases_returns_correct_fitness(self):
+        chromosomes = [[0], [1], [1, 0, 1, 0], [0, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+        expecteds = [0, 1, 10, 5, 1023]
+        for chromosome, expected in zip(chromosomes, expecteds):
+            with self.subTest(chromosome=chromosome, expected=expected):
+                self.assertEquals(expected, value_fitness(chromosome))
+
+    def test_ones_fitness_various_cases_returns_correct_fitness(self):
+        chromosomes = [[0], [1], [1, 0, 1, 0], [0, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+        expecteds = [0, 1, 2, 2, 10]
+        for chromosome, expected in zip(chromosomes, expecteds):
+            with self.subTest(chromosome=chromosome, expected=expected):
+                self.assertEquals(expected, ones_fitness(chromosome))
