@@ -5,7 +5,7 @@ The integer is encoded as a bit string (list of 0s or 1s). Fitness is calculated
 or the number of 1s in the bit string (both are included for a comparison). Crossover is a single point crossover and
 mutation is a bit flip mutation.
 """
-from random import choices, randrange, random
+from random import choices, random, randrange
 
 BIT_STRING_LENGTH = 16
 POPULATION_SIZE = 10
@@ -82,7 +82,7 @@ def ones_fitness(chromosome):
 population = []
 population_fitness = []
 for _ in range(POPULATION_SIZE):
-    chromosome = choices([0,1], k=BIT_STRING_LENGTH)
+    chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
     population.append(chromosome)
 
 for generation in range(GENERATIONS):
@@ -105,9 +105,9 @@ for generation in range(GENERATIONS):
     for i in range(0, POPULATION_SIZE, 2):
         if random() < CROSSOVER_RATE:
             crossover_point = randrange(BIT_STRING_LENGTH)
-            chromosome_1, chromosome_2 = one_point_crossover(new_population[i], new_population[i+1], crossover_point)
+            chromosome_1, chromosome_2 = one_point_crossover(new_population[i], new_population[i + 1], crossover_point)
             new_population[i] = chromosome_1
-            new_population[i+1] = chromosome_2
+            new_population[i + 1] = chromosome_2
 
     # Variation (Mutation)
     for i in range(POPULATION_SIZE):
