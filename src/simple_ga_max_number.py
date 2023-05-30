@@ -53,3 +53,26 @@ def bit_flip_mutation(parent, mutation_point):
     child[mutation_point] = (child[mutation_point] + 1) % 2
     return child
 
+
+def value_fitness(chromosome):
+    """
+    Calculate the decimal value of the chromosome (bit string).
+
+    :param chromosome: Chromosome (bit string) to evaluate
+    :return: The decimal value of the chromosome (bit string)
+    """
+    return int("".join(str(bit) for bit in chromosome), 2)
+
+
+def ones_fitness(chromosome):
+    """
+    Count the number of 1s (ones) in the chromosome (bit string).
+
+    :param chromosome: Chromosome (bit string) to evaluate
+    :return: The number of 1s (ones) in the chromosome (bit string).
+    """
+    number_of_ones = 0
+    for bit in chromosome:
+        number_of_ones += bit
+    return number_of_ones
+
