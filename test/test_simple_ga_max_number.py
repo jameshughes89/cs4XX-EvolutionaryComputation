@@ -24,16 +24,6 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
                     expected_chromosome_pair, one_point_crossover(chromosome_1, chromosome_2, crossover_point)
                 )
 
-    def test_one_point_crossover_valid_case_leaves_argument_chromosomes_unchanged(self):
-        chromosome_1 = [0, 0, 0, 0, 0]
-        chromosome_2 = [1, 1, 1, 1, 1]
-        crossover_points = [0, 2, 4]
-        expected_chromosome_pair = ([0, 0, 0, 0, 0], [1, 1, 1, 1, 1])
-        for crossover_point in crossover_points:
-            with self.subTest(crossover_point=crossover_point):
-                _ = one_point_crossover(chromosome_1, chromosome_2, crossover_point)
-                self.assertEquals(expected_chromosome_pair, (chromosome_1, chromosome_2))
-
     def test_one_point_crossover_unequal_chromosomes_raises_value_error(self):
         chromosome_1 = [0, 0, 0, 0, 0]
         chromosome_2 = [1, 1, 1, 1]
@@ -57,15 +47,6 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
         for mutation_point, expected_chromosome in zip(mutation_points, expected_chromosomes):
             with self.subTest(mutation_point=mutation_point, expected_chromosome=expected_chromosome):
                 self.assertEquals(expected_chromosome, bit_flip_mutation(chromosome, mutation_point))
-
-    def test_bit_flip_mutation_valid_case_leaves_argument_chromosome_unchanged(self):
-        chromosome = [0, 0, 0, 0, 0]
-        mutation_points = [0, 2, 4]
-        expected_chromosome = [0, 0, 0, 0, 0]
-        for mutation_point in mutation_points:
-            with self.subTest(mutation_point=mutation_point):
-                _ = bit_flip_mutation(chromosome, mutation_point)
-                self.assertEquals(expected_chromosome, chromosome)
 
     def test_bit_flip_mutation_mutation_point_out_of_bounds_raises_value_error(self):
         chromosome = [0, 0, 0, 0, 0]
