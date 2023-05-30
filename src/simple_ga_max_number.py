@@ -14,29 +14,6 @@ CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 
 
-def one_point_crossover(parent_1, parent_2, crossover_point):
-    """
-    One point crossover. All elements at and after the crossover point are swapped between the two chromosomes.
-    For example, with a crossover point of 2, [0,0,0,0,0], [1,1,1,1,1] -> [0,0,1,1,1], [1,1,0,0,0]. A crossover point of
-    0 is allowed, but results in all contents being swapped. This function has no side effects; the chromosomes provided
-    as arguments are left unchanged.
-
-    :param parent_1: Chromosome to be used in crossover
-    :param parent_2: Chromosome to be used in crossover
-    :param crossover_point: The index of the starting point of where all elements will be swapped between chromosomes
-    :return: The two chromosomes after the crossover is applied
-    :raises ValueError: If the parents are not the same length of if the crossover point is out of bounds
-    """
-    if len(parent_1) != len(parent_2):
-        raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
-    if crossover_point < 0 or crossover_point > len(parent_1) - 1:
-        raise ValueError(f"crossover_point out of bounds: {crossover_point}")
-    child_1 = parent_1[:]
-    child_2 = parent_2[:]
-    child_1[crossover_point:], child_2[crossover_point:] = child_2[crossover_point:], child_1[crossover_point:]
-    return child_1, child_2
-
-
 def bit_flip_mutation(parent, mutation_point):
     """
     Bit flip mutation. Flip the bit at the specified index. In other words, if the bit is a 0, change it to be a 1, and
@@ -78,6 +55,54 @@ def ones_fitness(chromosome):
     return number_of_ones
 
 
+def tournament_selection(population, population_fitness, selected_indices):
+    """
+    Select the chromosome with the maximum fitness value of the chromosomes in the tournament. The chromosomes in the
+    tournament if its index is contained within the selected_indices list.
+
+    :param population: Population of chromosomes to select from
+    :param population_fitness: Fitness values of the population
+    :param selected_indices: List of indices in the tournament
+    :return: A copy of the selected chromosome
+    :raises ValueError: If the list of selected indices is empty or contains an out of bounds index
+    """
+    if len(selected_indices) == 0:
+        raise ValueError(f"List of indices in the tournament must be non empty: {selected_indices}")
+    for index in selected_indices:
+        if index < 0 or index > len(population_fitness) - 1:
+            raise ValueError(f"List of indices in the tournament contains out of bounds index: {index}")
+    max_value = 0
+    max_index = 0
+    for index in selected_indices:
+        if population_fitness[index] > max_value:
+            max_value = population_fitness[index]
+            max_index = index
+    return population[max_index][:]
+
+
+def one_point_crossover(parent_1, parent_2, crossover_point):
+    """
+    One point crossover. All elements at and after the crossover point are swapped between the two chromosomes.
+    For example, with a crossover point of 2, [0,0,0,0,0], [1,1,1,1,1] -> [0,0,1,1,1], [1,1,0,0,0]. A crossover point of
+    0 is allowed, but results in all contents being swapped. This function has no side effects; the chromosomes provided
+    as arguments are left unchanged.
+
+    :param parent_1: Chromosome to be used in crossover
+    :param parent_2: Chromosome to be used in crossover
+    :param crossover_point: The index of the starting point of where all elements will be swapped between chromosomes
+    :return: The two chromosomes after the crossover is applied
+    :raises ValueError: If the parents are not the same length of if the crossover point is out of bounds
+    """
+    if len(parent_1) != len(parent_2):
+        raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
+    if crossover_point < 0 or crossover_point > len(parent_1) - 1:
+        raise ValueError(f"crossover_point out of bounds: {crossover_point}")
+    child_1 = parent_1[:]
+    child_2 = parent_2[:]
+    child_1[crossover_point:], child_2[crossover_point:] = child_2[crossover_point:], child_1[crossover_point:]
+    return child_1, child_2
+
+
 # Initialize
 population = []
 population_fitness = []
@@ -85,6 +110,7 @@ for _ in range(POPULATION_SIZE):
     chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
     population.append(chromosome)
 
+# Run for a Specified Number of Generations (Termination)
 for generation in range(GENERATIONS):
     # Evaluate
     population_fitness = []
@@ -95,10 +121,8 @@ for generation in range(GENERATIONS):
     # Selection
     new_population = []
     for _ in range(POPULATION_SIZE):
-        select_1 = randrange(len(population_fitness))
-        select_2 = randrange(len(population_fitness))
-        chromosome_index = select_1 if population_fitness[select_1] > population_fitness[select_2] else select_2
-        chromosome = population[chromosome_index][:]
+        tournament_indices = choices(range(POPULATION_SIZE))
+        chromosome = tournament_selection(population, population_fitness, tournament_indices)
         new_population.append(chromosome)
 
     # Variation (Crossover)
