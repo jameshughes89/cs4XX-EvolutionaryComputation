@@ -26,7 +26,7 @@ def one_point_crossover(parent_1, parent_2, crossover_point):
     :return: The two chromosomes after the crossover is applied
     :raises ValueError: If the parents are not the same length of if the crossover point is out of bounds
     """
-    if len(parent_1) != len(parent_1):
+    if len(parent_1) != len(parent_2):
         raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
     if crossover_point < 0 or crossover_point > len(parent_1) - 1:
         raise ValueError(f"crossover_point out of bounds: {crossover_point}")
@@ -75,4 +75,3 @@ def ones_fitness(chromosome):
     for bit in chromosome:
         number_of_ones += bit
     return number_of_ones
-
