@@ -1,8 +1,8 @@
 """
-A simple genetic algorithm for maximizing a bit string.
+A simple genetic algorithm for maximizing a bitstring.
 
-The integer is encoded as a bit string (list of 0s or 1s). Fitness is calculated with either the value of the bit string
-or the number of 1s in the bit string (both are included for a comparison). Crossover is a single point crossover and
+The integer is encoded as a bitstring (list of 0s or 1s). Fitness is calculated with either the value of the bitstring
+or the number of 1s in the bitstring (both are included for a comparison). Crossover is a single point crossover and
 mutation is a bit flip mutation.
 """
 from random import choices, random, randrange
@@ -20,20 +20,20 @@ MUTATION_RATE = 0.10
 
 def value_fitness(chromosome: list) -> int:
     """
-    Calculate the decimal value of the chromosome (bit string).
+    Calculate the decimal value of the chromosome (bitstring).
 
-    :param chromosome: Chromosome (bit string) to evaluate
-    :return: The decimal value of the chromosome (bit string)
+    :param chromosome: Chromosome (bitstring) to evaluate
+    :return: The decimal value of the chromosome (bitstring)
     """
     return int("".join(str(bit) for bit in chromosome), 2)
 
 
 def ones_fitness(chromosome: list) -> int:
     """
-    Count the number of 1s (ones) in the chromosome (bit string).
+    Count the number of 1s (ones) in the chromosome (bitstring).
 
-    :param chromosome: Chromosome (bit string) to evaluate
-    :return: The number of 1s (ones) in the chromosome (bit string).
+    :param chromosome: Chromosome (bitstring) to evaluate
+    :return: The number of 1s (ones) in the chromosome (bitstring).
     """
     number_of_ones = 0
     for bit in chromosome:

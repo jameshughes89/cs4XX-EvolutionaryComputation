@@ -8,12 +8,12 @@ def one_point_crossover(parent_1: list, parent_2: list, crossover_point: int) ->
     :param parent_2: Chromosome to be used in crossover
     :param crossover_point: The index of the starting point of where all elements will be swapped between chromosomes
     :return: The two chromosomes after the crossover is applied
-    :raises ValueError: If the parents are not the same length of if the crossover point is out of bounds
+    :raises ValueError: If the parents are not the same length of if the crossover point is out-of-bounds
     """
     if len(parent_1) != len(parent_2):
         raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
     if crossover_point < 0 or crossover_point > len(parent_1) - 1:
-        raise ValueError(f"crossover_point out of bounds: {crossover_point}")
+        raise ValueError(f"crossover_point out-of-bounds: {crossover_point}")
     child_1 = parent_1[:]
     child_2 = parent_2[:]
     child_1[crossover_point:], child_2[crossover_point:] = child_2[crossover_point:], child_1[crossover_point:]

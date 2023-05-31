@@ -6,10 +6,10 @@ def bit_flip_mutation(parent: list, mutation_point: int) -> list:
     :param parent: Chromosome to be mutated
     :param mutation_point: Index of the bit to be flipped
     :return: The chromosome after the mutation is applied
-    :raises ValueError: If the mutation point is out of bounds
+    :raises ValueError: If the mutation point is out-of-bounds
     """
     if mutation_point < 0 or mutation_point > len(parent) - 1:
-        raise ValueError(f"mutation_point out of bounds: {mutation_point}")
+        raise ValueError(f"mutation_point out-of-bounds: {mutation_point}")
     child = parent[:]
     child[mutation_point] = (child[mutation_point] + 1) % 2
     return child

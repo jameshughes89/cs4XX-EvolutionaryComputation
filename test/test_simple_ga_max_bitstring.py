@@ -3,7 +3,7 @@ import unittest
 from src.simple_ga_max_bitstring import ones_fitness, value_fitness
 
 
-class TestSimpleGAMaxNumber(unittest.TestCase):
+class TestSimpleGAMaxBitstring(unittest.TestCase):
     def test_value_fitness_various_cases_returns_correct_fitness(self):
         chromosomes = [[0], [1], [1, 0, 1, 0], [0, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
         expecteds = [0, 1, 10, 5, 1023]
