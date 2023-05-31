@@ -7,6 +7,10 @@ mutation is a bit flip mutation.
 """
 from random import choices, random, randrange
 
+from src.crossover import one_point_crossover
+from src.mutation import bit_flip_mutation
+from src.selection import tournament_selection
+
 BIT_STRING_LENGTH = 16
 POPULATION_SIZE = 10
 GENERATIONS = 100
@@ -37,108 +41,49 @@ def ones_fitness(chromosome: list) -> int:
     return number_of_ones
 
 
-def tournament_selection(population: list, population_fitness: list, selected_indices: list[int]) -> list:
-    """
-    Select the chromosome with the maximum fitness value of the chromosomes in the tournament. The chromosomes in the
-    tournament if its index is contained within the selected_indices list.
-
-    :param population: Population of chromosomes to select from
-    :param population_fitness: Fitness values of the population
-    :param selected_indices: List of indices in the tournament
-    :return: A copy of the selected chromosome
-    :raises ValueError: If the list of selected indices is empty or contains an out of bounds index
-    """
-    if len(selected_indices) == 0:
-        raise ValueError(f"List of indices in the tournament must be non empty: {selected_indices}")
-    for index in selected_indices:
-        if index < 0 or index > len(population_fitness) - 1:
-            raise ValueError(f"List of indices in the tournament contains out of bounds index: {index}")
-    max_value = 0
-    max_index = 0
-    for index in selected_indices:
-        if population_fitness[index] > max_value:
-            max_value = population_fitness[index]
-            max_index = index
-    return population[max_index][:]
-
-
-def one_point_crossover(parent_1: list, parent_2: list, crossover_point: int) -> tuple[list, list]:
-    """
-    One point crossover. All elements at and after the crossover point are swapped between the two chromosomes.
-    For example, with a crossover point of 2, [0,0,0,0,0], [1,1,1,1,1] -> [0,0,1,1,1], [1,1,0,0,0]. A crossover point of
-    0 is allowed, but results in all contents being swapped.
-
-    :param parent_1: Chromosome to be used in crossover
-    :param parent_2: Chromosome to be used in crossover
-    :param crossover_point: The index of the starting point of where all elements will be swapped between chromosomes
-    :return: The two chromosomes after the crossover is applied
-    :raises ValueError: If the parents are not the same length of if the crossover point is out of bounds
-    """
-    if len(parent_1) != len(parent_2):
-        raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
-    if crossover_point < 0 or crossover_point > len(parent_1) - 1:
-        raise ValueError(f"crossover_point out of bounds: {crossover_point}")
-    child_1 = parent_1[:]
-    child_2 = parent_2[:]
-    child_1[crossover_point:], child_2[crossover_point:] = child_2[crossover_point:], child_1[crossover_point:]
-    return child_1, child_2
-
-
-def bit_flip_mutation(parent: list, mutation_point: int) -> list:
-    """
-    Bit flip mutation. Flip the bit at the specified index. In other words, if the bit is a 0, change it to be a 1, and
-    if the bit is a 1, change it to be a 0. For example, with mutation point of 2, [0,0,0,0,0] -> [0,0,1,0,0].
-
-    :param parent: Chromosome to be mutated
-    :param mutation_point: Index of the bit to be flipped
-    :return: The chromosome after the mutation is applied
-    :raises ValueError: If the mutation point is out of bounds
-    """
-    if mutation_point < 0 or mutation_point > len(parent) - 1:
-        raise ValueError(f"mutation_point out of bounds: {mutation_point}")
-    child = parent[:]
-    child[mutation_point] = (child[mutation_point] + 1) % 2
-    return child
-
-
-# Initialize
-population = []
-population_fitness = []
-for _ in range(POPULATION_SIZE):
-    chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
-    population.append(chromosome)
-
-# Run for a Specified Number of Generations (Termination)
-for generation in range(GENERATIONS):
-    # Evaluate
+def run_max_bitstring_ga():
+    # Initialize
+    population = []
     population_fitness = []
-    for chromosome in population:
-        fitness = value_fitness(chromosome)
-        population_fitness.append(fitness)
-
-    # Selection
-    new_population = []
     for _ in range(POPULATION_SIZE):
-        tournament_indices = choices(range(POPULATION_SIZE))
-        chromosome = tournament_selection(population, population_fitness, tournament_indices)
-        new_population.append(chromosome)
+        chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
+        population.append(chromosome)
 
-    # Variation (Crossover)
-    for i in range(0, POPULATION_SIZE, 2):
-        if random() < CROSSOVER_RATE:
-            crossover_point = randrange(BIT_STRING_LENGTH)
-            chromosome_1, chromosome_2 = one_point_crossover(new_population[i], new_population[i + 1], crossover_point)
-            new_population[i] = chromosome_1
-            new_population[i + 1] = chromosome_2
+    # Run for a Specified Number of Generations (Termination)
+    for generation in range(GENERATIONS):
+        # Evaluate
+        population_fitness = []
+        for chromosome in population:
+            fitness = value_fitness(chromosome)
+            population_fitness.append(fitness)
 
-    # Variation (Mutation)
-    for i in range(POPULATION_SIZE):
-        if random() < MUTATION_RATE:
-            mutation_point = randrange(BIT_STRING_LENGTH)
-            chromosome = bit_flip_mutation(new_population[i], mutation_point)
-            new_population[i] = chromosome
+        # Selection
+        mating_pool = []
+        for _ in range(POPULATION_SIZE):
+            tournament_indices = choices(range(POPULATION_SIZE))
+            chromosome = tournament_selection(population, population_fitness, tournament_indices)
+            mating_pool.append(chromosome)
 
-    population = new_population
+        # Variation (Crossover)
+        for i in range(0, POPULATION_SIZE, 2):
+            if random() < CROSSOVER_RATE:
+                crossover_point = randrange(BIT_STRING_LENGTH)
+                chromosome_1, chromosome_2 = one_point_crossover(mating_pool[i], mating_pool[i + 1], crossover_point)
+                mating_pool[i] = chromosome_1
+                mating_pool[i + 1] = chromosome_2
 
-print(population_fitness)
-print(population)
+        # Variation (Mutation)
+        for i in range(POPULATION_SIZE):
+            if random() < MUTATION_RATE:
+                mutation_point = randrange(BIT_STRING_LENGTH)
+                chromosome = bit_flip_mutation(mating_pool[i], mutation_point)
+                mating_pool[i] = chromosome
+
+        population = mating_pool
+
+    print(population_fitness)
+    print(population)
+
+
+if __name__ == "__main__":
+    run_max_bitstring_ga()
