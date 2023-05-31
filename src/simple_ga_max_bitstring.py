@@ -60,7 +60,7 @@ def run_max_bitstring_ga():
         # Selection
         mating_pool = []
         for _ in range(POPULATION_SIZE):
-            tournament_indices = choices(range(POPULATION_SIZE))
+            tournament_indices = choices(range(POPULATION_SIZE), k=2)
             chromosome = tournament_selection(population, population_fitness, tournament_indices)
             mating_pool.append(chromosome)
 
