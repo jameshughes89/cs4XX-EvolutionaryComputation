@@ -1,6 +1,6 @@
 import unittest
 
-from src.simple_ga_max_number import (
+from src.simple_ga_max_bitstring import (
     bit_flip_mutation,
     one_point_crossover,
     ones_fitness,
@@ -24,7 +24,7 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
         ]
         for selected_indices, expecteds in zip(valid_selected_indices, expecteds):
             with self.subTest(selected_indices=selected_indices, expecteds=expecteds):
-                self.assertEquals(expecteds, tournament_selection(population, population_fitness, selected_indices))
+                self.assertEqual(expecteds, tournament_selection(population, population_fitness, selected_indices))
 
     def test_tournament_selection_empty_selected_indices_raises_value_error(self):
         population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
@@ -53,7 +53,7 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
         ]
         for crossover_point, expected_chromosome_pair in zip(crossover_points, expected_chromosome_pairs):
             with self.subTest(crossover_point=crossover_point, expected_chromosome_pair=expected_chromosome_pair):
-                self.assertEquals(
+                self.assertEqual(
                     expected_chromosome_pair, one_point_crossover(chromosome_1, chromosome_2, crossover_point)
                 )
 
@@ -79,7 +79,7 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
         expected_chromosomes = [[1, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 1]]
         for mutation_point, expected_chromosome in zip(mutation_points, expected_chromosomes):
             with self.subTest(mutation_point=mutation_point, expected_chromosome=expected_chromosome):
-                self.assertEquals(expected_chromosome, bit_flip_mutation(chromosome, mutation_point))
+                self.assertEqual(expected_chromosome, bit_flip_mutation(chromosome, mutation_point))
 
     def test_bit_flip_mutation_mutation_point_out_of_bounds_raises_value_error(self):
         chromosome = [0, 0, 0, 0, 0]
@@ -94,11 +94,11 @@ class TestSimpleGAMaxNumber(unittest.TestCase):
         expecteds = [0, 1, 10, 5, 1023]
         for chromosome, expected in zip(chromosomes, expecteds):
             with self.subTest(chromosome=chromosome, expected=expected):
-                self.assertEquals(expected, value_fitness(chromosome))
+                self.assertEqual(expected, value_fitness(chromosome))
 
     def test_ones_fitness_various_cases_returns_correct_fitness(self):
         chromosomes = [[0], [1], [1, 0, 1, 0], [0, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
         expecteds = [0, 1, 2, 2, 10]
         for chromosome, expected in zip(chromosomes, expecteds):
             with self.subTest(chromosome=chromosome, expected=expected):
-                self.assertEquals(expected, ones_fitness(chromosome))
+                self.assertEqual(expected, ones_fitness(chromosome))
