@@ -141,3 +141,4 @@ for generation in range(GENERATIONS):
     population = new_population
 
 print(population_fitness)
+print(population)
