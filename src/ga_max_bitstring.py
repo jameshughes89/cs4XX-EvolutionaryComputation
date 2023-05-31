@@ -1,5 +1,5 @@
 """
-A simple genetic algorithm for maximizing a bitstring.
+A genetic algorithm for maximizing a bitstring.
 
 The integer is encoded as a bitstring (list of 0s or 1s). Fitness is calculated with either the value of the bitstring
 or the number of 1s in the bitstring (both are included for a comparison). Crossover is a single point crossover and
