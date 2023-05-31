@@ -14,25 +14,7 @@ CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 
 
-def bit_flip_mutation(parent, mutation_point):
-    """
-    Bit flip mutation. Flip the bit at the specified index. In other words, if the bit is a 0, change it to be a 1, and
-    if the bit is a 1, change it to be a 0. For example, with mutation point of 2, [0,0,0,0,0] -> [0,0,1,0,0]. This
-    function has no side effects; the chromosome provided as the argument is left unchanged.
-
-    :param parent: Chromosome to be mutated
-    :param mutation_point: Index of the bit to be flipped
-    :return: The chromosome after the mutation is applied
-    :raises ValueError: If the mutation point is out of bounds
-    """
-    if mutation_point < 0 or mutation_point > len(parent) - 1:
-        raise ValueError(f"mutation_point out of bounds: {mutation_point}")
-    child = parent[:]
-    child[mutation_point] = (child[mutation_point] + 1) % 2
-    return child
-
-
-def value_fitness(chromosome):
+def value_fitness(chromosome: list) -> int:
     """
     Calculate the decimal value of the chromosome (bit string).
 
@@ -42,7 +24,7 @@ def value_fitness(chromosome):
     return int("".join(str(bit) for bit in chromosome), 2)
 
 
-def ones_fitness(chromosome):
+def ones_fitness(chromosome: list) -> int:
     """
     Count the number of 1s (ones) in the chromosome (bit string).
 
@@ -55,7 +37,7 @@ def ones_fitness(chromosome):
     return number_of_ones
 
 
-def tournament_selection(population, population_fitness, selected_indices):
+def tournament_selection(population: list, population_fitness: list, selected_indices: list[int]) -> list:
     """
     Select the chromosome with the maximum fitness value of the chromosomes in the tournament. The chromosomes in the
     tournament if its index is contained within the selected_indices list.
@@ -80,12 +62,11 @@ def tournament_selection(population, population_fitness, selected_indices):
     return population[max_index][:]
 
 
-def one_point_crossover(parent_1, parent_2, crossover_point):
+def one_point_crossover(parent_1: list, parent_2: list, crossover_point: int) -> tuple[list, list]:
     """
     One point crossover. All elements at and after the crossover point are swapped between the two chromosomes.
     For example, with a crossover point of 2, [0,0,0,0,0], [1,1,1,1,1] -> [0,0,1,1,1], [1,1,0,0,0]. A crossover point of
-    0 is allowed, but results in all contents being swapped. This function has no side effects; the chromosomes provided
-    as arguments are left unchanged.
+    0 is allowed, but results in all contents being swapped.
 
     :param parent_1: Chromosome to be used in crossover
     :param parent_2: Chromosome to be used in crossover
@@ -101,6 +82,23 @@ def one_point_crossover(parent_1, parent_2, crossover_point):
     child_2 = parent_2[:]
     child_1[crossover_point:], child_2[crossover_point:] = child_2[crossover_point:], child_1[crossover_point:]
     return child_1, child_2
+
+
+def bit_flip_mutation(parent: list, mutation_point: int) -> list:
+    """
+    Bit flip mutation. Flip the bit at the specified index. In other words, if the bit is a 0, change it to be a 1, and
+    if the bit is a 1, change it to be a 0. For example, with mutation point of 2, [0,0,0,0,0] -> [0,0,1,0,0].
+
+    :param parent: Chromosome to be mutated
+    :param mutation_point: Index of the bit to be flipped
+    :return: The chromosome after the mutation is applied
+    :raises ValueError: If the mutation point is out of bounds
+    """
+    if mutation_point < 0 or mutation_point > len(parent) - 1:
+        raise ValueError(f"mutation_point out of bounds: {mutation_point}")
+    child = parent[:]
+    child[mutation_point] = (child[mutation_point] + 1) % 2
+    return child
 
 
 # Initialize
