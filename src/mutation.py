@@ -35,7 +35,7 @@ def inversion_mutation(parent: list, start_index: int, end_index: int) -> list:
     return child
 
 
-def swap_mutation(parent:list, index_1: int, index_2: int) -> list:
+def swap_mutation(parent: list, index_1: int, index_2: int) -> list:
     """
     Swap mutation. Swap the values between the two specified indices. For example, with swap indices of 0 and 3,
     [0, 1, 2, 3, 4] -> [3, 1, 2, 0, 4]. Providing the same index for both index values results in no change.
