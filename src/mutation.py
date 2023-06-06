@@ -6,7 +6,7 @@ def bit_flip_mutation(parent: list, index: int) -> list:
     :param parent: Chromosome to be mutated
     :param index: Index of the bit to be flipped
     :return: The chromosome after the mutation is applied
-    :raises ValueError: If the mutation point is out-of-bounds
+    :raises ValueError: If the index is out-of-bounds
     """
     if index < 0 or index > len(parent) - 1:
         raise ValueError(f"Index out-of-bounds: {index}")
@@ -21,8 +21,8 @@ def inversion_mutation(parent: list, start_index: int, end_index: int) -> list:
     the reversal. For example, with starting and ending indices of 1 and 4, [0,1,2,3,4] -> [0,3,2,1,4].
 
     :param parent: Chromosome to be mutated
-    :param start_index: Starting point of the inversion mutation
-    :param end_index: Ending point of the inversion mutation (excluded in reversal)
+    :param start_index: Starting index of the inversion mutation
+    :param end_index: Ending index of the inversion mutation (excluded in reversal)
     :return: The chromosome after the mutation is applied
     """
     if start_index < 0 or end_index < 0 or start_index > len(parent) or end_index > len(parent):
