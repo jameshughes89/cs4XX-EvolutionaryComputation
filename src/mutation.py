@@ -18,7 +18,8 @@ def bit_flip_mutation(parent: list, index: int) -> list:
 def inversion_mutation(parent: list, start_index: int, end_index: int) -> list:
     """
     Inversion mutation. Reverse the order of elements between the specified indices. The end index is not included in
-    the reversal. For example, with starting and ending indices of 1 and 4, [0,1,2,3,4] -> [0,3,2,1,4].
+    the reversal. For example, with starting and ending indices of 1 and 4, [0,1,2,3,4] -> [0,3,2,1,4]. Out of order
+    indices, indices with a difference of 0, and indices with a difference 1 are allowed, but result in no change.
 
     :param parent: Chromosome to be mutated
     :param start_index: Starting index of the inversion mutation
