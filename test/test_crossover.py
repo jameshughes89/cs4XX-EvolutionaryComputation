@@ -24,7 +24,7 @@ class TestCrossover(unittest.TestCase):
         with self.assertRaises(ValueError):
             one_point_crossover(chromosome_1, chromosome_2, index)
 
-    def test_one_point_crossover_crossover_point_out_of_bounds_raises_value_error(self):
+    def test_one_point_crossover_index_out_of_bounds_raises_value_error(self):
         chromosome_1 = [0, 0, 0, 0, 0]
         chromosome_2 = [1, 1, 1, 1, 1]
         bad_indices = [-101, -1, 5, 101]
