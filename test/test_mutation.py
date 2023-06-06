@@ -36,37 +36,25 @@ class TestMutation(unittest.TestCase):
     def test_inversion_mutation_same_indices_returns_unchanged_chromosome(self):
         chromosome = [0, 1, 2, 3, 4]
         indices = [(0, 0), (1, 1), (5, 5)]
-        expected_chromosomes = [
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-        ]
-        for index, expected_chromosome in zip(indices, expected_chromosomes):
-            with self.subTest(start=index[0], end=index[1], expected_chromosome=expected_chromosome):
+        expected_chromosome = [0, 1, 2, 3, 4]
+        for index in indices:
+            with self.subTest(start=index[0], end=index[1]):
                 self.assertEqual(expected_chromosome, inversion_mutation(chromosome, index[0], index[1]))
 
     def test_inversion_mutation_adjacent_indices_returns_unchanged_chromosome(self):
         chromosome = [0, 1, 2, 3, 4]
         indices = [(0, 1), (1, 2), (4, 5)]
-        expected_chromosomes = [
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-        ]
-        for index, expected_chromosome in zip(indices, expected_chromosomes):
-            with self.subTest(start=index[0], end=index[1], expected_chromosome=expected_chromosome):
+        expected_chromosome = [0, 1, 2, 3, 4]
+        for index in indices:
+            with self.subTest(start=index[0], end=index[1]):
                 self.assertEqual(expected_chromosome, inversion_mutation(chromosome, index[0], index[1]))
 
     def test_inversion_mutation_high_index_before_low_returns_unchanged_chromosome(self):
         chromosome = [0, 1, 2, 3, 4]
         indices = [(1, 0), (4, 2), (5, 0)]
-        expected_chromosomes = [
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-        ]
-        for index, expected_chromosome in zip(indices, expected_chromosomes):
-            with self.subTest(start=index[0], end=index[1], expected_chromosome=expected_chromosome):
+        expected_chromosome = [0, 1, 2, 3, 4]
+        for index in indices:
+            with self.subTest(start=index[0], end=index[1]):
                 self.assertEqual(expected_chromosome, inversion_mutation(chromosome, index[0], index[1]))
 
     def test_inversion_mutation_indices_out_of_bounds_raises_value_error(self):
@@ -88,13 +76,9 @@ class TestMutation(unittest.TestCase):
     def test_swap_mutation_same_indices_returns_unchanged_chromosome(self):
         chromosome = [0, 1, 2, 3, 4]
         indices = [(0, 0), (1, 1), (4, 4)]
-        expected_chromosomes = [
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-            [0, 1, 2, 3, 4],
-        ]
-        for index, expected_chromosome in zip(indices, expected_chromosomes):
-            with self.subTest(start=index[0], end=index[1], expected_chromosome=expected_chromosome):
+        expected_chromosome = [0, 1, 2, 3, 4]
+        for index in indices:
+            with self.subTest(start=index[0], end=index[1]):
                 self.assertEqual(expected_chromosome, swap_mutation(chromosome, index[0], index[1]))
 
     def test_swap_mutation_indices_out_of_bounds_raises_value_error(self):
