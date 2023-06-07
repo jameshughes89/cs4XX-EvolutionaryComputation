@@ -36,7 +36,6 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
     return child_1, child_2
 
 
-
 def one_point_crossover(parent_1: list, parent_2: list, index: int) -> tuple[list, list]:
     """
     One point crossover. All elements at and after the crossover index are swapped between the two chromosomes.
