@@ -18,6 +18,9 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
     if start_index < 0 or end_index < 0 or start_index > len(parent_1) - 1 or end_index > len(parent_1):
         raise ValueError(f"Index out-of-bounds: {start_index}, {end_index}")
     child_1 = parent_1[:]
+    child_2 = parent_2[:]
+    if start_index > end_index:
+        return child_1, child_2
     source_index = end_index % len(parent_1)
     target_index = end_index % len(parent_1)
     while target_index != start_index:
@@ -25,7 +28,6 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
             child_1[target_index] = parent_2[source_index]
             target_index = (target_index + 1) % len(parent_1)
         source_index = (source_index + 1) % len(parent_1)
-    child_2 = parent_2[:]
     source_index = end_index % len(parent_1)
     target_index = end_index % len(parent_1)
     while target_index != start_index:
@@ -33,7 +35,6 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
             child_2[target_index] = parent_1[source_index]
             target_index = (target_index + 1) % len(parent_1)
         source_index = (source_index + 1) % len(parent_1)
-    return child_1, child_2
     return child_1, child_2
 
 
