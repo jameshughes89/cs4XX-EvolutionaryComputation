@@ -5,14 +5,16 @@ def roulette_wheel_selection(population: list, population_fitness: list, pill_la
 
     :param population: Population of chromosomes to select from
     :param population_fitness: Fitness values of the population
-    :param pill_landing: Floating point Value between 0 -- 1 indicating where the pill lands
+    :param pill_landing: Floating point Value between [0, 1) indicating where the pill lands
     :return: A copy of the selected chromosome
+    :raises ValueError: If pill_landing is not between [0, 1)
     """
-    total_fitness = sum(population_fitness)
-    selection_probabilities = [fitness / population_fitness for fitness in population_fitness]
-    cumulative_sum = [sum(selection_probabilities[: i + 1]) for i in range(len(selection_probabilities))]
+    if pill_landing < 0 or pill_landing >= 1:
+        raise ValueError(f"pill_landing must be between [0, 1): {pill_landing}")
+    pill_landing_scaled = pill_landing * sum(population_fitness)
+    cumulative_sum = [sum(population_fitness[: i + 1]) for i in range(len(population_fitness))]
     for i, candidate_probability_edge in enumerate(cumulative_sum):
-        if pill_landing < candidate_probability_edge:
+        if pill_landing_scaled < candidate_probability_edge:
             return population[i][:]
 
 
