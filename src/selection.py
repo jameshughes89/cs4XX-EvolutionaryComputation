@@ -1,3 +1,21 @@
+def roulette_wheel_selection(population: list, population_fitness: list, pill_landing: float) -> list:
+    """
+    Select a chromosome based on where the roulette wheel's ball (pill) lands. The probability of a given chromosome
+    being selected is proportional to its fitness value.
+
+    :param population: Population of chromosomes to select from
+    :param population_fitness: Fitness values of the population
+    :param pill_landing: Floating point Value between 0 -- 1 indicating where the pill lands
+    :return: A copy of the selected chromosome
+    """
+    total_fitness = sum(population_fitness)
+    selection_probabilities = [fitness / population_fitness for fitness in population_fitness]
+    cumulative_sum = [sum(selection_probabilities[: i + 1]) for i in range(len(selection_probabilities))]
+    for i, candidate_probability_edge in enumerate(cumulative_sum):
+        if pill_landing < candidate_probability_edge:
+            return population[i][:]
+
+
 def tournament_selection(population: list, population_fitness: list, selected_indices: list[int]) -> list:
     """
     Select the chromosome with the maximum fitness value of the chromosomes in the tournament. The chromosomes in the
