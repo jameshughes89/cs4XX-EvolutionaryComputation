@@ -56,9 +56,16 @@ class TestSelection(unittest.TestCase):
 
     def test_roulette_wheel_selection_pill_landing_not_between_0_and_1_raises_value_error(self):
         population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
-        population_fitness = [0, 0, 0, 0, 0]
+        population_fitness = [1, 1, 1, 1, 1]
         bad_pill_landings = [-101, -0.01, 1, 101]
         for pill_landing in bad_pill_landings:
             with self.subTest(selected_indices=pill_landing):
                 with self.assertRaises(ValueError):
                     roulette_wheel_selection(population, population_fitness, pill_landing)
+
+    def test_roulette_wheel_selection_population_fitness_total_is_zero_raises_value_error(self):
+        population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
+        population_fitness = [0, 0, 0, 0, 0]
+        pill_landing = 0.5
+        with self.assertRaises(ValueError):
+            roulette_wheel_selection(population, population_fitness, pill_landing)
