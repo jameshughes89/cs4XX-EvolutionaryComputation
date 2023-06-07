@@ -3,8 +3,8 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
     Order crossover. All elements between the two indices are moved to the children and the remaining missing elements
     are copied in the order that they appear in the other parent. Copying starts at end_index and returns to index zero
     when the end of the chromosome is hit. For example, indices of 2 and 5, [0,1,2,3,4,5,6], [4,6,3,5,2,0,1] ->
-    [?,?,2,3,4,?,?], [?,?,3,5,2,?,?] -> [6,5,2,3,4,0,1], [1,4,3,5,2,6,0]. Out of order indices and indices with a
-    difference of 0 are allowed, but result in no change.
+    [?,?,2,3,4,?,?], [?,?,3,5,2,?,?] -> [6,5,2,3,4,0,1], [1,4,3,5,2,6,0]. Out of order indices, indices with a
+    difference of 0, and indices covering the whole length of the chromosome are allowed, but result in no change.
 
     :param parent_1: Chromosome to be used in crossover
     :param parent_2: Chromosome to be used in crossover
