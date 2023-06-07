@@ -13,6 +13,27 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
     :return: The two chromosomes after the crossover is applied
     :raises ValueError: If the parents are not the same length of if an index is out-of-bounds
     """
+
+    def copy_missing_elements(parent: list, child: list, start_index: int, end_index: int) -> list:
+        """
+        Copy the missing elements from the other parent into the child. Elements are copied in order that they appear
+        in the parent, starting at the end index, and looping to index 0 where necessary.
+
+        :param parent: Chromosome to copy missing elements from
+        :param child: Chromosome to have missing elements copied too
+        :param start_index: Starting index of copied segment (where to stop copying missing elements to)
+        :param end_index: Ending index of copied segment (where to start copying missing elements from)
+        :return: child chromosome with the missing elements copied
+        """
+        source_index = end_index % len(parent_1)
+        target_index = end_index % len(parent_1)
+        while target_index != start_index:
+            if parent[source_index] not in child[start_index:end_index]:
+                child[target_index] = parent[source_index]
+                target_index = (target_index + 1) % len(parent_1)
+            source_index = (source_index + 1) % len(parent_1)
+        return child
+
     if len(parent_1) != len(parent_2):
         raise ValueError(f"chromosomes must be the same length: {len(parent_1)}, {len(parent_2)}")
     if start_index < 0 or end_index < 0 or start_index > len(parent_1) - 1 or end_index > len(parent_1):
@@ -21,20 +42,8 @@ def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index:
     child_2 = parent_2[:]
     if start_index > end_index:
         return child_1, child_2
-    source_index = end_index % len(parent_1)
-    target_index = end_index % len(parent_1)
-    while target_index != start_index:
-        if parent_2[source_index] not in parent_1[start_index:end_index]:
-            child_1[target_index] = parent_2[source_index]
-            target_index = (target_index + 1) % len(parent_1)
-        source_index = (source_index + 1) % len(parent_1)
-    source_index = end_index % len(parent_1)
-    target_index = end_index % len(parent_1)
-    while target_index != start_index:
-        if parent_1[source_index] not in parent_2[start_index:end_index]:
-            child_2[target_index] = parent_1[source_index]
-            target_index = (target_index + 1) % len(parent_1)
-        source_index = (source_index + 1) % len(parent_1)
+    child_1 = copy_missing_elements(parent_2, child_1, start_index, end_index)
+    child_2 = copy_missing_elements(parent_1, child_2, start_index, end_index)
     return child_1, child_2
 
 
