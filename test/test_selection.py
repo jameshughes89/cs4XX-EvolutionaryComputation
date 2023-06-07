@@ -1,6 +1,6 @@
 import unittest
 
-from src.selection import tournament_selection
+from src.selection import roulette_wheel_selection, tournament_selection
 
 
 class TestSelection(unittest.TestCase):
@@ -16,9 +16,9 @@ class TestSelection(unittest.TestCase):
             [4, 4, 4, 4, 4],
             [4, 4, 4, 4, 4],
         ]
-        for selected_indices, expecteds in zip(valid_selected_indices, expecteds):
-            with self.subTest(selected_indices=selected_indices, expecteds=expecteds):
-                self.assertEqual(expecteds, tournament_selection(population, population_fitness, selected_indices))
+        for selected_indices, expected in zip(valid_selected_indices, expecteds):
+            with self.subTest(selected_indices=selected_indices, expected=expected):
+                self.assertEqual(expected, tournament_selection(population, population_fitness, selected_indices))
 
     def test_tournament_selection_empty_selected_indices_raises_value_error(self):
         population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
@@ -35,3 +35,30 @@ class TestSelection(unittest.TestCase):
             with self.subTest(selected_indices=selected_indices):
                 with self.assertRaises(ValueError):
                     tournament_selection(population, population_fitness, selected_indices)
+
+    def test_roulette_wheel_selection_valid_case_returns_correct_chromosome(self):
+        population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
+        population_fitness = [0, 1, 2, 3, 4]
+        valid_pill_landings = [0, 0.09, 0.1, 0.29, 0.3, 0.59, 0.6, 0.99]
+        expecteds = [
+            [1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1],
+            [2, 2, 2, 2, 2],
+            [2, 2, 2, 2, 2],
+            [3, 3, 3, 3, 3],
+            [3, 3, 3, 3, 3],
+            [4, 4, 4, 4, 4],
+            [4, 4, 4, 4, 4],
+        ]
+        for pill_landing, expected in zip(valid_pill_landings, expecteds):
+            with self.subTest(pill_landing=pill_landing, expected=expected):
+                self.assertEqual(expected, roulette_wheel_selection(population, population_fitness, pill_landing))
+
+    def test_roulette_wheel_selection_pill_landing_not_between_0_and_1_raises_value_error(self):
+        population = [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [3, 3, 3, 3, 3], [4, 4, 4, 4, 4]]
+        population_fitness = [0, 0, 0, 0, 0]
+        bad_pill_landings = [-101, -0.01, 1, 101]
+        for pill_landing in bad_pill_landings:
+            with self.subTest(selected_indices=pill_landing):
+                with self.assertRaises(ValueError):
+                    roulette_wheel_selection(population, population_fitness, pill_landing)
