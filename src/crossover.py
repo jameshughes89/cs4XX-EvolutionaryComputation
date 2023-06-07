@@ -1,3 +1,20 @@
+def order_crossover(parent_1: list, parent_2: list, start_index: int, end_index: int) -> tuple[list, list]:
+    """
+    Order crossover. All elements between the two indices are moved to the children and the remaining missing elements
+    are copied in the order that they appear in the other parent. Copying starts at end_index and returns to index zero
+    when the end of the chromosome is hit. For example, indices of 2 and 5, [0,1,2,3,4,5,6], [4,6,3,5,2,0,1] ->
+    [?,?,2,3,4,?,?], [?,?,3,5,2,?,?] -> [6,5,2,3,4,0,1], [1,4,3,5,2,6,0].
+
+    :param parent_1: Chromosome to be used in crossover
+    :param parent_2: Chromosome to be used in crossover
+    :param start_index: Starting index of copied segment
+    :param end_index: Ending index of copied segment (excluded in segment)
+    :return: The two chromosomes after the crossover is applied
+    :raises ValueError: If the parents are not the same length of if an index is out-of-bounds
+    """
+
+    
+
 def one_point_crossover(parent_1: list, parent_2: list, index: int) -> tuple[list, list]:
     """
     One point crossover. All elements at and after the crossover index are swapped between the two chromosomes.
