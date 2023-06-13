@@ -18,6 +18,7 @@ GENERATIONS = 100
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 
+
 def attacking_fitness(chromosome: list) -> int:
     """
     Count the number of attacking queens in the provided queen placements. To count each attacking pair only once, the
@@ -33,7 +34,7 @@ def attacking_fitness(chromosome: list) -> int:
     """
     total_attackers = 0
     for attacker_index, attacker_row in enumerate(chromosome):
-        for victim_index in range(attacker_index+1, len(chromosome)):
+        for victim_index in range(attacker_index + 1, len(chromosome)):
             offset = victim_index - attacker_index
             victim_row = chromosome[victim_index]
             if (attacker_row - offset) == victim_row or (attacker_row + offset) == victim_row:
