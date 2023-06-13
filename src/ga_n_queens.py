@@ -86,6 +86,7 @@ def run_n_queens_ga():
 
         population = mating_pool
 
+    population_fitness = []
     for chromosome in population:
         fitness = attacking_fitness(chromosome)
         population_fitness.append(fitness)
