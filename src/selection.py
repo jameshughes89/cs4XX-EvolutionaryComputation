@@ -20,14 +20,18 @@ def roulette_wheel_selection(population: list, population_fitness: list, pill_la
             return population[i][:]
 
 
-def tournament_selection(population: list, population_fitness: list, selected_indices: list[int]) -> list:
+def tournament_selection(
+    population: list, population_fitness: list, selected_indices: list[int], direction: int = 1
+) -> list:
     """
-    Select the chromosome with the maximum fitness value of the chromosomes in the tournament. The chromosomes in the
-    tournament if its index is contained within the selected_indices list.
+    Select the chromosome with the maximum/minimum fitness value of the chromosomes in the tournament. The chromosomes
+    in the tournament if its index is contained within the selected_indices list. By default, the function selects for
+    maximum fitness.
 
     :param population: Population of chromosomes to select from
     :param population_fitness: Fitness values of the population
     :param selected_indices: List of indices in the tournament
+    :param direction: +1 for maximizing fitness, -1 for minimizing fitness
     :return: A copy of the selected chromosome
     :raises ValueError: If the list of selected indices is empty or contains an out-of-bounds index
     """
@@ -36,10 +40,10 @@ def tournament_selection(population: list, population_fitness: list, selected_in
     for index in selected_indices:
         if index < 0 or index > len(population_fitness) - 1:
             raise ValueError(f"List of indices in the tournament contains out-of-bounds index: {index}")
-    max_value = 0
-    max_index = 0
+    max_value = population_fitness[selected_indices[0]] * direction
+    max_index = selected_indices[0]
     for index in selected_indices:
-        if population_fitness[index] > max_value:
-            max_value = population_fitness[index]
+        if population_fitness[index] * direction > max_value:
+            max_value = population_fitness[index] * direction
             max_index = index
     return population[max_index][:]
