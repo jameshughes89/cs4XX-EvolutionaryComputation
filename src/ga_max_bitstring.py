@@ -81,6 +81,10 @@ def run_max_bitstring_ga():
 
         population = mating_pool
 
+    population_fitness = []
+    for chromosome in population:
+        fitness = value_fitness(chromosome)
+        population_fitness.append(fitness)
     print(population_fitness)
     print(population)
 
