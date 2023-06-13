@@ -33,7 +33,9 @@ def attacking_fitness(chromosome: list) -> int:
     """
     total_attackers = 0
     for attacker_index, attacker_row in enumerate(chromosome):
-        for offset, victim_row in enumerate(chromosome, attacker_index):
+        for victim_index in range(attacker_index+1, len(chromosome)):
+            offset = victim_index - attacker_index
+            victim_row = chromosome[victim_index]
             if (attacker_row - offset) == victim_row or (attacker_row + offset) == victim_row:
                 total_attackers += 1
     return total_attackers
