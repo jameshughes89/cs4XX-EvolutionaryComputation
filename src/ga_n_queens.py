@@ -62,7 +62,7 @@ def run_n_queens_ga():
         mating_pool = []
         for _ in range(POPULATION_SIZE):
             tournament_indices = choices(range(POPULATION_SIZE), k=2)
-            chromosome = tournament_selection(population, population_fitness, tournament_indices)
+            chromosome = tournament_selection(population, population_fitness, tournament_indices, direction=-1)
             mating_pool.append(chromosome)
 
         # Variation (Crossover)
@@ -86,6 +86,9 @@ def run_n_queens_ga():
 
         population = mating_pool
 
+    for chromosome in population:
+        fitness = attacking_fitness(chromosome)
+        population_fitness.append(fitness)
     print(population_fitness)
     print(population)
 
