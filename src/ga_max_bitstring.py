@@ -7,6 +7,8 @@ mutation is a bit flip mutation.
 """
 from random import choices, random, randrange
 
+import matplotlib.pyplot as plt
+
 from src.crossover import one_point_crossover
 from src.mutation import bit_flip_mutation
 from src.selection import tournament_selection
@@ -42,6 +44,10 @@ def ones_fitness(chromosome: list) -> int:
 
 
 def run_max_bitstring_ga():
+    # Bookkeeping
+    generation_max_fitness = []
+    generation_average_fitness = []
+
     # Initialize
     population = []
     population_fitness = []
@@ -56,6 +62,10 @@ def run_max_bitstring_ga():
         for chromosome in population:
             fitness = value_fitness(chromosome)
             population_fitness.append(fitness)
+
+        # Bookkeeping
+        generation_max_fitness.append(max(population_fitness))
+        generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
 
         # Selection
         mating_pool = []
@@ -87,6 +97,12 @@ def run_max_bitstring_ga():
         population_fitness.append(fitness)
     print(population_fitness)
     print(population)
+    generation_max_fitness.append(max(population_fitness))
+    generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
+
+    # plt.plot(generation_max_fitness)
+    # plt.plot(generation_average_fitness)
+    # plt.show()
 
 
 if __name__ == "__main__":
