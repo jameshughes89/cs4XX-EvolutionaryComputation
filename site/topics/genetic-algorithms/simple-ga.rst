@@ -1,16 +1,37 @@
-***************************************
-Implementing a Simple Genetic Algorithm
-***************************************
+********************************
+Implementing a Genetic Algorithm
+********************************
 
+* Purpose is to see one
+
+
+Problem
+=======
+
+
+Initialization
+==============
+
+
+Evaluation
+==========
+
+
+Selection
+=========
+
+
+Variation Operators
+===================
+
+
+Termination Requirement
+=======================
 
 
 For Next Class
 ==============
 
-* Read Chapter 1
+* TBD
 
-    * 9 pages
-
-* Read Chapter 2
-
-    * 7 pages
+    * TBD
