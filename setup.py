@@ -40,7 +40,7 @@ if __name__ == "__main__":
             "mdformat-black==0.1.1",
             "numpy==1.24",
             "sphinx==5.3.0",
-            "sphinx-rtd-theme==1.2.1",
+            "sphinx-rtd-theme==1.2.2",
         ],
         entry_points={
             "console_scripts": [
