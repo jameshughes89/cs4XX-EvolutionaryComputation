@@ -2,11 +2,34 @@
 Introduction
 ************
 
+.. figure:: ec_idea.png
+    :width: 500 px
+    :align: center
+
+    High level idea of most evolutionary computation algorithms.
+
+
+Nearly all forms of evolutionary computation follow the same idea
+
+    * Initialize a *population* of *candidate solutions*
+
+        * Evaluate the population's *fitness*
+        * *Select* candidate solutions for the next *generation's* population
+        * Apply *genetic operators* to the selected candidate solutions for variation
+        * Repeat until some stopping criteria is met
+
+
+    * Stop
+
 
 
 For Next Class
 ==============
 
-* If you have not yet, :doc:`go through set up for CS 161 </getting-set/getting-set>`
-* `Read Chapter 1 of the text <http://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html>`_
-* `Read Sections 2.1-2.5 of Chapter 2 of the text <http://openbookproject.net/thinkcs/python/english3e/variables_expressions_statements.html>`_
+* Read Chapter 1
+
+    * 9 pages
+
+* Read Chapter 2
+
+    * 7 pages

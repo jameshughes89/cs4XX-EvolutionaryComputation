@@ -1,41 +1,16 @@
-# Contributing to cs101
+# Contributing to cs4XX-EvolutionaryComputation
 
-## This assumes no computer science background
+## The course is designed as an upper year undergraduate/graduate level course
 
-Keep content contributions at an appropriate level for students.
+This course assumes expertise with data structures and related algorithms.
 
 The main learning objectives of this course are:
 
-- Variables
-- Types
-- I/O
-- Functions
-- Conditionals
-- Loops
-- Strings
-- Arrays/Lists (linear collection)
-- Objects
-- A little searching and sorting
-- A little complexity analysis
-- Very little recursion
-
-Topics out of scope include:
-
-- Linked Structures
-- Linear Data Structures
-  - Stacks
-  - Queues
-  - Lists
-- Nonlinear Data Structures
-  - Some Trees
-- Interfaces
-- Inheritance
-- Iterators
-- Algorithm Analysis
-- Recursion
-- Searching and Sorting Algorithms
-
-Although no programming language is a learning objective, Python-*isms* are presented where necessary. Additional Python design ideas are welcome, but keep them simple enough to be accessible for the level of student.
+- Genetic algorithms
+- Genetic programming
+- Swarm intelligence
+- Problem-solving with evolutionary computation
+- Current trends in EC
 
 ## Content Categories
 

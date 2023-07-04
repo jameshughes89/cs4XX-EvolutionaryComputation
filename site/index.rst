@@ -2,13 +2,13 @@
 Welcome to CSCI 340 --- Fall 2023
 *********************************
 
-An introduction to computer science, programming, algorithms, and data structures. No experience with programming is
-required.
+Evolutionary computation is a family of powerful optimization algorithms often used to find solutions to computationally
+intractable problems. The study of these algorithms and their application to problems is a large research area within
+computer science. Course topics include combinatorial optimization, genetic algorithms, particle swarm optimization,
+search space analysis, multi-objective optimization, and neuroevolution. Research practices and technical writing will
+be emphasized for course assignments/projects.
 
-This course is devoted to learning problem solving and elementary programming skills. Topics include
-problem analysis, algorithm development, data representation, control structures, functions, lists, and objects.
-
-`The content used to generate the course can be found on GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_ 
+`The content used to generate the course can be found on GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_
 
 
 Professors
@@ -22,12 +22,11 @@ Dr. James Hughes
 
 
 Lecture
-^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 * Tue 11:15 - 12:05 (K4), MULH 2070
 * Wed 13:15 - 14:05 (K5), MULH 2070
 * Fri 12:15 - 13:05 (K6), MULH 2070
-
 
 
 `Office Hours <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
@@ -50,7 +49,7 @@ YouTube
     :numbered:
    
     topics/intro/intro
-
+    topics/problems/problems
 
 
 .. toctree::
@@ -58,5 +57,3 @@ YouTube
     :maxdepth: 1
  
     /outline/outline
-
-
