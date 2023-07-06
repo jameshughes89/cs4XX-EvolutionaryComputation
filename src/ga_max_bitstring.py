@@ -50,7 +50,6 @@ def run_max_bitstring_ga():
 
     # Initialize
     population = []
-    population_fitness = []
     for _ in range(POPULATION_SIZE):
         chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
         population.append(chromosome)
