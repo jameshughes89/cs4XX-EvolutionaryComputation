@@ -2,11 +2,16 @@
 Implementing a Genetic Algorithm
 ********************************
 
-* Purpose is to see one
+* The purpose of this topic is to see a simple genetic algorithm (GA)
+* Although simple, it includes all the necessary parts to make it a complete GA
+* Despite never seeing a GA before, or knowing the intuition behind the underlying ideas, the topic should be manageable
 
 
 Problem
 =======
+
+
+
 
 
 Initialization
