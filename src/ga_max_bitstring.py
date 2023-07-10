@@ -13,11 +13,13 @@ from src.crossover import one_point_crossover
 from src.mutation import bit_flip_mutation
 from src.selection import tournament_selection
 
+# [begin-hyperparameters]
 BIT_STRING_LENGTH = 16
 POPULATION_SIZE = 10
 GENERATIONS = 100
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
+# [end-hyperparameters]
 
 
 def value_fitness(chromosome: list) -> int:
@@ -48,48 +50,55 @@ def run_max_bitstring_ga():
     generation_max_fitness = []
     generation_average_fitness = []
 
-    # Initialize
+    # [begin-initialization]
     population = []
     for _ in range(POPULATION_SIZE):
         chromosome = choices([0, 1], k=BIT_STRING_LENGTH)
         population.append(chromosome)
+    # [end-initialization]
 
-    # Run for a Specified Number of Generations (Termination)
+    # [begin-generation-loop]
     for generation in range(GENERATIONS):
-        # Evaluate
+        # [begin-evaluation]
         population_fitness = []
         for chromosome in population:
             fitness = value_fitness(chromosome)
             population_fitness.append(fitness)
+        # [begin-evaluation]
 
         # Bookkeeping
         generation_max_fitness.append(max(population_fitness))
         generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
 
-        # Selection
+        # [begin-selection]
         mating_pool = []
         for _ in range(POPULATION_SIZE):
             tournament_indices = choices(range(POPULATION_SIZE), k=2)
             chromosome = tournament_selection(population, population_fitness, tournament_indices)
             mating_pool.append(chromosome)
+        # [end-selection]
 
-        # Variation (Crossover)
+        # [begin-crossover]
         for i in range(0, POPULATION_SIZE, 2):
             if random() < CROSSOVER_RATE:
                 crossover_point = randrange(BIT_STRING_LENGTH)
                 chromosome_1, chromosome_2 = one_point_crossover(mating_pool[i], mating_pool[i + 1], crossover_point)
                 mating_pool[i] = chromosome_1
                 mating_pool[i + 1] = chromosome_2
+        # [end-crossover]
 
-        # Variation (Mutation)
+        # [begin-mutation]
         for i in range(POPULATION_SIZE):
             if random() < MUTATION_RATE:
                 mutation_point = randrange(BIT_STRING_LENGTH)
                 chromosome = bit_flip_mutation(mating_pool[i], mutation_point)
                 mating_pool[i] = chromosome
+        # [end-mutation]
 
         population = mating_pool
+    # [end-generation-loop]
 
+    # [begin-ending]
     population_fitness = []
     for chromosome in population:
         fitness = value_fitness(chromosome)
@@ -98,6 +107,7 @@ def run_max_bitstring_ga():
     print(population)
     generation_max_fitness.append(max(population_fitness))
     generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
+    # [end-ending]
 
     # plt.plot(generation_max_fitness)
     # plt.plot(generation_average_fitness)
