@@ -25,7 +25,7 @@ Problem
 
 
 * Given this problem description, the best solution is obviously a string of :math:`n` ones
-* Consider an example with :math:`n=10`, how would these candidate solutions be ranked?
+* Consider an example with :math:`n=10`, how would these candidate solutions be ranked in terms of *goodness*?
 
     * :math:`1111111111` (1023)
     * :math:`1011001001` (713)
