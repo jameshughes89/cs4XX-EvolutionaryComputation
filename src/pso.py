@@ -31,7 +31,7 @@ def matyas_function(x, y):
     return 0.26 * (x**2 + y**2) - 0.48 * x * y
 
 
-def run_pso(optimization_function):
+if __name__ == "__main__":
     # Initialize
     particles = []
     for _ in range(NUMBER_OF_PARTICLES):
@@ -47,10 +47,10 @@ def run_pso(optimization_function):
     for _ in range(ITERATIONS):
         # Calculate fitness
         for particle in particles:
-            particle_value = optimization_function(*particle["position"])
-            if particle_value < optimization_function(*particle["best_known_position"]):
+            particle_value = matyas_function(*particle["position"])
+            if particle_value < matyas_function(*particle["best_known_position"]):
                 particle["best_known_position"] = particle["position"]
-            if particle_value < optimization_function(*global_best):
+            if particle_value < matyas_function(*global_best):
                 global_best = particle["position"]
 
         # Update velocity and position (variation)
@@ -64,9 +64,4 @@ def run_pso(optimization_function):
             )
             particle["position"] = particle["position"] + particle["velocity"]
 
-    return global_best
-
-
-if __name__ == "__main__":
-    best = run_pso(matyas_function)
-    print(best, matyas_function(*best))
+    print(global_best, matyas_function(*global_best))

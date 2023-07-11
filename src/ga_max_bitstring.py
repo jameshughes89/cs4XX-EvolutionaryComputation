@@ -45,7 +45,7 @@ def ones_fitness(chromosome: list) -> int:
     return number_of_ones
 
 
-def run_max_bitstring_ga():
+if __name__ == "__main__":
     # Bookkeeping
     generation_max_fitness = []
     generation_average_fitness = []
@@ -112,7 +112,3 @@ def run_max_bitstring_ga():
     # plt.plot(generation_max_fitness)
     # plt.plot(generation_average_fitness)
     # plt.show()
-
-
-if __name__ == "__main__":
-    run_max_bitstring_ga()
