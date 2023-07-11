@@ -64,7 +64,7 @@ if __name__ == "__main__":
         for chromosome in population:
             fitness = value_fitness(chromosome)
             population_fitness.append(fitness)
-        # [begin-evaluation]
+        # [end-evaluation]
 
         # Bookkeeping
         generation_max_fitness.append(max(population_fitness))
