@@ -49,6 +49,7 @@ YouTube
     :numbered:
    
     topics/intro/intro
+    topics/genetic-algorithms/simple-ga
     topics/problems/problems
 
 

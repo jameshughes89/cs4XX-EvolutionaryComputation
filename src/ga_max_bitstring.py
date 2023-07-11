@@ -16,6 +16,7 @@ from src.selection import tournament_selection
 # [begin-hyperparameters]
 BIT_STRING_LENGTH = 16
 POPULATION_SIZE = 10
+TOURNAMENT_SIZE = 2
 GENERATIONS = 100
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
@@ -28,7 +29,10 @@ def value_fitness(chromosome: list) -> int:
 
     :param chromosome: Chromosome (bitstring) to evaluate
     :return: The decimal value of the chromosome (bitstring)
+    :raises ValueError: If the chromosome is empty
     """
+    if len(chromosome) == 0:
+        raise ValueError(f"Empty chromosome cannot be evaluated")
     return int("".join(str(bit) for bit in chromosome), 2)
 
 
@@ -38,7 +42,10 @@ def ones_fitness(chromosome: list) -> int:
 
     :param chromosome: Chromosome (bitstring) to evaluate
     :return: The number of 1s (ones) in the chromosome (bitstring).
+    :raises ValueError: If the chromosome is empty
     """
+    if len(chromosome) == 0:
+        raise ValueError(f"Empty chromosome cannot be evaluated")
     number_of_ones = 0
     for bit in chromosome:
         number_of_ones += bit
@@ -64,7 +71,7 @@ if __name__ == "__main__":
         for chromosome in population:
             fitness = value_fitness(chromosome)
             population_fitness.append(fitness)
-        # [begin-evaluation]
+        # [end-evaluation]
 
         # Bookkeeping
         generation_max_fitness.append(max(population_fitness))
@@ -73,7 +80,7 @@ if __name__ == "__main__":
         # [begin-selection]
         mating_pool = []
         for _ in range(POPULATION_SIZE):
-            tournament_indices = choices(range(POPULATION_SIZE), k=2)
+            tournament_indices = choices(range(POPULATION_SIZE), k=TOURNAMENT_SIZE)
             chromosome = tournament_selection(population, population_fitness, tournament_indices)
             mating_pool.append(chromosome)
         # [end-selection]
