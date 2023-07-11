@@ -28,7 +28,10 @@ def value_fitness(chromosome: list) -> int:
 
     :param chromosome: Chromosome (bitstring) to evaluate
     :return: The decimal value of the chromosome (bitstring)
+    :raises ValueError: If the chromosome is empty
     """
+    if len(chromosome) == 0:
+        raise ValueError(f"Empty chromosome cannot be evaluated")
     return int("".join(str(bit) for bit in chromosome), 2)
 
 
@@ -38,7 +41,10 @@ def ones_fitness(chromosome: list) -> int:
 
     :param chromosome: Chromosome (bitstring) to evaluate
     :return: The number of 1s (ones) in the chromosome (bitstring).
+    :raises ValueError: If the chromosome is empty
     """
+    if len(chromosome) == 0:
+        raise ValueError(f"Empty chromosome cannot be evaluated")
     number_of_ones = 0
     for bit in chromosome:
         number_of_ones += bit
