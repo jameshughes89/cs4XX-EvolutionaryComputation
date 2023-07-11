@@ -16,7 +16,7 @@ Problem
     The problem being *solved* is deliberately kept very simple. This is because (a) the purpose of this topic is to
     see a working GA, not solve a complex problem, and (b) well understood problems are often much simpler to reason
     about. Knowing what a good/bad solution is, and having an idea of why certain solving strategies work or not, will
-    only help with building the intuition around how GAs work.
+    help with building the intuition around how GAs work.
 
 
 * The problem being solved is to maximize the integer value of an unsigned binary number
@@ -106,8 +106,28 @@ Population
 
 Evaluation
 ==========
-* What is a ``good'' solution
-* How to weed out ``good'' from ``less-good''
+
+* After generating the population, the candidate solutions are often not particularly *good*
+* However, some will likely be better than others
+* Regardless, a mechanism for evaluating the quality, or *fitness*, of candidate solutions is needed
+* This mechanism is called the *fitness function*
+
+* Below is an example fitness function for this problem in Python
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :pyobject: value_fitness
+
+
+* With this fitness function, the fitness of each candidate solution within the population can be calculated and stored
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-evaluation]
+    :end-before: # [end-evaluation]
+
 
 
 Selection
