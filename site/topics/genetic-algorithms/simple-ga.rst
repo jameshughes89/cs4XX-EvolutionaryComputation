@@ -132,11 +132,57 @@ Evaluation
 
 Selection
 =========
-* How do we pick solutions to persist?
+
+* Ideally, more fit candidate solutions should be *more likely* to persist within the population
+
+    * And less fit candidate solutions should be more likely to die off
+
+
+* However, it is not as simple as always selecting the best candidate solutions
+
+    * Doing so would cause the population to *converge* too early
+    * This can result in finding sub-optimal solutions
+
+
+* This is where it becomes important to think about the population, not individual candidate solutions
+* The fitness function is a metric for the ultimate goal --- finding a *candidate solution* that best solves the problem
+* But focusing on this metric is detrimental to the *population*
+* Instead, the population should also emphasize *diversity*
+
+* This can be done in any way someone wants
+
+    * There are no hard rules on how selection is to be done
+
+
+* A simple and popular selection technique is *tournament selection*
+
+    * Randomly select a subset of chromosomes within the population
+    * Select the best of the subset
+    * Repeat until the next generation's population is full
+
+.. literalinclude:: /../src/selection.py
+    :language: python
+    :lineno-match:
+    :pyobject: tournament_selection
+
+
+* This ``tournament_selection`` function returns a single chromosome
+* This function must be run multiple times until the next generation's population is full
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-selection]
+    :end-before: # [end-selection]
+
+
+* In the above code, the list ``mating_pool`` will ultimately become the next generation's population
+
 
 
 Variation Operators
 ===================
+
 * Only having population of the same solutions is boring
 * How to make different solutions
    * More fun?
@@ -150,6 +196,17 @@ Termination Requirement
 =======================
 * Don't have infinite resources to run EC forever
 * Have to end loop somehow...
+
+
+
+TODO
+====
+
+- plot
+- play with hyperparams
+- selection pressure (random vs always best)
+- fitness variables
+- invent your own stuff
 
 
 For Next Class
