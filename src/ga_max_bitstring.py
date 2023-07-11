@@ -16,6 +16,7 @@ from src.selection import tournament_selection
 # [begin-hyperparameters]
 BIT_STRING_LENGTH = 16
 POPULATION_SIZE = 10
+TOURNAMENT_SIZE = 2
 GENERATIONS = 100
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
@@ -79,7 +80,7 @@ if __name__ == "__main__":
         # [begin-selection]
         mating_pool = []
         for _ in range(POPULATION_SIZE):
-            tournament_indices = choices(range(POPULATION_SIZE), k=2)
+            tournament_indices = choices(range(POPULATION_SIZE), k=TOURNAMENT_SIZE)
             chromosome = tournament_selection(population, population_fitness, tournament_indices)
             mating_pool.append(chromosome)
         # [end-selection]
