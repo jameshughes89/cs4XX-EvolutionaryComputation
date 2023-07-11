@@ -312,16 +312,53 @@ Mutation
 Termination Requirement
 =======================
 
+* The above describes a single generation of the genetic algorithm
+* For this algorithm to work, many generations will need to be executed
+* This then begs the question, *when does one stop the algorithm*
+
+    * After some set number of individuals?
+    * After the optimal solution is found?
+    * After there have been no improvements in the population?
+    * ...
 
 
-TODO
-====
+* Like most things with genetic algorithms, there really is no correct answer
+* Here, for ease, the algorithm is run for some number of generations specified by the hyperparameter ``GENERATIONS``
 
-- plot
-- play with hyperparams
-- selection pressure (random vs always best)
-- fitness variables
-- invent your own stuff
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-generation-loop]
+    :end-before: # [end-generation-loop]
+
+
+* Notice that this generation loop performs
+
+    * Evaluation
+    * Selection
+    * Variation Operators
+
+
+* Also notice the bookkeeping variables storing some values from evolution
+
+    * ``generation_max_fitness`` and ``generation_average_fitness``
+    * These are not required, but help with visualizing what happened
+
+
+* Also notice the tags like ``# [begin-evaluation]``
+
+    * These can be ignored
+    * They are only there for making it easier to reference the code in the course notes
+
+
+* Once the loop terminates, the population should be evaluated one last time to find the best candidate solution
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-ending]
+    :end-before: # [end-ending]
+
 
 
 For Next Class
