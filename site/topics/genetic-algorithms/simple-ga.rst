@@ -24,6 +24,8 @@ Problem
     * Find the largest binary number representable with :math:`n` bits
 
 
+* For this problem, the *search space* is all possible unsigned binary numbers of length :math:`n`
+
 * Given this problem description, the best solution is obviously a string of :math:`n` ones
 * Consider an example with :math:`n=10`, how would these candidate solutions be ranked in terms of *goodness*?
 
@@ -92,7 +94,7 @@ Population
          [0, 1, 1, 1, 1, 0, 0, 0, 0, 1]]
 
 
-* The number of chromosomes within the population is defined by some hyperparameter
+* The number of chromosomes within the population is defined by a hyperparameter called ``POPULATION_SIZE``
 * Each chromosome is randomly generated
 * Below is an example of how one could create a population for this problem in Python
 
@@ -160,6 +162,7 @@ Selection
     * Select the best of the subset
     * Repeat until the next generation's population is full
 
+
 .. literalinclude:: /../src/selection.py
     :language: python
     :lineno-match:
@@ -177,25 +180,137 @@ Selection
 
 
 * In the above code, the list ``mating_pool`` will ultimately become the next generation's population
-
+* The size of the tournament is defined by a hyperparameter called ``TOURNAMENT_SIZE``
 
 
 Variation Operators
 ===================
 
-* Only having population of the same solutions is boring
-* How to make different solutions
-   * More fun?
-   * Better ones?
-   * Maybe both!!
+* Variation operators, sometimes called genetic operators, are used to alter the chromosomes
 
-* PROBLEM WITH ONLY CROSSOVER (no diversity)
+    * With only selection, the chromosomes will never change
+
+
+* Like most things with genetic algorithms, there are no real hard rules on how this is done
+* Typically there should be a way to exploit what is already known to be good
+* And there should be a way to add some new information to the chromosomes, to better explore the search space
+
+
+Crossover
+---------
+
+* Crossover is a variation operator that acts on two chromosomes
+* The idea is, if two candidate solutions are relatively good, then mixing them together may produce something else good
+
+* Again, there is no *right* way to perform crossover
+* A simple crossover one could use is ``one_point_crossover``
+
+    * Given two chromosomes
+    * Select an arbitrary index
+    * Swap the contents of the chromosomes from that index to the end
+
+
+* For example, selecting index 2 for the following chromosomes
+
+    .. code-block:: text
+
+               v                    v
+        [0, 0, 0, 0, 0]      [0, 0, 1, 1, 1]
+                         ->
+        [1, 1, 1, 1, 1]      [1, 1, 0, 0, 0]
+               ^                    ^
+
+
+.. literalinclude:: /../src/crossover.py
+    :language: python
+    :lineno-match:
+    :pyobject: one_point_crossover
+
+
+* This function only returns two chromosomes, so it must be run multiple times
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :emphasize-lines: 2
+    :start-after: # [begin-crossover]
+    :end-before: # [end-crossover]
+
+
+* Notice that the crossover is applied to adjacent candidate solutions within the ``mating_pool`` list
+
+    * The fact that they are adjacent is arbitrary
+
+
+* Also notice ``random() < CROSSOVER_RATE``
+* Crossover is typically not always applied
+* Thus, this provides a way for selected candidate solutions to persist in the next generation unchanged
+* The probability of crossover being applied is defined by a hyperparameter called ``CROSSOVER_RATE``
+
+
+Potential Problem
+^^^^^^^^^^^^^^^^^
+
+* There is a potential problem with this crossover on this problem
+* Consider the following population on a smaller version of the problem where :math:`n=5`
+
+    .. code-block:: text
+
+        [[1, 0, 1, 1, 1],
+         [1, 0, 0, 0, 1],
+         [0, 0, 1, 1, 1],
+         [1, 0, 1, 1, 1],
+         [0, 0, 0, 1, 0]]
+
+
+* Notice how there exists no ``1`` in any of the chromosomes' index ``1``
+* Because of this, it is actually not possible to ever find the optimal solution through crossover
+* This is because there is no way to add new information to the candidate solutions
+
+    * It is only possible to transfer the existing information between the candidate solutions
+
+
+Mutation
+--------
+
+* Mutation is a variation operator that acts on a single chromosome
+* It is also great for adding new information to the candidate solutions
+
+* Like crossover, there is no correct way to perform mutation
+* Here, a ``bit_flip_mutation`` will be used
+
+    * Given a chromosome
+    * Select an arbitrary index
+    * Flip the bit at the selected index (``0`` -> ``1``/``1`` -> ``0``)
+
+
+* For example, selecting index 2 for the following chromosome
+
+    .. code-block:: text
+
+        [0, 0, 0, 0, 0]  ->  [0, 0, 1, 0, 0]
+               ^                    ^
+
+
+.. literalinclude:: /../src/mutation.py
+    :language: python
+    :lineno-match:
+    :pyobject: bit_flip_mutation
+
+
+* Similar to crossover, the application of mutation is probabilistic based on a hyperparameter called ``MUTATION_RATE``
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :emphasize-lines: 2
+    :start-after: # [begin-mutation]
+    :end-before: # [end-mutation]
+
 
 
 Termination Requirement
 =======================
-* Don't have infinite resources to run EC forever
-* Have to end loop somehow...
 
 
 
