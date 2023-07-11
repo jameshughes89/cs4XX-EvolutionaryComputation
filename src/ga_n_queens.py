@@ -42,7 +42,7 @@ def attacking_fitness(chromosome: list) -> int:
     return total_attackers
 
 
-def run_n_queens_ga():
+if __name__ == "__main__":
     # Initialize
     population = []
     population_fitness = []
@@ -92,7 +92,3 @@ def run_n_queens_ga():
         population_fitness.append(fitness)
     print(population_fitness)
     print(population)
-
-
-if __name__ == "__main__":
-    run_n_queens_ga()
