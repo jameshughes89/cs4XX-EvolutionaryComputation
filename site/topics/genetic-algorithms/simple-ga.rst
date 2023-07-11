@@ -46,9 +46,62 @@ Problem
 
 Initialization
 ==============
-* How do we start the problem?
-   * Initialize population
-   * ... and other parameters
+
+* Before evolution can begin, an initial *population* of *candidate solutions* needs to be created
+* A single candidate solution is a potential solution to the problem being solved
+* For example, :math:`1011001001` is a valid candidate solution for finding the largest binary value where :math:`n=10`
+
+
+Representation
+--------------
+
+* It is sometimes non-trivial to determine how a candidate solution should be represented, or encoded, in the program
+
+    * An encoded candidate solution is called a *chromosome*
+
+
+* For the integer maximization of an unsigned binary number, there are some obvious reasonable and simple encodings
+* Here, a list of ``0``\s and ``1``\s will be used
+* Thus, the candidate solution :math:`1011001001` can be encoded as the chromosome ``[1, 0, 1, 1, 0, 0, 1, 0, 0, 1]``
+
+* A single chromosome can be created by generating random lists of ``0``\s and ``1``\s of some predetermined length
+
+    * The example used here, the length was :math:`n=10`
+
+
+Population
+----------
+
+* A population is a collection of candidate solutions
+* A population can be created by creating a list of randomly generated chromosomes
+
+* In this example, a single chromosome is a list of ``0``\s and ``1``\s
+
+    ``[1, 0, 1, 1, 0, 0, 1, 0, 0, 1]``
+
+
+* A population is a list of chromosomes
+
+    .. code-block:: text
+
+        [[1, 0, 1, 1, 0, 0, 1, 0, 0, 1],
+         [0, 0, 0, 1, 1, 0, 1, 0, 0, 0],
+         [1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+         ...
+         ...
+         [0, 1, 1, 1, 1, 0, 0, 0, 0, 1]]
+
+
+* The number of chromosomes within the population is defined by some hyperparameter
+* Each chromosome is randomly generated
+* Below is an example of how one could create a population for this problem in Python
+
+.. literalinclude:: /../src/ga_max_bitstring.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-initialization]
+    :end-before: # [end-initialization]
+
 
 
 Evaluation
