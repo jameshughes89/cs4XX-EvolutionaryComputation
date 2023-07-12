@@ -3,7 +3,7 @@ Experimenting with a Genetic Algorithm
 **************************************
 
 
-* Having seen the GA, it is now time to tinker with it to see what happens
+* Having seen the GA, it is now time to tinker with one to see what happens
 
 
 
@@ -93,7 +93,7 @@ A Change of Perspective
     * Phenotype space
 
 
-* By counting the number of ones in he chromosomes, the solutions can be ranked based on their encodings
+* By counting the number of ones in he chromosomes, the solutions can be compared based on their encodings
 
     * Genotype space
 
@@ -120,12 +120,12 @@ Experiment Again
 
     * There is no rule saying the fitness function must work a certain way
     * There is no set way to do crossover or mutation
-    * Selection can be done however one wants
+    * Selection can be done however one wants to
     * ...
 
 
 * All that really matters is that it produces a working GA in the end that finds high-quality solutions to a problem
-* The ideas of evolutionary computation is truly only rough frameworks
+* The ideas of evolutionary computation are truly only rough frameworks
 * The individual concrete pieces are flexible and can be whatever works
 
 
