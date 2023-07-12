@@ -50,6 +50,7 @@ YouTube
    
     topics/intro/intro
     topics/genetic-algorithms/simple-ga
+    topics/genetic-algorithms/simple-ga-experiment
     topics/problems/problems
 
 
