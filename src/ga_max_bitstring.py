@@ -14,10 +14,10 @@ from src.mutation import bit_flip_mutation
 from src.selection import tournament_selection
 
 # [begin-hyperparameters]
-BIT_STRING_LENGTH = 16
-POPULATION_SIZE = 10
+BIT_STRING_LENGTH = 10
+POPULATION_SIZE = 10  # Must be multiple of two
 TOURNAMENT_SIZE = 2
-GENERATIONS = 100
+GENERATIONS = 25
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 # [end-hyperparameters]
@@ -116,6 +116,10 @@ if __name__ == "__main__":
     generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
     # [end-ending]
 
-    # plt.plot(generation_max_fitness)
-    # plt.plot(generation_average_fitness)
+    # plt.plot(generation_max_fitness, label="Best Fitness")
+    # plt.plot(generation_average_fitness, label="Average Fitness")
+    # plt.title("Fitness Over Time")
+    # plt.xlabel("Generation")
+    # plt.ylabel("Fitness")
+    # plt.legend()
     # plt.show()
