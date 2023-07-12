@@ -15,7 +15,7 @@ from src.selection import tournament_selection
 
 # [begin-hyperparameters]
 BIT_STRING_LENGTH = 10
-POPULATION_SIZE = 10        # Must be multiple of two
+POPULATION_SIZE = 10  # Must be multiple of two
 TOURNAMENT_SIZE = 2
 GENERATIONS = 25
 CROSSOVER_RATE = 0.70
