@@ -191,7 +191,7 @@ Variation Operators
     * With only selection, the chromosomes will never change
 
 
-* Like most things with genetic algorithms, there are no real hard rules on how this is done
+* Like most things with GAs, there are no real hard rules on how this is done
 * Typically there should be a way to exploit what is already known to be good
 * And there should be a way to add some new information to the chromosomes, to better explore the search space
 
@@ -312,7 +312,7 @@ Mutation
 Termination Requirement
 =======================
 
-* The above describes a single generation of the genetic algorithm
+* The above describes a single generation of the GA
 * For this algorithm to work, many generations will need to be executed
 * This then begs the question, *when does one stop the algorithm*
 
@@ -322,7 +322,7 @@ Termination Requirement
     * ...
 
 
-* Like most things with genetic algorithms, there really is no correct answer
+* Again, like most things with GAs, there really is no correct answer
 * Here, for ease, the algorithm is run for some number of generations specified by the hyperparameter ``GENERATIONS``
 
 .. literalinclude:: /../src/ga_max_bitstring.py
