@@ -68,13 +68,13 @@ Representation
 
 * A single chromosome can be created by generating random lists of ``0``\s and ``1``\s of some predetermined length
 
-    * The example used here, the length was :math:`n=10`
+    * For the example used here, the length was :math:`n=10`
 
 
 Population
 ----------
 
-* A population is a collection of candidate solutions
+* A *population* is a collection of candidate solutions
 * A population can be created by creating a list of randomly generated chromosomes
 
 * In this example, a single chromosome is a list of ``0``\s and ``1``\s
@@ -94,15 +94,18 @@ Population
          [0, 1, 1, 1, 1, 0, 0, 0, 0, 1]]
 
 
-* The number of chromosomes within the population is defined by a hyperparameter called ``POPULATION_SIZE``
 * Each chromosome is randomly generated
-* Below is an example of how one could create a population for this problem in Python
+* Below is an example of how one could create a population for this problem
 
 .. literalinclude:: /../src/ga_max_bitstring.py
     :language: python
     :lineno-match:
     :start-after: # [begin-initialization]
     :end-before: # [end-initialization]
+
+
+* The number of chromosomes within the population is defined by a hyperparameter called ``POPULATION_SIZE``
+* The number of bits in the binary number (:math:`n`) is called ``BIT_STRING_LENGTH``
 
 
 
@@ -114,7 +117,7 @@ Evaluation
 * Regardless, a mechanism for evaluating the quality, or *fitness*, of candidate solutions is needed
 * This mechanism is called the *fitness function*
 
-* Below is an example fitness function for this problem in Python
+* Below is an example fitness function for this problem
 
 .. literalinclude:: /../src/ga_max_bitstring.py
     :language: python
@@ -193,16 +196,16 @@ Variation Operators
 
 * Like most things with GAs, there are no real hard rules on how this is done
 * Typically there should be a way to exploit what is already known to be good
-* And there should be a way to add some new information to the chromosomes, to better explore the search space
+* And there should be a way to add some new information to the chromosomes to better explore the search space
 
 
 Crossover
 ---------
 
 * Crossover is a variation operator that acts on two chromosomes
-* The idea is, if two candidate solutions are relatively good, then mixing them together may produce something else good
+* The idea is, if two candidate solutions are relatively good, then mixing them together may produce something good
 
-* Again, there is no *right* way to perform crossover
+* Again, there is no one correct way to perform crossover
 * A simple crossover one could use is ``one_point_crossover``
 
     * Given two chromosomes
@@ -210,7 +213,7 @@ Crossover
     * Swap the contents of the chromosomes from that index to the end
 
 
-* For example, selecting index 2 for the following chromosomes
+* For example, selecting index ``2`` for the following chromosomes
 
     .. code-block:: text
 
@@ -247,6 +250,8 @@ Crossover
 * Thus, this provides a way for selected candidate solutions to persist in the next generation unchanged
 * The probability of crossover being applied is defined by a hyperparameter called ``CROSSOVER_RATE``
 
+    * Value would be between :math:`0 -- 1`
+
 
 Potential Problem
 ^^^^^^^^^^^^^^^^^
@@ -266,8 +271,7 @@ Potential Problem
 * Notice how there exists no ``1`` in any of the chromosomes' index ``1``
 * Because of this, it is actually not possible to ever find the optimal solution through crossover
 * This is because there is no way to add new information to the candidate solutions
-
-    * It is only possible to transfer the existing information between the candidate solutions
+* It is only possible to transfer the existing information between the candidate solutions
 
 
 Mutation
@@ -300,6 +304,9 @@ Mutation
 
 * Similar to crossover, the application of mutation is probabilistic based on a hyperparameter called ``MUTATION_RATE``
 
+    * Value would be between :math:`0 -- 1`
+
+
 .. literalinclude:: /../src/ga_max_bitstring.py
     :language: python
     :lineno-match:
@@ -316,7 +323,7 @@ Termination Requirement
 * For this algorithm to work, many generations will need to be executed
 * This then begs the question, *when does one stop the algorithm*
 
-    * After some set number of individuals?
+    * After some set number of generations?
     * After the optimal solution is found?
     * After there have been no improvements in the population?
     * ...
