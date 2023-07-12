@@ -371,6 +371,11 @@ Termination Requirement
 For Next Class
 ==============
 
-* TBD
+* Download and look at
 
-    * TBD
+    * :download:`The Selection Script </../src/selection.py>`
+    * :download:`The Crossover Script </../src/crossover.py>`
+    * :download:`The Mutation Script </../src/mutation.py>`
+    * :download:`Bitstring GA </../src/ga_max_bitstring.py>`
+
+
