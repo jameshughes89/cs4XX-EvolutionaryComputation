@@ -3,6 +3,12 @@ Experimenting with a Genetic Algorithm
 **************************************
 
 
+Show plot
+Change params
+Change fitness algo
+
+
+
 TODO
 ====
 
