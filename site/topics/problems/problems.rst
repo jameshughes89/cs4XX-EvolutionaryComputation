@@ -61,19 +61,59 @@ Systems
         * Output --- Oxygen and sugar
 
 
+    * Calculating the time it takes to drive to work
+
+        * Input --- Route taken
+        * Model --- Spacetime
+        * Output --- Time taken
+
+
 
 Optimization
 ------------
+
+.. figure:: system_optimization.png
+    :width: 500 px
+    :align: center
+
+    Given a system, if the goal is to find the best set of inputs, then it is called an optimization problem.
+
+
+* Best path to work
 
 
 
 Modelling
 ---------
 
+.. figure:: system_modelling.png
+    :width: 500 px
+    :align: center
+
+    Given a system, if the goal is to define the functionality and processes to produce the output, then it is called
+    modelling.
+
+
+* Writing software
+
+
 
 
 Simulation
 ----------
+
+.. figure:: system_simulation.png
+    :width: 500 px
+    :align: center
+
+    Given a system, if the goal is to know the output of applying some input to a model, then it is called simulation.
+
+
+* Aircraft wing design
+
+    * Can kinda' depend though as optimization could be just a bunch of simulations
+    * Maybe a warning?
+
 
 
 Search Problems
