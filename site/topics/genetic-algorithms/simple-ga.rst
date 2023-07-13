@@ -250,7 +250,7 @@ Crossover
 * Thus, this provides a way for selected candidate solutions to persist in the next generation unchanged
 * The probability of crossover being applied is defined by a hyperparameter called ``CROSSOVER_RATE``
 
-    * Value would be between :math:`0 -- 1`
+    * Value would be ``0 <= CROSSOVER_RATE <= 1``
 
 
 Potential Problem
