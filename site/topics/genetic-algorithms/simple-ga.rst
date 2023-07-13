@@ -24,7 +24,7 @@ Problem
     * Find the largest binary number representable with :math:`n` bits
 
 
-* For this problem, the *search space* is all possible unsigned binary numbers of length :math:`n`
+* For this problem, the **search space** is all possible unsigned binary numbers of length :math:`n`
 
 * Given this problem description, the best solution is obviously a string of :math:`n` ones
 * Consider an example with :math:`n=10`, how would these candidate solutions be ranked in terms of *goodness*?
@@ -49,7 +49,7 @@ Problem
 Initialization
 ==============
 
-* Before evolution can begin, an initial *population* of *candidate solutions* needs to be created
+* Before evolution can begin, an initial **population** of **candidate solutions** needs to be created
 * A single candidate solution is a potential solution to the problem being solved
 * For example, :math:`1011001001` is a valid candidate solution for finding the largest binary value where :math:`n=10`
 
@@ -59,7 +59,7 @@ Representation
 
 * It is sometimes non-trivial to determine how a candidate solution should be represented, or encoded, in the program
 
-    * An encoded candidate solution is called a *chromosome*
+    * An encoded candidate solution is called a **chromosome**
 
 
 * For the integer maximization of an unsigned binary number, there are some obvious reasonable and simple encodings
@@ -74,7 +74,7 @@ Representation
 Population
 ----------
 
-* A *population* is a collection of candidate solutions
+* A **population** is a collection of candidate solutions
 * A population can be created by creating a list of randomly generated chromosomes
 
 * In this example, a single chromosome is a list of ``0``\s and ``1``\s
@@ -114,8 +114,8 @@ Evaluation
 
 * After generating the population, the candidate solutions are often not particularly *good*
 * However, some will likely be better than others
-* Regardless, a mechanism for evaluating the quality, or *fitness*, of candidate solutions is needed
-* This mechanism is called the *fitness function*
+* Regardless, a mechanism for evaluating the quality, or **fitness**, of candidate solutions is needed
+* This mechanism is called the **fitness function**
 
 * Below is an example fitness function for this problem
 
@@ -145,21 +145,21 @@ Selection
 
 * However, it is not as simple as always selecting the best candidate solutions
 
-    * Doing so would cause the population to *converge* too early
+    * Doing so would cause the population to **converge** too early
     * This can result in finding sub-optimal solutions
 
 
 * This is where it becomes important to think about the population, not individual candidate solutions
 * The fitness function is a metric for the ultimate goal --- finding a *candidate solution* that best solves the problem
 * But focusing on this metric is detrimental to the *population*
-* Instead, the population should also emphasize *diversity*
+* Instead, the population should also emphasize **diversity**
 
 * This can be done in any way someone wants
 
     * There are no hard rules on how selection is to be done
 
 
-* A simple and popular selection technique is *tournament selection*
+* A simple and popular selection technique is ``tournament_selection``
 
     * Randomly select a subset of chromosomes within the population
     * Select the best of the subset
