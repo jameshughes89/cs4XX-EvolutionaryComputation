@@ -246,8 +246,34 @@ Modelling
     modelling.
 
 
-* Writing software
+* Writing software is modelling
+* Sometimes it's a simple problem, like writing a program to calculate a grocery bill
+* But sometimes it's complex, like writing a classifier for iris classification based on petal and sepal sizes
 
+.. figure:: iris_classification.png
+    :width: 500 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Iris_flower_data_set
+
+    Example iris flowers. Iris classification is a classic toy machine learning problem
+
+
+* When using machine learning and AI for modelling, one can think of this modelling as an optimization problem
+
+    * Find the best classifier setup
+    * For example, find a classifier (model) to classify the irises (input) such that the error (output) is minimized
+    * The search space is the set of all possible models
+
+
+Real World Problem
+------------------
+
+.. figure:: brain_modelling.png
+    :width: 333 px
+    :align: center
+
+    Find a model that best describes the relationships between regions of interest within a human brain during some
+    task.
 
 
 
@@ -261,10 +287,8 @@ Simulation
     Given a system, if the goal is to know the output of applying some input to a model, then it is called simulation.
 
 
-* Aircraft wing design
-
-    * Can kinda' depend though as optimization could be just a bunch of simulations
-    * Maybe a warning?
+* Simulation occurs when the input and model is known, but the output is not known
+* Simulation is used when real world experiments may not be feasible
 
 
 
