@@ -106,7 +106,7 @@ Travelling Salesman Problem
     graph's edges, and a path's distance is the edge's weight. It is a minimization problem starting and finishing at a
     specified vertex after having visited each other vertex exactly once [#]_.
 
-.. [#] `From Wikipedia <https://en.wikipedia.org/wiki/Travelling_salesman_problem#Description>`_
+
 
 
 * Effectively, the problem is to find the shortest **Hamiltonian cycle** within the graph
@@ -198,19 +198,23 @@ How Many Cycles are There?
     * It's binary --- valid or not
 
 
+* However, it could be framed as reducing the number of conflicting queens on the board
+
+
 How Many Board Configurations are There?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* How many configurations of :math`8` queens are there on an :math`8 \times 8` board?
+* How many configurations of :math:`8` queens are there on an :math:`8 \times 8` board?
 
-    * :math:`8` choose :math:`64`
-    * :math:`{8 \choose 64} = 4,426,165,368`
-
-
-
-* However, there are only 92 valid board configurations
+    * :math:`64` choose :math:`8`
+    * :math:`{64 \choose 8} = 4,426,165,368`
 
 
+
+* However, there are only :math:`92` valid board configurations
+
+
+* To generalize this, it would be :math:`n \times n \choose n`
 
 
 
@@ -271,3 +275,8 @@ For Next Class
 ==============
 
 * TBD
+
+
+----------------------
+
+.. [#] `From Wikipedia <https://en.wikipedia.org/wiki/Travelling_salesman_problem#Description>`_
