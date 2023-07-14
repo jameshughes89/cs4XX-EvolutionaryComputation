@@ -210,11 +210,28 @@ How Many Board Configurations are There?
     * :math:`{64 \choose 8} = 4,426,165,368`
 
 
-
 * However, there are only :math:`92` valid board configurations
-
-
 * To generalize this, it would be :math:`n \times n \choose n`
+
+
+NASA's Problems
+---------------
+
+.. figure:: nasa_truss.png
+    :width: 333 px
+    :align: center
+    :target: http://www.soton.ac.uk/~ajk/truss/welcome.html
+
+    Image of a truss structure in space. Versions of this structure were designed with a GA to enhance vibration
+    isolation characteristics.
+
+
+.. figure:: nasa_antenna.png
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Genetic_algorithm
+
+    NASA's ST5 spacecraft Antenna designed with evolutionary computation. This design maximizes the radiation pattern.
 
 
 
