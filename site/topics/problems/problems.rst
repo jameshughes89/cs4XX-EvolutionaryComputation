@@ -57,7 +57,7 @@ Systems
     * Photosynthesis
 
         * Input --- Light, carbon dioxide, and water
-        * Model --- Light reactions and the Calvin Cycle
+        * Model --- Light reactions and the Calvin cycle
         * Output --- Oxygen and sugar
 
 
@@ -294,6 +294,31 @@ Simulation
 
 Search Problems
 ===============
+
+.. figure:: search_space.png
+    :width: 500 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Fitness_landscape
+
+    Example search space, or, *fitness landscape*. This example has two dimensions plus the z-dimension representing
+    fitness. As the location in 2D space changes, the fitness value changes.
+
+
+* If the search space is small enough, then it may be possible to enumerate all possible configurations
+* However, the search space can be enormous, or even infinite
+
+* When framing problems as a search problem, one can think of the problem solver as a mechanism to traverse that space
+
+    * For example, a GA traversing the search space of all possible Hamiltonian cycles for a TSP instance
+
+
+* It also allows for asking questions like
+
+    * What is a *good* way to traverse the space?
+    * Can the search be changed?
+    * Can a feature of the search space be exploited?
+    * Can the space be constrained or simplified?
+
 
 
 Optimization vs Constraints
