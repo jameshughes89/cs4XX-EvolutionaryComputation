@@ -140,7 +140,7 @@ Travelling Salesman Problem
 * Thus, it's only a matter of applying a linear time algorithm to each cycle
 
 
-How Many Cycles Are There?
+How Many Cycles are There?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The starting/ending city is always fixed
@@ -173,6 +173,42 @@ How Many Cycles Are There?
     * :math:`\frac{(100-1)!}{2} = \frac{99!}{2} = 4.666311\times10^{155}`
     * For a point of reference, there are about :math:`2.4\times10^{67}` atoms in the Milky Way
 
+
+:math:`n` Queens
+----------------
+
+* Place :math:`n` queens on an :math:`n \times n` chess board such that no two queens can attack each other
+
+    * No two queens share the same row, column, or diagonal
+
+
+.. figure:: 8_queens_example.gif
+    :width: 352 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Eight_queens_puzzle
+
+    Example of a backtracking algorithm searching for an admissible solution to the 8 queens problem. The 8 queens
+    problem is a specific case of the :math:`n` queens problem.
+
+
+* Unlike TSP, this problem is a little different for optimization
+* There is nothing being minimized
+* Instead, all that is needed is a valid board configuration
+
+    * It's binary --- valid or not
+
+
+How Many Board Configurations are There?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* How many configurations of :math`8` queens are there on an :math`8 \times 8` board?
+
+    * :math:`8` choose :math:`64`
+    * :math:`{8 \choose 64} = 4,426,165,368`
+
+
+
+* However, there are only 92 valid board configurations
 
 
 
