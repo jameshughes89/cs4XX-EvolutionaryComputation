@@ -94,7 +94,7 @@ Optimization
 
     * The search space would be all possible paths to work
     * Though, most of the paths would be terrible, so it is common to constrain the search space
-    * For example, do not consider paths that go out of town
+    * For example, assuming living and working in the same town, do not consider paths that go out of town
 
 
 Travelling Salesman Problem
@@ -196,9 +196,6 @@ How Many Cycles are There?
 * Instead, all that is needed is a valid board configuration
 
     * It's binary --- valid or not
-
-
-* However, it could be framed as reducing the number of conflicting queens on the board
 
 
 How Many Board Configurations are There?
@@ -324,17 +321,90 @@ Search Problems
 Optimization vs Constraints
 ===========================
 
+* Objective functions (fitness functions in the context of evolutionary computation) are used for *optimization*
+
+    * With TSP, minimize the total distance of the Hamiltonian cycle
+
+
+* A binary evaluation checks if a given *constraint* holds
+
+    * With :math:`n`-queens, are all queens safe?
+
+
+* Sometimes optimization problems have constraints
+
+    * Consider TSP with a requirement that some city :math:`X` is visited before city :math:`Y`
+
+
+* It is also sometimes possible to convert constraint problems
+
+    * Instead of finding a chess board configuration with no attacking queens, minimize the number of attacking queens
+
+
+* Further, it is sometimes possible to add constrains to an optimization problem to reduce the size of the search space
+
+    * Like in the example above --- not looking for paths to work that go out of town
+
+
 
 Hardness
 ========
+
+* For simplicity
+
+    * A problem is *easy* if there is some *fast* solver for it
+    * A problem is *hard* if there is no *fast* solver for it
 
 
 Continuous vs Discrete
 ----------------------
 
+* If the problem is defined in terms of continuous values (like real numbers), it is called *numerical optimization*
+
+    * These problems have uncountably infinite search spaces
+
+
+* If the problem is defined in terms of discrete values (like integers), then it is called *combinatorial optimization*
+
+    * These problems have finite or countably infinite search spaces
+
 
 What to Know About Hardness
 ---------------------------
+
+* **Class P** are decision problems that can be solved in polynomial time
+* **Class NP** are decision problems with positive solutions that can be *verified* in polynomial time
+
+    * For example, restricted subset sum --- does there exist a subset of a set of integers that sums to :math:`0`?
+    * Class P :math:`\subseteq` Class NP
+
+
+* **Class NP-Complete** are decision problems with no *known* polynomial time algorithm but can be verified in polynomial time
+
+    * All NP-Complete problems are reducible to one another
+
+
+* **Class NP-Hard** are decision problems with no *known* polynomial time algorithm and *can't* be verified in polynomial time
+
+    * For example, the decision version of TSP
+
+
+.. figure:: p_np.png
+    :width: 500 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/P_versus_NP_problem
+
+    Relationships between P, NP, NP-Complete, and NP-Hard class problems. Both assumptions of P :math:`\ne` NP and P :math:`=`
+    NP are included.
+
+
+What to *Really* Know about Hardness
+------------------------------------
+
+* There are some very hard problems out there
+* Given this, the goal is often to find a *good enough* solution to these hard problems
+* This is where tools like evolutionary computation comes in
+
 
 
 For Next Class
