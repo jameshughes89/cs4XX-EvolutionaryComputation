@@ -79,6 +79,33 @@ Individual vs. Population
 Systems
 =======
 
+* Populations of living things evolve
+* But a population of living things is just some system
+* And a system exists within some environment, which is a system
+* And the population is made up individuals, which are themselves systems
+* Each individual is made up of many more systems
+* Each of those smaller systems are made up of more systems
+* ...
+
+.. figure:: turtles_turtles.png
+    :width: 250 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Turtles_all_the_way_down
+
+    It's turtles all the way down.
+
+
+* Systems can evolve, not just biological systems
+* It really only needs mechanisms for persisting and changing
+
+* Systems evolve as a consequence of it's relationship with it's environment
+
+    * Sometimes the environment has some intention behind it
+    * Sometimes it's aimless
+
+
+Cellular Automate
+-----------------
 
 
 The Invisible Hand
