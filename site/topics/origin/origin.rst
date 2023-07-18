@@ -70,9 +70,10 @@ Individual vs. Population
 * Having a balance of competition and diversity is important for populations
 
     * Having too much competition often lowers diversity
+    * Having too little diversity can limit a population's ability to adapt to changes
     * Having too little competition can increase diversity
     * Having too much diversity may stagnate specialization
-    * Having too little diversity can limit a population's ability to adapt to changes
+
 
 
 
