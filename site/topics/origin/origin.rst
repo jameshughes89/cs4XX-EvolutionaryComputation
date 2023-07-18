@@ -95,7 +95,7 @@ Systems
     It's turtles all the way down.
 
 
-* Systems can evolve, not just biological systems
+* Systems can evolve --- not just biological systems
 * It really only needs mechanisms for persisting and changing
 
 * Systems evolve as a consequence of it's relationship with it's environment
@@ -123,7 +123,7 @@ Cellular Automate
 
 * Since each cell's value is determined by three cells' previous state, there are a total of eight (8) patterns
 
-    * Three since it's based on the current cell and its neighbours
+    * Three since it's based on the current cell and its tow neighbours
 
 * Each of the eight patterns can produce either a 0 or a 1, meaning there are a total of 256 possible rules
 * The above rule is named "Rule 30" since :math:`00011110` is the pattern, which has a decimal value of 30
@@ -155,6 +155,13 @@ Cellular Automate
 
     A conus textile, a small venomous sea snail. The shell of the snail has a naturally occurring interesting pattern.
 
+
+Conway's Game of Life
+---------------------
+
+
+Turing Completeness in Simple Systems
+-------------------------------------
 
 
 The Invisible Hand
