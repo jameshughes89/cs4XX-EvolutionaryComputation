@@ -79,6 +79,94 @@ Individual vs. Population
 Systems
 =======
 
+* Populations of living things evolve
+* But a population of living things is just system
+* And a system exists within some environment, which is a system
+* And the population is made up individuals, which are themselves systems
+* Each individual is made up of many more systems
+* Each of those smaller systems are made up of more systems
+* ...
+
+.. figure:: turtles_turtles.png
+    :width: 250 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Turtles_all_the_way_down
+
+    It's turtles all the way down.
+
+
+* Systems can evolve --- not just biological systems
+
+    * Don't put life on a pedestal
+    * It's just another system within the universe
+
+
+* It really only needs mechanisms for persisting and changing
+
+* Systems evolve as a consequence of it's relationship with it's environment
+
+    * Sometimes the environment has some intention behind it
+    * Sometimes it's aimless
+
+
+Cellular Automata 
+-----------------
+
+* An elementary cellular automata is a very simple system of rules
+
+    * Given a one-dimensional (linear) sequence of binary values (cells)
+    * Create the sequence's next *generation* based on each cell's current state and state of its neighbours
+
+
+.. figure:: rule_30.gif
+    :width: 500 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Elementary_cellular_automaton
+
+    Example of rule 30 being applied to some arbitrary sequence.
+
+
+* Since each cell's value is determined by three cells' previous state, there are a total of eight (8) patterns
+
+    * Three since it's based on the current cell and its tow neighbours
+
+* Each of the eight patterns can produce either a 0 or a 1, meaning there are a total of 256 possible rules
+* The above rule is named "Rule 30" since :math:`00011110` is the pattern, which has a decimal value of 30
+
+* By repeatedly applying these very simple rules to each new sequence, interesting and complex patterns may emerge
+
+.. figure:: rule_22.png
+    :width: 333 px
+    :align: center
+    :target: https://www.wolframalpha.com/input?i=rule+22
+
+    Example of Rule 22 being applied 200 times. This was created with the initial condition of a single cell being
+    active.
+
+
+#.  Visit `Wolfram Alpha <https://www.wolframalpha.com/input?i=rule+0>`_ and create the patterns for some rules
+
+    * The above link is the result of running Rule 0
+
+
+#. Take the time to generate the patterns for a few dozen rules and keep track of the most interesting ones found
+#. What makes the patterns interesting?
+
+
+.. figure:: rule_30_shell.png
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Rule_30
+
+    A conus textile, a small venomous sea snail. The shell of the snail has a naturally occurring interesting pattern.
+
+
+Conway's Game of Life
+---------------------
+
+
+Turing Completeness in Simple Systems
+-------------------------------------
 
 
 The Invisible Hand
