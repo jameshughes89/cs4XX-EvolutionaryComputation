@@ -80,7 +80,7 @@ Systems
 =======
 
 * Populations of living things evolve
-* But a population of living things is just some system
+* But a population of living things is just system
 * And a system exists within some environment, which is a system
 * And the population is made up individuals, which are themselves systems
 * Each individual is made up of many more systems
@@ -96,6 +96,11 @@ Systems
 
 
 * Systems can evolve --- not just biological systems
+
+    * Don't put life on a pedestal
+    * It's just another system within the universe
+
+
 * It really only needs mechanisms for persisting and changing
 
 * Systems evolve as a consequence of it's relationship with it's environment
@@ -104,7 +109,7 @@ Systems
     * Sometimes it's aimless
 
 
-Cellular Automate
+Cellular Automata 
 -----------------
 
 * An elementary cellular automata is a very simple system of rules
