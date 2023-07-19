@@ -164,9 +164,46 @@ Cellular Automata
 Conway's Game of Life
 ---------------------
 
+* Conway's Game of Life is another interesting simple system, but works in a two-dimensions grid of cells
+* The rules are
+
+    #. Any live cell with fewer than two live neighbours dies off
+    #. Any live cell with two or three live neighbours survives
+    #. Any live cell with more than three live neighbours dies off
+    #. Any dead cell with exactly three live neighbours becomes live
+
+
+* Visit `this website <https://conwaylife.com/>`_ and play with Conway's Game of Life
+
+    * `Feel free to look up initial condition patterns <https://conwaylife.com/wiki/Category:Patterns>`_
+
+
+.. figure:: game_of_life_puffer.gif
+    :width: 1000 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+    Execution of Conway's Game of Life. The initial conditions for this execution created a "puffer".
+
+
+* `With Conway's Game of Life, one can create logic gates, and with logic gates, it is possible to simulate a computer <https://nicholas.carlini.com/writing/2020/digital-logic-game-of-life.html>`_
+* `This means it's possible to simulate Conway's Game of Life in Conway's Game of Life <https://www.youtube.com/watch?v=xP5-iIeKXE8>`_
+
+    * Which means it's possible to also simulate Conway's Game of Life in Conway's Game of Life in Conway's Game of Life
+    * Which means ...
+
 
 Turing Completeness in Simple Systems
 -------------------------------------
+
+* Both Conway's Game of Life and Rule 110 are Turing complete
+* Both are remarkably simple systems that can produce remarkably complex behaviour
+* Both do not have any intelligence; they just follow their rules starting from initial conditions
+
+* But they're Turing complete --- they can perform any computation any other Turing complete system can
+
+    * Like a standard computer
+
 
 
 The Invisible Hand
