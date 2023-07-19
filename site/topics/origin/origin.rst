@@ -202,7 +202,7 @@ Turing Completeness in Simple Systems
 
 * But they're Turing complete --- they can perform any computation any other Turing complete system can
 
-    * Like a standard computer
+    * Like a typical desktop computer
 
 
 
