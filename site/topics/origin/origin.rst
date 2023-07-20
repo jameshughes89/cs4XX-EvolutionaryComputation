@@ -219,7 +219,7 @@ The Invisible Hand
     * The exceptions being things like human created things
 
 
-* Things only exist because they don't not
+* Things only exist because they don't not exist
 * Evolution has no intelligence guiding it
 * Yet, things seem to *work*
 * But remember, they works, because if it did not, it would exist
