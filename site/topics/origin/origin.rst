@@ -211,6 +211,35 @@ The Invisible Hand
 
 
 
+
+* Nothing exists
+
+* Beware of the *teleology*
+
+
+Nothing designed with a purpose
+
+
+Learning to Walk
+----------------
+
+* Consider the problem of training a robot to walk
+* Deep learning is an absolutely terrible idea for finding the *best* way for a robot to walk
+* As artificial neural networks grow in size, the number of parameters within the network grows rapidly
+* As the number of parameters grows, the odds of finding the best configuration of parameters becomes astronomically low
+
+* However, with deep learning, something interesting happens
+* As the number of parameters grows, it seems that the number of *good* configurations increases
+* Finding the *best* way to walk is not the goal; finding a way to walk is the goal
+
+    * What does the *best* way to walk even mean?
+    * Does there even exist a *best* way to walk?
+
+
+* Thus, deep learning is an absolutely brilliant idea for finding a good way for a robot to walk
+
+
+
 For Next Class
 ==============
 
