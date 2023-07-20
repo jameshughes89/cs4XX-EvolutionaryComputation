@@ -197,7 +197,7 @@ Turing Completeness in Simple Systems
 -------------------------------------
 
 * Both Conway's Game of Life and Rule 110 are Turing complete
-* Both are remarkably simple systems that can produce remarkably complex behaviour
+* Both are remarkably simple systems that can produce remarkably complex and seemingly chaotic random behaviour
 * Both do not have any intelligence; they just follow their rules starting from initial conditions
 
 * But they're Turing complete --- they can perform any computation any other Turing complete system can
