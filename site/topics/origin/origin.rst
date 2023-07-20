@@ -248,4 +248,4 @@ Learning to Walk
 For Next Class
 ==============
 
-* TBD
+* Spend some time thinking about how systems exist and try to explain their existence in terms of *how* instead of *why*
