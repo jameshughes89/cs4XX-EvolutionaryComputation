@@ -209,9 +209,43 @@ Turing Completeness in Simple Systems
 The Invisible Hand
 ==================
 
+* Beware of *teleology*
+
+    * Explaining phenomena in terms of the purpose they serve rather than of the cause by which they arise
+
+
+* Virtually nothing within the universe exists for a purpose
+
+    * The exceptions being things like human created things
+
+
+* Things only exist because they don't not exist
+* Evolution has no intelligence guiding it
+* Yet, things seem to *work*
+* However, the things work because if they did not, they would not exist
+
+
+Learning to Walk
+----------------
+
+* Consider the problem of training a robot to walk
+* Deep learning is an absolutely terrible idea for finding the *best* way for a robot to walk
+* As artificial neural networks grow in size, the number of parameters within the network grows rapidly
+* As the number of parameters grows, the odds of finding the best configuration of parameters becomes astronomically low
+
+* However, with deep learning, something interesting happens
+* As the number of parameters grows, it seems that the number of *good* configurations increases
+* Finding the *best* way to walk is not the goal; finding a way to walk is the goal
+
+    * What does the *best* way to walk even mean?
+    * Does there even exist a *best* way to walk?
+
+
+* Thus, deep learning is an absolutely brilliant idea for finding a good way for a robot to walk
+
 
 
 For Next Class
 ==============
 
-* TBD
+* Spend some time thinking about how systems exist and try to explain their existence in terms of *how* instead of *why*
