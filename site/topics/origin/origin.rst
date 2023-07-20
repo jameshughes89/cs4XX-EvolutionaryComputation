@@ -209,15 +209,20 @@ Turing Completeness in Simple Systems
 The Invisible Hand
 ==================
 
+* Beware of *teleology*
+
+    * Explaining phenomena in terms of the purpose they serve rather than of the cause by which they arise
 
 
+* Virtually nothing within the universe exists for a purpose
 
-* Nothing exists
-
-* Beware of the *teleology*
+    * The exceptions being things like human created things
 
 
-Nothing designed with a purpose
+* Things only exist because they don't not
+* Evolution has no intelligence guiding it
+* Yet, things seem to *work*
+* But remember, they works, because if it did not, it would exist
 
 
 Learning to Walk
