@@ -222,7 +222,7 @@ The Invisible Hand
 * Things only exist because they don't not exist
 * Evolution has no intelligence guiding it
 * Yet, things seem to *work*
-* But remember, they works, because if it did not, it would exist
+* However, the things work because if they did not, they would not exist
 
 
 Learning to Walk
