@@ -6,10 +6,10 @@ Introduction
     :width: 500 px
     :align: center
 
-    High level idea of most evolutionary computation algorithms.
+    High-level idea of most evolutionary computation algorithms.
 
 
-Nearly all forms of evolutionary computation follow the same idea
+* Nearly all forms of evolutionary computation follow the same idea
 
     * Initialize a *population* of *candidate solutions*
 
@@ -26,10 +26,4 @@ Nearly all forms of evolutionary computation follow the same idea
 For Next Class
 ==============
 
-* Read Chapter 1
-
-    * 9 pages
-
-* Read Chapter 2
-
-    * 7 pages
+* TBD
