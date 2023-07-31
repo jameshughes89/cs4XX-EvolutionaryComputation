@@ -26,10 +26,4 @@ Nearly all forms of evolutionary computation follow the same idea
 For Next Class
 ==============
 
-* Read Chapter 1
-
-    * 9 pages
-
-* Read Chapter 2
-
-    * 7 pages
+* TBD
