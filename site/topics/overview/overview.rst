@@ -28,6 +28,13 @@ Overview
         * Competition based on fitness
 
 
+.. figure:: ../intro/ec_idea.png
+    :width: 500 px
+    :align: center
+
+    High-level idea of most evolutionary computation algorithms.
+
+
 * There are two big forces at play
 
     #. Variation
