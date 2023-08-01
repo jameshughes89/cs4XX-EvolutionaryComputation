@@ -4,7 +4,7 @@ Overview
 
 * Given a population of individuals within an environment with limited resources
 * Competition for those resources occurs
-* This competition causes natural selection to occur
+* This competition causes natural selection
 * This causes the overall fitness of the population to rise
 
     * An evolutionary "arms race"
@@ -25,7 +25,7 @@ Overview
     * Apply the quality measure to the solutions
     * More fit solutions reproduce to fill the next generation's population
 
-        * Competition based on fitness
+        * More fit individuals compete better
 
 
 .. figure:: ../intro/ec_idea.png
