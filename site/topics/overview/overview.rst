@@ -39,6 +39,9 @@ Representation
     * Although, this jargon is not commonly used in practice
 
 
+* It is often ideal to ensure all possible valid solutions can be represented in the genotype space
+* Constraining the search space by eliminating inadmissible solutions can greatly improve performance
+
 * What the encoding for a given problem should is is not always obvious
 * A clever encoding can drastically improve the results of the algorithm
 * These ideas are discussed further in a future topic
