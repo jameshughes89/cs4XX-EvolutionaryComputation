@@ -39,8 +39,34 @@ Representation
     * Although, this jargon is not commonly used in practice
 
 
-Fitness
--------
+* What the encoding for a given problem should is is not always obvious
+* A clever encoding can drastically improve the results of the algorithm
+* These ideas are discussed further in a future topic
+
+
+Fitness and Fitness Function
+----------------------------
+
+* The fitness is the measure of how *good* a given candidate solution is
+* The fitness function is a mechanism for measuring a given candidate solution's *goodness*
+
+* This is what the population is trying to adapt to
+
+* What the fitness function should be is not always straightforward
+
+    * Like representation, the choice of fitness function can drastically impact the performance of the algorithm
+
+
+* Consider the unsigned binary number problem discussed in a previous topic
+* Two different fitness functions were used
+
+    #. The actual integer value of the unsigned binary number
+    #. The number of ones in the unsigned binary number
+
+
+* Although both fitness functions worked on the same representation, the fitness function impacted the performance
+
+    * It altered how the population traversed the genotype space
 
 
 Population
