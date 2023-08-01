@@ -10,7 +10,7 @@ Overview
     * An evolutionary "arms race"
 
 
-* In the context of EAs
+* In the context of Evolutionary Computation (EC)
 
     * Given some problem and a mechanism for measuring solution quality
 
