@@ -8,7 +8,9 @@ Types of Evolutionary Algorithms
 ================================
 
 * Given how flexible the framework of an EA is, there is a large and growing list of *types* of EAs
-* Their differences often come down to specific details, their encodings, and types of problems they are used for
+* Their differences often come down to specific details, their encodings, and types of problems they are designed for
+* But they are all population-based iterative processes with selection and variation mechanisms
+
 * Common popular EAs are
 
     * Genetic Algorithms
