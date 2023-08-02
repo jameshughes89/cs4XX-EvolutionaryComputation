@@ -15,7 +15,7 @@ Types of Evolutionary Computation
 
     * Genetic Algorithms
 
-        * Typically have a string/array encoding
+        * Typically have a string or array/list encoding
 
 
     * Evolutionary Strategies
