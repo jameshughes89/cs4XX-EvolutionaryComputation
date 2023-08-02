@@ -39,6 +39,15 @@ Representation
     * Although, this jargon is not commonly used in practice
 
 
+.. figure:: ../representation/genotype_phenotype_binary.png
+    :width: 500 px
+    :align: center
+
+    Example phenotype and genotype for the unsigned binary number maximization problem discussed previously. The
+    Phenotype is the actual integer and the genotype is the binary string. Here, the binary string is shown as a vector.
+    An locus/position/gene/allele would be a single value within the vector (genotype).
+
+
 * It is often ideal to ensure all possible valid solutions can be represented in the genotype space
 * Constraining the search space by eliminating inadmissible solutions can greatly improve performance
 
