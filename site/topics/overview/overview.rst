@@ -209,6 +209,23 @@ Crossover
     This caused the children to inherit traits from both parents.
 
 
+Initialization and Termination
+------------------------------
+
+* The initial population is often randomly generated
+* Sometimes the initial population can be seeded with already known high-quality solutions
+
+    * However, this can have a negative impact as the search may get stuck in a local optimum due to lack of diversity
+
+
+* Termination can be done however the user wants
+
+    * After a predetermined number of generations
+    * After a debited fitness value is achieved
+    * After some diversity threshold is met
+    * If fitness has not improved for some time
+
+
 
 Examples
 ========
