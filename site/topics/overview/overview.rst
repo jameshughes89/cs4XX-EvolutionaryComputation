@@ -34,6 +34,11 @@ Representation
 
 * Candidate solution, phenotype, and individual are words used to describe a possible solution to a problem
 * Genotype and chromosome are words used to describe an encoding of a possible solution to a problem
+
+    * However, chromosomes are themselves candidate solutions
+    * "Candidate solution" is often used as a catch-all term
+
+
 * Locus, position, gene, and allele are words used to describe a part of the chromosome
 
     * Although, this jargon is not commonly used in practice
@@ -83,6 +88,27 @@ Fitness and Fitness Function
 
 Population
 ----------
+
+* A population is a collection of chromosomes
+
+    * A multiset
+
+
+* Each chromosome would have a fitness value associated with it
+
+* The population typically has a fixed size, which is the limited resource for the candidate solutions to compete for
+* Over time, the population's average fitness should improve
+* Diversity is a measure of how different the candidate solutions are within the population
+
+* It is often helpful to think of the population evolving rather than individual candidate solutions
+
+
+.. figure:: ../representation/genotype_phenotype_binary.png
+    :width: 500 px
+    :align: center
+
+    Example population for the unsigned binary number maximization problem discussed previously. The population is a
+    collection of chromosomes.
 
 
 Selection
