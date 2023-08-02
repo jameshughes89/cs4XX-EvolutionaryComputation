@@ -103,8 +103,8 @@ Population
 * It is often helpful to think of the population evolving rather than individual candidate solutions
 
 
-.. figure:: ../overview/genotype_phenotype_binary.png
-    :width: 500 px
+.. figure:: ../overview/population_binary.png
+    :width: 333 px
     :align: center
 
     Example population for the unsigned binary number maximization problem discussed previously. The population is a
@@ -153,9 +153,9 @@ Generational vs. Steady State
     :align: center
 
     Example of a round of selection occurring in a steady state evolutionary algorithm. The list represents a population
-    and the individual letters represent individual chromosomes. Here, chromosomes B and E (green) are selected for
-    reproduction and chromosomes E and I (red) are selected for replacement. The offspring chromosomes of B and E,
-    denoted as X and Y (blue), replace E and I within the same population.
+    and the individual letters represent individual chromosomes. Here, chromosomes "B" and "E" (green) are selected for
+    reproduction and chromosomes "E" and "I" (red) are selected for replacement. The offspring chromosomes of "B" and
+    "E", denoted as "X" and "Y" (blue), replace "E" and "I" within the same population.
 
 
 Variation Operators
@@ -201,7 +201,7 @@ Crossover
 
 
 .. figure:: ../overview/single_point_crossover.png
-    :width: 500 px
+    :width: 666 px
     :align: center
 
     Example single point crossover. The top vectors represent the chromosomes and their corresponding stick figure
