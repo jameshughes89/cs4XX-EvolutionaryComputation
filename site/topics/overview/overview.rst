@@ -44,7 +44,7 @@ Representation
     * Although, this jargon is not commonly used in practice
 
 
-.. figure:: ../representation/genotype_phenotype_binary.png
+.. figure:: ../overview/genotype_phenotype_binary.png
     :width: 500 px
     :align: center
 
@@ -103,7 +103,7 @@ Population
 * It is often helpful to think of the population evolving rather than individual candidate solutions
 
 
-.. figure:: ../representation/genotype_phenotype_binary.png
+.. figure:: ../overview/genotype_phenotype_binary.png
     :width: 500 px
     :align: center
 
@@ -113,6 +113,49 @@ Population
 
 Selection
 ---------
+
+* Selection is a mechanism for selecting candidate solutions for reproduction and/or entering to the next generation
+* Selection is stochastic, but probabilistic
+
+    * More fit candidate solutions have a higher chance to be selected
+
+
+* There are many ways to perform selection, but two popular strategies are:
+
+    * Roulette Wheel
+    * Tournament
+
+
+* These strategies will be discussed further in a later topic
+
+
+Generational vs. Steady State
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* There are two popular strategies for running the evolutionary computation algorithms
+
+    * Generational
+    * Steady State
+
+
+* Generational will have discrete generations where selection occurs to fill a whole new population for each generation
+
+    * The previously discussed unsigned binary number maximization problem's GA was generational
+
+
+* Steady state does not have discrete generations
+* Instead, these operate continuously on the same single population
+* They select candidate solutions for reproduction *and* selects candidates for replacement
+* The offspring will replace the candidate solutions selected for replacement
+
+.. figure:: ../representation/steady_state.png
+    :width: 500 px
+    :align: center
+
+    Example of a round of selection occurring in a steady state evolutionary algorithm. The list represents a population
+    and the individual letters represent individual chromosomes. Here, chromosomes B and E (green) are selected for
+    reproduction and chromosomes E and I (red) are selected for replacement. The offspring chromosomes of B and E,
+    denoted as X and Y (blue), replace E and I within the same population.
 
 
 Genetic Operators
