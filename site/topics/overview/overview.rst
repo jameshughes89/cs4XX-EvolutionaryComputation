@@ -148,7 +148,7 @@ Generational vs. Steady State
 * They select candidate solutions for reproduction *and* selects candidates for replacement
 * The offspring will replace the candidate solutions selected for replacement
 
-.. figure:: ../representation/steady_state.png
+.. figure:: ../overview/steady_state.png
     :width: 500 px
     :align: center
 
@@ -158,8 +158,55 @@ Generational vs. Steady State
     denoted as X and Y (blue), replace E and I within the same population.
 
 
-Genetic Operators
------------------
+Variation Operators
+-------------------
+
+* Variation operators are used to create new, but different, individuals based on old ones
+* Although it depends on the specific type of evolutionary computation algorithm used, there are typically two types
+
+    * Mutation
+    * Crossover
+
+
+Mutation
+^^^^^^^^
+
+* Acts on a single chromosome
+* Small changes
+* Stochastic changes
+* Stochastic chance to happen
+* Typically distinctive
+
+
+.. figure:: ../overview/single_point_mutation.png
+    :width: 500 px
+    :align: center
+
+    Example single point mutation. The vector is some integer encoding that represents the blue stick figure phenotype.
+    A single element in the vector is changed which causes the phenotype to change slightly; the arms of the stick
+    figure changed colour to become orange.
+
+
+
+Crossover
+^^^^^^^^^
+
+* Acts on two chromosomes
+
+    * The idea is, if both parents are *good*, then perhaps their offspring will also be good, but different
+
+
+* Stochastic change
+* Stochastic chance to happen
+
+
+.. figure:: ../overview/single_point_crossover.png
+    :width: 500 px
+    :align: center
+
+    Example single point crossover. The top vectors represent the chromosomes and their corresponding stick figure
+    phenotypes selected for crossover. The last four elements within the vectors are exchanged to produce the offspring.
+    This caused the children to inherit traits from both parents.
 
 
 
