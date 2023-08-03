@@ -315,8 +315,87 @@ Examples
 
 
 
+Typical Settings
+================
+
+* Evolutionary computation algorithms have several hyperparameters to set
+* How many there are will depend on the specific type
+
+* For a generational GA using tournament selection that will run for some number of generations
+
+    * Number of generations
+
+        * As big as it needs to be
+        * Could be in the hundreds or the billions
+
+
+    * Population size
+
+        * Could be a few dozen or in the thousands
+
+
+    * Crossover rate
+
+        * Usually around 80%
+
+
+    * Mutation rate
+
+        * Usually around 10%
+
+
+    * Tournament size
+
+        * Usually around 2 to 5, but depends on the population size
+
+
+* Although some specific values are mentioned above, all settings determined with some trial runs
+
+* The above examples are numerical parameters
+* But it's not just the numbers associated with certain parameters
+* Given the modularity of evolutionary computation algorithms, there is a lot of choice in what is used
+
+    * For example, the generic operators, representation, and selection strategy used
+
+
+* These are called symbolic parameters and often have numerical parameters associated with them
+
+    * For example, tournament size for tournament selection
+
+
+
 Typical Behaviour
 =================
+
+* With a randomly generated starting population, the population will be spread throughout the search space
+* Over time, the population will start to converge on relatively good areas of the search space
+* As more time passes, the population will ideally converge to even better areas of the search space
+
+
+.. figure:: ../overview/typical_search_space_progress.png
+    :width: 333 px
+    :align: center
+
+    Typical distribution of populations over the course of evolution. This example is of a one dimensional problem with
+    the search space defined by the curve. All possible values for the problem are along the x-axis and the
+    corresponding fitness values are along the y-axis. Candidate solutions within the population are represented as
+    points on the curve.
+
+
+* The fitness of the population will improves over time
+* But as time goes on, the rate in which the fitness improves will slow
+
+
+.. figure:: ../overview/typical_learning_curve.png
+    :width: 333 px
+    :align: center
+
+    Typical learning curve of an evolutionary computation algorithm. Early in the search, rapid improvements to fitness
+    will happen, but as time goes on the improvements will slow and the search will begin to converge.
+
+
+* Changing the values of the parameters will often impact the shape of the learning curve
+* Learning curves are helpful for tuning the hyperparameters
 
 
 
