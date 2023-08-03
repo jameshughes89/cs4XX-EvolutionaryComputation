@@ -175,10 +175,6 @@ Population
 ----------
 
 * A population is a collection of chromosomes
-
-    * A multiset
-
-
 * Each chromosome would have a fitness value associated with it
 
 * The population typically has a fixed size, which is the limited resource for the candidate solutions to compete for
