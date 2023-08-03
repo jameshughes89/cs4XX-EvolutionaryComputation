@@ -368,7 +368,17 @@ Typical Settings
 Typical Behaviour
 =================
 
+* With a randomly generated starting population, the population will be spread throughout the search space
+* Over time, the population will start to converge on relatively good areas of the search space
+* As more time passes, the population will ideally converge to even better areas of the search space
 
+
+.. figure:: ../overview/typical_search_space_progress.png
+    :width: 500 px
+    :align: center
+
+    Typical distribution of populations over the course of evolution. This example is of a one dimensional problem where
+    the values of the chromosomes in the population is a value on the x-axis and the fitness values are on the y-axis.
 
 
 
