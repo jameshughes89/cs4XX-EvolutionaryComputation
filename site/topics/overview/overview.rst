@@ -351,7 +351,6 @@ Typical Settings
 
 * Although some specific values are mentioned above, all settings determined with some trial runs
 
-
 * The above examples are numerical parameters
 * But it's not just the numbers associated with certain parameters
 * Given the modularity of evolutionary computation algorithms, there is a lot of choice in what is used
@@ -374,11 +373,13 @@ Typical Behaviour
 
 
 .. figure:: ../overview/typical_search_space_progress.png
-    :width: 500 px
+    :width: 333 px
     :align: center
 
-    Typical distribution of populations over the course of evolution. This example is of a one dimensional problem where
-    the values of the chromosomes in the population is a value on the x-axis and the fitness values are on the y-axis.
+    Typical distribution of populations over the course of evolution. This example is of a one dimensional problem with
+    the search space defined by the curve. All possible values for the problem are along the x-axis and the
+    corresponding fitness values are along the y-axis. Candidate solutions within the population are represented as
+    points on the curve.
 
 
 * The fitness of the population will improves over time
@@ -386,7 +387,7 @@ Typical Behaviour
 
 
 .. figure:: ../overview/typical_learning_curve.png
-    :width: 500 px
+    :width: 333 px
     :align: center
 
     Typical learning curve of an evolutionary computation algorithm. Early in the search, rapid improvements to fitness
