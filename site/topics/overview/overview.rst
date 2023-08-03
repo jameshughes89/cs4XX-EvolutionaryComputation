@@ -133,9 +133,10 @@ Representation
     :width: 500 px
     :align: center
 
-    Example phenotype and genotype for the unsigned binary number maximization problem discussed previously. The
-    Phenotype is the actual integer and the genotype is the binary string. Here, the binary string is shown as a vector.
-    An locus/position/gene/allele would be a single value within the vector (genotype).
+    Two phenotypes and genotypes for the unsigned binary number maximization problem discussed previously. In this
+    example, the binary number being maximized is 4 bits. The phenotype is the actual integer and the genotype is the
+    binary string. Here, the binary string is shown as a vector. An locus/position/gene/allele would be a single value
+    within the vector (genotype).
 
 
 * It is often ideal to ensure all possible valid solutions can be represented in the genotype space
