@@ -381,6 +381,20 @@ Typical Behaviour
     the values of the chromosomes in the population is a value on the x-axis and the fitness values are on the y-axis.
 
 
+* The fitness of the population will improves over time
+* But as time goes on, the rate in which the fitness improves will slow
+
+
+.. figure:: ../overview/typical_learning_curve.png
+    :width: 500 px
+    :align: center
+
+    Typical learning curve of an evolutionary computation algorithm. Early in the search, rapid improvements to fitness
+    will happen, but as time goes on the improvements will slow and the search will begin to converge.
+
+
+* Changing the values of the parameters will often impact the shape of the learning curve
+* Learning curves are helpful for tuning the hyperparameters
 
 
 
