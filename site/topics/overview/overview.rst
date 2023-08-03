@@ -189,8 +189,8 @@ Population
     :width: 333 px
     :align: center
 
-    Example population for the unsigned binary number maximization problem discussed previously. The population is a
-    collection of chromosomes.
+    Population for the unsigned binary number maximization problem discussed previously. In this example, the binary
+    number being maximized is 10 bits. The population is a collection of chromosomes.
 
 
 Selection
