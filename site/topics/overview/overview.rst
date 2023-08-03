@@ -247,6 +247,7 @@ Variation Operators
 -------------------
 
 * Variation operators are used to create new, but different, individuals based on old ones
+* Depending on the representation, some genetic operators may be more helpful than others 
 * Although it depends on the specific type of evolutionary computation algorithm used, there are typically two types
 
     * Mutation
