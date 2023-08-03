@@ -334,12 +334,12 @@ Typical Settings
         * Could be a few dozen or in the thousands
 
 
-    * Crossover rate (usually around 80%)
+    * Crossover rate
 
         * Usually around 80%
 
 
-    * Mutation rate (usually around 10%)
+    * Mutation rate
 
         * Usually around 10%
 
