@@ -326,7 +326,7 @@ Typical Settings
     * Number of generations
 
         * As big as it needs to be
-        * Could be in the billions
+        * Could be in the hundreds or the billions
 
 
     * Population size
