@@ -315,8 +315,62 @@ Examples
 
 
 
+Typical Settings
+================
+
+* Evolutionary computation algorithms have several hyperparameters to set
+* How many there are will depend on the specific type
+
+* For a generational GA using tournament selection that will run for some number of generations
+
+    * Number of generations
+
+        * As big as it needs to be
+        * Could be in the billions
+
+
+    * Population size
+
+        * Could be a few dozen or in the thousands
+
+
+    * Crossover rate (usually around 80%)
+
+        * Usually around 80%
+
+
+    * Mutation rate (usually around 10%)
+
+        * Usually around 10%
+
+
+    * Tournament size
+
+        * Usually around 2 to 5, but depends on the population size
+
+
+* Although some specific values are mentioned above, all settings determined with some trial runs
+
+
+* The above examples are numerical parameters
+* But it's not just the numbers associated with certain parameters
+* Given the modularity of evolutionary computation algorithms, there is a lot of choice in what is used
+
+    * For example, the generic operators, representation, and selection strategy used
+
+
+* These are called symbolic parameters and often have numerical parameters associated with them
+
+    * For example, tournament size for tournament selection
+
+
+
 Typical Behaviour
 =================
+
+
+
+
 
 
 
