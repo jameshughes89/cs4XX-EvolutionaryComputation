@@ -402,31 +402,31 @@ Fitness
 Variation Operators
 -------------------
 
-* This will depend on the representation
+* Which variation operators are used depends on the representation
 * But ultimately the choice can be whatever, but it will impact performance
 
-* 2D array encoding
+* For the permutation representation, a simple single point mutation will not work
 
-    * For mutation, move one of the queens to some other spot on the chess board
-
-    * For crossover, it is less obvious
-    * Swapping half the boards could be problematic as it may result in the boards not having :math:`n` queens
-    * Instead, perhaps select a subset of queens to swap between chromosomes
-
-
-* 1D array encoding
-
-    * For mutation, randomly replace one of the coordinates with a newly generated coordinate
-
-    * For crossover, a single point crossover could work
-
-        * Select an index and swap all contents between parents after that index
+    * Selecting one city and replacing it with another will not work since it would break the permutation
+    * For example, consider this permutation :math:`<0, 5, 3, 4, 2, 6, 1>` of seven cities
+    * Replacing the city at index ``3`` (city :math:`4`) with any value other than :math:`4` would break the permutation
+    * It would cause city :math:`4` not to be visited and some other city to be visited twice
 
 
-    * However, this could result in duplicate coordinates existing in a chromosome
+* Instead, a swap mutation could be used
 
-        * We can't have two of the :math:`n` queens exist in the same space on the board
-        * Although perhaps not ideal, this can be delt with by applying a fitness penalty if this happens
+    * Select two indices and swap the cities between them
+
+
+* Similarly, for crossover, a simple one-point crossover will not work as it could break the permutation
+
+    * For example, consider :math:`<0, 1, 2, 3, 4, 5, 6>` and :math:`<6, 5, 4, 3, 2, 1, 0>`
+    * Performing one-point crossover at any index other than index ``0`` would break the permutation
+
+
+* Instead, a more complex crossover, such as partially mapped crossover or order crossover, would need to be used
+
+    * These are discussed in more detail later
 
 
 Selection
