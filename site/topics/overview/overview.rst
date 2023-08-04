@@ -383,9 +383,8 @@ Representation
 Population
 ----------
 
-* Assuming the use of the 2D array encoding, the population would be a collection of 2D arrays
-* Alternatively, with the 1D array, the population would be a collection of 1D arrays
 * Whatever encoding is used, the population would simply be a collection of coded values
+* With the permutation representation, the population would be a collection of permutations of length :math:`n`
 
 
 Fitness
