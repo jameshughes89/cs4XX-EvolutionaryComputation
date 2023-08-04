@@ -424,9 +424,8 @@ Final Notes
     :width: 500 px
     :align: center
 
-    Notwithstanding the "no free lunch" theorem, this figure depicts the High-level idea of evolutionary computation
-    algorithms' performance on arbitrary problems. Although they perform well in general, a well designed algorithm for
-    a particular problem will typically perform much better.
+    High-level idea of evolutionary computation algorithms' performance on arbitrary problems. Although they perform
+    well in general, a well designed algorithm for a particular problem will typically perform much better.
 
 
 * The point is, if an effective and tractable algorithm for a problem exists, use it
