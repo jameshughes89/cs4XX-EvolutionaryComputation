@@ -313,18 +313,19 @@ Initialization and Termination
 Example
 =======
 
-* Consider the :math:`n` queen problem
+* Consider the Travelling Salesman Problem (TSP)
 
-    * Place :math:`n` queens on an :math:`n \times n` chess board such that none can attack any other
+    * Find the shortest hamiltonian cycle in some weighted graph
 
 
-.. figure:: ../representation/10_queens.png
-    :width: 300 px
+.. figure:: ../overview/tsp_example.png
+    :width: 333 px
     :align: center
-    :target: https://en.wikipedia.org/wiki/Eight_queens_puzzle
+    :target: https://en.wikipedia.org/wiki/Travelling_salesman_problem
 
-    A valid configuration of :math:`10` queens on a :math:`10 \times 10` chess board. This particular configuration is
-    called a "staircase solution".
+    Some hamiltonian cycle representing a solution to the TSP. Black lines represent the pathway and the red vertices
+    represent the cities. This instance assumes the graph is completely connected and the distance between vertices is
+    the Euclidean distance.
 
 
 * Consider what the parts of the GA would be for this problem
