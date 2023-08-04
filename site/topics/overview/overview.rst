@@ -409,6 +409,7 @@ Final Notes
     * Hard to understand why it came up with what it did
     * Will often not find the best solution to a problem
 
+
 * However, it is widely accepted that some problems have no tractable solution
 * If finding the *best* solution is not practical, a *good* solution will work
 
