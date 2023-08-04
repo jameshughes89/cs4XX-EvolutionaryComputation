@@ -402,7 +402,7 @@ Typical Behaviour
 Final Notes
 ===========
 
-* Realistically, when trying to solve a problem, it is not idea to use evolutionary computation
+* Realistically, when trying to solve a problem, it is not ideal to use evolutionary computation
 
     * It is computationally expensive
     * Overfits
