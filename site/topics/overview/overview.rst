@@ -390,25 +390,13 @@ Population
 Fitness
 -------
 
-* As discussed previously, there is value in turning the :math:`n` queens problem into an optimization problem
+* The phenotype is the actual Hamiltonian cycle
+* The genotype is encoding a Hamiltonian cycle as a permutation
 
-    * Instead of looking for a valid board configuration, minimize the number of conflicts
-    * This provides a gradient
+* The fitness would be the total length of the Hamiltonian cycle
+* Given a chromosome, sum up the distances between the cities in order
 
-
-* An appropriate fitness function for this problem would be to count the number of conflicting queens
-* How exactly this fitness value is calculated will depend on the encoding
-
-* 2D array encoding
-
-    * One way would be to look at each queen and check its rows, columns, and diagonals and count the conflicts
-
-
-* 1D array encoding
-
-    * This one is not as straightforward
-    * However, one could *translate* the :math:`(x, y)` coordinates into an :math:`n \times n` chess board
-    * Then, perform the same fitness check as the 2D array encoding
+    * Being sure to include the distance from the last visited city back to the starting city
 
 
 Variation Operators
