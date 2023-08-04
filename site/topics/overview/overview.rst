@@ -310,8 +310,167 @@ Initialization and Termination
 
 
 
-Examples
-========
+Example
+=======
+
+* Consider the Travelling Salesman Problem (TSP)
+
+    * Find the shortest Hamiltonian cycle in some weighted graph
+
+
+.. figure:: ../overview/tsp_example.png
+    :width: 333 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Travelling_salesman_problem
+
+    A Hamiltonian cycle representing a solution to a TSP. Black lines represent the pathway and the red vertices
+    represent the cities. This instance assumes the graph is completely connected and the distance between vertices is
+    the Euclidean distance.
+
+
+* Consider what the parts of the GA would be for this problem
+
+
+Representation
+--------------
+
+* The phenotype is the Hamiltonian cycle
+
+* For the genotype, an ordered collection of cities could represent the path
+* Or, more simply, by assigning each city some integer, it could be an ordered collection of integers
+
+    * Between :math:`0` and :math:`(n-1)`, where :math:`n` is the number of cities
+
+
+* This would make the search space every combination of integers between :math:`0` and :math:`(n-1)`
+
+    * :math:`<0, 0, 0, ..., 0>`
+    * :math:`<0, 0, 0, ..., 1>`
+    * :math:`<0, 0, 0, ..., 2>`
+    * :math:`...`
+    * :math:`<(n-1), (n-1), (n-1), ..., (n-1)>`
+
+
+* This would mean there are a total of :math:`n^{n}` possible combinations
+
+    * There are :math:`n` possible integers for each of the :math:`n` possible spots in the collection
+    * That's a lot...
+
+
+* However, this would include many inadmissible solutions since each city should be visited once and only once
+
+    * Except for the starting city, which is visited twice since it is started and ended on
+
+
+* This knowledge can be taken advantage of
+* Instead, a permutation of the integers from :math:`0` to :math:`(n-1)` could be used
+* This would ensure each city is visited once and only once
+
+* To analyze the size of the search space, consider the number of permutations there are of the :math:`n` cities
+
+    * The starting/ending city is fixed, meaning there are a total of :math:`n-1` possibilities for the next city
+    * After that, there are a total of :math:`n-2` possible cities to visit
+    * Then :math:`n-3`, then :math:`n-4`, and so on
+    * Thus, there a total of :math:`(n-1) \times (n-2) \times (n-3) \times ... \times 2 \times 1` permutations
+    * Which can be written as :math:`(n-1)!`
+
+
+* Further, half of those permutations are reverse of the other half, so really it's :math:`\frac{(n-1)!}{2}`
+
+* This is still a very large number, but it is an improvement over :math:`n^{n}`
+
+* Ultimately however, the representation can be whatever, but being clever about the encoding can impact the performance
+
+
+Population
+----------
+
+* Whatever encoding is used, the population would simply be a collection of coded values
+* With the permutation representation, the population would be a collection of permutations of length :math:`n`
+
+
+Fitness
+-------
+
+* The phenotype is the actual Hamiltonian cycle
+* The genotype is encoding a Hamiltonian cycle as a permutation
+
+* The fitness would be the total length of the Hamiltonian cycle
+* Given a chromosome, sum up the distances between the cities in order
+
+    * Being sure to include the distance from the last visited city back to the starting city
+
+
+.. figure:: ../overview/tsp_chromosome_fitness.png
+    :width: 333 px
+    :align: center
+
+    Chromosome and it's meaning as a Hamiltonian cycle in some graph. The fitness is the sum of the length of all the
+    distances between adjacent values in the chromosome's permutation (red edges) plus the distance from the last city
+    back to the first (blue edge).
+
+
+* This provides a nice gradient to follow when traversing the search space
+
+    * But not all improvements will necessarily be a step towards the optimal solution
+
+
+Variation Operators
+-------------------
+
+* Which variation operators are used depends on the representation
+* But ultimately the choice can be whatever, but it will impact performance
+
+* For the permutation representation, a simple single point mutation will not work well
+
+    * Selecting one city and replacing it with another will not work since it would break the permutation
+    * For example, consider this permutation of seven cities :math:`<0, 5, 3, 4, 2, 6, 1>`
+    * Replacing the city at index ``3`` (city :math:`4`) with any value other than :math:`4` would break the permutation
+    * It would cause city :math:`4` not to be visited and some other city to be visited twice
+
+
+* Instead, a swap mutation could be used
+
+    * Select two indices and swap the cities between them
+
+
+* Similarly, for crossover, a simple one-point crossover will not work as it could break the permutation
+
+    * For example, consider :math:`<0, 1, 2, 3, 4, 5, 6>` and :math:`<6, 5, 4, 3, 2, 1, 0>`
+    * Performing one-point crossover at any index other than index ``0`` would break the permutation
+
+
+* Instead, a more complex crossover, such as partially mapped crossover or order crossover, would need to be used
+
+    * These are discussed in more detail later in the course
+
+
+Selection
+---------
+
+* There are so many possibilities for selection
+* For simplicity, tournament selection could be used
+
+    * Randomly select :math:`k` candidate solutions
+    * Select the best candidate solution of the :math:`k` based on fitness
+    * Repeat
+
+
+* If a generational algorithm is used, this would be repeated until the new population is full
+* If a steady state algorithm is used, chromosomes would need to be selected for replacement
+
+    * There are many ways this could be done
+
+        * Replace based on age
+        * Replace based on fitness
+        * Replace randomly
+
+
+Initialization and Termination
+------------------------------
+
+* For initialization, for both encodings, randomly generate the chromosomes would work
+* For termination, just run for some predetermined number of generations
 
 
 
