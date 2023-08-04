@@ -323,7 +323,7 @@ Example
     :align: center
     :target: https://en.wikipedia.org/wiki/Travelling_salesman_problem
 
-    Some hamiltonian cycle representing a solution to the TSP. Black lines represent the pathway and the red vertices
+    A Hamiltonian cycle representing a solution to a TSP. Black lines represent the pathway and the red vertices
     represent the cities. This instance assumes the graph is completely connected and the distance between vertices is
     the Euclidean distance.
 
@@ -336,10 +336,10 @@ Representation
 
 * The phenotype is the Hamiltonian cycle
 
-* For the genotype, an ordered collection cities could represent the path
+* For the genotype, an ordered collection of cities could represent the path
 * Or, more simply, by assigning each city some integer, it could be an ordered collection of integers
 
-    * Between :math:`0 - (n-1)`, where :math:`n` is the number of cities
+    * Between :math:`0` and :math:`(n-1)`, where :math:`n` is the number of cities
 
 
 * This would make the search space every combination of integers between :math:`0` and :math:`(n-1)`
@@ -367,11 +367,13 @@ Representation
 * This would ensure each city is visited once and only once
 
 * To analyze the size of the search space, consider the number of permutations there are of the :math:`n` cities
-* The starting/ending city is fixed, meaning there are a total of :math:`n-1` possibilities for the next city
-* After that, there are a total of :math:`n-2` possible cities to visit
-* Then :math:`n-3`, then :math:`n-4`, and so on
-* Thus, there a total of :math:`(n-1) \times (n-2) \times (n-3) \times ... \times 2 \times 1` permutations
-* Which can be written as :math:`(n-1)!`
+
+    * The starting/ending city is fixed, meaning there are a total of :math:`n-1` possibilities for the next city
+    * After that, there are a total of :math:`n-2` possible cities to visit
+    * Then :math:`n-3`, then :math:`n-4`, and so on
+    * Thus, there a total of :math:`(n-1) \times (n-2) \times (n-3) \times ... \times 2 \times 1` permutations
+    * Which can be written as :math:`(n-1)!`
+
 
 * Further, half of those permutations are reverse of the other half, so really it's :math:`\frac{(n-1)!}{2}`
 
@@ -399,16 +401,25 @@ Fitness
     * Being sure to include the distance from the last visited city back to the starting city
 
 
+.. figure:: ../overview/tsp_chromosome_fitness.png
+    :width: 333 px
+    :align: center
+
+    Chromosome and it's meaning as a Hamiltonian cycle in some graph. The fitness is the sum of the length of all the
+    distances between adjacent values in the chromosome's permutation (red edges) plus the distance from the last city
+    back to the first (blue edge).
+
+
 Variation Operators
 -------------------
 
 * Which variation operators are used depends on the representation
 * But ultimately the choice can be whatever, but it will impact performance
 
-* For the permutation representation, a simple single point mutation will not work
+* For the permutation representation, a simple single point mutation will not work well
 
     * Selecting one city and replacing it with another will not work since it would break the permutation
-    * For example, consider this permutation :math:`<0, 5, 3, 4, 2, 6, 1>` of seven cities
+    * For example, consider this permutation of seven cities :math:`<0, 5, 3, 4, 2, 6, 1>`
     * Replacing the city at index ``3`` (city :math:`4`) with any value other than :math:`4` would break the permutation
     * It would cause city :math:`4` not to be visited and some other city to be visited twice
 
@@ -426,7 +437,7 @@ Variation Operators
 
 * Instead, a more complex crossover, such as partially mapped crossover or order crossover, would need to be used
 
-    * These are discussed in more detail later
+    * These are discussed in more detail later in the course
 
 
 Selection
