@@ -402,6 +402,22 @@ Typical Behaviour
 Final Notes
 ===========
 
+* Realistically, when trying to solve a problem, it is not idea to use evolutionary computation
+
+    * It is computationally expensive
+    * Overfits
+    * Hard to understand why it came up with what it did
+    * Will often not find the best solution to a problem
+
+* However, it is widely accepted that some problems have no tractable solution
+* If finding the *best* solution is not practical, a *good* solution will work
+
+* Thus, sometimes, when all else fails, it's one of the best tools available
+
+* Further, evolutionary computation algorithms are population based, meaning at the end, a suite of results are obtained
+* They tend to work well on noisy data
+* They tend to work well on large and noncontinuous search spaces
+* They often require minimal expertise in a subject area to find good results
 
 
 For Next Class
