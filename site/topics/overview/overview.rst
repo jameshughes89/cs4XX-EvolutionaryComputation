@@ -410,6 +410,11 @@ Fitness
     back to the first (blue edge).
 
 
+* This provides a nice gradient to follow when traversing the search space
+
+    * But not all improvements will necessarily be a step towards the optimal solution
+
+
 Variation Operators
 -------------------
 
