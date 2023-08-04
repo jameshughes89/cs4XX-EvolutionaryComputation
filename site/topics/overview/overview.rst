@@ -420,6 +420,12 @@ Final Notes
 * They often require minimal expertise in a subject area to find good results
 
 
+
+* The point is, if an effective and tractable algorithm for a problem exists, use it
+* If all out of ideas, try evolutionary computation
+
+
+
 For Next Class
 ==============
 
