@@ -420,9 +420,17 @@ Final Notes
 * They often require minimal expertise in a subject area to find good results
 
 
+.. figure:: ../overview/algorithm_performance.png
+    :width: 500 px
+    :align: center
+
+    Notwithstanding the "no free lunch" theorem, this figure depicts the High-level idea of evolutionary computation
+    algorithms' performance on arbitrary problems. Although they perform well in general, a well designed algorithm for
+    a particular problem will typically perform much better.
+
 
 * The point is, if an effective and tractable algorithm for a problem exists, use it
-* If all out of ideas, try evolutionary computation
+* If all out of ideas, give evolutionary computation a try
 
 
 
