@@ -315,7 +315,7 @@ Example
 
 * Consider the Travelling Salesman Problem (TSP)
 
-    * Find the shortest hamiltonian cycle in some weighted graph
+    * Find the shortest Hamiltonian cycle in some weighted graph
 
 
 .. figure:: ../overview/tsp_example.png
@@ -334,25 +334,50 @@ Example
 Representation
 --------------
 
-* The phenotype is the :math:`n \times n` chess board configuration of :math:`n` queens
+* The phenotype is the Hamiltonian cycle
 
-* For the genotype, a 2D array encoding could be used
+* For the genotype, an ordered collection cities could represent the path
+* Or, more simply, by assigning each city some integer, it could be an ordered collection of integers
 
-    * It would require an :math:`n \times n` array
-    * :math:`n` cells in the array would be filled, representing the queen locations
-    * This would be a very *direct* representation
-    * It can represent all possible configurations
+    * Between :math:`0 - (n-1)`, where :math:`n` is the number of cities
 
 
-* Alternatively, a 1D array could be used
+* This would make the search space every combination of integers between :math:`0` and :math:`(n-1)`
 
-    * It would require an :math:`n` length array
-    * Each value in the array could be a tuple representing the :math:`(x, y)` coordinate of each queen
-    * This is still relatively direct, but does need a bit of translation to represent the phenotype
-    * This can also represent all possible configurations
+    * :math:`<0, 0, 0, ..., 0>`
+    * :math:`<0, 0, 0, ..., 1>`
+    * :math:`<0, 0, 0, ..., 2>`
+    * :math:`...`
+    * :math:`<(n-1), (n-1), (n-1), ..., (n-1)>`
 
 
-* The representation can be whatever one wants, but being clever about the encoding can have an impact on performance
+* This would mean there are a total of :math:`n^{n}` possible combinations
+
+    * There are :math:`n` possible integers for each of the :math:`n` possible spots in the collection
+    * That's a lot...
+
+
+* However, this would include many inadmissible solutions since each city should be visited once and only once
+
+    * Except for the starting city, which is visited twice since it is started and ended on
+
+
+* This knowledge can be taken advantage of
+* Instead, a permutation of the integers from :math:`0` to :math:`(n-1)` could be used
+* This would ensure each city is visited once and only once
+
+* To analyze the size of the search space, consider the number of permutations there are of the :math:`n` cities
+* The starting/ending city is fixed, meaning there are a total of :math:`n-1` possibilities for the next city
+* After that, there are a total of :math:`n-2` possible cities to visit
+* Then :math:`n-3`, then :math:`n-4`, and so on
+* Thus, there a total of :math:`(n-1) \times (n-2) \times (n-3) \times ... \times 2 \times 1` permutations
+* Which can be written as :math:`(n-1)!`
+
+* Further, half of those permutations are reverse of the other half, so really it's :math:`\frac{(n-1)!}{2}`
+
+* This is still a very large number, but it is an improvement over :math:`n^{n}`
+
+* Ultimately however, the representation can be whatever, but being clever about the encoding can impact the performance
 
 
 Population
