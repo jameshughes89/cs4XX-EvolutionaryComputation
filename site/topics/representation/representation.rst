@@ -28,7 +28,7 @@ Genotype vs. Phenotype
     * The number :math:`7` is ``0111`` in the genotype space
     * The number :math:`8` is ``1000`` in the genotype space
     * The difference in the phenotype space (:math:`8 - 7`) is :math:`1`
-    * The difference in the genotype space, if using *Hamming distance* is :math:`4`
+    * The difference in the genotype space, if using *Hamming distance*, is :math:`4`
 
         * The number of bits that would need to change to get from ``0111`` to ``1000`` is :math:`4`
 
@@ -50,6 +50,15 @@ TSP Example
 
 * Consider the TSP example previous discussed
 
+.. figure:: ../representation/tsp_horse.png
+    :width: 333 px
+    :align: center
+    :target: https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/pull/64#discussion_r1284677649
+
+    A solution to a large TSP instance where high-quality solutions depict a horse, or maybe a zebra? Who knows. Credit
+    Twentylemon.
+
+
 Integer Encoding
 ^^^^^^^^^^^^^^^^
 
@@ -69,13 +78,27 @@ Integer Encoding
     * :math:`n` multiplied by itself :math:`n` times
 
 
+* Consider the following possible chromosomes
+
+    * :math:`<0, 0, 0, ..., 0, 0>`
+    * :math:`<0, 0, 0, ..., 0, 1>`
+    * :math:`<0, 0, 0, ..., 0, 2>`
+    * :math:`...`
+    * :math:`<0, 0, 0, ..., 0, (n-1)>`
+    * :math:`<0, 0, 0, ..., 1, 0>`
+    * :math:`<0, 0, 0, ..., 1, 1>`
+    * :math:`<0, 0, 0, ..., 1, 2>`
+    * :math:`...`
+    * :math:`<(n-1), (n-1), (n-1), ..., (n-1)>`
+
+
 * There is nothing *wrong* with the integer encoding
 
     * It includes all possible Hamiltonian cycles
 
 
 * But the integer encoding allows inadmissible solutions to be included in the search space
-* With TSP, with the exception of the starting city, each city is to be visited only once
+* For TSP, with the exception of the starting city, each city is to be visited once and only once
 * But with the integer encoding, it's possible to have a chromosome where some cities are visited more than once
 
     * Which necessarily means that some cities are not visited at all
@@ -94,7 +117,7 @@ Permutation Encoding
     * Solutions where each city is visited once and only once
 
 
-* A permutation encoding where the ordered list is a permutation of the integers between :math:`0` and :math:`n-1`
+* A *permutation* encoding where the ordered list is a permutation of the integers between :math:`0` and :math:`n-1`
 * This would ensure that each exists once and only once in the ordered list
 
 * Since the ordered list has a total of :math:`n` indices
@@ -114,7 +137,7 @@ Permutation Encoding v2
 * The search space can be further constrained
 
 .. figure:: ../representation/tsp_arbitrary_path.png
-    :width: 333 px
+    :width: 250 px
     :align: center
 
     Small TSP instance with some arbitrary Hamiltonian cycle shown.
@@ -139,7 +162,7 @@ Permutation Encoding v2
 
 
 * This means that there only :math:`n-1` remaining cities to place into the ordered list
-* After one is selected, there are :math:`n-2` remaining cities
+* After one is selected for visiting, there are :math:`n-2` remaining cities
 * ...
 
 * This means the search space has a size of :math:`(n-1)!`
@@ -153,7 +176,7 @@ The Gap
 * But what is the smallest the search space could be while still including all valid solutions?
 
 .. figure:: ../representation/tsp_arbitrary_path.png
-    :width: 333 px
+    :width: 250 px
     :align: center
 
     Small TSP instance with some arbitrary Hamiltonian cycle shown.
