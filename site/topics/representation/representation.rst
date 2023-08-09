@@ -108,16 +108,73 @@ Permutation Encoding
 * This is still a very large, but it is an improvement over :math:`n^{n}`
 
 
-
-
 Permutation Encoding v2
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-* fix index 0
+* The search space can be further constrained
+
+.. figure:: ../representation/tsp_arbitrary_path.png
+    :width: 333 px
+    :align: center
+
+    Small TSP instance with some arbitrary Hamiltonian cycle shown.
 
 
+* In the above figure, consider the following ordered lists
+
+    * :math:`<0, 3, 5, 2, 4, 1>`
+    * :math:`<2, 4, 1, 0, 3, 5>`
 
 
+* Both permutations define the same Hamiltonian cycle
+
+    * In fact, there are a total of :math:`n` permutations that define the exact same cycle
+    * This would be true for each Hamiltonian cycle
+
+
+* A way to eliminate the duplicates is by fixing the starting city
+
+    * Either remove it entirely from the chromosome but include it in the fitness calculation
+    * Or have it always at index :math:`0`
+
+
+* This means that there only :math:`n-1` remaining cities to place into the ordered list
+* After one is selected, there are :math:`n-2` remaining cities
+* ...
+
+* This means the search space has a size of :math:`(n-1)!`
+* This is still very large, but an improvement over :math:`n!`
+
+
+The Gap
+^^^^^^^
+
+* The second permutation representation had a search space of :math:`(n-1)!`
+* But what is the smallest the search space could be while still including all valid solutions?
+
+.. figure:: ../representation/tsp_arbitrary_path.png
+    :width: 333 px
+    :align: center
+
+    Small TSP instance with some arbitrary Hamiltonian cycle shown.
+
+
+* In the above figure, consider the following ordered lists
+
+    * :math:`<0, 3, 5, 2, 4, 1>`
+    * :math:`<0, 1, 4, 2, 5, 3>`
+
+
+* Once again, both permutations define the same Hamiltonian cycle
+
+    * The second is the reverse of the first
+    * For every permutation, there is a reverse of it
+
+
+* This means it could be possible to eliminate half of the permutations
+* This would result in a search space of :math:`\frac{(n-1)!}{2}`
+
+* But, how could the representation be updated address this?
 
 
 :math:`n` Queens Example
