@@ -88,6 +88,50 @@ Genotype vs. Phenotype
     * It's worse since it's possible for queens to be placed in the same :math:`(x, y)` coordinate
 
 
+Integer and Permutation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+* Since the queens are not to attack one another, they can't be in the same row or column
+
+    * Otherwise it will be an invalid configuration
+
+
+* Since each column can only have one queen in it, an integer encoding could be used
+
+    * Have a list of size :math:`n`
+    * The index in the list corresponds to the queen's :math:`x` coordinate
+    * The value at the index corresponds to the queen's :math:`y` coordinate
+
+
+* This can be taken a step further --- use a permutation representation
+* This would ensure that the values in each index are unique
+
+    * This would mean no two queens could be in the same row
+
+
+* In other words, with the permutation encoding
+
+    * Each queen must be in a different column as the columns are defined by the index of the list
+    * Each queen must be in a different row since the rows are defined by the values in the list, which are unique
+
+
+.. figure:: ../representation/8_queens.png
+    :width: 250 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Eight_queens_puzzle
+
+    A valid configuration for the :math:`8` queens problem. The permutation encoding of this solution would be
+    :math:`<2, 5, 7, 0, 4, 6, 1, 3>`.
+
+
+* This representation eliminates all configurations where queens conflict in the rows or columns
+* The only way a permutation would not be a valid configuration is if any queens conflict along the diagonals
+
+* The size of the search space with this encoding is :math:`n!`
+
+    * For :math:`8` queens, this is :math:`8! = 40,320`
+
+
 
 Binary Representation
 =====================
