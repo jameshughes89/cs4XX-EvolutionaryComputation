@@ -357,7 +357,7 @@ Common Representations
 Binary Representation
 ---------------------
 
-* A collection of ``0``\s and ``1``\s
+* A collection of :math:`0`\s and :math:`1`\s
 
     * Like the representation used for the maximization of an unsigned binary number previously discussed
     * For example, :math:`<0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1>`
@@ -376,7 +376,7 @@ Integer Representation
 * Could be any integer or integers taken from a predefined set of integers
 * For example
 
-    * Allow the numbers between :math:`0` to :math:`100`
+    * Allow all integers representable in Python
     * Allow only :math:`0, 1, 2` and :math:`3` to mean North, South, East, West
 
 
@@ -395,7 +395,7 @@ Integer Representation
 * Consider the problem of programming a robot to traverse a maze
 * The set of possible integers could be :math:`\{0, 1, 2, 3\}` meaning North, South, East, and West
 * The robot needs to take :math:`10` steps
-* An encoding could be :math:`<0, 0, 0, 1, 0, 2, 3, 0, 2, 2>`
+* A valid chromosome could be :math:`<0, 0, 0, 1, 0, 2, 3, 0, 2, 2>`
 
 
 Permutation Representation
@@ -407,7 +407,7 @@ Permutation Representation
 
 
 * Useful for situations where each value in an encoding must be unique, or have a fixed number of occurrences
-* For example, consider TSP
+* For example, TSP
 
     * Each Hamiltonian cycle is defined by a permutation of cities
 
@@ -415,15 +415,16 @@ Permutation Representation
 * Does not need to be numerical
 * Order of elements in the chromosome matters
 
-* Consider the problem of finding English words form a given multiset
-* Consider the set of letters :math:`\{A, A, E, G, M, N, T\}`
-* Below is a list of possible chromosomes
+* Consider the problem of finding English words form a given multiset of letters
 
-    * :math:`<A, A, E, G, M, N, T>`
-    * :math:`<G, A, T, E, M, A, N>`
-    * :math:`<M, A, G, E, N, T, A>`
-    * :math:`<M, A, G, N, A, T, E>`
-    * :math:`<N, A, M, E, T, A, G>`
+    * Given the multiset of letters :math:`\{A, A, E, G, M, N, T\}`
+    * Below is a list of possible chromosomes
+
+        * :math:`<A, A, E, G, M, N, T>`
+        * :math:`<G, A, T, E, M, A, N>`
+        * :math:`<M, A, G, E, N, T, A>`
+        * :math:`<M, A, G, N, A, T, E>`
+        * :math:`<N, A, M, E, T, A, G>`
 
 
 Real Value Representation
