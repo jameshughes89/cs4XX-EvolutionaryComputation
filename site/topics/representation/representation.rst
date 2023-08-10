@@ -348,29 +348,46 @@ Integer and Permutation
 
 
 
+Common Representations
+======================
+
+* Below a collection of common encodings are discussed
+
+    * However, the representation can be whatever one needs or wants it to be
+    * For example, consider the 2D list encoding for :math:`n` queens discussed above
+
+
+* Some of these encodings fit well with a particular type of evolutionary computation algorithm
+* Some of these encodings are effectively what defines a class of evolutionary computation algorithm
+
+
 Binary Representation
-=====================
+---------------------
+
 
 
 
 Integer Representation
-======================
+----------------------
+
 
 
 
 Permutation Representation
-==========================
+--------------------------
+
 
 
 
 Real Value Representation
-=========================
+-------------------------
 
 
 
 
 Tree Representation
-===================
+-------------------
+
 
 
 
