@@ -221,13 +221,6 @@ The Gap
 :math:`n` Queens Example
 ------------------------
 
-
-
-
-
-:math:`n` Queens Example
-------------------------
-
 * Consider the :math:`n` queen problem
 
     * Place :math:`n` queens on an :math:`n \times n` chess board such that none can attack any other
