@@ -357,6 +357,15 @@ Common Representations
 Binary Representation
 ---------------------
 
+* Strings of ``0``\s and ``1``\s
+
+    * Like the representation used for the maximization of an unsigned binary number previously discussed
+    * For example,  :math:`<0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1>``
+
+* Commonly used for binary decisions
+* Can be used to represent virtually anything as long as there is a sufficient encoding/decoding method
+
+    * This representation is often very *indirect*
 
 
 
