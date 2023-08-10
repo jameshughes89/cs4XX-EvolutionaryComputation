@@ -43,29 +43,32 @@ def attacking_fitness(chromosome: list) -> int:
 
 
 if __name__ == "__main__":
-    # Initialize
+    # [begin-initialization]
     population = []
     population_fitness = []
     for _ in range(POPULATION_SIZE):
         chromosome = sample(range(N_QUEENS), k=N_QUEENS)
         population.append(chromosome)
+    # [end-initialization]
 
-    # Run for a Specified Number of Generations (Termination)
+    # [begin-generation-loop]
     for generation in range(GENERATIONS):
-        # Evaluate
+        # [begin-evaluation]
         population_fitness = []
         for chromosome in population:
             fitness = attacking_fitness(chromosome)
             population_fitness.append(fitness)
+        # [end-evaluation]
 
-        # Selection
+        # [begin-selection]
         mating_pool = []
         for _ in range(POPULATION_SIZE):
             tournament_indices = choices(range(POPULATION_SIZE), k=2)
             chromosome = tournament_selection(population, population_fitness, tournament_indices, direction=-1)
             mating_pool.append(chromosome)
+        # [end-selection]
 
-        # Variation (Crossover)
+        # [begin-crossover]
         for i in range(0, POPULATION_SIZE, 2):
             if random() < CROSSOVER_RATE:
                 index_one = randrange(N_QUEENS)
@@ -75,20 +78,25 @@ if __name__ == "__main__":
                 chromosome_1, chromosome_2 = order_crossover(mating_pool[i], mating_pool[i + 1], start_index, end_index)
                 mating_pool[i] = chromosome_1
                 mating_pool[i + 1] = chromosome_2
+        # [end-crossover]
 
-        # Variation (Mutation)
+        # [begin-mutation]
         for i in range(POPULATION_SIZE):
             if random() < MUTATION_RATE:
                 index_one = randrange(N_QUEENS)
                 index_two = randrange(N_QUEENS)
                 chromosome = swap_mutation(mating_pool[i], index_one, index_two)
                 mating_pool[i] = chromosome
+        # [end-mutation]
 
         population = mating_pool
+    # [end-generation-loop]
 
+    # [begin-ending]
     population_fitness = []
     for chromosome in population:
         fitness = attacking_fitness(chromosome)
         population_fitness.append(fitness)
     print(population_fitness)
     print(population)
+    # [end-ending]
