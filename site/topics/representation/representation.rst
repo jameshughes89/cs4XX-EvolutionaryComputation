@@ -449,13 +449,34 @@ Real Value Representation
     * Evolutionary strategies, differential evolution, and particle swarm optimization work well with real numbers
 
 
-
-
-
-
 Tree Representation
 -------------------
 
+* Tree representations are typically used in genetic programming
+* The tree representation is used to encode a program/function
+
+.. figure:: ../genetic-programming/tree_examples.png
+    :width: 666 px
+    :align: center
+
+    Example of three different tree encodings for three different problems. The left tree encodes some mathematical
+    expression, the centre tree encodes a boolean expression, and the right tree is some conditional program.
+
+
+* The above figure shows three different tree encodings that would be used for different problems
+* The left most tree represents the mathematical expression :math:`(1.2 - x) \times y`
+
+    * This could be used for a regression problem
+
+
+* The centre tree represents the boolean expression ``length < 5.2 or not(red)``
+
+    * This could be used for programming a classifier
+
+
+* The right most tree represents the conditional program ``if(open and right closed) then (forward) else (turn right)``
+
+    * This could be used for programming a robot to traverse a maze
 
 
 
