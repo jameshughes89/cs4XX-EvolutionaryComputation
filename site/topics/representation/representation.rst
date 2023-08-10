@@ -480,6 +480,16 @@ Tree Representation
     * This could be used for programming a robot to traverse a maze
 
 
+* The trees are made up of operators and operands
+
+    * Operands are the leaves of the trees and can be a variable or constant
+    * Operators are interior nodes and act on the values returned by their children
+
+
+* Many of the common representations for evolutionary computation have a fixed size
+* However, tree so not, and they can have odd shapes
+
+
 
 For Next Class
 ==============
