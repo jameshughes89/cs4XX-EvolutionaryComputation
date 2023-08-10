@@ -357,7 +357,7 @@ Common Representations
 Binary Representation
 ---------------------
 
-* Strings of ``0``\s and ``1``\s
+* A collection of ``0``\s and ``1``\s
 
     * Like the representation used for the maximization of an unsigned binary number previously discussed
     * For example, :math:`<0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1>`
@@ -372,7 +372,7 @@ Binary Representation
 Integer Representation
 ----------------------
 
-* A string of integers
+* A collection of integers
 * Could be any integer or integers taken from a predefined set of integers
 * For example
 
@@ -380,9 +380,14 @@ Integer Representation
     * Allow only :math:`0, 1, 2` and :math:`3` to mean North, South, East, West
 
 
-* The order of the integers may or may not matter
+* The ordering of the integer values may or may not matter
 
     * Although :math:`0` comes before :math:`1`, North is not less than South
+
+
+* The order of the elements in the collection may or may not matter
+
+    * The fact that one integer is at index :math:`7` and another is in index :math:`8` may not matter
 
 
 * The encoding could be used to represent whatever, as long as there is a sufficient encoding/decoding method
@@ -424,6 +429,27 @@ Permutation Representation
 Real Value Representation
 -------------------------
 
+* A collection of real/floating point numbers
+* Consider the problem of encoding the weights for an artificial neural network
+* Or finding the :math:`(x, y)` coordinates to find the minimum value of some function
+
+
+.. figure:: ../particle-swarm-optimization/ackley_function.png
+    :width: 500 px
+    :align: center
+    :target: https://www.sfu.ca/~ssurjano/ackley.html
+
+    Ackley function shown in 3D where the plotted value is the result of the function. This function is a common "toy
+    problem" used to test optimization algorithms that work with real numbers [#]_.
+
+
+
+* Certain forms of evolutionary computation work well with real/floating point numbers
+
+    * Evolutionary strategies, differential evolution, and particle swarm optimization work well with real numbers
+
+
+
 
 
 
@@ -437,3 +463,8 @@ For Next Class
 ==============
 
 * TBD
+
+
+----------------------
+
+.. [#] `From the "Virtual Library of Simulation Experiments" <https://www.sfu.ca/~ssurjano/index.html>`_
