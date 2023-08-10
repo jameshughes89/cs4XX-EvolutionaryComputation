@@ -368,15 +368,14 @@ Representation
 
 * To analyze the size of the search space, consider the number of permutations there are of the :math:`n` cities
 
-    * The starting/ending city is fixed, meaning there are a total of :math:`n-1` possibilities for the next city
-    * After that, there are a total of :math:`n-2` possible cities to visit
-    * Then :math:`n-3`, then :math:`n-4`, and so on
-    * Thus, there a total of :math:`(n-1) \times (n-2) \times (n-3) \times ... \times 2 \times 1` permutations
-    * Which can be written as :math:`(n-1)!`
+    * There are a total of :math:`n` possibilities for the first index
+    * After that, there are a total of :math:`n-1` possible cities to visit
+    * Then :math:`n-2`, then :math:`n-4`, and so on
+    * Thus, there a total of :math:`n \times (n-1) \times (n-2) \times ... \times 2 \times 1` permutations
+    * Which can be written as
 
 
-* Further, half of those permutations are reverse of the other half, so really it's :math:`\frac{(n-1)!}{2}`
-
+* Therefore, the search space has a size :math:`n!`
 * This is still a very large number, but it is an improvement over :math:`n^{n}`
 
 * Ultimately however, the representation can be whatever, but being clever about the encoding can impact the performance
