@@ -340,6 +340,16 @@ Integer and Permutation
     * For :math:`8` queens, this is :math:`8! = 40,320`
 
 
+.. warning::
+
+    The above problems are common "toy problems" that are well understood and are thus relatively easy to reason about.
+    This enabled an intuitive process of reducing the search space by changing the representations.
+
+    Evolutionary computation, in practice, is used on difficult problems that are not well understood. Further, little
+    may be known about the search space, it's shape, and what all admissible and non-admissible solutions are. This
+    means that reasoning about the representation may not be straightforward.
+
+
 
 Common Representations
 ======================
