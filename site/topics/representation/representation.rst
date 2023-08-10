@@ -221,13 +221,6 @@ The Gap
 :math:`n` Queens Example
 ------------------------
 
-
-
-
-
-:math:`n` Queens Example
-------------------------
-
 * Consider the :math:`n` queen problem
 
     * Place :math:`n` queens on an :math:`n \times n` chess board such that none can attack any other
@@ -348,29 +341,143 @@ Integer and Permutation
 
 
 
-Binary Representation
-=====================
+Common Representations
+======================
 
+* Below a collection of common encodings are discussed
+
+    * However, the representation can be whatever one needs or wants it to be
+    * For example, consider the 2D list encoding for :math:`n` queens discussed above
+
+
+* Some of these encodings fit well with a particular type of evolutionary computation algorithm
+* Some of these encodings are effectively what defines a class of evolutionary computation algorithm
+
+
+Binary Representation
+---------------------
+
+* A collection of :math:`0`\s and :math:`1`\s
+
+    * Like the representation used for the maximization of an unsigned binary number previously discussed
+    * For example, :math:`<0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1>`
+
+
+* Commonly used for binary decisions
+* Can be used to represent virtually anything as long as there is a sufficient encoding/decoding method
+
+    * This representation is often very *indirect*
 
 
 Integer Representation
-======================
+----------------------
 
+* A collection of integers
+* Could be any integer or integers taken from a predefined set of integers
+* For example
+
+    * Allow all integers representable in Python
+    * Allow only :math:`0, 1, 2` and :math:`3` to mean North, South, East, West
+
+
+* The ordering of the integer values may or may not matter
+
+    * Although :math:`0` comes before :math:`1`, North is not less than South
+
+
+* The order of the elements in the collection may or may not matter
+
+    * The fact that one integer is at index :math:`7` and another is in index :math:`8` may not matter
+
+
+* The encoding could be used to represent whatever, as long as there is a sufficient encoding/decoding method
+
+* Consider the problem of programming a robot to traverse a maze
+* The set of possible integers could be :math:`\{0, 1, 2, 3\}` meaning North, South, East, and West
+* The robot needs to take :math:`10` steps
+* A valid chromosome could be :math:`<0, 0, 0, 1, 0, 2, 3, 0, 2, 2>`
 
 
 Permutation Representation
-==========================
+--------------------------
 
+* An ordering of values in a set/multiset
+
+    * An arrangement of values in some sequence
+
+
+* Useful for situations where each value in an encoding must be unique, or have a fixed number of occurrences
+* For example, TSP
+
+    * Each Hamiltonian cycle is defined by a permutation of cities
+
+
+* Does not need to be numerical
+* Order of elements in the chromosome matters
+
+* Consider the problem of finding English words form a given multiset of letters
+
+    * Given the multiset of letters :math:`\{A, A, E, G, M, N, T\}`
+    * Below is a list of possible chromosomes
+
+        * :math:`<A, A, E, G, M, N, T>`
+        * :math:`<G, A, T, E, M, A, N>`
+        * :math:`<M, A, G, E, N, T, A>`
+        * :math:`<M, A, G, N, A, T, E>`
+        * :math:`<N, A, M, E, T, A, G>`
 
 
 Real Value Representation
-=========================
+-------------------------
+
+* A collection of real/floating point numbers
+* Consider the problem of encoding the weights for an artificial neural network
+* Or finding the :math:`(x, y)` coordinates to find the minimum value of some function
 
 
+.. figure:: ../particle-swarm-optimization/ackley_function.png
+    :width: 500 px
+    :align: center
+    :target: https://www.sfu.ca/~ssurjano/ackley.html
+
+    Ackley function shown in 3D where the plotted value is the result of the function. This function is a common "toy
+    problem" used to test optimization algorithms that work with real numbers [#]_.
+
+
+
+* Certain forms of evolutionary computation work well with real/floating point numbers
+
+    * Evolutionary strategies, differential evolution, and particle swarm optimization work well with real numbers
 
 
 Tree Representation
-===================
+-------------------
+
+* Tree representations are typically used in genetic programming
+* The tree representation is used to encode a program/function
+
+.. figure:: ../genetic-programming/tree_examples.png
+    :width: 666 px
+    :align: center
+
+    Example of three different tree encodings for three different problems. The left tree encodes some mathematical
+    expression, the centre tree encodes a boolean expression, and the right tree is some conditional program.
+
+
+* The above figure shows three different tree encodings that would be used for different problems
+* The left most tree represents the mathematical expression :math:`(1.2 - x) \times y`
+
+    * This could be used for a regression problem
+
+
+* The centre tree represents the boolean expression ``length < 5.2 or not(red)``
+
+    * This could be used for programming a classifier
+
+
+* The right most tree represents the conditional program ``if(open and right closed) then (forward) else (turn right)``
+
+    * This could be used for programming a robot to traverse a maze
 
 
 
@@ -378,3 +485,8 @@ For Next Class
 ==============
 
 * TBD
+
+
+----------------------
+
+.. [#] `From the "Virtual Library of Simulation Experiments" <https://www.sfu.ca/~ssurjano/index.html>`_
