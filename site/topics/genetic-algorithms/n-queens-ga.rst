@@ -25,20 +25,16 @@ Population
 Evaluation
 ==========
 
-* The randomly generated population is not likely to be particularly good
-* However, some will probably be better than others
-* A fitness function will be used to measure the effectiveness of each chromosome
-
 * The fitness function will count the number of conflicting queens
 * Each pair of conflicting queens will only be counted once
 
 * With the representation used, it's not possible for two queens to be in the same row or column
 * Thus, only the diagonals need to be checked
 
-.. literalinclude:: /../src/attacking_fitness.py
+.. literalinclude:: /../src/ga_n_queens.py
     :language: python
     :lineno-match:
-    :pyobject: value_fitness
+    :pyobject: attacking_fitness
 
 
 * For each queen, check the up and down diagonals to the right
@@ -49,8 +45,8 @@ Evaluation
 * The basic idea here is
 
     * Given a queen at index ``attacker_column`` with value ``attacker_row``
-    * In order for a queen ``offset`` indices away to be in the same diagonal
-    * It **must** be in the row ``attacker_row - offset`` or ``attacker_row + offset``
+    * In order for a queen ``offset`` indices away with the value ``victim_row`` to be in the same diagonal
+    * The value of ``victim_row`` **must** be equal to ``attacker_row - offset`` or ``attacker_row + offset``
 
 
 .. figure:: 8_queens_conflicts.png
@@ -62,9 +58,9 @@ Evaluation
     demonstration purposes.
 
 
-* Consider the above figure and the chromosome ``<? 6, 3, 4, 0, ?, 1, ?>
+* Consider the above figure and the chromosome ``<? 6, 3, 4, 0, ?, 1, ?>``
 
-    * The questionmarks repreesnt irrelevant values for this example
+    * The question marks represent irrelevant values for this example
 
 
 * When evaluating the queens from left to right
