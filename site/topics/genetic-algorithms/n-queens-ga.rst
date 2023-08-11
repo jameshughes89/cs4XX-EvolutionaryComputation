@@ -59,6 +59,6 @@ For Next Class
     * :download:`The Selection Script </../src/selection.py>`
     * :download:`The Crossover Script </../src/crossover.py>`
     * :download:`The Mutation Script </../src/mutation.py>`
-    * :download:`n queens GA </../src/ga_n_queens.py>`
+    * :download:`n Queens GA </../src/ga_n_queens.py>`
 
 
