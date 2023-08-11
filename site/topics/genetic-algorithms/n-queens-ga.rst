@@ -49,6 +49,35 @@ Mutation
 Termination Requirement
 =======================
 
+* A generational GA will be used with a pre set number of generations defined by the hyperparameter ``GENERATIONS``
+
+.. literalinclude:: /../src/ga_n_queens.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-generation-loop]
+    :end-before: # [end-generation-loop]
+
+
+* This loop performs
+
+    * Evaluation
+    * Selection
+    * Crossover
+    * Mutation
+
+
+* Once the loop runs to completion, some final results are calculated and reported
+
+    * Calculate the final populations fitness
+    * Report the population and the population's fitness
+
+
+.. literalinclude:: /../src/ga_n_queens.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-ending]
+    :end-before: # [end-ending]
+
 
 
 For Next Class
