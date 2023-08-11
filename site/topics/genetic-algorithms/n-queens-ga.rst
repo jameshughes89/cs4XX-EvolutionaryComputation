@@ -35,6 +35,21 @@ Selection
 Variation Operators
 ===================
 
+* Given the permutation representation, special considerations should be made when implementing the variation operators
+* The operators should ensure the chromosome remain a permutation
+
+    * Consider a one point crossover on permutations
+
+    .. code-block:: text
+
+               v                    v
+        [0, 1, 2, 3, 4]      [0, 1, 2, 1, 0]
+                         ->
+        [4, 3, 2, 1, 0]      [4, 3, 2, 3, 4]
+               ^                    ^
+
+
+    * This crossover may destroy the fact that the chromosomes are permutations
 
 
 Crossover
