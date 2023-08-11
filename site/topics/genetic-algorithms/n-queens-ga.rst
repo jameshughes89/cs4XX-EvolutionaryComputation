@@ -55,8 +55,9 @@ Variation Operators
 Crossover
 ---------
 
-* An *order crossover* common crossover for permutation representations
-* Briefly, keep all elements between two randomly selected indices
+* An *order crossover* is commonly used for permutation representations
+
+* Keep all elements between two randomly selected indices
 
 .. figure:: ../genetic-algorithms/order_crossover_1.png
     :width: 500 px
@@ -71,7 +72,7 @@ Crossover
     * Start copying from *after* the kept segment
 
 
-.. figure:: ../genetic-algorithms/order_crossover_1.png
+.. figure:: ../genetic-algorithms/order_crossover_2.png
     :width: 500 px
     :align: center
 
@@ -89,7 +90,7 @@ Mutation
 --------
 
 * Similar to crossover, one must be careful with the choice of mutation when working with permutations
-* Fortunately swap mutation is a very simple mutation that is permutation safe
+* Fortunately, swap mutation is a very simple mutation that is permutation safe
 
     * Select two indices and swap the values between them
 
