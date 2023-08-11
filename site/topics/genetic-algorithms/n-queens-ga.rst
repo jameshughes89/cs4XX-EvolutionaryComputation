@@ -55,9 +55,55 @@ Variation Operators
 Crossover
 ---------
 
+* An *order crossover* common crossover for permutation representations
+* Briefly, keep all elements between two randomly selected indices
+
+.. figure:: ../genetic-algorithms/order_crossover_1.png
+    :width: 500 px
+    :align: center
+
+    Keep the segment of the chromosome between two arbitrarily selected indices. This only shows one of the two children
+    that this crossover would produce.
+
+
+* Then, copy the elements from chromosome :math:`A`, in order, if they do *not* appear in chromosome :math:`B`
+
+    * Start copying from *after* the kept segment
+
+
+.. figure:: ../genetic-algorithms/order_crossover_1.png
+    :width: 500 px
+    :align: center
+
+    Copy the elements from the other parent, in order, starting after the kept segment. Only copy values that are not
+    already contained within the child. Again, this only shows one of the two children this crossover would produce.
+
+
+.. literalinclude:: /../src/crossover.py
+    :language: python
+    :lineno-match:
+    :pyobject: order_crossover
+
 
 Mutation
 --------
+
+* Similar to crossover, one must be careful with the choice of mutation when working with permutations
+* Fortunately swap mutation is a very simple mutation that is permutation safe
+
+    * Select two indices and swap the values between them
+
+.. figure:: ../genetic-algorithms/swap_mutation.png
+    :width: 500 px
+    :align: center
+
+    Swap mutation on some chromosome. The values at indices ``1`` and ``4`` are swapped in this example.
+
+
+.. literalinclude:: /../src/mutation.py
+    :language: python
+    :lineno-match:
+    :pyobject: swap_mutation
 
 
 
