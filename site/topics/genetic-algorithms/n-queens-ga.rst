@@ -58,7 +58,7 @@ Evaluation
     demonstration purposes.
 
 
-* Consider the above figure and the chromosome ``<? 6, 3, 4, 0, ?, 1, ?>``
+* Consider the above figure and the chromosome ``<?, 6, 3, 4, 0, ?, 1, ?>``
 
     * The question marks represent irrelevant values for this example
 
