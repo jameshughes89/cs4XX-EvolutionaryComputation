@@ -188,6 +188,29 @@ Evaluation
 Selection
 =========
 
+* Tournament selection will be used here
+
+    * It's simple, and effective
+
+
+.. literalinclude:: /../src/ga_n_queens.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-selection]
+    :end-before: # [end-selection]
+
+
+* Mind the use of the argument ``direction``
+
+    * This indicates that chromosomes with *lower* fitness values are better
+    * By default it assumes higher fitness is better
+
+
+.. literalinclude:: /../src/selection.py
+    :language: python
+    :lineno-match:
+    :pyobject: tournament_selection
+
 
 
 Variation Operators
