@@ -33,9 +33,9 @@ def attacking_fitness(chromosome: list) -> int:
     :return: The number of attacking queens.
     """
     total_attackers = 0
-    for attacker_index, attacker_row in enumerate(chromosome):
-        for victim_index in range(attacker_index + 1, len(chromosome)):
-            offset = victim_index - attacker_index
+    for attacker_column, attacker_row in enumerate(chromosome):
+        for victim_index in range(attacker_column + 1, len(chromosome)):
+            offset = victim_index - attacker_column
             victim_row = chromosome[victim_index]
             if (attacker_row - offset) == victim_row or (attacker_row + offset) == victim_row:
                 total_attackers += 1

@@ -55,6 +55,7 @@ YouTube
     topics/origin/origin
     topics/overview/overview
     topics/representation/representation
+    topics/genetic-algorithms/n-queens-ga
 
 
 .. toctree::
