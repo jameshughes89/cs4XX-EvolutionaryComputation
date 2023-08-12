@@ -44,7 +44,7 @@ Selection
 
 * Mind the use of the argument ``direction``
 
-    * This indicates that chromosomes with *loser* fitness values are better
+    * This indicates that chromosomes with *lower* fitness values are better
     * By default it assumes higher fitness is better
 
 
