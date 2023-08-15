@@ -2,7 +2,8 @@
 Experimenting with the :math:`n` Queens Genetic Algorithm
 *********************************************************
 
-* The purpose of this topic is to
+* It is time to tinker with the provided :math:`n` queens genetic algorithm implementation
+* The purpose of this is to
 
     * Gain more hands on experience working with a genetic algorithm
     * Implement different operators and see the impact of the changes
