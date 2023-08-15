@@ -15,6 +15,7 @@ from src.selection import tournament_selection
 N_QUEENS = 8
 POPULATION_SIZE = 10
 GENERATIONS = 100
+TOURNAMENT_SIZE = 2
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
 
@@ -63,7 +64,7 @@ if __name__ == "__main__":
         # [begin-selection]
         mating_pool = []
         for _ in range(POPULATION_SIZE):
-            tournament_indices = choices(range(POPULATION_SIZE), k=2)
+            tournament_indices = choices(range(POPULATION_SIZE), k=TOURNAMENT_SIZE)
             chromosome = tournament_selection(population, population_fitness, tournament_indices, direction=-1)
             mating_pool.append(chromosome)
         # [end-selection]
