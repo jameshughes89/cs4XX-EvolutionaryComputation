@@ -83,7 +83,7 @@ Creating a Distribution
 
 
 #. To make the problem harder, repeat these questions for :math:`n=30`
-
+#. When happy with the results, save them somewhere to be used later for comparisons 
 
 
 Change Operators
