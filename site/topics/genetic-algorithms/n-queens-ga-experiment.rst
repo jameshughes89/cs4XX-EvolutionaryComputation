@@ -74,12 +74,12 @@ Creating a Distribution
     * `Use matplotlib's hist function <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html>`_
 
 
-.. figure:: distribution_of_results_nqueens.png
-    :width: 500 px
-    :align: center
+    .. figure:: distribution_of_results_nqueens.png
+        :width: 500 px
+        :align: center
 
-    Distribution of the results of 100 runs of the :math:`n` queens genetic algorithm where :math:`n=20`, population
-    size was 100, generations was 250, and a tournament size of 2.
+        Distribution of the results of 100 runs of the :math:`n` queens genetic algorithm where :math:`n=20`, population
+        size was 100, generations was 250, and a tournament size of 2.
 
 
 #. To make the problem harder, repeat these questions for :math:`n=30`
