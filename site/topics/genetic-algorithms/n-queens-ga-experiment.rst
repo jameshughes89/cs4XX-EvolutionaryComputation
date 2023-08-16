@@ -230,6 +230,31 @@ Effect Size
 * Thus, the bigger, the more one would care
 
 
+Perform the Comparisons
+-----------------------
+
+* Comparing each of the groups of :math:`100` results is going to be difficult
+
+    * Combinatorial explosion
+
+
+* Therefore, for the following tasks, only select two or three groups of :math:`100` to compare
+
+    * Select those that seem the most *interesting*
+    * These are not necessary the best performing results
+
+
+#. Based on the above, tabulate simple summary statistics for each distribution
+#. Plot the distributions against one another like in the above figure
+#. Perform a t-test or Mann-Whitney U test to obtain a p-value
+#. Calculate the effect size with the standardized difference/Cohen's d
+#. What are the conclusions one can make from these results?
+
+    * Be critical and try to come up with the most meaningful conclusions
+    * Try to reason about why the results are what they are
+
+
+
 For Next Class
 ==============
 
