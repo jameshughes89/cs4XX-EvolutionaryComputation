@@ -114,7 +114,7 @@ Change Operators
     * In other words, revert the previous changes before moving on to the next task
 
 
-* Finally, run each 100 times and generate the summary statistics and distributions
+* Finally, run each :math:`100` times and generate the summary statistics and distributions
 
     * Be sure to save the results somewhere for later comparisons
 
