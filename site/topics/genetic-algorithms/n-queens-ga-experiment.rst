@@ -196,8 +196,33 @@ Probability Value
 Effect Size
 -----------
 
-* Effect size
+* Finally, just because there is in fact a difference in the distributions, it doesn't really mean one should care
 
+    * It says if the distributions are different, but not the strength or magnitude of the effect
+
+
+* This is where *effect size* comes in
+* Simply, they're different, but does anyone care?
+
+* The crudest way to think of this is to go back and compare the means
+
+    * How different are the means?
+    * Sure, the distributions are in fact different, but is the difference in the means tiny?
+
+
+* This is commonly calculated with the standardized difference/Cohen's d between two means
+
+    * :math:`\frac{\overline{x_1} - \overline{x_2}}{\sigma}`
+    * Divide the difference between the grop means by the standard deviation of either or both groups
+
+
+* The standard difference when comparing the above distributions is :math:`1.10`
+
+    * This was obtained when using the standard deviation of the aggregate of the two populations
+
+
+* The bigger the number, the bigger the effect size
+* Thus, the bigger, the more one would care
 
 
 For Next Class
