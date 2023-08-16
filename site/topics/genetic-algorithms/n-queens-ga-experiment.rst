@@ -128,6 +128,17 @@ Change Operators
 Change Representation
 =====================
 
+#. Change the representation from the permutation representation
+
+    * Use either the 2D or 1D list representations previously discussed
+    * This will require a change of the fitness function and genetic operators
+    * Expect this change to negatively impact the quality of the results the genetic algorithm obtains
+
+
+#. Run the algorithm :math:`100` times and generate summary statistics and the distribution of results
+
+    * Save the results somewhere for later comparisons
+
 
 
 Comparing Results
