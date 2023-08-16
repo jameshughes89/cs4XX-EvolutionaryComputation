@@ -133,6 +133,49 @@ Change Representation
 Comparing Results
 =================
 
+* The summary statistics of a distribution of results is a great way for a quick perspective of the results
+* Often, people will compare the summary statistics of two distributions to make a conclusion of what is *better*
+
+    * If the results when using crossover X has a better mean than the results of crossover Y, then X is better, right?
+
+
+* But in reality, this is a poor way to perform a comparison
+* This is because, the goal is to compare the distribution of the results, not the summary statistics
+
+* The simplest way to do this is to plot the distributions against each other and perform an eyeball test
+
+.. figure:: distribution_of_results_nqueens.png
+    :width: 500 px
+    :align: center
+
+    Comparison of two distribution of results of :math:`100` runs. These results were obtained by running the genetic
+    algorithm as provided where :math:`n=20`, population size was 100, generations was 250, and a tournament size of 2.
+    One run had a crossover rate of 70% and the other had a rate of 20%. It is clear, from this comparison, that using a
+    crossover rate of 20% is superior.
+
+
+
+Probability Value
+-----------------
+
+* The most correct way to compare is with a permutation/randomization test
+
+    * This will be discussed briefly in a future topic
+    * The idea of a permutation test is intuitive when related to what it means
+    * Can get hairy
+
+
+* More simply, use a t-test or MWU
+
+    * t-test often requires assumptions that often do not hold
+    * MWU is safe
+
+
+Effect Size
+-----------
+
+* Effect size
+
 
 
 For Next Class
