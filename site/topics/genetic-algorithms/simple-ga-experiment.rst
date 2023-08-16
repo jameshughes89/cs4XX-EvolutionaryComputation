@@ -43,9 +43,9 @@ Experiment
     the github `repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_, download it, and run the
     setup described in the "README".
 
-    Alternatively, the scripts can be downloaded individually, but this may require some additional setup for the
-    dependencies. It is recommended to make a `virtual environment <https://docs.python.org/3/library/venv.html>`_ and
-    `download any required dependencies with pip <https://pypi.org/project/pip/>`_.
+    Alternatively, the scripts can be downloaded individually to ``/src``, but this may require some additional setup for
+    the dependencies. It is recommended to make a `virtual environment <https://docs.python.org/3/library/venv.html>`_
+    and `download any required dependencies with pip <https://pypi.org/project/pip/>`_.
 
 
 #. Increase the difficulty of the problem by increasing the bitstring length :math:`n` (``BIT_STRING_LENGTH``)
