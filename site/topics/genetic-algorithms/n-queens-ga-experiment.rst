@@ -102,6 +102,27 @@ Creating a Distribution
 Change Operators
 ================
 
+* For the following, try to be as creative as possible and feel free to try multiple ideas
+
+    * It's always good to explore and tinker
+    * It really does not matter how good or bad the results are in the end
+    * If stuck, look up existing popular ideas for the operators to implement
+
+
+* Additionally, test each change in isolation to simplify the analysis of the impact of the change
+
+    * In other words, revert the previous changes before moving on to the next task
+
+
+* Finally, run each 100 times and generate the summary statistics and distributions
+
+    * Be sure to save the results somewhere for later comparisons
+
+
+#. Change out the crossover operator for something else and run the experiments again
+#. Change out the mutation operator for something else and run the experiments again
+#. Change out the selection operator for something else and run the experiments again
+
 
 
 Change Representation
