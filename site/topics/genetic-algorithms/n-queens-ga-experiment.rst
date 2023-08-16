@@ -15,12 +15,16 @@ Experimenting with the :math:`n` Queens Genetic Algorithm
 Run Multiple Times and Plot
 ===========================
 
-#. If not done already, download the
+.. note::
 
-    * :download:`Selection Script </../src/selection.py>`
-    * :download:`Crossover Script </../src/crossover.py>`
-    * :download:`Mutation Script </../src/mutation.py>`
-    * :download:`n Queens GA </../src/ga_n_queens.py>`
+    The easiest way to get the code up and running is to
+    `fork <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`_
+    the github `repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation>`_, download it, and run the
+    setup described in the "README".
+
+    Alternatively, the scripts can be downloaded individually to ``/src``, but this may require some additional setup for
+    the dependencies. It is recommended to make a `virtual environment <https://docs.python.org/3/library/venv.html>`_
+    and `download any required dependencies with pip <https://pypi.org/project/pip/>`_.
 
 
 #. Get the :math:`n` queens genetic algorithm running

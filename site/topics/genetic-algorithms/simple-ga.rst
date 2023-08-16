@@ -371,7 +371,7 @@ Termination Requirement
 For Next Class
 ==============
 
-* Download and look at
+* Check out the following scripts
 
     * :download:`The Selection Script </../src/selection.py>`
     * :download:`The Crossover Script </../src/crossover.py>`
