@@ -168,7 +168,7 @@ Probability Value
 * Instead, a mechanism for measuring the results of comparing distributions is used
 * The measurement provides a value called a *probability value* (p-value)
 
-    * It provides the *probability* that two distributions were created by the same *thing*
+    * It provides the *probability* that two distributions were created by sampling the same *thing*
     * Simply, a big p-value means that it is likely that the two distributions are not too different
     * A small p-value means that it is likely that the two distributions are quite different
 
@@ -196,7 +196,9 @@ Probability Value
 
 * Although the p-values differ, they are both very small
 * Thus, one could conclude that there is a very small probability that these distributions are from the same *thing*
-* In other words, the results of using a crossover rate of 20% is almost certainly better
+
+    * In other words, given the lower mean of the 20% crossover rate and the low p-value
+    * The results of using a crossover rate of 20% is almost certainly better
 
 
 
@@ -221,7 +223,7 @@ Effect Size
 * This is commonly calculated with the standardized difference/Cohen's d between two means
 
     * :math:`\frac{\overline{x_1} - \overline{x_2}}{\sigma}`
-    * Divide the difference between the grop means by the standard deviation of the aggregate of both groups
+    * Divide the difference between the group means by the standard deviation of the aggregate of both groups
 
 
 * The standard difference when comparing the above distributions is :math:`1.10`
