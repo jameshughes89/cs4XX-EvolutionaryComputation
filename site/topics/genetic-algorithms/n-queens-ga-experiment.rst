@@ -102,6 +102,32 @@ Creating a Distribution
 Change Operators
 ================
 
+* For the following, try to be as creative as possible
+
+    * It's always good to explore and tinker
+    * It really does not matter how good or bad the results are in the end
+
+
+#. Change out the crossover operator for something else and run the experiments again
+
+    * Try to create a new permutation safe crossover or look up other popular ones if stuck
+    * Be sure to run 100 times and generate the summary statistics and distribution
+    * Save the results somewhere for later comparisons
+
+
+#. Change out the mutation operator for something else and run the experiments again
+
+    * Try to create a new permutation safe mutation or look up other popular ones if stuck
+    * Be sure to run 100 times and generate the summary statistics and distribution
+    * Save the results somewhere for later comparisons
+
+
+#. Change out the selection operator for something else and run the experiments again
+
+    * This one can be tricky, but try to create a new selection strategy or look up other popular ones if stuck
+    * Be sure to run 100 times and generate the summary statistics and distribution
+    * Save the results somewhere for later comparisons
+
 
 
 Change Representation
