@@ -144,6 +144,128 @@ Change Representation
 Comparing Results
 =================
 
+* The summary statistics of a distribution of results is a great way for a *quick* perspective of the results
+* Often, people will compare the summary statistics of two distributions to make a conclusion of what is *better*
+
+    * If the results when using crossover X has a better mean than the results of crossover Y, then X is better, right?
+    * For example, from the data plotted in the below figure
+
+        * The mean of the genetic algorithm with a crossover rate of 70% was :math:`2.1`
+        * The mean of the genetic algorithm with a crossover rate of 20% was :math:`0.55`
+        * It would seem that the crossover rate of 20% provided better results
+
+
+* But in reality, this is a poor way to perform a comparison
+* This is because, the goal is to compare the distribution of the results, not the summary statistics
+
+* The simplest way to do this is to plot the distributions against each other and perform an eyeball test
+
+
+.. figure:: comparing_distributions.png
+    :width: 500 px
+    :align: center
+
+    Comparison of two distribution of results of :math:`100` runs. These results were obtained by running the genetic
+    algorithm as provided where :math:`n=20`, population size was 100, generations was 250, and a tournament size of 2.
+    One run had a crossover rate of 70% and the other had a rate of 20%. It is clear, from this comparison, that using a
+    crossover rate of 20% is superior.
+
+
+
+Probability Value
+-----------------
+
+* Unfortunately, an eyeball test provides no quantitative data so it's difficult to truly compare results
+* Instead, a mechanism for measuring the results of comparing distributions is used
+* The measurement provides a value called a *probability value* (p-value)
+
+    * It provides the *probability* that two distributions were created by sampling the same *thing*
+    * Simply, a big p-value means that it is likely that the two distributions are not too different
+    * A small p-value means that it is likely that the two distributions are quite different
+
+
+* Ideally, the best way to do the comparison is with something called a `permutation/randomization test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html>`_
+
+    * This test is an intuitive way to compare distributions
+    * It provides a way to measure the difference between any statistic
+    * This idea will discussed in more detail in a later topic to get a sense of what it *means*
+
+
+* Unfortunately, a permutation/randomization test, although simple to do, is more work than other popular alternatives
+* Instead, it is common to see a `t-test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind>`_  or a `Mann-Whitney U test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu>`_
+
+    * A t-test requires assumptions that are often not true when comparing genetic algorithm results
+    * As a result, Mann-Whitney U tests are more "powerful"
+    * However, a t-test will often be sufficient
+
+
+* When comparing the distributions shown above
+
+    * The p-value obtained by an independent t-test was :math:`2.88 \times 10^{-17}`
+    * The p-value obtained by a Mann-Whitney U test was :math:`2.97 \times 10^{-14}`
+
+
+* Although the p-values differ, they are both very small
+* Thus, one could conclude that there is a very small probability that these distributions are from the same *thing*
+
+    * In other words, given the lower mean of the 20% crossover rate and the low p-value
+    * The results of using a crossover rate of 20% is almost certainly better
+
+
+
+Effect Size
+-----------
+
+* Finally, just because there is in fact a difference in the distributions, it doesn't really mean one should care
+
+    * It only says if the distributions are different
+    * It does not detail the strength or magnitude of the effect
+
+
+* This is where *effect size* comes in
+* Simply, the distributions are different, but does anyone care?
+
+* The crudest way to think of this is to go back and compare the means
+
+    * How different are the means?
+    * Sure, the distributions are in fact different, but is the difference in the means tiny?
+
+
+* This is commonly calculated with the standardized difference/Cohen's d between two means
+
+    * :math:`\frac{\overline{x_1} - \overline{x_2}}{\sigma}`
+    * Divide the difference between the group means by the standard deviation of the aggregate of both groups
+
+
+* The standard difference when comparing the above distributions is :math:`1.10`
+
+* The bigger the number, the bigger the effect size
+* Thus, the bigger, the more one would care
+
+
+Perform the Comparisons
+-----------------------
+
+* Comparing each of the groups of :math:`100` results is going to be difficult
+
+    * Combinatorial explosion
+
+
+* Therefore, for the following tasks, only select two or three groups of :math:`100` to compare
+
+    * Select those that seem the most *interesting*
+    * These are not necessary the best performing results
+
+
+#. Based on the above, tabulate simple summary statistics for each distribution
+#. Plot the distributions against one another like in the above figure
+#. Perform a t-test or Mann-Whitney U test to obtain a p-value
+#. Calculate the effect size with the standardized difference/Cohen's d
+#. What are the conclusions one can make from these results?
+
+    * Be critical and try to come up with the most meaningful conclusions
+    * Try to reason about why the results are what they are
+
 
 
 For Next Class
