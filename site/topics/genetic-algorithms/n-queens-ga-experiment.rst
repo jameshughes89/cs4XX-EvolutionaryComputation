@@ -133,16 +133,22 @@ Change Representation
 Comparing Results
 =================
 
-* The summary statistics of a distribution of results is a great way for a quick perspective of the results
+* The summary statistics of a distribution of results is a great way for a *quick* perspective of the results
 * Often, people will compare the summary statistics of two distributions to make a conclusion of what is *better*
 
     * If the results when using crossover X has a better mean than the results of crossover Y, then X is better, right?
+    * For example, from the data plotted in the below figure
+
+        * The mean of the genetic algorithm with a crossover rate of 70% was :math:`2.1`
+        * The mean of the genetic algorithm with a crossover rate of 20% was :math:`0.55`
+        * It would seem that the crossover rate of 20% provided better results
 
 
 * But in reality, this is a poor way to perform a comparison
 * This is because, the goal is to compare the distribution of the results, not the summary statistics
 
 * The simplest way to do this is to plot the distributions against each other and perform an eyeball test
+
 
 .. figure:: comparing_distributions.png
     :width: 500 px
@@ -177,9 +183,10 @@ Probability Value
 * Unfortunately, a permutation/randomization test, although simple to do, is more work than other popular alternatives
 * Instead, it is common to see a `t-test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind>`_  or a `Mann-Whitney U test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu>`_
 
-* A t-test requires assumptions that are often not true when comparing genetic algorithm results
-* As a result, Mann-Whitney U tests are more "powerful"
-* However, a t-test will often be sufficient
+    * A t-test requires assumptions that are often not true when comparing genetic algorithm results
+    * As a result, Mann-Whitney U tests are more "powerful"
+    * However, a t-test will often be sufficient
+
 
 * When comparing the distributions shown above
 
@@ -198,11 +205,12 @@ Effect Size
 
 * Finally, just because there is in fact a difference in the distributions, it doesn't really mean one should care
 
-    * It says if the distributions are different, but not the strength or magnitude of the effect
+    * It only says if the distributions are different
+    * It does not detail the strength or magnitude of the effect
 
 
 * This is where *effect size* comes in
-* Simply, they're different, but does anyone care?
+* Simply, the distributions are different, but does anyone care?
 
 * The crudest way to think of this is to go back and compare the means
 
@@ -213,13 +221,10 @@ Effect Size
 * This is commonly calculated with the standardized difference/Cohen's d between two means
 
     * :math:`\frac{\overline{x_1} - \overline{x_2}}{\sigma}`
-    * Divide the difference between the grop means by the standard deviation of either or both groups
+    * Divide the difference between the grop means by the standard deviation of the aggregate of both groups
 
 
 * The standard difference when comparing the above distributions is :math:`1.10`
-
-    * This was obtained when using the standard deviation of the aggregate of the two populations
-
 
 * The bigger the number, the bigger the effect size
 * Thus, the bigger, the more one would care
