@@ -144,7 +144,7 @@ Comparing Results
 
 * The simplest way to do this is to plot the distributions against each other and perform an eyeball test
 
-.. figure:: distribution_of_results_nqueens.png
+.. figure:: comparing_distributions.png
     :width: 500 px
     :align: center
 
@@ -167,7 +167,7 @@ Probability Value
     * A small p-value means that it is likely that the two distributions are quite different
 
 
-* Ideally, the best way to do the comparison is with something called a `*permutation/randomization* test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html>`_
+* Ideally, the best way to do the comparison is with something called a `permutation/randomization test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html>`_
 
     * This test is an intuitive way to compare distributions
     * It provides a way to measure the difference between any statistic
@@ -175,7 +175,7 @@ Probability Value
 
 
 * Unfortunately, a permutation/randomization test, although simple to do, is more work than other popular alternatives
-* Instead, it is common to see a `*t-test* <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind>`_  or a `*Mann-Whitney U test* <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu>`_
+* Instead, it is common to see a `t-test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind>`_  or a `Mann-Whitney U test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu>`_
 
 * A t-test requires assumptions that are often not true when comparing genetic algorithm results
 * As a result, Mann-Whitney U tests are more "powerful"
@@ -190,6 +190,7 @@ Probability Value
 * Although the p-values differ, they are both very small
 * Thus, one could conclude that there is a very small probability that these distributions are from the same *thing*
 * In other words, the results of using a crossover rate of 20% is almost certainly better
+
 
 
 Effect Size
