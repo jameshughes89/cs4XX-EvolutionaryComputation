@@ -158,17 +158,38 @@ Comparing Results
 Probability Value
 -----------------
 
-* The most correct way to compare is with a permutation/randomization test
+* Unfortunately, an eyeball test provides no quantitative data so it's difficult to truly compare results
+* Instead, a mechanism for measuring the results of comparing distributions is used
+* The measurement provides a value called a *probability value* (p-value)
 
-    * This will be discussed briefly in a future topic
-    * The idea of a permutation test is intuitive when related to what it means
-    * Can get hairy
+    * It provides the *probability* that two distributions were created by the same *thing*
+    * Simply, a big p-value means that it is likely that the two distributions are not too different
+    * A small p-value means that it is likely that the two distributions are quite different
 
 
-* More simply, use a t-test or MWU
+* Ideally, the best way to do the comparison is with something called a `*permutation/randomization* test <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html>`_
 
-    * t-test often requires assumptions that often do not hold
-    * MWU is safe
+    * This test is an intuitive way to compare distributions
+    * It provides a way to measure the difference between any statistic
+    * This idea will discussed in more detail in a later topic to get a sense of what it *means*
+
+
+* Unfortunately, a permutation/randomization test, although simple to do, is more work than other popular alternatives
+* Instead, it is common to see a `*t-test* <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind>`_  or a `*Mann-Whitney U test* <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu>`_
+
+* A t-test requires assumptions that are often not true when comparing genetic algorithm results
+* As a result, Mann-Whitney U tests are more "powerful"
+* However, a t-test will often be sufficient
+
+* When comparing the distributions shown above
+
+    * The p-value obtained by an independent t-test was :math:`2.88 \times 10^{-17}`
+    * The p-value obtained by a Mann-Whitney U test was :math:`2.97 \times 10^{-14}`
+
+
+* Although the p-values differ, they are both very small
+* Thus, one could conclude that there is a very small probability that these distributions are from the same *thing*
+* In other words, the results of using a crossover rate of 20% is almost certainly better
 
 
 Effect Size
