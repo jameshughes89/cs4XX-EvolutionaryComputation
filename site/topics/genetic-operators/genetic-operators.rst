@@ -19,7 +19,7 @@ One Point Crossover
 * Randomly select an index
 * Exchange the elements between the chromosomes after that index
 
-.. figure:: bit_flip_mutation.png
+.. figure:: one_point_crossover.png
     :width: 400 px
     :align: center
 
@@ -31,6 +31,23 @@ One Point Crossover
 
 :math:`n` Point Crossover
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Randomly select :math:`n` indices
+* Exchange the elements between every other pair of indices the indices
+
+    * If an odd number of indices, exchange the elements from the last index to the end
+
+
+* This is a generalization of one point crossover
+* :math:`n=2` is popular (two point crossover)
+
+.. figure:: n_point_crossover.png
+    :width: 400 px
+    :align: center
+
+    Result of applying :math:`n` point crossover where :math:`n=3`. The randomly selected indices in this example are
+    ``5``, ``8``, and ``14``. All elements between indices ``5`` and ``8`` (exclusively) are exchanged along with all
+    the elements from index ``14`` to the end of the chromosome.
 
 
 Uniform Crossover
