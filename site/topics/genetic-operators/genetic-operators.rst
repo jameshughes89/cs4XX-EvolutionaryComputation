@@ -20,13 +20,13 @@ One Point Crossover
 * Exchange the elements between the chromosomes after that index
 
 .. figure:: one_point_crossover.png
-    :width: 400 px
+    :width: 450 px
     :align: center
 
     Result of applying one point crossover on two chromosomes. This example has index ``5`` as the randomly selected
     crossover point, thus, all elements after index ``5`` are exchanged between the parent chromosomes. Although this
-    example shows one parent containing only ``0``\s and the other containing only ``1``s, this is not a requirement;
-    the parents could contain both ``0``s and ``1``s.
+    example shows one parent containing only ``0``\s and the other containing only ``1``\s, this is not a requirement;
+    the parents could contain both ``0``\s and ``1``\s.
 
 
 :math:`n` Point Crossover
@@ -42,7 +42,7 @@ One Point Crossover
 * :math:`n=2` is popular (two point crossover)
 
 .. figure:: n_point_crossover.png
-    :width: 400 px
+    :width: 450 px
     :align: center
 
     Result of applying :math:`n` point crossover where :math:`n=3`. The randomly selected indices in this example are
@@ -73,7 +73,7 @@ Bit Flip Mutation
 
 
 .. figure:: bit_flip_mutation.png
-    :width: 400 px
+    :width: 450 px
     :align: center
 
     Result of applying a bit flip mutation to some chromosome. Here, a total of 10 bits were flipped during the
