@@ -2,10 +2,11 @@
 Genetic Operators
 *****************
 
-* Below is a collection of common genetic operators for each broad type of representation
+* Below is a collection of common genetic operators for broad types of representations
 
     * This is by no means exhaustive
     * Further, it should not be assumed that they are particularly effective
+    * They are intended to provide foundational ideas 
 
 
 * These operators focus on representations for genetic algorithms
