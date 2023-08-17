@@ -16,7 +16,17 @@ Crossovers
 One Point Crossover
 ^^^^^^^^^^^^^^^^^^^
 
+* Randomly select an index
+* Exchange the elements between the chromosomes after that index
 
+.. figure:: bit_flip_mutation.png
+    :width: 400 px
+    :align: center
+
+    Result of applying one point crossover on two chromosomes. This example has index ``5`` as the randomly selected
+    crossover point, thus, all elements after index ``5`` are exchanged between the parent chromosomes. Although this
+    example shows one parent containing only ``0``\s and the other containing only ``1``s, this is not a requirement;
+    the parents could contain both ``0``s and ``1``s.
 
 
 :math:`n` Point Crossover
