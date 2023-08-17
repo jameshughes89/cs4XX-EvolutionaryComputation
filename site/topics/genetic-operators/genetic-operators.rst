@@ -18,6 +18,13 @@ One Point Crossover
 
 * Randomly select an index
 * Exchange the elements between the chromosomes after that index
+* This crossover is not particularly *destructive*
+
+    * The amount in which the information within the chromosomes gets changed is low
+
+
+* This crossover works well when element adjacency in the chromosome is important
+
 
 .. figure:: one_point_crossover.png
     :width: 450 px
@@ -55,8 +62,10 @@ Uniform Crossover
 
 * Select some random number of indices at random
 * Exchange the elements at those indices
-
 * Often implemented by giving each index a 50/50 chance to be selected for crossover
+
+* This crossover is relatively *destructive*
+* Not particularly effective on chromosomes where element adjacency is important
 
 .. figure:: uniform_crossover.png
     :width: 450 px
@@ -83,6 +92,9 @@ Bit Flip Mutation
 
 
 * Similar to uniform crossover, but instead of exchanging elements between parents, just change the binary symbol
+
+* As the number of bits that are flipped increases, so does the level of *destruction* this mutation causes
+
 
 .. figure:: bit_flip_mutation.png
     :width: 450 px
