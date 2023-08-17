@@ -7,6 +7,27 @@ Genetic Operators
 Genetic Operators for Binary Representations
 ============================================
 
+Crossovers
+----------
+
+One Point Crossover
+^^^^^^^^^^^^^^^^^^^
+
+
+:math:`n` Point Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Uniform Crossover
+^^^^^^^^^^^^^^^^^
+
+
+
+Mutations
+---------
+
+Bit Flip Mutation
+^^^^^^^^^^^^^^^^^
 
 
 Genetic Operators for Integer Representations
