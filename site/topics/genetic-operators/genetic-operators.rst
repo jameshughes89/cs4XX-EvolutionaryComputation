@@ -53,6 +53,16 @@ One Point Crossover
 Uniform Crossover
 ^^^^^^^^^^^^^^^^^
 
+* Select some random number of indices at random
+* Exchange the elements at those indices
+
+* Often implemented by giving each index a 50/50 chance to be selected for crossover
+
+.. figure:: uniform_crossover.png
+    :width: 450 px
+    :align: center
+
+    Result of applying uniform crossover where the a total of :math:`8` values were exchanged.
 
 
 Mutations
@@ -71,6 +81,8 @@ Bit Flip Mutation
     * Could be hard coded
     * Could be randomly selected each time
 
+
+* Similar to uniform crossover, but instead of exchanging elements between parents, just change the binary symbol
 
 .. figure:: bit_flip_mutation.png
     :width: 450 px
