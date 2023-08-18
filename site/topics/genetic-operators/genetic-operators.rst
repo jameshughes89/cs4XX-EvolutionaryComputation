@@ -130,13 +130,18 @@ Genetic Operators for Permutation Representations
 
 
 
-Genetic Operators for Floating Point Number Representations
-===========================================================
+Genetic Operators for Floating Point/Real Number Representations
+================================================================
 
 
-* Floating point/real value representations are those that consist of continuous values
+* Floating point/real number representations are those that consist of continuous values
 
     * They are bound by the computer's ability to represent real numbers as floating point numbers
+
+
+* There are many complex genetic operators for floating point/real number representations
+* Only a few of the relatively simple popular ones are discussed here
+* In practice, there are other forms of evolutionary computation that perform better with these representations
 
 
 Crossovers
@@ -155,25 +160,84 @@ Crossovers
 Single Arithmetic Crossover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Randomly select an index
+* Average the values between the parents at that index
+
+.. figure:: single_arithmetic_crossover.png
+    :width: 550 px
+    :align: center
+
+    Result of single arithmetic crossover where the selected index was 7. The values of 0.8 and 0.2 in the two parents
+    are replaced with 0.5, the average of the values.
+
 
 Simple Arithmetic Crossover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Similar to single point crossover
+* Randomly select an index
+* Average the values between the parents after that index
+
+* This crossover can be generalized to an :math:`n` point version
+
+.. figure:: simple_arithmetic_crossover.png
+    :width: 550 px
+    :align: center
+
+    Result of simple arithmetic crossover where the selected index was 6. All values are averaged between the parents
+    from index 6 to the end.
 
 
 Whole Arithmetic Crossover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Average the values between the parents across all indices
+* This would be a special case of simple arithmetic crossover where the selected index was 0
+
+.. figure:: whole_arithmetic_crossover.png
+    :width: 550 px
+    :align: center
+
+    Result of whole arithmetic crossover. All values are averaged between the parents.
+
 
 Mutations
 ---------
 
-
 Uniform Mutation
 ^^^^^^^^^^^^^^^^
+
+* Randomly select an index
+* Replace the value at the selected index by a value from a continuous uniform distribution within some range
+
+.. figure:: continuous_uniform_distribution.png
+    :width: 400 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Continuous_uniform_distribution
+
+    A continuous uniform distribution of values between :math:`a` and :math:`b`.
 
 
 Non Uniform Mutation
 ^^^^^^^^^^^^^^^^^^^^
+
+* Randomly select an index
+* Replace the value at the selected index by a value from a continuous normal/Gaussian distribution
+
+    * The mean of the distribution is the original value at the selected index
+
+
+* This mutation is more likely to make small incremental changes
+* This mutation is particularly popular 
+
+
+.. figure:: continuous_normal_distribution.png
+    :width: 400 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Normal_distribution
+
+    Three continuous normal/Gaussian distribution of values with different mean and variance values. The red curve is a
+    "standard" normal distribution.
 
 
 Self Adapted Mutation
