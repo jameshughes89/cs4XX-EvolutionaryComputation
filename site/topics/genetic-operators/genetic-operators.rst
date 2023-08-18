@@ -134,6 +134,22 @@ Genetic Operators for Floating Point Number Representations
 ===========================================================
 
 
+* Floating point/real value representations are those that consist of continuous values
+
+    * They are bound by the computer's ability to represent real numbers as floating point numbers
+
+
+Crossovers
+----------
+
+
+
+Mutations
+---------
+
+
+
+
 
 Genetic Operators for Tree Representations
 ==========================================
