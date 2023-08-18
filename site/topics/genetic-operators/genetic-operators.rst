@@ -123,6 +123,48 @@ Bit Flip Mutation
 Genetic Operators for Integer Representations
 =============================================
 
+* Integer representations are those that consist of integer values
+
+* The crossovers used for binary representations are typically used for integer representations
+
+
+Single Point Mutation
+---------------------
+
+* Sometimes called "Random Resetting"
+
+* Similar to the bit flip mutation
+
+* Select an index at random
+* Replace the value at the selected index with some other valid integer
+
+* A single point mutation can be generalized to an :math:`n` point mutation by selecting multiple indices to change
+
+* This mutation is helpful in situations where the values within the chromosome represent cardinal attributes
+
+    * Where the order of the possible integer values *do not* necessary matter
+
+        * For example, the amount of values within a set
+
+
+* This mutation is also helpful in situations where each possible integer is equally likely to be within the chromosome
+
+
+Creep Mutation
+--------------
+
+* Select an index at random
+* Change the value at that index to one relatively *close to* the current value
+
+    * For example, if the value at the selected index is 7, replace it with an 8
+
+
+* What *close to* means will depend on the context
+
+* This mutation is often used in situations where the values within the chromosome represent ordinal attributes
+
+    * Where the order of the possible integer values matter
+
 
 
 Genetic Operators for Floating Point Number Representations
