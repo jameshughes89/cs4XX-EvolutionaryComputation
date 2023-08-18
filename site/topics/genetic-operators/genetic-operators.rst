@@ -142,12 +142,42 @@ Genetic Operators for Floating Point Number Representations
 Crossovers
 ----------
 
+* Two broad ideas
+
+    * Discrete --- offspring have values from parents
+
+        * These would be those that were discussed for the binary representation
+
+
+    * Intermediate --- offing have values *between* the two parents
+
+
+Single Arithmetic Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Simple Arithmetic Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Whole Arithmetic Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Mutations
 ---------
 
 
+Uniform Mutation
+^^^^^^^^^^^^^^^^
+
+
+Non Uniform Mutation
+^^^^^^^^^^^^^^^^^^^^
+
+
+Self Adapted Mutation
+^^^^^^^^^^^^^^^^^^^^^
 
 
 
