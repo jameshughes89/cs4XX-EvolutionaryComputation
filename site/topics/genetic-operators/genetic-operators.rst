@@ -228,7 +228,7 @@ Non Uniform Mutation
 
 
 * This mutation is more likely to make small incremental changes
-* This mutation is particularly popular 
+* This mutation is particularly popular
 
 
 .. figure:: continuous_normal_distribution.png
@@ -242,6 +242,13 @@ Non Uniform Mutation
 
 Self Adapted Mutation
 ^^^^^^^^^^^^^^^^^^^^^
+
+* A non uniform mutation, but the value of the variance of the normal/Gaussian distribution is part of the chromosome
+
+    * The value of the variance is also evolved
+
+
+* This means the evolutionary search is also modifying the value of one of it's parameters
 
 
 
