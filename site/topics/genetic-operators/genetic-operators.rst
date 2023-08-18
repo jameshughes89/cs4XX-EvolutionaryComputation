@@ -125,11 +125,18 @@ Genetic Operators for Integer Representations
 
 * Integer representations are those that consist of integer values
 
+
+Crossover
+---------
+
 * The crossovers used for binary representations are typically also used for integer representations
 
 
+Mutations
+---------
+
 Single Point Mutation
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 * Sometimes called "Random Resetting"
 
@@ -151,7 +158,7 @@ Single Point Mutation
 
 
 Creep Mutation
---------------
+^^^^^^^^^^^^^^
 
 * Select an index at random
 * Change the value at that index to one relatively *close to* the current value
