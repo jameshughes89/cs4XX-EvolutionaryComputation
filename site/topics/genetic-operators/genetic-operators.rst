@@ -157,6 +157,9 @@ Crossovers
     * Intermediate --- offing have values *between* the two parents
 
 
+* Select intermediate crossovers are discussed below
+
+
 Single Arithmetic Crossover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
