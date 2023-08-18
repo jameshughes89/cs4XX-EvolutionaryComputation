@@ -125,7 +125,7 @@ Genetic Operators for Integer Representations
 
 * Integer representations are those that consist of integer values
 
-* The crossovers used for binary representations are typically used for integer representations
+* The crossovers used for binary representations are typically also used for integer representations
 
 
 Single Point Mutation
