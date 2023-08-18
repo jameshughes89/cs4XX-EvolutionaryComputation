@@ -125,13 +125,13 @@ Genetic Operators for Integer Representations
 
 
 
-Genetic Operators for Floating Point Number Representations
-===========================================================
-
-
-
 Genetic Operators for Permutation Representations
 =================================================
+
+
+
+Genetic Operators for Floating Point Number Representations
+===========================================================
 
 
 
