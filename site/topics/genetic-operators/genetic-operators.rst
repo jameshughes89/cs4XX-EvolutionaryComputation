@@ -195,6 +195,10 @@ Exploration vs. Exploitation
 
 * Notice how there exists no ``1`` in any of the chromosomes' index 1
 * No matter how much the search *exploits* the information in the population, it cannot possibly add a ``1`` to index 1
+
+    * Exploit in this context means making use of what is already known to be good
+
+
 * Because of this, it is not possible to find the optimal solution with single point crossover alone
 * This is where the bit flip mutation came in
 
@@ -208,8 +212,18 @@ Exploration vs. Exploitation
 
 * Further, consider a population that has converged on some local optimum
 
-    * No matter how much the information in the local optimum is exploited, the search will likely stay stuck
-    * By increasing the exploration, perhaps the search can work itself out of the local optimum 
+    * No matter how much the information in the local optimum is exploited, the search will likely remain stuck
+    * By increasing the exploration, perhaps the search can work itself out of the local optimum
+
+
+.. note::
+
+    These ideas are just high-level guidelines. Crossover is not always exploitative, nor is mutation always
+    explorative. A destructive genetic operator is not always explorative nor is a less destructive one more
+    exploitative.
+
+    These all depend on the context of the problem, representation, and how the operators are being used. In other
+    words, use these ideas as a starting point for high-level decision making.
 
 
 
