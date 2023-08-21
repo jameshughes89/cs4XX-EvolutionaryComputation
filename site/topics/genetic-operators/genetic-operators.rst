@@ -238,6 +238,22 @@ Insertion Mutation
     inserted after the value at index 1.
 
 
+Scramble Mutation
+^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Scramble/shuffle the vales between the selected indices
+* This mutation can be quite destructive
+
+.. figure:: scramble_mutation.png
+    :width: 450 px
+    :align: center
+
+    Scramble mutation being applied between indices 1 and 5 (exclusive). The resulting order of the shown scramble is
+    arbitrary.
+
+
+
 Genetic Operators for Floating Point/Real Number Representations
 ================================================================
 
