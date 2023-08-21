@@ -140,6 +140,21 @@ Genetic Operators for Tree Representations
 
 
 
+Additional Notes
+================
+
+* As stated above, this list is in no way exhaustive
+
+    * It simply contains some common examples of genetic operators for various representations
+
+
+* The above are shown to give an idea of what is out there and what works
+* However, throughout this course, being creative and inventive with genetic operators is strongly encouraged
+
+
+
+
+
 For Next Class
 ==============
 
