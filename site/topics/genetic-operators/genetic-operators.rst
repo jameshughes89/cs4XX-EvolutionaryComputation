@@ -170,6 +170,14 @@ Swap Mutation
     * Now new information is added
 
 
+.. figure:: swap_mutation.png
+    :width: 450 px
+    :align: center
+
+    Swap mutation applied to a chromosome where the selected indices are 1 and 4. The values at index 1 and 4 are
+    swapped.
+
+
 Creep Mutation
 ^^^^^^^^^^^^^^
 
