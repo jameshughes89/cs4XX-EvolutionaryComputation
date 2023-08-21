@@ -175,6 +175,43 @@ Destructive Operators
     * Since the integer adjacent is important for paths, changing out multiple single directions can have a large impact
 
 
+Exploration vs. Exploitation
+----------------------------
+
+* Consider the following population for a genetic algorithm maximizing the integer value with a single point crossover
+
+    * This example was already discussed in an earlier topic
+
+
+    .. code-block:: text
+
+        [[1, 0, 1, 1, 1],
+         [1, 0, 0, 0, 1],
+         [0, 0, 1, 1, 1],
+         [1, 0, 1, 1, 1],
+         [0, 0, 0, 1, 0]]
+
+
+
+* Notice how there exists no ``1`` in any of the chromosomes' index 1
+* No matter how much the search *exploits* the information in the population, it cannot possibly add a ``1`` to index 1
+* Because of this, it is not possible to find the optimal solution with single point crossover alone
+* This is where the bit flip mutation came in
+
+    * It added new information to the population; it *explored* the search space
+
+
+* Thus, sometimes a destructive operator is very beneficial
+
+    * It can improve the search's ability to explore other areas of the search space
+
+
+* Further, consider a population that has converged on some local optimum
+
+    * No matter how much the information in the local optimum is exploited, the search will likely stay stuck
+    * By increasing the exploration, perhaps the search can work itself out of the local optimum 
+
+
 
 For Next Class
 ==============
