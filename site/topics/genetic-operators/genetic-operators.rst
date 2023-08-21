@@ -157,6 +157,19 @@ Single Point Mutation
 * This mutation is also helpful in situations where each possible integer is equally likely to be within the chromosome
 
 
+Swap Mutation
+^^^^^^^^^^^^^
+
+* Select two indices at random
+* Swap the values at the selected indices
+
+* Can be generalized to a rotation mutation where many indices are selected and the values are rotated among them
+
+* This mutation preserves what information is within the chromosome
+
+    * Now new information is added
+
+
 Creep Mutation
 ^^^^^^^^^^^^^^
 
