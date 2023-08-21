@@ -57,6 +57,7 @@ YouTube
     topics/representation/representation
     topics/genetic-algorithms/n-queens-ga
     topics/genetic-algorithms/n-queens-ga-experiment
+    topics/genetic-operators/genetic-operators
 
 
 .. toctree::
