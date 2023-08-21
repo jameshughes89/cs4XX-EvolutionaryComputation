@@ -253,6 +253,21 @@ Scramble Mutation
     arbitrary.
 
 
+Inversion Mutation
+^^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Reverse the order of the elements between the selected indices
+
+* Not particularly destructive when the adjacency of elements in the chromosome is important
+
+
+.. figure:: scramble_mutation.png
+    :width: 450 px
+    :align: center
+
+    Inversion mutation applied to a chromosome where the selected indices are 1 and 5 (exclusive).
+
 
 Genetic Operators for Floating Point/Real Number Representations
 ================================================================
