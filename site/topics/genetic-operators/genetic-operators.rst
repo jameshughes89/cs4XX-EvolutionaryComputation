@@ -363,6 +363,94 @@ Mutation
     the subtree is replaced with a new tree with only a root node, this is not a requirement.
 
 
+Additional Notes
+================
+
+* As stated above, this list is in no way exhaustive
+
+    * It simply contains some common examples of genetic operators for various representations
+
+
+* The above are shown to give an idea of what is out there and what works
+* However, throughout this course, being creative and inventive with genetic operators is strongly encouraged
+
+
+Destructive Operators
+---------------------
+
+* The word *destructive* was used above when referring to genetic operators
+* This term is not particularly well defined
+
+    * Used to communicate how much the chromosomes change and/or how much the information within the chromosomes change
+
+
+* How destructive something is will depend on the representation and the problem
+
+* For example, a single point crossover on an integer representation for a robot navigating a maze
+
+    * On average it changes half the chromosome, but the information in the chromosomes is preserved and transferred
+    * The part of the chromosome that is transferred represents a sub-path that will move to the other chromosome
+    * This is not particularly destructive
+
+
+* On the other hand, a uniform crossover on the same problem can be quite destructive
+
+    * Since the integer adjacent is important for paths, changing out multiple single directions can have a large impact
+
+
+Exploration vs. Exploitation
+----------------------------
+
+* Consider the following population for a genetic algorithm maximizing the integer value with a single point crossover
+
+    * This example was already discussed in an earlier topic
+
+
+    .. code-block:: text
+
+        [[1, 0, 1, 1, 1],
+         [1, 0, 0, 0, 1],
+         [0, 0, 1, 1, 1],
+         [1, 0, 1, 1, 1],
+         [0, 0, 0, 1, 0]]
+
+
+
+* Notice how there exists no ``1`` in any of the chromosomes' index 1
+* No matter how much the search *exploits* the information in the population, it cannot possibly add a ``1`` to index 1
+
+    * Exploit in this context means making use of what is already known to be good
+
+
+* Because of this, it is not possible to find the optimal solution with single point crossover alone
+* This is where the bit flip mutation came in
+
+    * It added new information to the population; it *explored* the search space
+    * In this context, the bit flip was relatively destructive compared to the one point crossover
+
+
+* Thus, sometimes a destructive operator is very beneficial
+
+    * It can improve the search's ability to explore other areas of the search space
+
+
+* Further, consider a population that has converged on some local optimum
+
+    * No matter how much the information in the local optimum is exploited, the search will likely remain stuck
+    * By increasing the exploration, perhaps the search can work itself out of the local optimum
+
+
+.. note::
+
+    These ideas are just high-level guidelines. Crossover is not always exploitative, nor is mutation always
+    explorative. A destructive genetic operator is not always explorative nor is a less destructive one more
+    exploitative.
+
+    These all depend on the context of the problem, representation, and how the operators are being used. In other
+    words, use these ideas as a starting point for high-level decision making.
+
+
+
 For Next Class
 ==============
 
