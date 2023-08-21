@@ -190,6 +190,44 @@ Creep Mutation
 Genetic Operators for Permutation Representations
 =================================================
 
+* Permutation representations are those that consist of different orderings of values from some predefined set/multiset
+
+* For example
+
+    * The representation used for the :math:`n` queens problem was a permutation representation
+    * Typically a permutation representation is used for TSP
+
+
+* Many of the previously discussed genetic operators are problematic since they may destroy the permutation property
+
+
+Crossovers
+----------
+
+
+
+
+Mutations
+---------
+
+* The swap mutation discussed above is simple and works well
+
+    * Same with the generalized rotation mutation
+
+
+Insertion Mutation
+^^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Insert/move the value at one index before/after the value at the other index
+
+
+.. figure:: insert_mutation.png
+    :width: 450 px
+    :align: center
+
+    Result of applying insertion mutation on a chromosome where indices 1 and 4 are selected. The value at index 4 was
+    inserted after the value at index 1.
 
 
 Genetic Operators for Floating Point/Real Number Representations
