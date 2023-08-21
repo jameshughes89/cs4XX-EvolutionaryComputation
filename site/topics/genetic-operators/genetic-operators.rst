@@ -216,11 +216,47 @@ Order Crossover
 ^^^^^^^^^^^^^^^
 
 * Select two indices randomly
-* Keep the elements between the selected indices
-* Copy the missing elements from the other chromosome in the order they appear after the second index
-* Best described with figures
+* Copy the elements between the selected indices to a child
+* Copy the missing elements in the child from the other chromosome in the order they appear after the second index
+* Best described with an example
+
+#. Select two indices at random
+
+    * Here, indices 3 and 7 are selected
 
 
+#. Copy the elements between the selected indices to a child chromosome
+
+    * Typically the larger index is not included in the copy
+    * Here, elements at indices 3, 4, 5, and 6 are copied
+
+    .. figure:: ../genetic-operators/order_crossover_1.png
+        :width: 500 px
+        :align: center
+
+        Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
+
+
+#. Copy elements from the other parent to the child in the order they appear, starting at the larger index
+
+    * Wrap to index 0 where necessary
+    * Here, the copying would start at index 7, which contains the element 1
+    * The 1 would be copied to the child as it is not contained within the child chromosome
+    * The value at index 8 is a 4, but would not get copied since it already exists in the child
+    * The next index would be 0 as there is no index 9, which contains a 9, thus it is copied to the child
+    * etc.
+    * The values that are copied are 1, 9, 3, 8, and 2, in that order
+
+
+.. figure:: ../genetic-operators/order_crossover_2.png
+    :width: 500 px
+    :align: center
+
+    Copy the elements from the other parent, in order, starting after the larger index. Only copy values that are not
+    already contained within the child.
+
+
+#. Repeat the same idea for the other child
 
 
 
