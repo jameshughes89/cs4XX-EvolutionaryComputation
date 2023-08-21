@@ -171,7 +171,7 @@ Swap Mutation
 
 
 .. figure:: swap_mutation.png
-    :width: 450 px
+    :width: 550 px
     :align: center
 
     Swap mutation applied to a chromosome where the selected indices are 1 and 4. The values at index 1 and 4 are
@@ -230,8 +230,8 @@ Insertion Mutation
 * Insert/move the value at one index before/after the value at the other index
 
 
-.. figure:: insert_mutation.png
-    :width: 450 px
+.. figure:: insertion_mutation.png
+    :width: 550 px
     :align: center
 
     Result of applying insertion mutation on a chromosome where indices 1 and 4 are selected. The value at index 4 was
@@ -246,7 +246,7 @@ Scramble Mutation
 * This mutation can be quite destructive
 
 .. figure:: scramble_mutation.png
-    :width: 450 px
+    :width: 550 px
     :align: center
 
     Scramble mutation being applied between indices 1 and 5 (exclusive). The resulting order of the shown scramble is
@@ -262,8 +262,8 @@ Inversion Mutation
 * Not particularly destructive when the adjacency of elements in the chromosome is important
 
 
-.. figure:: scramble_mutation.png
-    :width: 450 px
+.. figure:: inversion_mutation.png
+    :width: 550 px
     :align: center
 
     Inversion mutation applied to a chromosome where the selected indices are 1 and 5 (exclusive).
