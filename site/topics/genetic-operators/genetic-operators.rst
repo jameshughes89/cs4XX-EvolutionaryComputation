@@ -242,7 +242,7 @@ Gaussian Mutation
     :target: https://en.wikipedia.org/wiki/Normal_distribution
 
     Three continuous normal/Gaussian distribution of values with different mean and variance values. The red curve is a
-    "standard" normal distribution.
+    "standard" normal distribution --- has a mean of 0 and a standard deviation of 1. 
 
 
 Self Adapted Mutation
