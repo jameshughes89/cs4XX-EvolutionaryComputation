@@ -231,7 +231,7 @@ Order Crossover
     * Here, elements at indices 3, 4, 5, and 6 are copied
 
     .. figure:: ../genetic-operators/order_crossover_1.png
-        :width: 500 px
+        :width: 600 px
         :align: center
 
         Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
@@ -249,7 +249,7 @@ Order Crossover
 
 
     .. figure:: ../genetic-operators/order_crossover_2.png
-        :width: 500 px
+        :width: 600 px
         :align: center
 
         Copy the elements from the other parent, in order, starting after the larger index. Only copy values that are not
@@ -276,7 +276,7 @@ Partially Mapped Crossover
     * Here, elements at indices 3, 4, 5, and 6 are copied
 
     .. figure:: ../genetic-operators/partially_mapped_crossover_1.png
-        :width: 500 px
+        :width: 600 px
         :align: center
 
         Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
@@ -300,7 +300,7 @@ Partially Mapped Crossover
 
 
     .. figure:: ../genetic-operators/partially_mapped_crossover_2.png
-        :width: 500 px
+        :width: 600 px
         :align: center
 
         Example of how the values of 8 and 2 would be copied to the child.
@@ -310,7 +310,7 @@ Partially Mapped Crossover
 
 
 .. figure:: ../genetic-operators/partially_mapped_crossover_3.png
-        :width: 500 px
+        :width: 600 px
         :align: center
 
         The elements that do not exist in the child are copied from the parent in place.
@@ -331,14 +331,16 @@ Cycle Crossover
 #. Exchange the elements at the indices in the cycle between the parents
 
 .. figure:: ../genetic-operators/cycle_crossover_1.png
-    :width: 500 px
+    :width: 600 px
     :align: center
 
-    Three different cycles in the same two parents. One is shown in dark grey, one in white, and one in light grey.
+    Three different cycles in the same two parents. One is shown in dark grey, one in white, and one in light grey. If
+    the light grey cycle was selected (the one only containing 6s), no change would happen as a result of this
+    crossover.
 
 
 .. figure:: ../genetic-operators/cycle_crossover_2.png
-    :width: 500 px
+    :width: 600 px
     :align: center
 
     Result of applying cycle crossover. This is the result of using either the dark grey or white cycles identified
