@@ -322,6 +322,45 @@ Self Adapted Mutation
 Genetic Operators for Tree Representations
 ==========================================
 
+* Tree representations are typically for genetic programming
+* However, genetic programming is really just a genetic algorithm where
+
+    * The representation is a tree
+    * The goal is to evolve some function/program
+
+
+* The generic operators can become tricky when working with *typed* genetic programming
+
+    * This is discussed in a future topic
+
+
+Crossover
+---------
+
+* Randomly select a node within each tree
+* Swap the subtrees between the parents
+
+.. figure:: genetic_programming_crossover.png
+    :width: 600 px
+    :align: center
+
+    Swapping the subtrees rooted at the divide (:math:`/`) and multiplication (:math:`\cdot`).
+
+
+
+Mutation
+--------
+
+* Randomly select a node within the tree
+* Replace the subtree at that node with a newly generated subtree
+* Typically the newly generated subtree will be of some bound depth
+
+.. figure:: genetic_programming_mutation.png
+    :width: 500 px
+    :align: center
+
+    The subtree with the root of divide (:math:`/`) is replaced by the subtree of only the variable :math:`y`. Although
+    the subtree is replaced with a new tree with only a root node, this is not a requirement.
 
 
 For Next Class
