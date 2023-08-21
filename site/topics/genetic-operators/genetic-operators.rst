@@ -152,6 +152,27 @@ Additional Notes
 * However, throughout this course, being creative and inventive with genetic operators is strongly encouraged
 
 
+Destructive Operators
+---------------------
+
+* The word *destructive* was used above when referring to genetic operators
+* This term is not particularly well defined
+
+    * Used to communicate how much the chromosomes change and/or how much the information within the chromosomes change
+
+
+* How destructive something is will depend on the representation and the problem
+
+* For example, a single point crossover on an integer representation for a robot navigating a maze
+
+    * On average it changes half the chromosome, but the information in the chromosomes is preserved and transferred
+    * This is not considered particularly destructive
+    * The part of the chromosome that transfers represents a sub-path that will be preserved, but transferred
+
+
+* On the other hand, a uniform crossover on the same problem can be quite destructive
+
+    * Since the integer adjacent is important for paths, changing out multiple single directions can have a large impact
 
 
 
