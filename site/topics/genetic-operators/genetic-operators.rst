@@ -212,6 +212,15 @@ Genetic Operators for Permutation Representations
 Crossovers
 ----------
 
+Order Crossover
+^^^^^^^^^^^^^^^
+
+* Select two indices randomly
+* Keep the elements between the selected indices
+* Copy the missing elements from the other chromosome in the order they appear after the second index
+* Best described with figures
+
+
 
 
 
