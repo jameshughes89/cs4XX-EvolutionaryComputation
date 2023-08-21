@@ -248,16 +248,72 @@ Order Crossover
     * The values that are copied are 1, 9, 3, 8, and 2, in that order
 
 
-.. figure:: ../genetic-operators/order_crossover_2.png
-    :width: 500 px
-    :align: center
+    .. figure:: ../genetic-operators/order_crossover_2.png
+        :width: 500 px
+        :align: center
 
-    Copy the elements from the other parent, in order, starting after the larger index. Only copy values that are not
-    already contained within the child.
+        Copy the elements from the other parent, in order, starting after the larger index. Only copy values that are not
+        already contained within the child.
 
 
 #. Repeat the same idea for the other child
 
+
+Partially Mapped Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* This one is rather complex and is tough to explain in words
+* Below are figures that help explain the process
+
+#. Select two indices at random
+
+    * Here, indices 3 and 7 are selected
+
+
+#. Copy the elements between the selected indices to a child chromosome
+
+    * Typically the larger index is not included in the copy
+    * Here, elements at indices 3, 4, 5, and 6 are copied
+
+    .. figure:: ../genetic-operators/partially_mapped_crossover_1.png
+        :width: 500 px
+        :align: center
+
+        Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
+
+
+#. Starting at the first selected index in the other parent, copy non-copied elements in the child by
+
+    * Finding the index of the element that exists in the child at the index of the non-copied index
+    * Here, the value of 8 was not copied and exists at index 4
+    * The value in index 4 of the child is 4
+    * The value of 4 exists at index 8 in the parent
+    * This, the value of 8 is copied into index 8
+
+    * It is possible that the index the value should be copied to is already filled
+
+        * See the value 2 in the below figure
+        * The value 2 would be copied to index 6, but index 6 is already occupied in the child chromosome
+
+
+    * When this happens, the process is continued by looking back to what value exists at *that* index in the child
+
+
+    .. figure:: ../genetic-operators/partially_mapped_crossover_2.png
+        :width: 500 px
+        :align: center
+
+        Example of how the values of 8 and 2 would be copied to the child.
+
+
+#. Copy the remaining elements to the child in place
+
+
+.. figure:: ../genetic-operators/partially_mapped_crossover_3.png
+        :width: 500 px
+        :align: center
+
+        The elements that do not exist in the child are copied from the parent in place.
 
 
 Mutations
