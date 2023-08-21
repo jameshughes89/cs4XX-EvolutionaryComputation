@@ -166,8 +166,8 @@ Destructive Operators
 * For example, a single point crossover on an integer representation for a robot navigating a maze
 
     * On average it changes half the chromosome, but the information in the chromosomes is preserved and transferred
-    * This is not considered particularly destructive
-    * The part of the chromosome that transfers represents a sub-path that will be preserved, but transferred
+    * The part of the chromosome that is transferred represents a sub-path that will move to the other chromosome
+    * This is not particularly destructive
 
 
 * On the other hand, a uniform crossover on the same problem can be quite destructive
@@ -203,6 +203,7 @@ Exploration vs. Exploitation
 * This is where the bit flip mutation came in
 
     * It added new information to the population; it *explored* the search space
+    * In this context, the bit flip was relatively destructive compared to the one point crossover
 
 
 * Thus, sometimes a destructive operator is very beneficial
