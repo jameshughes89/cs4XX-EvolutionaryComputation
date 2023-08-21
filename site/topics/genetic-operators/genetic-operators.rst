@@ -221,8 +221,10 @@ Uniform Mutation
     A continuous uniform distribution of values between :math:`a` and :math:`b`.
 
 
-Non Uniform Mutation
-^^^^^^^^^^^^^^^^^^^^
+Gaussian Mutation
+^^^^^^^^^^^^^^^^^
+
+* Sometimes called *non uniform mutation*
 
 * Randomly select an index
 * Replace the value at the selected index by a value from a continuous normal/Gaussian distribution
