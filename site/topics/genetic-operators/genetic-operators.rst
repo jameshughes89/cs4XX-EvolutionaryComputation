@@ -316,6 +316,35 @@ Partially Mapped Crossover
         The elements that do not exist in the child are copied from the parent in place.
 
 
+Cycle Crossover
+^^^^^^^^^^^^^^^
+
+#. Select an index at random
+#. Identify the value at that index in parent 1
+#. Get the value at the selected index in parent 2
+#. Find the index of that value in parent 1
+#. Repeat until a whole cycle is found
+
+    * When the value at the original index in parent 1 is found in parent 2
+
+
+#. Exchange the elements at the indices in the cycle between the parents
+
+.. figure:: ../genetic-operators/cycle_crossover_1.png
+    :width: 500 px
+    :align: center
+
+    Three different cycles in the same two parents. One is shown in dark grey, one in white, and one in light grey.
+
+
+.. figure:: ../genetic-operators/cycle_crossover_2.png
+    :width: 500 px
+    :align: center
+
+    Result of applying cycle crossover. This is the result of using either the dark grey or white cycles identified
+    above.
+
+
 Mutations
 ---------
 
