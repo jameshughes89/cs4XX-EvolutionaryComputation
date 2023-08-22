@@ -3,7 +3,7 @@ import unittest
 from src.ga_n_queens import attacking_fitness
 
 
-class TestGAMaxBitstring(unittest.TestCase):
+class TestGANQueens(unittest.TestCase):
     def test_attacking_fitness_various_cases_returns_correct_fitness(self):
         chromosomes = [
             [0],
