@@ -170,6 +170,14 @@ Swap Mutation
     * Now new information is added
 
 
+.. figure:: swap_mutation.png
+    :width: 550 px
+    :align: center
+
+    Swap mutation applied to a chromosome where the selected indices are 1 and 4. The values at index 1 and 4 are
+    swapped.
+
+
 Creep Mutation
 ^^^^^^^^^^^^^^
 
@@ -190,6 +198,207 @@ Creep Mutation
 Genetic Operators for Permutation Representations
 =================================================
 
+* Permutation representations are those that consist of different orderings of values from some predefined set/multiset
+
+* For example
+
+    * The representation used for the :math:`n` queens problem was a permutation representation
+    * Typically a permutation representation is used for TSP
+
+
+* Many of the previously discussed genetic operators are problematic since they may destroy the permutation property
+
+
+Crossovers
+----------
+
+Order Crossover
+^^^^^^^^^^^^^^^
+
+* Select two indices randomly
+* Copy the elements between the selected indices to a child
+* Copy the missing elements in the child from the other chromosome in the order they appear after the second index
+* Best described with an example
+
+#. Select two indices at random
+
+    * Here, indices 3 and 7 are selected
+
+
+#. Copy the elements between the selected indices to a child chromosome
+
+    * Typically the larger index is not included in the copy
+    * Here, elements at indices 3, 4, 5, and 6 are copied
+
+    .. figure:: ../genetic-operators/order_crossover_copy.png
+        :width: 600 px
+        :align: center
+
+        Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
+
+
+#. Copy elements from the other parent to the child in the order they appear, starting at the larger index
+
+    * Wrap to index 0 where necessary
+    * Here, the copying would start at index 7, which contains the element 1
+    * The 1 would be copied to the child as it is not contained within the child chromosome
+    * The value at index 8 is a 4, but would not get copied since it already exists in the child
+    * The next index would be 0 as there is no index 9, which contains a 9, thus it is copied to the child
+    * etc.
+    * The values that are copied are 1, 9, 3, 8, and 2, in that order
+
+
+    .. figure:: ../genetic-operators/order_crossover_remaining.png
+        :width: 600 px
+        :align: center
+
+        Copy the elements from the other parent, in order, starting after the larger index. Only copy values that are not
+        already contained within the child.
+
+
+#. Repeat the same idea for the other child
+
+
+Partially Mapped Crossover
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* This one is rather complex and is tough to explain in words
+* Below are figures that help explain the process
+
+#. Select two indices at random
+
+    * Here, indices 3 and 7 are selected
+
+
+#. Copy the elements between the selected indices to a child chromosome
+
+    * Typically the larger index is not included in the copy
+    * Here, elements at indices 3, 4, 5, and 6 are copied
+
+    .. figure:: ../genetic-operators/partially_mapped_crossover_copy.png
+        :width: 600 px
+        :align: center
+
+        Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
+
+
+#. Starting at the first selected index in the other parent, copy non-copied elements in the child by
+
+    * Finding the index of the element that exists in the child at the index of the non-copied index
+    * Here, the value of 8 was not copied and exists at index 4
+    * The value in index 4 of the child is 4
+    * The value of 4 exists at index 8 in the parent
+    * Thus, the value of 8 is copied into index 8
+
+    * It is possible that the index the value should be copied to is already filled
+
+        * See the value 2 in the below figure
+        * The value 2 would be copied to index 6, but index 6 is already occupied in the child chromosome
+
+
+    * When this happens, the process is continued by looking back to what value exists at *that* index in the child
+
+
+    .. figure:: ../genetic-operators/partially_mapped_crossover_noncopy.png
+        :width: 600 px
+        :align: center
+
+        Example of how the values of 8 and 2 would be copied to the child.
+
+
+#. Copy the remaining elements to the child in place
+
+
+.. figure:: ../genetic-operators/partially_mapped_crossover_remaining.png
+        :width: 600 px
+        :align: center
+
+        The elements that do not exist in the child are copied from the parent in place.
+
+
+Cycle Crossover
+^^^^^^^^^^^^^^^
+
+#. Select an index at random
+#. Identify the value at that index in parent 1
+#. Get the value at the selected index in parent 2
+#. Find the index of that value in parent 1
+#. Repeat until a whole cycle is found
+
+    * When the value at the original index in parent 1 is found in parent 2
+
+
+#. Exchange the elements at the indices in the cycle between the parents
+
+.. figure:: ../genetic-operators/cycle_crossover_find_cycles.png
+    :width: 600 px
+    :align: center
+
+    Three different cycles in the same two parents. One is shown in dark grey, one in white, and one in light grey. If
+    the light grey cycle was selected (the one only containing 6s), no change would happen as a result of this
+    crossover.
+
+
+.. figure:: ../genetic-operators/cycle_crossover_exchange.png
+    :width: 600 px
+    :align: center
+
+    Result of applying cycle crossover. This is the result of using either the dark grey or white cycles identified
+    above.
+
+
+Mutations
+---------
+
+* The swap mutation discussed above is simple and works well
+
+    * Same with the generalized rotation mutation
+
+
+Insertion Mutation
+^^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Insert/move the value at one index before/after the value at the other index
+
+
+.. figure:: insertion_mutation.png
+    :width: 550 px
+    :align: center
+
+    Result of applying insertion mutation on a chromosome where indices 1 and 4 are selected. The value at index 4 was
+    inserted after the value at index 1.
+
+
+Scramble Mutation
+^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Scramble/shuffle the vales between the selected indices
+* This mutation can be quite destructive
+
+.. figure:: scramble_mutation.png
+    :width: 550 px
+    :align: center
+
+    Scramble mutation being applied between indices 1 and 5 (exclusive). The resulting order of the shown scramble is
+    arbitrary.
+
+
+Inversion Mutation
+^^^^^^^^^^^^^^^^^^
+
+* Select two indices at random
+* Reverse the order of the elements between the selected indices
+
+* Not particularly destructive when the adjacency of elements in the chromosome is important
+
+
+.. figure:: inversion_mutation.png
+    :width: 550 px
+    :align: center
+
+    Inversion mutation applied to a chromosome where the selected indices are 1 and 5 (exclusive).
 
 
 Genetic Operators for Floating Point/Real Number Representations
