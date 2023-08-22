@@ -23,5 +23,4 @@ def protected_divide(dividend: float, divisor: float) -> float:
     if divisor == 0:
         return 999_999_999
     else:
-        return dividend/divisor
-
+        return dividend / divisor
