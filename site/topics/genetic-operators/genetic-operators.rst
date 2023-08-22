@@ -230,7 +230,7 @@ Order Crossover
     * Typically the larger index is not included in the copy
     * Here, elements at indices 3, 4, 5, and 6 are copied
 
-    .. figure:: ../genetic-operators/order_crossover_1.png
+    .. figure:: ../genetic-operators/order_crossover_copy.png
         :width: 600 px
         :align: center
 
@@ -248,7 +248,7 @@ Order Crossover
     * The values that are copied are 1, 9, 3, 8, and 2, in that order
 
 
-    .. figure:: ../genetic-operators/order_crossover_2.png
+    .. figure:: ../genetic-operators/order_crossover_remaining.png
         :width: 600 px
         :align: center
 
@@ -275,7 +275,7 @@ Partially Mapped Crossover
     * Typically the larger index is not included in the copy
     * Here, elements at indices 3, 4, 5, and 6 are copied
 
-    .. figure:: ../genetic-operators/partially_mapped_crossover_1.png
+    .. figure:: ../genetic-operators/partially_mapped_crossover_copy.png
         :width: 600 px
         :align: center
 
@@ -299,7 +299,7 @@ Partially Mapped Crossover
     * When this happens, the process is continued by looking back to what value exists at *that* index in the child
 
 
-    .. figure:: ../genetic-operators/partially_mapped_crossover_2.png
+    .. figure:: ../genetic-operators/partially_mapped_crossover_noncopy.png
         :width: 600 px
         :align: center
 
@@ -309,7 +309,7 @@ Partially Mapped Crossover
 #. Copy the remaining elements to the child in place
 
 
-.. figure:: ../genetic-operators/partially_mapped_crossover_3.png
+.. figure:: ../genetic-operators/partially_mapped_crossover_remaining.png
         :width: 600 px
         :align: center
 
@@ -330,7 +330,7 @@ Cycle Crossover
 
 #. Exchange the elements at the indices in the cycle between the parents
 
-.. figure:: ../genetic-operators/cycle_crossover_1.png
+.. figure:: ../genetic-operators/cycle_crossover_find_cycles.png
     :width: 600 px
     :align: center
 
@@ -339,7 +339,7 @@ Cycle Crossover
     crossover.
 
 
-.. figure:: ../genetic-operators/cycle_crossover_2.png
+.. figure:: ../genetic-operators/cycle_crossover_exchange.png
     :width: 600 px
     :align: center
 

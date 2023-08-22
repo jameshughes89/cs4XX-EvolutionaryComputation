@@ -240,7 +240,7 @@ Crossover
 
 * Keep all elements between two randomly selected indices
 
-.. figure:: ../genetic-operators/order_crossover_1.png
+.. figure:: ../genetic-operators/order_crossover_copy.png
     :width: 500 px
     :align: center
 
@@ -253,7 +253,7 @@ Crossover
     * Start copying from *after* the kept segment
 
 
-.. figure:: ../genetic-operators/order_crossover_2.png
+.. figure:: ../genetic-operators/order_crossover_remaining.png
     :width: 500 px
     :align: center
 
