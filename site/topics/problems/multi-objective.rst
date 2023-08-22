@@ -1,14 +1,14 @@
-*************************
-Multio-Objective Problems
-*************************
+************************
+Multi-Objective Problems
+************************
 
 
 
 Scalarization
 =============
 
-Distance from Idea
-------------------
+Distance from Ideal
+-------------------
 
 
 Weighted Sum
