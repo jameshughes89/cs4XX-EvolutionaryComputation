@@ -288,7 +288,7 @@ Partially Mapped Crossover
     * Here, the value of 8 was not copied and exists at index 4
     * The value in index 4 of the child is 4
     * The value of 4 exists at index 8 in the parent
-    * This, the value of 8 is copied into index 8
+    * Thus, the value of 8 is copied into index 8
 
     * It is possible that the index the value should be copied to is already filled
 
