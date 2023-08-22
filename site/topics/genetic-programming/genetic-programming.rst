@@ -51,6 +51,11 @@ Example Problem --- Symbolic Regression
 
 
 
+Interesting Applications
+========================
+
+
+
 For Next Class
 ==============
 
