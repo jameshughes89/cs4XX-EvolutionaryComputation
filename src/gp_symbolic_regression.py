@@ -20,6 +20,21 @@ MUTATION_RATE = 0.05
 # [end-hyperparameters]
 
 
+def protected_divide(dividend: float, divisor: float) -> float:
+    """
+    The basic arithmetic operator of division. If the division basic results in a ZeroDivisionError, this function
+    returns an arbitrarily large number (999,999,999).
+
+    :param dividend: Value to divide
+    :param divisor: Value to divide by
+    :return: The quotient; the result of the division (dividend/divisor)
+    """
+    if divisor == 0:
+        return 999_999_999
+    else:
+        return dividend / divisor
+
+
 def mean_squared_error(
     compiled_individual, independent_variables: list[list[float]], dependent_variable: list[float]
 ) -> float:
@@ -40,7 +55,9 @@ def mean_squared_error(
     return sum(squared_errors) / len(dependent_variable)
 
 
-def mean_squared_error_fitness(individual, toolbox, independent_variables: list[list[float]], dependent_variable: list[float]) -> tuple[float]:
+def mean_squared_error_fitness(
+    individual, toolbox, independent_variables: list[list[float]], dependent_variable: list[float]
+) -> tuple[float]:
     """
     Calculate the mean squared error for a given function on the observed data. The independent variables are a list of
     lists where the list of the outer list is the number of observations and the length of the inside list is the number
@@ -62,22 +79,7 @@ def mean_squared_error_fitness(individual, toolbox, independent_variables: list[
         )
     callable_function = toolbox.compile(expr=individual)
     individual_mean_squared_error = mean_squared_error(callable_function, independent_variables, dependent_variable)
-    return (individual_mean_squared_error, )
-
-
-def protected_divide(dividend: float, divisor: float) -> float:
-    """
-    The basic arithmetic operator of division. If the division basic results in a ZeroDivisionError, this function
-    returns an arbitrarily large number (999,999,999).
-
-    :param dividend: Value to divide
-    :param divisor: Value to divide by
-    :return: The quotient; the result of the division (dividend/divisor)
-    """
-    if divisor == 0:
-        return 999_999_999
-    else:
-        return dividend / divisor
+    return (individual_mean_squared_error,)
 
 
 if __name__ == "__main__":
