@@ -3,7 +3,7 @@ import unittest
 from src.pso import matyas_function
 
 
-class TestGAMaxBitstring(unittest.TestCase):
+class TestPso(unittest.TestCase):
     def test_matyas_function_returns_correct_value(self):
         vectors = [(0, 0), (1, 1), (1, 2), (-5, 5), (10, 10), (-100, 100)]
         expecteds = [0, 0.04, 0.34, 25, 4, 10000]
