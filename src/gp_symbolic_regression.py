@@ -23,7 +23,7 @@ MUTATION_RATE = 0.05
 # [end-hyperparameters]
 
 # [begin-data-parameters]
-RESOURCE_PATH = "../resources/regression-data/"
+RELATIVE_RESOURCES = "../resources/regression-data/"
 DATA_FILE = "d0.csv"
 # [end-data-parameters]
 
@@ -92,7 +92,7 @@ def mean_squared_error_fitness(
 
 if __name__ == "__main__":
     # [begin-data]
-    data_file = open(os.path.join(RESOURCE_PATH, DATA_FILE))
+    data_file = open(os.path.join(RELATIVE_RESOURCES, DATA_FILE))
     all_data = [list(map(float, x.split(","))) for x in data_file]
     independent_variables = [observation[:-1] for observation in all_data]
     dependent_variable = [observation[-1] for observation in all_data]
