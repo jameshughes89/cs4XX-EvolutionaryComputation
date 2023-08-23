@@ -7,6 +7,7 @@ many variables but should contain at least two --- one independent and one depen
 """
 
 import operator
+import os.path
 from functools import partial
 from random import randint
 
@@ -19,6 +20,8 @@ TOURNAMENT_SIZE = 2
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.05
 # [end-hyperparameters]
+
+RESOURCE_PATH = "../resources/regression-data/"
 
 
 def protected_divide(dividend: float, divisor: float) -> float:
@@ -84,6 +87,13 @@ def mean_squared_error_fitness(
 
 
 if __name__ == "__main__":
+    # [begin-data]
+    data_file = open(os.path.join(RESOURCE_PATH, "d0.csv"))
+    all_data = [list(map(float, x.split(","))) for x in data_file]
+    independent_variables = [observation[:-1] for observation in all_data]
+    dependent_variable = [observation[-1] for observation in all_data]
+    # [end-data]
+
     # [begin-language]
     primitive_set = gp.PrimitiveSet("MAIN", 1)
     primitive_set.addPrimitive(operator.add, 2)
@@ -93,3 +103,24 @@ if __name__ == "__main__":
     primitive_set.addPrimitive(operator.neg, 1)
     primitive_set.addEphemeralConstant("rand_int", partial(randint, -10, 10))
     # [end-language]
+
+    # [begin-setup]
+    creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
+    creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
+
+    toolbox = base.Toolbox()
+    toolbox.register("expr", gp.genHalfAndHalf, pset=primitive_set, min_=1, max_=2)
+    toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.expr)
+    toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+    toolbox.register("compile", gp.compile, pset=primitive_set)
+    toolbox.register(
+        "evaluate",
+        mean_squared_error_fitness,
+        independent_variables=independent_variables,
+        dependent_variable=dependent_variable,
+    )
+    toolbox.register("select", tools.selTournament, tournsize=2)
+    toolbox.register("mate", gp.cxOnePoint)
+    toolbox.register("expr_mut", gp.genFull, min_=0, max_=4)
+    toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=primitive_set)
+    # [end-setup]
