@@ -2,7 +2,7 @@ import operator
 import unittest
 from unittest.mock import patch
 
-from src.gp_symbolic_regression import mean_squared_error_fitness, protected_divide
+from src.gp_symbolic_regression import mean_squared_error_fitness, protected_divide, mean_squared_error
 
 
 class TestGPSymbolicRegression(unittest.TestCase):
@@ -31,8 +31,13 @@ class TestGPSymbolicRegression(unittest.TestCase):
                 self.assertEqual(expected, protected_divide(dividend, 0))
 
     def test_mean_squared_error_returns_correct_value(self):
-        # Don't forget to modify function too
-        pass
+        independent_variables = [[0, 0], [1, 1], [2, 1], [2, 2], [3, 3], [10, 1], [10, 10], [-1, 1], [-2, -2]]
+        dependent_variable =[0, 2, 3, 4, 6, 11, 20, 0, -4]
+        functions = [operator.add, operator.sub, operator.mul]
+        expecteds = [0, 484/9, 2159/3]
+        for func, expected in zip(functions, expecteds):
+            with self.subTest(func=func, expected=expected):
+                self.assertAlmostEqual(expected, mean_squared_error(func, independent_variables, dependent_variable))
 
     def test_mean_squared_error_fitness_returns_correct_value(self, mocked_toolbox):
         # mock stuff somehow
