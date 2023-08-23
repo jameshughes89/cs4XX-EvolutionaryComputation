@@ -11,13 +11,14 @@ import os.path
 from functools import partial
 from random import randint
 
+import numpy
 from deap import algorithms, base, creator, gp, tools
 
 # [begin-hyperparameters]
 POPULATION_SIZE = 10
 GENERATIONS = 100
 TOURNAMENT_SIZE = 2
-CROSSOVER_RATE = 0.70
+CROSSOVER_RATE = 0.80
 MUTATION_RATE = 0.05
 # [end-hyperparameters]
 
@@ -88,14 +89,14 @@ def mean_squared_error_fitness(
 
 if __name__ == "__main__":
     # [begin-data]
-    data_file = open(os.path.join(RESOURCE_PATH, "d0.csv"))
+    data_file = open(os.path.join(RESOURCE_PATH, "d10.csv"))
     all_data = [list(map(float, x.split(","))) for x in data_file]
     independent_variables = [observation[:-1] for observation in all_data]
     dependent_variable = [observation[-1] for observation in all_data]
     # [end-data]
 
     # [begin-language]
-    primitive_set = gp.PrimitiveSet("MAIN", 1)
+    primitive_set = gp.PrimitiveSet("MAIN", 2)
     primitive_set.addPrimitive(operator.add, 2)
     primitive_set.addPrimitive(operator.sub, 2)
     primitive_set.addPrimitive(operator.mul, 2)
@@ -116,6 +117,7 @@ if __name__ == "__main__":
     toolbox.register(
         "evaluate",
         mean_squared_error_fitness,
+        toolbox=toolbox,
         independent_variables=independent_variables,
         dependent_variable=dependent_variable,
     )
@@ -123,4 +125,31 @@ if __name__ == "__main__":
     toolbox.register("mate", gp.cxOnePoint)
     toolbox.register("expr_mut", gp.genFull, min_=0, max_=4)
     toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=primitive_set)
+
+    toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
+    toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
+    toolbox.decorate("mate", gp.staticLimit(key=len, max_value=32))
+    toolbox.decorate("mutate", gp.staticLimit(key=len, max_value=32))
     # [end-setup]
+
+    population = toolbox.population(n=POPULATION_SIZE)
+    hall_of_fame = tools.HallOfFame(1)
+
+    stats_fit = tools.Statistics(lambda individual: individual.fitness.values)
+    stats_size = tools.Statistics(len)
+    mstats = tools.MultiStatistics(fitness=stats_fit, size=stats_size)
+    mstats.register("avg", numpy.mean)
+    mstats.register("std", numpy.std)
+    mstats.register("min", numpy.min)
+    mstats.register("max", numpy.max)
+
+    # [begin-run]
+    population, log = algorithms.eaSimple(
+        population, toolbox, 0.5, 0.1, GENERATIONS, stats=mstats, halloffame=hall_of_fame, verbose=True
+    )
+    # [end-run]
+
+    # [begin-ending]
+    print(str(hall_of_fame[0]))
+    print(hall_of_fame[0].fitness.values)
+    # [end-ending]
