@@ -2,7 +2,11 @@ import operator
 import unittest
 from unittest.mock import patch
 
-from src.gp_symbolic_regression import mean_squared_error_fitness, protected_divide, mean_squared_error
+from src.gp_symbolic_regression import (
+    mean_squared_error,
+    mean_squared_error_fitness,
+    protected_divide,
+)
 
 
 class TestGPSymbolicRegression(unittest.TestCase):
@@ -32,21 +36,37 @@ class TestGPSymbolicRegression(unittest.TestCase):
 
     def test_mean_squared_error_returns_correct_value(self):
         independent_variables = [[0, 0], [1, 1], [2, 1], [2, 2], [3, 3], [10, 1], [10, 10], [-1, 1], [-2, -2]]
-        dependent_variable =[0, 2, 3, 4, 6, 11, 20, 0, -4]
+        dependent_variable = [0, 2, 3, 4, 6, 11, 20, 0, -4]
         functions = [operator.add, operator.sub, operator.mul]
-        expecteds = [0, 484/9, 2159/3]
+        expecteds = [0, 484 / 9, 2159 / 3]
         for func, expected in zip(functions, expecteds):
             with self.subTest(func=func, expected=expected):
                 self.assertAlmostEqual(expected, mean_squared_error(func, independent_variables, dependent_variable))
 
+    @patch("deap.base.Toolbox")
     def test_mean_squared_error_fitness_returns_correct_value(self, mocked_toolbox):
-        # mock stuff somehow
-        pass
+        independent_variables = [[0, 0], [1, 1], [2, 1], [2, 2], [3, 3], [10, 1], [10, 10], [-1, 1], [-2, -2]]
+        dependent_variable = [0, 2, 3, 4, 6, 11, 20, 0, -4]
+        functions = [operator.add, operator.sub, operator.mul]
+        expecteds = [(0,), (484 / 9,), (2159 / 3,)]
+        for func, expected in zip(functions, expecteds):
+            with self.subTest(func=func, expected=expected):
+                mocked_toolbox.compile.return_value = func
+                self.assertAlmostEqual(
+                    expected,
+                    mean_squared_error_fitness(None, mocked_toolbox, independent_variables, dependent_variable),
+                )
 
-    def test_mean_squared_error_fitness_zero_length_variables_raises_value_error(self, mocked_toolbox_compile):
-        # mock stuff somehow
-        pass
+    def test_mean_squared_error_fitness_zero_length_variables_raises_value_error(self):
+        independent_variables_set = [[], [[]], []]
+        dependent_variable_set = [[[]], [], []]
+        for independent_variables, dependent_variable in zip(independent_variables_set, dependent_variable_set):
+            with self.subTest(independent_variables=independent_variables, dependent_variable=dependent_variable):
+                with self.assertRaises(ValueError):
+                    mean_squared_error_fitness(None, None, independent_variables, dependent_variable)
 
     def test_mean_squared_error_fitness_uneven_length_variables_raises_value_error(self):
-        # mock stuff somehow
-        pass
+        independent_variables = [[], [], []]
+        dependent_variable = [0, 0, 0, 0]
+        with self.assertRaises(ValueError):
+            mean_squared_error_fitness(None, None, independent_variables, dependent_variable)
