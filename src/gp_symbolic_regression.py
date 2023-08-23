@@ -7,6 +7,7 @@ many variables but should contain at least two --- one independent and one depen
 """
 
 import operator
+from functools import partial
 from random import randint
 
 from deap import algorithms, base, creator, gp, tools
@@ -90,5 +91,5 @@ if __name__ == "__main__":
     primitive_set.addPrimitive(operator.mul, 2)
     primitive_set.addPrimitive(protected_divide, 2)
     primitive_set.addPrimitive(operator.neg, 1)
-    primitive_set.addEphemeralConstant("rand_int", lambda: randint(-10, 10))
+    primitive_set.addEphemeralConstant("rand_int", partial(randint, -10, 10))
     # [end-language]
