@@ -22,7 +22,10 @@ CROSSOVER_RATE = 0.80
 MUTATION_RATE = 0.05
 # [end-hyperparameters]
 
+# [begin-data-parameters]
 RESOURCE_PATH = "../resources/regression-data/"
+DATA_FILE = "d0.csv"
+# [end-data-parameters]
 
 
 def protected_divide(dividend: float, divisor: float) -> float:
@@ -89,14 +92,14 @@ def mean_squared_error_fitness(
 
 if __name__ == "__main__":
     # [begin-data]
-    data_file = open(os.path.join(RESOURCE_PATH, "d10.csv"))
+    data_file = open(os.path.join(RESOURCE_PATH, DATA_FILE))
     all_data = [list(map(float, x.split(","))) for x in data_file]
     independent_variables = [observation[:-1] for observation in all_data]
     dependent_variable = [observation[-1] for observation in all_data]
     # [end-data]
 
     # [begin-language]
-    primitive_set = gp.PrimitiveSet("MAIN", 2)
+    primitive_set = gp.PrimitiveSet("MAIN", len(independent_variables[0]))
     primitive_set.addPrimitive(operator.add, 2)
     primitive_set.addPrimitive(operator.sub, 2)
     primitive_set.addPrimitive(operator.mul, 2)
@@ -105,13 +108,13 @@ if __name__ == "__main__":
     primitive_set.addEphemeralConstant("rand_int", partial(randint, -10, 10))
     # [end-language]
 
-    # [begin-setup]
-    creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
-    creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMin)
+    # [begin-setting-hyperparameters]
+    creator.create("FitnessMinimum", base.Fitness, weights=(-1.0,))
+    creator.create("Individual", gp.PrimitiveTree, fitness=creator.FitnessMinimum)
 
     toolbox = base.Toolbox()
-    toolbox.register("expr", gp.genHalfAndHalf, pset=primitive_set, min_=1, max_=2)
-    toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.expr)
+    toolbox.register("generate_tree", gp.genHalfAndHalf, pset=primitive_set, min_=1, max_=4)
+    toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.generate_tree)
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     toolbox.register("compile", gp.compile, pset=primitive_set)
     toolbox.register(
@@ -123,27 +126,31 @@ if __name__ == "__main__":
     )
     toolbox.register("select", tools.selTournament, tournsize=2)
     toolbox.register("mate", gp.cxOnePoint)
-    toolbox.register("expr_mut", gp.genFull, min_=0, max_=4)
-    toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=primitive_set)
+    toolbox.register("generate_mutation_subtree", gp.genFull, min_=0, max_=4)
+    toolbox.register("mutate", gp.mutUniform, expr=toolbox.generate_mutation_subtree, pset=primitive_set)
+    # [end-setting-hyperparameters]
 
+    # [begin-bloat-control]
     toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
     toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
     toolbox.decorate("mate", gp.staticLimit(key=len, max_value=32))
     toolbox.decorate("mutate", gp.staticLimit(key=len, max_value=32))
-    # [end-setup]
+    # [end-bloat-control]
 
-    population = toolbox.population(n=POPULATION_SIZE)
+    # [begin-bookkeeping]
     hall_of_fame = tools.HallOfFame(1)
-
     stats_fit = tools.Statistics(lambda individual: individual.fitness.values)
     stats_size = tools.Statistics(len)
-    mstats = tools.MultiStatistics(fitness=stats_fit, size=stats_size)
+    stats_height = tools.Statistics(operator.attrgetter("height"))
+    mstats = tools.MultiStatistics(fitness=stats_fit, size=stats_size, height=stats_height)
     mstats.register("avg", numpy.mean)
     mstats.register("std", numpy.std)
     mstats.register("min", numpy.min)
     mstats.register("max", numpy.max)
+    # [end-bookkeeping]
 
     # [begin-run]
+    population = toolbox.population(n=POPULATION_SIZE)
     population, log = algorithms.eaSimple(
         population, toolbox, 0.5, 0.1, GENERATIONS, stats=mstats, halloffame=hall_of_fame, verbose=True
     )
