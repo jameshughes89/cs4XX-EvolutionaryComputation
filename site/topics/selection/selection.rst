@@ -2,7 +2,7 @@
 Selection and Population Management
 ***********************************
 
-* One of the driving forces of evolutionary computation algorithms is the variation operators
+* One of the main driving forces of evolutionary computation algorithms is the variation operators
 * Another major driving force is the selection strategy
 
     * This determines an individual's ability to survive and have offspring based on their fitness values
