@@ -63,7 +63,7 @@ Generational vs. Steady State
 Tournament Selection
 ====================
 
-* Two very basic selections could be implemented
+* Two very basic selections *could* be implemented
 
 #. Uniform selection
 
@@ -80,6 +80,29 @@ Tournament Selection
 #. Select the top chromosomes only and apply the genetic operators
 
     * As already seen, this will not perform well as the population will converge too quickly on some local optimum
+
+
+* An alternative highly effective selection is to go somewhere in between these ideas
+* This is where **tournament selection** comes in
+
+    * Randomly pick a subset of :math:`k` chromosomes from the population
+    * Select the best of these :math:`k` chromosomes
+
+
+.. figure:: ../intro/ec_idea.png
+    :width: 500 px
+    :align: center
+    :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
+
+    Tournament selection being performed on a population of size 13. Here, :math:`k = 3`, meaning three chromosomes were
+    selected at random. Of the three, the candidate solution with the highest fitness is then returned as the selected
+    chromosome.
+
+
+* The value of :math:`k` is typically kept low, but can be adjusted as needed
+
+    * If :math:`k = 1`, this would be the same as a uniform selection
+    * If :math:`k = \mu`, this would be the same as always selecting the best
 
 
 
