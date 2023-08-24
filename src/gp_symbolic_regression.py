@@ -56,11 +56,11 @@ def mean_squared_error(
     :param dependent_variable: Expected result of the function
     :return: Mean squared error of the function on the observed data
     """
-    squared_errors = []
+    running_error_squared_sum = 0
     for xs, y in zip(independent_variables, dependent_variable):
         y_hat = compiled_individual(*xs)
-        squared_errors.append((y - y_hat) ** 2)
-    return sum(squared_errors) / len(dependent_variable)
+        running_error_squared_sum += (y - y_hat) ** 2
+    return running_error_squared_sum / len(dependent_variable)
 
 
 def mean_squared_error_fitness(
