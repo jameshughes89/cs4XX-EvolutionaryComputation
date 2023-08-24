@@ -83,14 +83,14 @@ Tournament Selection
 
 
 * An alternative highly effective selection is to go somewhere in between these ideas
-* This is where **tournament selection** comes in
+* This is where tournament selection comes in
 
     * Randomly pick a subset of :math:`k` chromosomes from the population
     * Select the best of these :math:`k` chromosomes
 
 
-.. figure:: ../intro/ec_idea.png
-    :width: 500 px
+.. figure:: tournament_selection.png
+    :width: 600 px
     :align: center
     :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
 
