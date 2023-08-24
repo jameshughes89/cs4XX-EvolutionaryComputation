@@ -8,6 +8,10 @@ Selection and Population Management
     * This determines an individual's ability to survive and have offspring based on their fitness values
 
 
+* Selection is based on the *relative* fitness values of the individual
+* It works independently from the actual problem and representation
+
+
 
 Generational vs. Steady State
 =============================
