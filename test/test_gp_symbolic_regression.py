@@ -1,3 +1,4 @@
+import math
 import operator
 import unittest
 from unittest.mock import patch
@@ -27,9 +28,9 @@ class TestGPSymbolicRegression(unittest.TestCase):
             with self.subTest(valid_argument=valid_argument, expected=expected):
                 self.assertAlmostEqual(expected, protected_divide(*valid_argument))
 
-    def test_protected_divide_zero_divisor_returns_999999999(self):
+    def test_protected_divide_zero_divisor_returns_infinity(self):
         dividends = [0, 1, 2, 3, 4, 10, 100]
-        expected = 999_999_999
+        expected = math.inf
         for dividend in dividends:
             with self.subTest(dividend=dividend):
                 self.assertEqual(expected, protected_divide(dividend, 0))

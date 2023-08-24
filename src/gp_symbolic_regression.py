@@ -5,7 +5,7 @@ Data from some unknown function is read in from a file. Rows represent observati
 represent the variables. The last column in the file must be the dependant variable. The file can contain arbitrarily
 many variables but should contain at least two --- one independent and one dependent variable.
 """
-
+import math
 import operator
 import os.path
 from functools import partial
@@ -38,7 +38,7 @@ def protected_divide(dividend: float, divisor: float) -> float:
     :return: The quotient; the result of the division (dividend/divisor)
     """
     if divisor == 0:
-        return 999_999_999
+        return math.inf
     else:
         return dividend / divisor
 
