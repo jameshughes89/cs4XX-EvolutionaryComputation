@@ -60,6 +60,51 @@ Generational vs. Steady State
     * Determining which candidate solutions of the population are to be replaced with the :math:`\lambda` offspring
 
 
+Tournament Selection
+====================
+
+* Two very basic selections *could* be implemented
+
+#. Uniform selection
+
+    * Each chromosome has an equal chance at being selected
+
+        * :math:`p(i) = \frac{1}{\mu}`, where :math:`p(i)` is the probability of an individual chromosome being selected
+
+    * Some forms of evolutionary computation use this selection exclusively
+    * However, in general, it's not going to perform well as there is nothing guiding the search
+
+        * The algorithm will not converge
+
+
+#. Select the top chromosomes only and apply the genetic operators
+
+    * As already seen, this will not perform well as the population will converge too quickly on some local optimum
+
+
+* An alternative highly effective selection is to go somewhere in between these ideas
+* This is where tournament selection comes in
+
+    * Randomly pick a subset of :math:`k` chromosomes from the population
+    * Select the best of these :math:`k` chromosomes
+
+
+.. figure:: tournament_selection.png
+    :width: 600 px
+    :align: center
+    :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
+
+    Tournament selection being performed on a population of size 13. Here, :math:`k = 3`, meaning three chromosomes were
+    selected at random. Of the three, the candidate solution with the highest fitness is then returned as the selected
+    chromosome.
+
+
+* The value of :math:`k` is typically kept low, but can be adjusted as needed
+
+    * If :math:`k = 1`, this would be the same as a uniform selection
+    * If :math:`k = \mu`, this would be the same as always selecting the best
+
+
 
 Fitness Proportional Selection
 ==============================
