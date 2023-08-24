@@ -41,7 +41,7 @@ if __name__ == "__main__":
             "mdformat-black==0.1.1",
             "numpy==1.25.2",
             "sphinx==5.3.0",
-            "sphinx-rtd-theme==1.2.2",
+            "sphinx-rtd-theme==1.3.0",
         ],
         entry_points={
             "console_scripts": [
