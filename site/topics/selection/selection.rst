@@ -60,6 +60,28 @@ Generational vs. Steady State
     * Determining which candidate solutions of the population are to be replaced with the :math:`\lambda` offspring
 
 
+Tournament Selection
+====================
+
+* Two very basic selections could be implemented
+
+#. Uniform selection
+
+    * Each chromosome has an equal chance at being selected
+
+        * :math:`p(i) = \frac{1}{\mu}`, where :math:`p(i)` is the probability of an individual chromosome being selected
+
+    * Some forms of evolutionary computation use this selection exclusively
+    * However, in general, it's not going to perform well as there is nothing guiding the search
+
+        * The algorithm will not converge
+
+
+#. Select the top chromosomes only and apply the genetic operators
+
+    * As already seen, this will not perform well as the population will converge too quickly on some local optimum
+
+
 
 Fitness Proportional Selection
 ==============================
