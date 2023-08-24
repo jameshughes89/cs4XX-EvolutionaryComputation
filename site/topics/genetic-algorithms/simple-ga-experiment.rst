@@ -72,6 +72,12 @@ Experiment
     * What does this *mean*?
 
 
+#. Add *elitism* to the algorithm
+
+    * Elitism is when the top :math:`x` candidate solutions are automatically copied to the subsequent generation
+    * Typically, :math:`x` is kept low (like 1), but try larger values to see how it impacts the serach
+
+
 #. What is the best settings of the hyperparameters found?
 
 
