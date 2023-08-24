@@ -24,7 +24,7 @@ MUTATION_RATE = 0.05
 
 # [begin-data-parameters]
 RELATIVE_RESOURCES = "../resources/regression-data/"
-DATA_FILE = "d0.csv"
+DATA_FILE = "d00.csv"
 # [end-data-parameters]
 
 
