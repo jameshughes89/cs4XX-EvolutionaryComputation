@@ -126,7 +126,7 @@ Fitness Proportional Selection
 
 * The benefit of such a selection strategy is that it's very *fair*, which is valuable
 
-* However, in practice, highly fit individuals take over the population quickly
+* However, highly fit individuals may take over the population quickly
 
     * Premature convergence
 
