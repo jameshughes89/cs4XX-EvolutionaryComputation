@@ -189,7 +189,8 @@ Fitness Proportional Selection
       - **1.0**
 
 
-
+Roulette Wheel Selection
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
