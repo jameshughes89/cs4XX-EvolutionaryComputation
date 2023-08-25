@@ -124,7 +124,8 @@ Fitness Proportional Selection
     * Note that the sum of the probabilities must be one :math:`\sum^{\mu}_{j=1}p(j) = 1`
 
 
-* The benefit of such a selection strategy is that it's very *fair*
+* The benefit of such a selection strategy is that it's very *fair*, which is valuable
+
 * However, in practice, highly fit individuals take over the population quickly
 
     * Premature convergence
