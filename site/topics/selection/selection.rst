@@ -192,8 +192,42 @@ Fitness Proportional Selection
 Roulette Wheel Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Fitness proportional selection is commonly referred to as a *roulette wheel* selection
 
 
+.. figure:: roulette_wheel_selection.png
+    :width: 600 px
+    :align: center
+    :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
+
+    Visualization of roulette wheel selection. Each individual is assigned a piece of the wheel proportional to that
+    individual's proportion of fitness of the population's total fitness.
+
+
+
+Stochastic Universal Sampling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Typically, the roulette wheel has one arm and is *spun* :math:`\lambda` times
+* An alternative is to spin a roulette wheel with :math:`\lambda` arms once
+
+    * This means the wheel is spun only once
+    * This produces a diverse set of selected individuals
+
+
+.. figure:: stochastic_universal_sampling_selection.png
+    :width: 600 px
+    :align: center
+    :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
+
+    Example of a roulette wheel where :math:\lambda=2`.
+
+
+
+.. warning::
+
+    Although possible, fitness proportional selections often requires some alterations to work with minimization
+    problems or negative fitness values.
 
 
 
