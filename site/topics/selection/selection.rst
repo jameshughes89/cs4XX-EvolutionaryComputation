@@ -69,7 +69,9 @@ Tournament Selection
 
     * Each chromosome has an equal chance at being selected
 
-        * :math:`p(i) = \frac{1}{\mu}`, where :math:`p(i)` is the probability of an individual chromosome being selected
+        * :math:`p(i) = \frac{1}{\mu}`
+        * Where :math:`p(i)` is the probability of an individual chromosome being selected
+
 
     * Some forms of evolutionary computation use this selection exclusively
     * However, in general, it's not going to perform well as there is nothing guiding the search
@@ -108,6 +110,88 @@ Tournament Selection
 
 Fitness Proportional Selection
 ==============================
+
+* There are a collection of selection strategies that are fitness proportaional
+
+    * The probability of selecting an indiviual depends on its fitness value compared to the whole populations's fitness
+
+
+* The simplest of these is to have the probability be the individual's proportion of the total population fitness
+
+    * :math:`p(i) = \frac{f(i)}{\sum^{\mu}_{j=1}f(j)}`
+    * Where :math:`p(i)` is the probabability of selecting individual :math:`i`
+    * And :math:`f(i)` is the fitness of individual :math:`i`
+    * Note that the sum of the probabilities must be one :math:`\sum^{\mu}_{j=1}p(j) = 1`
+
+
+* The benefit of such a selection strategy is that it's very *fair*
+* However, in practice, highly fit individuals take over the population quickly
+
+    * Premature convergence
+
+
+* Further, when the population begins to converge, it becomes similar to a uniform selection
+
+    * Learning will stagnate when the fitness values of the chromosomes within the population are similar
+
+
+* Modifications to this strategy include adding some constant or *windowing*
+
+    * Windowing is subtracting the minimum fitness within the population from all individuals within the population
+
+
+* Several selection probabilities are shown in the below table for some maximization problem
+
+    * One regular, one with adding some constant, and one and windowing
+
+
+* Here, adding a constant made the lowest fit individual more likely to be selected
+* While also making the selection probabilities more similar
+
+* With windowing, the lowest fit individual had zero probabilty of being selected
+* While also making the selection probabilities more different
+
+
+.. list-table:: Modifications to Fitness Proportional Selection
+    :widths: 50 50 50 50 50 50
+    :header-rows: 1
+
+    * - :math:`i`
+      - :math:`f(i)`
+      - :math:`p(i)` for :math:`f(i)`
+      - :math:`f(i) + 10`
+      - :math:`p(i)` for :math:`f(i) + 10`
+      -  Windowing :math:`p(i)` for :math:`f(i)`
+    * - A
+      - :math:`1`
+      - :math:`0.1`
+      - :math:`11`
+      - :math:`0.257`
+      - :math:`0`
+    * - B
+      - :math:`4`
+      - :math:`0.4`
+      - :math:`14`
+      - :math:`0.350`
+      - :math:`0.333`
+    * - C
+      - :math:`5`
+      - :math:`0.5`
+      - :math:`15`
+      - :math:`0.375`
+      - :math:`0.666`
+    * - **Total**
+      - **10**
+      - **1.0**
+      - **40**
+      - **1.0**
+      - **1.0**
+
+
+
+
+
+
 
 
 
