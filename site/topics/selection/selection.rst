@@ -226,8 +226,8 @@ Stochastic Universal Sampling
 
 .. warning::
 
-    Although possible, fitness proportional selections often requires some alterations to work with minimization
-    problems or negative fitness values.
+    Although possible, fitness proportional selections often requires some alterations to work with algorithms
+    minimizing fitness or negative fitness values.
 
 
 
