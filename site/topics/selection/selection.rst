@@ -129,11 +129,32 @@ Selection Pressure
 Diversity
 =========
 
+* Diversity is how much the members of the populations differ from one another
+* Diversity is important within a population
+
+    * Balances exploration and exploitation
+    * It helps to prevent premature convergence
+
+
+* As with anything with evolutionary computation, there are no rules on what should be done
+
+    * Explicitly add a diversity measure to the fitness calculation
+    * Only have similar individuals compete with one another
+    * *The Island Model*
+
+        * Distribute the population into sub-populations that evolve independently with periodic migrations
+
+
+    * *Ring Species*
+
+        * Only allow individuals to mate if they are *close* to one another within the population
+
+
+
 
 
 Novelty
-=======
-
+-------
 
 
 For Next Class
