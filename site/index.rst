@@ -47,7 +47,7 @@ YouTube
     :caption: Course Notes
     :maxdepth: 1
     :numbered:
-   
+
     topics/intro/intro
     topics/genetic-algorithms/simple-ga
     topics/genetic-algorithms/simple-ga-experiment
@@ -58,6 +58,7 @@ YouTube
     topics/genetic-algorithms/n-queens-ga
     topics/genetic-algorithms/n-queens-ga-experiment
     topics/genetic-operators/genetic-operators
+    topics/selection/selection
 
 
 .. toctree::
