@@ -145,7 +145,46 @@ Diversity
         * Only allow individuals to mate if they are *close* to one another within the population
 
 
+.. figure:: island_model.png
+    :width: 250 px
+    :align: center
 
+    Island model layout with three sub-populations. Each of the three sub-populations evolve independently. This allows
+    each sub-population to explore the serach space along its own path, thereby preserving diversity between the
+    sub-populations. Periodically, members of the sub-populations migrate to other sub-populations to introduce
+    diversity to the individual sub-populations.
+
+
+
+.. figure:: ring_species.png
+    :width: 250 px
+    :align: center
+
+    Ring species treats the population as a ring/circle and mating can only occur between chromosomes if they exist
+    within some distance (number of indices) of one another. In this example, the distance :math:`d=3`, therefore only
+    the candidate solutions at indicies 22, 23, 24, 1, 2, 3, and 4 would be eligible for mating.
+
+
+* Further, there are no rules on where the diversity should be measured
+
+    * Genotype space
+
+        * How wimilar the chromosomes are
+        * Depends on the encoding
+        * Hamming distance?
+        * Levenshtein distance?
+
+
+    * Phenotype space
+
+        * How different are the phenotypes (what the chromosomes represent)
+        * May be very different from the genotype space's distance
+
+
+    * Algorithm space
+
+        * Some *distance* based on the algorithm's framework
+        * For example, ring species and the island model
 
 
 Novelty
