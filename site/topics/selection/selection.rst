@@ -290,18 +290,71 @@ Elitism
 
 
 
-Selection Pressure
-==================
-
-
-
 Diversity
 =========
 
+* Diversity is how much the members of the populations differ from one another
+* Diversity is important within a population
+
+    * Balances exploration and exploitation
+    * It helps to prevent premature convergence
 
 
-Novelty
-=======
+* As with anything with evolutionary computation, there are no rules on what should be done
+* Below are some high-level ideas, but is in no way exhaustive
+
+    * Explicitly add a diversity measure to the fitness calculation
+    * Only have similar individuals compete with one another
+    * *The Island Model*
+
+        * Distribute the population into sub-populations that evolve independently with periodic migrations
+
+
+    * *Ring Species*
+
+        * Only allow individuals to mate if they are *close* to one another within the population
+
+
+.. figure:: island_model.png
+    :width: 250 px
+    :align: center
+
+    Island model layout with three sub-populations. Each of the three sub-populations evolve independently. This allows
+    each sub-population to explore the search space along its own path, thereby preserving diversity between the
+    sub-populations. Periodically, members of the sub-populations migrate to other sub-populations to introduce
+    diversity to the individual sub-populations.
+
+
+
+.. figure:: ring_species.png
+    :width: 250 px
+    :align: center
+
+    Ring species treats the population as a ring/circle and mating can only occur between chromosomes if they exist
+    within some distance (number of indices) of one another. In this example, the distance :math:`d=3`, therefore only
+    the candidate solutions at indices 22, 23, 24, 1, 2, 3, and 4 would be eligible for mating.
+
+
+* Further, there are no rules on where the diversity should be measured
+
+    * Genotype space
+
+        * How similar the chromosomes are
+        * Depends on the encoding
+        * Hamming distance?
+        * Levenshtein distance?
+
+
+    * Phenotype space
+
+        * How different are the phenotypes (what the chromosomes represent)
+        * May be very different from the genotype space's distance
+
+
+    * Algorithm space
+
+        * Some *distance* based on the algorithm's framework
+        * For example, ring species and the island model
 
 
 
