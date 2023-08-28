@@ -124,14 +124,14 @@ Fitness Proportional Selection
     * Note that the sum of the probabilities must be one :math:`\sum^{\mu}_{j=1}p(j) = 1`
 
 
-* The benefit of such a selection strategy is that it's very *fair*, which is valuable
-
-* However, highly fit individuals may take over the population quickly
+* The benefit here is that by selecting highly fit individuals, the search may produce high quality solutions quickly
+* However, this may cause the population to get stuck in a local maximum
 
     * Premature convergence
+    * It is important to ensure the population stays diverse
 
 
-* Further, when the population begins to converge, it becomes similar to a uniform selection
+* Further, when the population begins to converge, this strategy becomes similar to a uniform selection
 
     * Learning will stagnate when the fitness values of the chromosomes within the population are similar
 
