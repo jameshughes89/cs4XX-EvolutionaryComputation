@@ -77,11 +77,13 @@ Tournament Selection
     * However, in general, it's not going to perform well as there is nothing guiding the search
 
         * The algorithm will not converge
+        * There is low *selection pressure*
 
 
 #. Select the top chromosomes only and apply the genetic operators
 
     * As already seen, this will not perform well as the population will converge too quickly on some local optimum
+    * There is high *selection pressure*
 
 
 * An alternative highly effective selection is to go somewhere in between these ideas
@@ -105,6 +107,7 @@ Tournament Selection
 
     * If :math:`k = 1`, this would be the same as a uniform selection
     * If :math:`k = \mu`, this would be the same as always selecting the best
+    * As :math:`k` increases, so does the selection pressure
 
 
 
