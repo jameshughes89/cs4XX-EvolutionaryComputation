@@ -111,15 +111,15 @@ Tournament Selection
 Fitness Proportional Selection
 ==============================
 
-* There are a collection of selection strategies that are fitness proportaional
+* There are a collection of selection strategies that are fitness proportional
 
-    * The probability of selecting an indiviual depends on its fitness value compared to the whole populations's fitness
+    * The probability of selecting an individual depends on its fitness value compared to the whole population's fitness
 
 
 * The simplest of these is to have the probability be the individual's proportion of the total population fitness
 
-    * :math:`p(i) = \frac{f(i)}{\sum^{\mu}_{j=1}f(j)}`
-    * Where :math:`p(i)` is the probabability of selecting individual :math:`i`
+    * :math:`p(i) = \frac{f(i)}{\sum^{\mu}_{j}f(j)}`
+    * Where :math:`p(i)` is the probability of selecting individual :math:`i`
     * And :math:`f(i)` is the fitness of individual :math:`i`
     * Note that the sum of the probabilities must be one :math:`\sum^{\mu}_{j=1}p(j) = 1`
 
@@ -149,7 +149,7 @@ Fitness Proportional Selection
 * Here, adding a constant made the lowest fit individual more likely to be selected
 * While also making the selection probabilities more similar
 
-* With windowing, the lowest fit individual had zero probabilty of being selected
+* With windowing, the lowest fit individual had zero probability of being selected
 * While also making the selection probabilities more different
 
 
