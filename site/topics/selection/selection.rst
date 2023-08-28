@@ -121,11 +121,6 @@ Survivor Selection
 
 
 
-Selection Pressure
-==================
-
-
-
 Diversity
 =========
 
