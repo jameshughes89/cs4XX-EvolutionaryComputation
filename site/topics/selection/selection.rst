@@ -107,6 +107,7 @@ Tournament Selection
 
     * If :math:`k = 1`, this would be the same as a uniform selection
     * If :math:`k = \mu`, this would be the same as always selecting the best
+    * As :math:`k` increases, so does the selection pressure
 
 
 
