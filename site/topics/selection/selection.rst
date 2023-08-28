@@ -239,6 +239,55 @@ Rank Based Selection
 Survivor Selection
 ==================
 
+* With a steady state algorithm, survivor selection is needed
+
+    * Which individuals survive and which are replaced
+
+
+* Any rules could be used, but common ones include
+
+    * Random
+
+        * Randomly select :math:`\lambda` to replace
+
+
+    * Age based
+
+        * Replace the :math:`\lambda` oldest individuals
+        * Ignores fitness
+        * Might kill off the best individuals
+
+
+    * Fitness based
+
+        * Replace the :math:`\lambda` worst individuals based on fitness
+        * Will kill off the worst candidate solutions
+        * May cause the population to converge prematurely
+
+
+    * Diversity based
+
+        * Replace :math:`\lambda` candidate solutions that are the most similar
+        * The idea is, replace those that add little diversity to the population
+
+
+    * Similarity based
+
+        * Replace the :math:`\lambda` candidate solutions with the most similar fitness to the offspring
+        * Similar to diversity and easy to implement with an assumption
+        * Those with a similar fitness may be similar in the genotype space
+
+
+
+Elitism
+^^^^^^^
+
+* Regardless of using a generational or steady state algorithm, elitism is commonly used in evolutionary computation
+* The idea is, always have a copy of the best :math:`x` chromosomes in the population
+
+    * Typically :math:`x=1`
+    * Having :math:`x` too high will cause premature convergence
+
 
 
 Selection Pressure
