@@ -234,11 +234,6 @@ Stochastic Universal Sampling
 
 
 
-Rank Based Selection
-====================
-
-
-
 Survivor Selection
 ==================
 
