@@ -163,7 +163,7 @@ Elitism
 ^^^^^^^
 
 * Regardless of using a generational or steady state algorithm, elitism is commonly used in evolutionary computation
-* The idea is, always have a copy of the best :math:`x` chromosome in the population
+* The idea is, always have a copy of the best :math:`x` chromosomes in the population
 
     * Typically :math:`x=1`
     * Having :math:`x` too high will cause premature convergence
