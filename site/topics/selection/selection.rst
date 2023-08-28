@@ -192,6 +192,48 @@ Fitness Proportional Selection
       - **1.0**
 
 
+Rank Based Selection
+^^^^^^^^^^^^^^^^^^^^
+
+* An alternative is to take the same idea, but rank the candidate solutions
+* Then, have the probability of being selected related to their rank, not their fitness value
+
+.. list-table:: Rank Based Proportional Selection
+    :widths: 50 50 50 50 50
+    :header-rows: 1
+
+    * - :math:`i`
+      - :math:`f(i)`
+      - :math:`p(i)` for :math:`f(i)`
+      - Ranking
+      - :math:`p(i)` for Ranking
+    * - A
+      - :math:`1`
+      - :math:`0.1`
+      - :math:`0`
+      - :math:`0`
+    * - B
+      - :math:`4`
+      - :math:`0.4`
+      - :math:`1`
+      - :math:`0.333`
+    * - C
+      - :math:`5`
+      - :math:`0.5`
+      - :math:`2`
+      - :math:`0.666`
+    * - **Total**
+      - **10**
+      - **1.0**
+      -
+      - **1.0**
+
+
+* The above table shows a simple linear ranking being used, but other more complex forms may be used
+* The benefit of this strategy is that, as the population converges, selection pressure will not become lower
+* The downside is the computational overhead of ranking each candidate solution
+
+
 Roulette Wheel Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
