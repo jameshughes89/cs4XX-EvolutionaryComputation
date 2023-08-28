@@ -132,6 +132,7 @@ Diversity
 
 
 * As with anything with evolutionary computation, there are no rules on what should be done
+* Below are some high-level ideas, but is in no way exhaustive
 
     * Explicitly add a diversity measure to the fitness calculation
     * Only have similar individuals compete with one another
@@ -150,7 +151,7 @@ Diversity
     :align: center
 
     Island model layout with three sub-populations. Each of the three sub-populations evolve independently. This allows
-    each sub-population to explore the serach space along its own path, thereby preserving diversity between the
+    each sub-population to explore the search space along its own path, thereby preserving diversity between the
     sub-populations. Periodically, members of the sub-populations migrate to other sub-populations to introduce
     diversity to the individual sub-populations.
 
@@ -162,14 +163,14 @@ Diversity
 
     Ring species treats the population as a ring/circle and mating can only occur between chromosomes if they exist
     within some distance (number of indices) of one another. In this example, the distance :math:`d=3`, therefore only
-    the candidate solutions at indicies 22, 23, 24, 1, 2, 3, and 4 would be eligible for mating.
+    the candidate solutions at indices 22, 23, 24, 1, 2, 3, and 4 would be eligible for mating.
 
 
 * Further, there are no rules on where the diversity should be measured
 
     * Genotype space
 
-        * How wimilar the chromosomes are
+        * How similar the chromosomes are
         * Depends on the encoding
         * Hamming distance?
         * Levenshtein distance?
