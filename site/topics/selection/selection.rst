@@ -187,9 +187,6 @@ Diversity
         * For example, ring species and the island model
 
 
-Novelty
--------
-
 
 For Next Class
 ==============
