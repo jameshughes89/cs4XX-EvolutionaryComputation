@@ -92,11 +92,35 @@ Below is a list of topics in no particular order that may or may not be covered 
     * Written Reports
 
 
-Student Evaluation (Tentative Dates) 
-====================================
+Student Evaluation
+==================
 
-TBD
+For this course, in general, marks are obtained by completing tasks as opposed to losing marks from mistakes.
 
+.. figure:: mark_breakdown.png
+    :width: 750 px
+    :align: center
+
+    Click the image to see a larger version of the mark allocation.
+
+
+Notes
+-----
+
+* Items represented as diamonds will be marked slightly more traditionally as they are somewhat more subjective
+
+    * E.g., Writeup marks will depend on prose, grammar, spelling, readability, structure, and overall effectiveness
+
+
+* Completing a task does not guarantee a mark as it must be satisfactory and is to the discretion of the marker
+
+    * E.g., the GA must be functional
+    * E.g., no mark will be awarded for low quality visualizations
+
+
+
+* Although there are more than 100 marks that can be obtained, the maximum grade an individual can receive in the class is 100
+* Although you can chose to do or not do most items here, you must do a and a final project
 
 
 Assignments
@@ -112,24 +136,24 @@ traditional method of losing marks for mistakes.
 Given that this is a more senior course, I am not that interested in your code as you should all be capable of getting
 your assignments and projects working. You receive marks for completing the coding portions correctly, however only a
 few marks are awarded for a working implementation. Implementing various enhancements on top of the base assignment
-will give you additional marks. These enhancements are not required; however you only receive the associated marks if
+will give you additional marks. These enhancements are not required; however, you only receive the associated marks if
 you complete the corresponding enhancement. The writeup/report accounts for a significant portion of the assignment and
-the writeup/report also has various enhancements. Again, the writeup/report is not necessary for all
-assignments, but the associated marks will only be awarded if the report is done.
+the writeup/report also has various enhancements. Again, the writeup/report is not necessary for all assignments, but
+the associated marks will only be awarded if the report is done.
 
-Unlike the rest of the course deliverables, the base writeups/reports, lecture, and class participation will be marked
-in a more conventional way where a mark reflecting the quality of the submitted work will be awarded. Things like
-grammar, prose, clarity, and effectiveness will be evaluated.
+Unlike the rest of the course deliverables, the base writeups/reports, and lecture will be marked in a more conventional
+way where a mark reflecting the quality of the submitted work will be awarded. Things like grammar, prose, clarity, and
+effectiveness will be evaluated.
 
-Participation and the final project are the only course deliverables that are required; however, if students receive
-perfect grades on all required submissions, then the highest final grade obtainable is 45% which would be a fail. All
+The lecture and the final project are the only course deliverables that are required; however, if students receive
+perfect grades on all required submissions, then the highest final grade obtainable is 40% which would be a fail. All
 other deliverables are "optional", but completion is encouraged. It is not possible to pass the course without doing
 some number of optional deliverables.
 
-You will notice that the total marks available is 125. Each mark is worth 1% of your final grade. The maximum grade one
-can receive in the course is 100. Although it is possible to obtain 125/100, the final grade will be reported as 100%
+You will notice that the total marks available is 130. Each mark is worth 1% of your final grade. The maximum grade one
+can receive in the course is 100. Although it is possible to obtain 130/100, the final grade will be reported as 100%
 (or 99%). This course is designed for you to decide which learning objectives you want to complete. It is entirely
-possible to obtain all 125 marks in the course; however, this would require a significant amount of work. This
+possible to obtain all 130 marks in the course; however, this would require a significant amount of work. This
 effectively means you could decide on day one of the course which grade in the course you will more-or-less obtain by
 picking which deliverables you will complete.
 
@@ -175,35 +199,18 @@ assignment, to guard against the possibility of errors in recording marks. It is
 until you are satisfied that your final mark for the course has been computed properly.
 
 
+Project
+-------
 
-Tests
-=====
-
-No cheating of any form is allowed. Tests and exams are closed book/laptop/notebook/etc. and calculators, cell phones
-and/or similar devices are not permitted. The possession of unauthorized devices during tests and examinations
-constitutes violation of academic integrity, as per section 3.8.2(b)(v) of the academic calendar. Further, anything that
-a reasonable person would deem as cheating is not permitted and will be investigated fully as academic misconduct.
-
-Test format will be in person; however, if necessary, the format *may* be changed to online. Students will be informed
-of the change as soon as possible.
+Each student will complete a final project. The topic and enhancements will be decided on by the student in consultation
+with the professor.
 
 
-Statement on Electronic Devices
--------------------------------
+Lecture
+-------
 
-Unless you have medical accommodations that require you to do so, or explicit permission from the instructor of the
-course, you may not use electronic devices during any of the tests, midterms, examinations, or
-other in-class evaluations, including, but not limited to: cellphones, smart phones, smart watches, smart glasses, audio
-players or recorders of any sort, video cameras, video games, DVD players, televisions, laptop/notebook/netbook
-computers, flashlights or laser pointers.
-
-
-Missed Tests
-------------
-
-There are no make-up tests. If a student is unable to write a test, the weight of their test will be added to the
-following test or final exam, whichever comes first. If both tests are missed, the weight of the tests will be added to
-the final exam.
+Each student will complete and present a lecture. The student, in consultation with the professor, will decide on the
+topic.
 
 
 
