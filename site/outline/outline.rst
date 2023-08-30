@@ -95,6 +95,39 @@ Below is a list of topics in no particular order that may or may not be covered 
 Student Evaluation
 ==================
 
+
+
+.. list-table:: Final Grade Breakdown
+    :widths: 50 50 50 50
+    :header-rows: 1
+
+    * - Deliverable
+      - Maximum Points
+      - Mandatory
+      - Due Date
+    * - Assignment 1
+      - 30
+      - ``False``
+      - End of September-ish
+    * - Assignment 2
+      - 30
+      - ``False``
+      - Mid October-ish
+    * - Assignment 3
+      - 30
+      - ``False``
+      - Early November-ish
+    * - Final Project
+      - 30
+      - ``True``
+      - End of November-ish
+    * - Lecture
+      - 10
+      - ``True``
+
+
+
+
 For this course, in general, marks are obtained by completing tasks as opposed to losing marks from mistakes.
 
 .. figure:: mark_breakdown.png
