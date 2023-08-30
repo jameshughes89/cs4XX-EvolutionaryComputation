@@ -131,7 +131,7 @@ from mistakes.
 
 * Each *point* equals one percent of the final grade
 * Individual assignments descriptions will include details on what tasks can be completed
-* Although there are 130 points available, the maximum grade that can be obtained is 100% (99%)
+* Although there are 130 points available, the maximum grade that can be obtained is 100% (99% due to system constraints)
 * Both the lecture and final project are mandatory to pass
 
     * If not completed, the final grade will be no more than 45%
