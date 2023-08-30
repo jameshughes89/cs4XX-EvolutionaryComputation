@@ -100,7 +100,7 @@ from mistakes.
 
 
 .. list-table:: Final Grade Breakdown
-    :widths: 50 50 50 50
+    :widths: 40 40 40 50
     :header-rows: 1
 
     * - Deliverable
