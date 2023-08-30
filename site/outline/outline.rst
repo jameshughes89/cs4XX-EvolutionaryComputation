@@ -124,17 +124,12 @@ Student Evaluation
     * - Lecture
       - 10
       - ``True``
+      - Second Half of Semester
 
 
 
 
 For this course, in general, marks are obtained by completing tasks as opposed to losing marks from mistakes.
-
-.. figure:: mark_breakdown.png
-    :width: 750 px
-    :align: center
-
-    Click the image to see a larger version of the mark allocation.
 
 
 Notes
