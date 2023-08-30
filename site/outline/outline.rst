@@ -154,22 +154,22 @@ with the assignment description. To gain a general idea, consider the following 
         * Adding enhancements to the algorithm may award an additional 5 points
         * Using the algorithm to solve a more complex problem may award an additional 5 points
         * Creating an effective visualization for the algorithm for the problem will award an additional 2 points
+        * Writing a report will award up to 5 points
+
+            * Using LaTeX will award an additional 2 points
+            * Including proper references/citations awards an additional 2 points
+            * Including figures and tables awards an additional 2 points
+            * Performing an effective comparison will award an additional 2 points
 
 
-    * Writing a report will award up to 5 points
-
-        * Using LaTeX will award an additional 2 points
-        * Including proper references/citations awards an additional 2 points
-        * Including figures and tables awards an additional 2 points
-        * Performing an effective comparison will award an additional 2 points
-
+Certain tasks cannot be completed without first completing a prerequisite task. For example, a report for the assignment
+cannot be completed without first implementing the algorithm.
 
 The reports will be marked in a more traditional way (prose, spelling, grammar, effectiveness, etc.)
 
-If any of this description is unclear, please ask the professor for clarification.
-
-If you prefer a conventional grading paradigm with a typical mark breakdown, please see the professor to make
-arrangements in the first two weeks of the course.
+If any of this description is unclear, please ask the professor for clarification. If you prefer a conventional grading
+paradigm with a typical mark breakdown, please see the professor to make arrangements in the first two weeks of the
+course.
 
 
 Submission
