@@ -95,6 +95,8 @@ Below is a list of topics in no particular order that may or may not be covered 
 Student Evaluation
 ==================
 
+For this course, in general, marks are obtained by completing tasks that build on each other as opposed to losing marks
+from mistakes.
 
 
 .. list-table:: Final Grade Breakdown
@@ -127,28 +129,13 @@ Student Evaluation
       - Second Half of Semester
 
 
+* Each *point* equals one percent of the final grade
+* Individual assignments descriptions will include details on what tasks can be completed
+* Although there are 130 points available, the maximum grade that can be obtained is 100% (99%)
+* Both the lecture and final project are mandatory to pass
 
+    * If not completed, the final grade will be no more than 45%
 
-For this course, in general, marks are obtained by completing tasks as opposed to losing marks from mistakes.
-
-
-Notes
------
-
-* Items represented as diamonds will be marked slightly more traditionally as they are somewhat more subjective
-
-    * E.g., Writeup marks will depend on prose, grammar, spelling, readability, structure, and overall effectiveness
-
-
-* Completing a task does not guarantee a mark as it must be satisfactory and is to the discretion of the marker
-
-    * E.g., the GA must be functional
-    * E.g., no mark will be awarded for low quality visualizations
-
-
-
-* Although there are more than 100 marks that can be obtained, the maximum grade an individual can receive in the class is 100
-* Although you can chose to do or not do most items here, you must do a and a final project
 
 
 Assignments
@@ -159,31 +146,25 @@ Breakdown
 
 The majority of the marks will come from applying what was learned in class and independent research in a series of
 assignments and projects. Most of these marks will be awarded for sufficiently completing tasks as opposed to a
-traditional method of losing marks for mistakes.
+traditional method of losing marks for mistakes. Details for the breakdown for individual assignments will be included
+with the assignment description. To gain a general idea, consider the following example:
 
-Given that this is a more senior course, I am not that interested in your code as you should all be capable of getting
-your assignments and projects working. You receive marks for completing the coding portions correctly, however only a
-few marks are awarded for a working implementation. Implementing various enhancements on top of the base assignment
-will give you additional marks. These enhancements are not required; however, you only receive the associated marks if
-you complete the corresponding enhancement. The writeup/report accounts for a significant portion of the assignment and
-the writeup/report also has various enhancements. Again, the writeup/report is not necessary for all assignments, but
-the associated marks will only be awarded if the report is done.
+    * Implementing an algorithm will award 5 points
 
-Unlike the rest of the course deliverables, the base writeups/reports, and lecture will be marked in a more conventional
-way where a mark reflecting the quality of the submitted work will be awarded. Things like grammar, prose, clarity, and
-effectiveness will be evaluated.
+        * Adding enhancements to the algorithm may award an additional 5 points
+        * Using the algorithm to solve a more complex problem may award an additional 5 points
+        * Creating an effective visualization for the algorithm for the problem will award an additional 2 points
 
-The lecture and the final project are the only course deliverables that are required; however, if students receive
-perfect grades on all required submissions, then the highest final grade obtainable is 40% which would be a fail. All
-other deliverables are "optional", but completion is encouraged. It is not possible to pass the course without doing
-some number of optional deliverables.
 
-You will notice that the total marks available is 130. Each mark is worth 1% of your final grade. The maximum grade one
-can receive in the course is 100. Although it is possible to obtain 130/100, the final grade will be reported as 100%
-(or 99%). This course is designed for you to decide which learning objectives you want to complete. It is entirely
-possible to obtain all 130 marks in the course; however, this would require a significant amount of work. This
-effectively means you could decide on day one of the course which grade in the course you will more-or-less obtain by
-picking which deliverables you will complete.
+    * Writing a report will award up to 5 points
+
+        * Using LaTeX will award an additional 2 points
+        * Including proper references/citations awards an additional 2 points
+        * Including figures and tables awards an additional 2 points
+        * Performing an effective comparison will award an additional 2 points
+
+
+The reports will be marked in a more traditional way (prose, spelling, grammar, effectiveness, etc.)
 
 If any of this description is unclear, please ask the professor for clarification.
 
