@@ -4,8 +4,8 @@ Genetic Programming
 
 
 
-Example Problem --- Loan Application
-====================================
+Example Problem --- Breast Cancer Identification
+================================================
 
 * Consider the problem of determining if an individual has breast cancer [#]_
 
