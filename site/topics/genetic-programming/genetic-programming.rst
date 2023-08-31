@@ -93,14 +93,14 @@ Example Problem --- Loan Application
     * The AI and Machine Learning would try to generalize trends that exists in the observations within the data
 
 
-* Unfortunately, most evolutionary computation algorithms are not designed to find models like this
+* Unfortunately, most evolutionary computation algorithms are not particularly designed to find models like this
 
     * Often they are used for combinatorial or real number optimization
 
 
 * This is where genetic programming comes in
 
-    * Genetic programming optimizes a program/function
+    * With the use of a clever representation, genetic programming optimizes programs/functions
 
 
 
