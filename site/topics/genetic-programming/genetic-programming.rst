@@ -87,7 +87,7 @@ Example Problem --- Loan Application
     * ``If mitosis == 1 then malignant else benign``?
 
 
-* It would take careful study and a deep understanding of the problem to build a classifier by hand
+* It would take careful study and a deep understanding of the problem to build a classifier manually
 * However, AI and Machine Learning are often used to automate the process of building a classifier
 
     * The AI and Machine Learning would try to generalize trends that exists in the observations within the data
