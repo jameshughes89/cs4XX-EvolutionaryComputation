@@ -2,7 +2,7 @@
 Genetic Programming
 *******************
 
-* Genetic programming is just using a genetic algorithm for evolving programs/functions
+* Genetic programming is using a genetic algorithm for evolving programs/functions
 * The genotype is typically a tree structure representing the program/function phenotype
 * Genetic operators that work on the tree encoding are used
 
