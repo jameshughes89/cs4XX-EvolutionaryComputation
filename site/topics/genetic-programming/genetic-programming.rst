@@ -195,22 +195,7 @@ Typical Genetic Programming Setup
     * But ultimately, the value to use is a value that works well
 
 
-* Populations are typically very large
-* With large populations, common selection strategies can become problematic
-* A strategy called *over-selection* is sometimes used
-
-    * Split the population into two groups
-
-        * Top :math:`x%` in group A
-        * Bottom :math:`100% - x%` in group B
-
-
-    * Select from both groups independently
-
-        * For example, :math:`80%` of the new population comes from group A and 20% from group B
-
-
-* However, it is still common to see tournament and roulette wheel selection used in genetic programming
+* Populations are also typically very large
 
 
 
