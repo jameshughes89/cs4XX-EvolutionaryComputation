@@ -154,6 +154,44 @@ Representation
 Language
 --------
 
+* The set of available operators and operands use for creating and modifying the trees is called the *language*
+* The operators and operands are something that can be adjusted as needed
+
+.. figure:: symbolic_regression_tree.png
+    :width: 333 px
+    :align: center
+
+    S-expression for the mathematical expression :math:`(1.2 - x) + sin((1.2 - x) \times y \times e^{x})`. This tree
+    contains arithmatic operators and operands (constants and variables).
+
+
+* When working with mathematical expressions, the language could be a collection of arithmatic operators
+
+    * Operators
+
+        * Binary Operators
+
+            * :math:`+`
+            * :math:`-`
+            * :math:`\times`
+            * :math:`/`
+
+
+        * Unary Operators
+
+            * :math:`sin`
+            * :math:`cos`
+            * :math:`e`
+
+
+    * Operands
+
+        * Constants (e.g. :math:`1.2`)
+        * Variables (e.g. :math:`x` and :math:`y`)
+
+
+
+
 
 Types vs. Untyped
 -----------------
