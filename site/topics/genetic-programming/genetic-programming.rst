@@ -233,7 +233,7 @@ Types vs. Untyped
     * All the operands, either constant or variable, would be numbers
 
 
-* However, the breast cancer example had multiple different *types* available
+* However, the breast cancer example had multiple different types available
 
     * Some operators act on numbers to produce a number (e.g. :math:`+`)
     * Some operators act on numbers to produce a boolean (e.g. :math:`<`)
