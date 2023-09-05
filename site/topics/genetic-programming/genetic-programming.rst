@@ -113,6 +113,25 @@ Example Problem --- Breast Cancer Identification
 Representation
 ==============
 
+
+* S-expressions (symbolic expressions) are commonly used as the representation for genetic programming
+* S-expressions are used to represent nested instructions and data
+
+* These s-expressions are commonly visualized as tree structures
+
+
+.. figure:: tree_examples.png
+    :width: 500 px
+    :align: center
+
+    Three s-expressions shown as trees representing three different programs/functions. The left tree represents
+    the s-expression ``((1.2 - x) \times y)``, the centre tree represents ``((length < 5.2) or not(red))``, and the
+    right tree represents ``if((open and right_closed)) then(forward) else(turn_right)``.
+
+
+
+
+
 Language
 --------
 
