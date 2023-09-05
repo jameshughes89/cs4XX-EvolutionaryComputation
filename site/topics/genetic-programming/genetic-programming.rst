@@ -165,7 +165,7 @@ Language
     contains arithmatic operators and operands (constants and variables).
 
 
-* When working with mathematical expressions, the language could be a collection of arithmatic operators
+* When working with mathematical expressions, the language could be a collection of arithmatic operators and operands
 
     * Operators
 
@@ -191,6 +191,34 @@ Language
 
 
 
+* With the breast cancer example, the language could be a collection of arithmatic and boolean operators and operands
+
+    * Operators
+
+        * Binary Operators
+
+            * :math:`+`
+            * :math:`-`
+            * :math:`\times`
+            * :math:`/`
+            * :math:`<`
+            * :math:`>`
+            * :math:`==`
+            * and
+            * or
+
+        * Unary Operators
+
+            * :math:`sin`
+            * :math:`cos`
+            * :math:`e`
+            * not
+
+
+    * Operands
+
+        * Constants (e.g. :math:`4`, True, False)
+        * Variables (e.g. size and shape)
 
 
 Types vs. Untyped
