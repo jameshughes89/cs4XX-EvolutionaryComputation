@@ -157,6 +157,37 @@ Language
 * The set of available operators and operands use for creating and modifying the trees is called the *language*
 * The operators and operands are something that can be adjusted as needed
 
+* With the breast cancer example, the language could be a collection of arithmatic and boolean operators and operands
+
+    * Operators
+
+        * Binary Operators
+
+            * :math:`+`
+            * :math:`-`
+            * :math:`\times`
+            * :math:`/`
+            * :math:`<`
+            * :math:`>`
+            * :math:`==`
+            * and
+            * or
+
+        * Unary Operators
+
+            * :math:`sin`
+            * :math:`cos`
+            * :math:`e`
+            * not
+
+
+    * Operands
+
+        * Constants (e.g. :math:`4`, True, False)
+        * Variables (e.g. size and shape)
+
+
+
 .. figure:: symbolic_regression_tree.png
     :width: 333 px
     :align: center
@@ -191,34 +222,6 @@ Language
 
 
 
-* With the breast cancer example, the language could be a collection of arithmatic and boolean operators and operands
-
-    * Operators
-
-        * Binary Operators
-
-            * :math:`+`
-            * :math:`-`
-            * :math:`\times`
-            * :math:`/`
-            * :math:`<`
-            * :math:`>`
-            * :math:`==`
-            * and
-            * or
-
-        * Unary Operators
-
-            * :math:`sin`
-            * :math:`cos`
-            * :math:`e`
-            * not
-
-
-    * Operands
-
-        * Constants (e.g. :math:`4`, True, False)
-        * Variables (e.g. size and shape)
 
 
 Types vs. Untyped
