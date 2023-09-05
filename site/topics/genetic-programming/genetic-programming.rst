@@ -227,6 +227,32 @@ Language
 Types vs. Untyped
 -----------------
 
+* Notice that the mathematical expression example above only worked with numerical values
+
+    * All the operators acted on numbers
+    * All the operands, either constant or variable, would be numbers
+
+
+* However, the breast cancer example had multiple different *types* available
+
+    * Some operators act on numbers to produce a number (e.g. :math:`+`)
+    * Some operators act on numbers to produce a boolean (e.g. :math:`<`)
+    * Some operators act on booleans to produce a boolean (e.g. and)
+    * The operands may be either numbers or booleans
+
+
+* When using a language with only one type, like the mathematical expression, it is called *untyped* genetic programming
+* When using a language that has more than one type, it is called *typed* genetic programming
+
+* There is added complexity when working with typed genetic programming since the s-expressions must be admissible
+* Generating an s-expression that applies an operator to the wrong type would be a problem
+
+    * For example, ``(shape == 4) + 7`` is an inadmissible statement
+
+
+* With untyped genetic programming, this will not be a problem
+* Fortunately, most modern genetic programming systems will manage this complexity
+
 
 
 Typical Genetic Programming Setup
