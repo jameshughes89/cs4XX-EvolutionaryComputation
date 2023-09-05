@@ -24,17 +24,18 @@ Dr. James Hughes
 Lecture
 ^^^^^^^
 
-* Tue 11:15 - 12:05 (K4), MULH 2070
-* Wed 13:15 - 14:05 (K5), MULH 2070
-* Fri 12:15 - 13:05 (K6), MULH 2070
+* Tue 8:30 - 9:25 (K1), MULH 4024
+* Wed 10:30 - 11:25 (K2), MULH 4024
+* Fri 9:30 - 10:25 (K3), MULH 4024
 
 
 `Office Hours <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Tue, 10:00 -- 11:00
-* Wed, 10:00 -- 11:00
-* Fri, 10:00 -- 11:00
+* Tue, 12:30 -- 13:30
+* Wed, 12:30 -- 13:30
+* Thr, 13:30 -- 14:30
+* Fri, 13:30 -- 14:00
 
 
 YouTube
