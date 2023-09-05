@@ -17,6 +17,7 @@ search space analysis, multi-objective optimization, and neuroevolution. Researc
 be emphasized for course assignments/projects.
 
 
+
 Prerequisites
 =============
 
@@ -33,20 +34,24 @@ Lecture Section 11
 * Dr. James Hughes
 * Office: Annex 20B
 * Office Hours: 
-    * Tuesday, 10:00am -- 11:00am
-    * Wednesday, 10:00am -- 11:00am
-    * Friday, 10:00am -- 11:00am
-    
+
+    * Tuesday, 12:30 -- 13:30
+    * Wednesday, 12:30 -- 13:30
+    * Thursday, 13:30 -- 14:30
+    * Friday, 13:30 -- 14:00
+
+
 * Email: jhughes at stfx.ca
+
 
 
 Class Times
 ===========
 
+* Tue 8:30 - 9:25 (K1), MULH 4024
+* Wed 10:30 - 11:25 (K2), MULH 4024
+* Fri 9:30 - 10:25 (K3), MULH 4024
 
-* Tue 11:15 - 12:05 (K4), MULH 2070
-* Wed 13:15 - 14:05 (K5), MULH 2070
-* Fri 12:15 - 13:05 (K6), MULH 2070
 
 
 Website
@@ -54,6 +59,7 @@ Website
 
 * Mostly :doc:`this website </index>`
 * MOODLE
+
 
 
 Textbook and Lecture Notes
@@ -67,6 +73,7 @@ The textbook for this class is:
 Eiben, Agoston E., and James E. Smith.
 *Introduction to Evolutionary Computing. Vol. 53.*
 Berlin: springer, 2003.
+
 
 
 Topics
@@ -90,6 +97,7 @@ Below is a list of topics in no particular order that may or may not be covered 
 
     * Lecture
     * Written Reports
+
 
 
 Student Evaluation
@@ -253,12 +261,14 @@ Students must understand that the professors and TAs are not there to provide th
 students solving their problems.
 
 
+
 Attendance
 ==========
 
 Students missing three classes without reasonable cause will be reported to the Assistant Vice-President Academic
 Affairs. See section 3.7 of the academic calendar for more details. You will be reported if you are repeatedly
 delinquent in assignments or attendance at classes or laboratories.
+
 
 
 Copyright Policy
@@ -271,12 +281,14 @@ law and is strictly prohibited.
 The course copyright policy will be aggressively enforced.
 
 
+
 Class Recording Policy
 ======================
 
 Students may not create audio and/or video recordings of classes. Students creating unauthorized recording of lectures
 violate an instructor's intellectual property rights and the Canadian Copyright Act. Students violating this policy will
 be subject to disciplinary actions.
+
 
 
 Statement of Academic Offenses and Academic Integrity
@@ -293,6 +305,7 @@ for academic misconduct. I will pursue academic offenses fully. I will apply -10
 advocate for an automatic failure in the course, or expulsion from the university when allowed.
 
 
+
 Use of Plagiarism-Checking Software
 -----------------------------------
 
@@ -300,6 +313,7 @@ All required papers/submissions may be subject to submission for textual similar
 detection software under license to the University for the detection of plagiarism. All papers submitted for such
 checking will be included as source documents in the reference database for the purpose of detecting plagiarism of
 papers subsequently submitted to the system.
+
 
 
 Use of Cheating-Analysis Software
@@ -327,6 +341,7 @@ Learning (CAL) provides assistance in determining and facilitating appropriate a
 disabilities.
 
 
+
 Tramble Center for Accessible Learning
 --------------------------------------
 
@@ -339,6 +354,7 @@ To book an appointment please use the following link:
 
 * Phone --- 902 867 5349
 * Email --- tramble@stfx.ca
+
 
 
 Academic Accommodation for Medical Illness
@@ -380,6 +396,7 @@ rosters are provided to the instructor with the student's legal name. I will gla
 an alternate name or gender pronoun. Please advise me of this preference early in the semester so that I may make
 appropriate changes to my records. See policies at
 `Policies | St. Francis Xavier University (stfx.ca) <https://www.stfx.ca/human-rights-equity/policies>`_.
+
 
 
 Support Services
