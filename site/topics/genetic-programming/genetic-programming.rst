@@ -154,9 +154,81 @@ Representation
 Language
 --------
 
+* The set of available operators and operands use for creating and modifying the trees is called the *language*
+* The operators and operands are something that can be adjusted as needed
+
+* With the breast cancer example, the language could be a collection of arithmatic and boolean operators and operands
+
+    * Operators
+
+        * Binary Operators
+
+            * :math:`+`
+            * :math:`-`
+            * :math:`\times`
+            * :math:`/`
+            * :math:`<`
+            * :math:`>`
+            * :math:`==`
+            * and
+            * or
+
+        * Unary Operators
+
+            * :math:`sin`
+            * :math:`cos`
+            * :math:`e`
+            * not
+
+
+    * Operands
+
+        * Constants (e.g. :math:`4`, True, False)
+        * Variables (e.g. size and shape)
+
+
+
+.. figure:: symbolic_regression_tree.png
+    :width: 333 px
+    :align: center
+
+    S-expression for the mathematical expression :math:`(1.2 - x) + sin((1.2 - x) \times y \times e^{x})`. This tree
+    contains arithmatic operators and operands (constants and variables).
+
+
+* When working with mathematical expressions, the language could be a collection of arithmatic operators and operands
+
+    * Like the numerical operators and operands discussed above
+
 
 Types vs. Untyped
 -----------------
+
+* Notice that the mathematical expression example above only worked with numerical values
+
+    * All the operators acted on numbers
+    * All the operands, either constant or variable, would be numbers
+
+
+* However, the breast cancer example had multiple different types available
+
+    * Some operators act on numbers to produce a number (e.g. :math:`+`)
+    * Some operators act on numbers to produce a boolean (e.g. :math:`<`)
+    * Some operators act on booleans to produce a boolean (e.g. and)
+    * The operands may be either numbers or booleans
+
+
+* When using a language with only one type, like the mathematical expression, it is called *untyped* genetic programming
+* When using a language that has more than one type, it is called *typed* genetic programming
+
+* There is added complexity when working with typed genetic programming since the s-expressions must be admissible
+* Generating an s-expression that applies an operator to the wrong type would be a problem
+
+    * For example, ``(shape == 4) + 7`` is an inadmissible statement
+
+
+* With untyped genetic programming, this will not be a problem
+* Fortunately, most modern genetic programming systems will manage this complexity
 
 
 
