@@ -235,6 +235,40 @@ Types vs. Untyped
 Typical Genetic Programming Setup
 =================================
 
+* A genetic programming algorithm is setup very similar to an ordinary genetic algorithm
+
+    * Initialize a population
+    * Evaluation
+    * Selection
+    * Genetic Operators
+    * Termination
+
+
+* The key differences are around the tree representation
+* For example, the genetic operators must work with the trees
+
+.. figure:: ../genetic-operators/genetic_programming_crossover.png
+    :width: 600 px
+    :align: center
+
+    One point crossover on a tree structure. The two randomly selected subtrees are exchanged.
+
+
+.. figure:: ../genetic-operators/genetic_programming_mutation.png
+    :width: 600 px
+    :align: center
+
+    One point mutation on a tree structure. A randomly selected node in the tree is replaced with a randomly generated
+    subtree. In this example, the subtree was replaced with a variable, but it could be been a more complex subtree.
+
+
+* Typically, for genetic programming, mutation rates are kept very low (less than 5%)
+
+    * But ultimately, the value to use is a value that works well
+
+
+* Populations are also typically very large
+
 
 
 Bloat
