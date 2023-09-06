@@ -335,9 +335,12 @@ Bloat
         and then consider the number of trees of size three that would return 4.
 
 
+* Like everything, there is no *right* answer, but there are popular strategies to manage bloat
 
-Strategies to Address Bloat
----------------------------
+    * Set tree depth limits
+    * Set tree node limits
+    * Set special genetic operator rules
+    * Add tree size to part of the fitness measure of the chromosomes
 
 
 
