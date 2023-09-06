@@ -274,6 +274,18 @@ Typical Genetic Programming Setup
 Bloat
 =====
 
+* With genetic programming, during evolution, the average number of nodes in the trees increase quickly
+* And it is common that this happens with no significant improvement in fitness
+* This is problematic since
+
+    * The trees take up more space
+    * They take longer to evaluate
+    * They tend to overfit and generalize poorly
+    * The trees are difficult to interpret
+    * The variation operators become less effective 
+
+
+
 Replication Accuracy Theory
 ---------------------------
 
