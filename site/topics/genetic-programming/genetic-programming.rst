@@ -198,30 +198,7 @@ Language
 
 * When working with mathematical expressions, the language could be a collection of arithmatic operators and operands
 
-    * Operators
-
-        * Binary Operators
-
-            * :math:`+`
-            * :math:`-`
-            * :math:`\times`
-            * :math:`/`
-
-
-        * Unary Operators
-
-            * :math:`sin`
-            * :math:`cos`
-            * :math:`e`
-
-
-    * Operands
-
-        * Constants (e.g. :math:`1.2`)
-        * Variables (e.g. :math:`x` and :math:`y`)
-
-
-
+    * Like the numerical operators and operands discussed above
 
 
 Types vs. Untyped
