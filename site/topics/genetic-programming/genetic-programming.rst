@@ -274,20 +274,74 @@ Typical Genetic Programming Setup
 Bloat
 =====
 
-Replication Accuracy Theory
----------------------------
+* With genetic programming, during evolution, the average number of nodes in the trees increase quickly
+* And it is common that this happens with no significant improvement in fitness
+* This is problematic since
+
+    * The trees take up more space
+    * They take longer to evaluate
+    * They tend to overfit and generalize poorly
+    * The trees are difficult to interpret
+    * The variation operators become less effective
 
 
-Removal Bias Theory
--------------------
+* There are three explanations for this phenomenon
 
 
-Nature of Programming Space Theory
-----------------------------------
+#. Replication accuracy theory
+
+    * Parents are selected for having a good fitness
+    * Children with a function similar to their parents will also be relatively good
+    * Larger trees are functionally impacted less by genetic operators
+    * Thus, large and bloated trees are more likely to be similar to their parents
 
 
-Strategies to Address Bloat
----------------------------
+#. Removal bias theory
+
+    * Useless subtrees with no meaningful function may exist within the tree
+    * With larger trees, there is a higher chance to have useless subtrees
+    * Applying genetic operators to useless subtrees has no impact on the fitness of the chromosome
+
+
+    .. figure:: removal_bias_theory.png
+        :width: 200 px
+        :align: center
+
+        A tree that always evaluates to true, regardless of what is contained within the left subtree, which may be
+        arbitrarily large.
+
+
+    .. note::
+
+        In evolutionary computation, "useless" information may not be useless over the course of evolution. This
+        *vestigial* information within the chromosome may have been useful at some time, but became not represented in
+        the phenotype.
+
+        It is also possible that this information reemerges as useful. For example, consider some subtree within the
+        "useless" subtree in the above figure. Although it may not be expressed in the phenotype of this tree, it may
+        end up expressed in some other tree's phenotype via crossover.
+
+
+#. Nature of program space theory
+
+    * With a fixed language, there are more larger programs
+    * The number of larger programs with a given function is greater than the number of short programs with the same function
+
+
+    .. figure:: nature_of_program_space_theory.png
+        :width: 333 px
+        :align: center
+
+        A tree with seven nodes that evaluates to 4. Consider the number of trees of size one that would also return 4
+        and then consider the number of trees of size three that would return 4.
+
+
+* Like everything, there is no *right* answer, but there are popular strategies to manage bloat
+
+    * Set tree depth limits
+    * Set tree node limits
+    * Set special genetic operator rules
+    * Add tree size to part of the fitness measure of the chromosomes
 
 
 
