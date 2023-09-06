@@ -290,7 +290,8 @@ Bloat
 
 #. Replication accuracy theory
 
-    * It is a good thing when children are functionally similar to their parents
+    * Parents are selected for having a good fitness
+    * Children with a function similar to their parents will also be relatively good
     * Larger trees are functionally impacted less by genetic operators
     * Thus, large and bloated trees are more likely to be similar to their parents
 
@@ -303,7 +304,7 @@ Bloat
 
 
     .. figure:: removal_bias_theory.png
-        :width: 333 px
+        :width: 200 px
         :align: center
 
         A tree that always evaluates to true, regardless of what is contained within the left subtree, which may be
