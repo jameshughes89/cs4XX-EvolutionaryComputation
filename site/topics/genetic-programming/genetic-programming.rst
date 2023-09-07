@@ -348,7 +348,14 @@ Bloat
 For Next Class
 ==============
 
-* TBD
+* `Read up on DEAP <https://deap.readthedocs.io/en/master/>`_
+
+    * It is an evolutionary computation system/framework
+
+
+* `Have a look at DEAP's API <https://deap.readthedocs.io/en/master/api/>`_
+
+
 
 ----------------------
 
