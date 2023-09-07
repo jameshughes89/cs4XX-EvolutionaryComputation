@@ -60,6 +60,7 @@ YouTube
     topics/genetic-algorithms/n-queens-ga-experiment
     topics/genetic-operators/genetic-operators
     topics/selection/selection
+    topics/genetic-programming/genetic-programming
 
 
 .. toctree::
