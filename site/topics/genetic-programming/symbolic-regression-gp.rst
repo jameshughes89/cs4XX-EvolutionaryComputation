@@ -2,6 +2,10 @@
 Symbolic Regression with Genetic Programming
 ********************************************
 
+* The purpose of this topic is to perform symbolic regression with genetic programming
+* The genetic programming system being used is DEAP (Distributed Evolutionary Algorithms in Python)
+* Much of the heavy lifting required to implement a genetic programming algorithm is managed by DEAP
+
 
 
 Problem
