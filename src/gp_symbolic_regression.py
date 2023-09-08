@@ -124,7 +124,7 @@ if __name__ == "__main__":
         independent_variables=independent_variables,
         dependent_variable=dependent_variable,
     )
-    toolbox.register("select", tools.selTournament, tournsize=2)
+    toolbox.register("select", tools.selTournament, tournsize=TOURNAMENT_SIZE)
     toolbox.register("mate", gp.cxOnePoint)
     toolbox.register("generate_mutation_subtree", gp.genFull, min_=0, max_=4)
     toolbox.register("mutate", gp.mutUniform, expr=toolbox.generate_mutation_subtree, pset=primitive_set)
