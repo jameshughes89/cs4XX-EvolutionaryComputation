@@ -11,6 +11,22 @@ Symbolic Regression with Genetic Programming
 Problem --- Regression Analysis
 ===============================
 
+* Regression is finding the relationships between dependent and independent variables given some observations
+* A common and simple form of regression is *linear regression*
+
+    * Find a *linear* relationship between some dependent and independent variables
+
+
+.. figure:: linear_regression_linear_data.png
+    :width: 500 px
+    :align: center
+
+    Observations of some phenomenon plotted in two dimensions. The dependent variable is plotted along the y-axis and
+    the independent variable is along the x-axis. From a quick glance, this data clearly has some linear relationship.
+
+
+
+
 Linear
 accuracy 0.9999994486146649 (R^2)
 coef 4.50016122
