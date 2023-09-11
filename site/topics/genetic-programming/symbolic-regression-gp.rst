@@ -31,7 +31,7 @@ Problem --- Regression Analysis
 
 
 * The mathematics behind finding this line is interesting, but outside the scope of this course
-* `Fortunately, scikit-learn provides an easy way to find this line <https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html>`_
+* `Fortunately, scikit-learn provides a way to find this line <https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html>`_
 
 
 .. figure:: regression_linear_data_linear_model.png
