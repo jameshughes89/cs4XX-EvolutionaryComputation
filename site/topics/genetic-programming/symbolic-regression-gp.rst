@@ -44,7 +44,7 @@ Problem --- Regression Analysis
 
 * The linearly regressed model for the above observations is :math:`\hat{y} = 0.999885x + 0.997937`
 
-    * Note that :math:`\hat{y}` denotes that it is not :math:`y`, but only a prediction of :math:`y`
+    * Note that :math:`\hat{y}` denotes that it is not :math:`y`, but only a prediction/estimation of :math:`y`
 
 
 * This particular model has an :math:`R^{2}` of :math:`0.9999885`
@@ -57,7 +57,7 @@ Linear Regression on Nonlinear Relationships
 --------------------------------------------
 
 * With linear regression, trouble arises when the observed data has nonlinear relationships
-* It is still possible to find a high-quality model, but it would require several assumptions and guesswork
+* It is still possible to find a high-quality model, but it would require several assumptions and a lot of guesswork
 
 .. figure:: regression_nonlinear_data.png
     :width: 500 px
@@ -84,14 +84,30 @@ Linear Regression on Nonlinear Relationships
 Symbolic Regression
 -------------------
 
-* An alternative to
-* It is still possible to use linear regression to fit this data, but it would require
+* An alternative strategy is something called *symbolic regression*
+* It is a form of regression analysis that requires fewer assumptions and works with nonlinear data
 
-SR
-0.16208662410178923 MSE
+* By using symbolic regression, the underlying nonlinear relationships may be found
 
-1.10051099017284868*X**2 -4.4395784214070755
-add(add(protected_divide(mul(ARG0, ARG0), 9.949160766203782), mul(ARG0, ARG0)), -4.4395784214070755)
+.. figure:: regression_nonlinear_data_nonlinear_model.png
+    :width: 500 px
+    :align: center
+
+    Nonlinear model found with symbolic regression. The model is :math:`\hat{y} = 1.100511x^{2} - 4.439578` and has
+    a mean squared error of :math:`0.162087`.
+
+
+* It is clear that :math:`\hat{y} = 1.100511x^{2} - 4.439578` effectively describes the relationships in the data
+* The *mean squared error* is :math:`0.162087`
+
+    * This is not the same as :math:`R^{2}`
+    * With mean squared error, a value closer to 0.0 is better
+
+
+.. note::
+
+    In reality, symbolic regression produced ``add(add(protected_divide(mul(x, x), 9.949161), mul(x, x)), -4.439578)``,
+    which was simplified to :math:`\hat{y} = 1.100511x^{2} - 4.439578`.
 
 
 
