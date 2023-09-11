@@ -57,6 +57,7 @@ Linear Regression on Nonlinear Relationships
 --------------------------------------------
 
 * With linear regression, trouble arises when the observed data has nonlinear relationships
+* It is still possible to find a high-quality model, but it would require several assumptions and guesswork
 
 .. figure:: regression_nonlinear_data.png
     :width: 500 px
@@ -66,6 +67,18 @@ Linear Regression on Nonlinear Relationships
     depending on which segment of the function was observed. It is not possible to effectively fit a straight line to
     describe the relationship between the dependent and independent variable.
 
+
+
+* HERE IS WHAT HAPPENS IF YOU DO IT
+
+.. figure:: regression_nonlinear_data_linear_model.png
+    :width: 500 px
+    :align: center
+
+
+
+* An alternative to
+* It is still possible to use linear regression to fit this data, but it would require
 
 Nonliear
 0.010924289363573592 (R^2)
