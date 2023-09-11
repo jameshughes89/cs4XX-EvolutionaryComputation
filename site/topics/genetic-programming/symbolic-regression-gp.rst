@@ -68,22 +68,24 @@ Linear Regression on Nonlinear Relationships
     describe the relationship between the dependent and independent variable.
 
 
+* Nevertheless, looking for a linear model for such nonlinear data is doomed to fail
 
-* HERE IS WHAT HAPPENS IF YOU DO IT
 
 .. figure:: regression_nonlinear_data_linear_model.png
     :width: 500 px
     :align: center
 
+    Linear model generated with linear regression on the nonlinear data. The resulting model is
+    :math:`\hat{y} = -3.070395x + 916.550675`, which has an :math:`R^{2} = 0.010924`. Although this is the best possible
+    straight line that fits this data, it is clear that it is not effectively fitting the data due to the limitation of
+    the modelling strategy.
 
+
+Symbolic Regression
+-------------------
 
 * An alternative to
 * It is still possible to use linear regression to fit this data, but it would require
-
-Nonliear
-0.010924289363573592 (R^2)
-[-3.07039458]
-916.5506746535088
 
 SR
 0.16208662410178923 MSE
