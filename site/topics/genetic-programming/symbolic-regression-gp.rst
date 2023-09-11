@@ -56,6 +56,17 @@ Problem --- Regression Analysis
 Linear Regression on Nonlinear Relationships
 --------------------------------------------
 
+* With linear regression, trouble arises when the observed data has nonlinear relationships
+
+.. figure:: regression_nonlinear_data.png
+    :width: 500 px
+    :align: center
+
+    Observed data with clear nonlinear relationships. The data appears to be parabolic or hyperbolic, but may be neither
+    depending on which segment of the function was observed. It is not possible to effectively fit a straight line to
+    describe the relationship between the dependent and independent variable.
+
+
 Nonliear
 0.010924289363573592 (R^2)
 [-3.07039458]
