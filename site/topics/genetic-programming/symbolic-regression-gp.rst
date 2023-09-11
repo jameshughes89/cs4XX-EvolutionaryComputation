@@ -17,7 +17,7 @@ Problem --- Regression Analysis
     * Find a *linear* relationship between some dependent and independent variables
 
 
-.. figure:: linear_regression_linear_data.png
+.. figure:: regression_linear_data.png
     :width: 500 px
     :align: center
 
@@ -25,13 +25,36 @@ Problem --- Regression Analysis
     the independent variable is along the x-axis. From a quick glance, this data clearly has some linear relationship.
 
 
+* Given the above observations, the goal is to draw a *line of best fit*
+
+    * Which should look a lot like :math:`y = mx + b`
 
 
-Linear
-accuracy 0.9999994486146649 (R^2)
-coef 4.50016122
-int 7.220999868042664
+* The mathematics behind finding this line is interesting, but outside the scope of this course
+* `Fortunately, scikit-learn provides an easy way to find this line <https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html>`_
 
+
+.. figure:: regression_linear_data_linear_model.png
+    :width: 500 px
+    :align: center
+
+    Linear model plotted on top of the observations. The resulting model is :math:`\hat{y} = 0.999885x + 0.997937` and
+    has an :math:`R^{2}` value of :math:`0.9999885`.
+
+
+* The linearly regressed model for the above observations is :math:`\hat{y} = 0.999885x + 0.997937`
+
+    * Note that :math:`\hat{y}` denotes that it is not :math:`y`, but only a prediction of :math:`y`
+
+
+* This particular model has an :math:`R^{2}` of :math:`0.9999885`
+
+    * This is a measure of *goodness*
+    * The closer to 1.0, the better the fit
+
+
+Linear Regression on Nonlinear Relationships
+--------------------------------------------
 
 Nonliear
 0.010924289363573592 (R^2)
