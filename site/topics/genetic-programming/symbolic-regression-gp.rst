@@ -127,6 +127,55 @@ Language
 
 * Fortunately, with symbolic regression, there is a common set to start with
 
+    * Typical arithmatic operators
+    * Maybe some trigonometry functions
+    * Maybe natural log and Euler's number
+
+
+* However, there is a potential problem with divide as the evolutionary search may try to divide by zero
+* For this reason, it is common to see a *protected divide* used instead
+
+    * If attempting to divide by zero, return infinity
+    * Note, however, it is not uncommon to see the function return 1 in this case
+
+
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :pyobject: protected_divide
+
+
+* Setting up the language with DEAP is then done like below
+
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-language]
+    :end-before: # [end-language]
+
+
+* The first line, creating the ``PrimitiveSet`` object, is where the language operators and operands will be added
+
+    * It also specifies the number of independent variables the function will have as the second argument
+    * Here, it assumes the independent variables are stored in some list called ``independent_variables``
+
+
+* Each operator is added to the primitive set object along with the number of operands that operator requires
+
+    * The operator is the first argument, and is passed as a function
+    * Most of the added operators in this example are taken from the ``operator`` library
+    * The protected divide, described above, is also added
+    * The ``neg`` operator is the negation (multiply by -1) and only requires one operand
+
+
+* Finally, the constant values are added with ``addEphemeralConstant``
+
+    * In this example, integers between -10 and 10 are eligible
+
+
+.. note::
+
+    There is no guarantee or suggestion that this is a *good* language, but it is at least a reasonable place to start.
 
 
 DEAP Setup
