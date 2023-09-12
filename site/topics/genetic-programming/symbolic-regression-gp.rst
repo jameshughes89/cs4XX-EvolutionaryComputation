@@ -114,6 +114,24 @@ Symbolic Regression
 DEAP
 ====
 
+* Due to the complexity, it is common to not implement genetic programming from scratch
+* Instead, a genetic programming system will be used, which does much of the heavy lifting for the user
+* Many systems exist in various programming languages
+
+* `DEAP is a framework for evolutionary computation algorithms in Python <https://deap.readthedocs.io/en/master/>`_
+
+    * Distributed Evolutionary Algorithms in Python --- DEAP
+    * It's a package for implementing evolutionary computation algorithms
+
+
+* DEAP is not only for genetic programming, but many evolutionary computation algorithms
+* It includes algorithm and tools for implementing multiple types of algorithms, enhancements, and analysis
+
+* Although any genetic program could be used, DEAP will be used here
+
+    * `The GitHub page is available here <https://github.com/deap/deap>`_
+    * It is encouraged to contribute to the repository if possible
+
 
 
 Language
