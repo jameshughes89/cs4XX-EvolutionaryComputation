@@ -239,7 +239,7 @@ Language
 * The first line, creating the ``PrimitiveSet`` object, is where the language operators and operands will be added
 
     * It also specifies the number of independent variables the function will have as the second argument
-    * Here, it assumes the independent variables are stored in some list called ``independent_variables``
+    * As discussed above, the independent variables are stored in some list called ``independent_variables``
 
 
 * Each operator is added to the primitive set object along with the number of operands that operator requires
