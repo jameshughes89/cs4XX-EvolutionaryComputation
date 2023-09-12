@@ -119,6 +119,14 @@ DEAP
 Language
 ========
 
+* With symbolic regression, genetic programming will be searching the space of mathematical expressions
+* This includes both the operators and operands
+* The language is the set of operators and operands that the genetic programming system can use in the search
+* The trouble is, it's not always clear which operators and operands should be included
+* Thus, the design of the language may need to be tuned for evolution like other hyperparameters
+
+* Fortunately, with symbolic regression, there is a common set to start with
+
 
 
 DEAP Setup
