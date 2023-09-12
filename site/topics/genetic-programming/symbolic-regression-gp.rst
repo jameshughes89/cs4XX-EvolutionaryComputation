@@ -119,7 +119,12 @@ DEAP
 Data
 ====
 
-* The data being used will be tabular data
+* The data being used will be tabular
+
+    * Rows of observations
+    * Columns of variables
+
+
 * Below is an example of how the data would look
 
 .. list-table:: Arbitrary Example Data for Regression Analysis
@@ -151,7 +156,7 @@ Data
       - ...
 
 
-* The data is provided in CSV files where the columns are the variables and the rows are observations
+* For this example, the data is provided in CSV files
 * The data is formatted such that the last column is always the dependant variable
 
     * Thus, all proceeding columns are independent variables
@@ -180,9 +185,9 @@ Data
     * Each value corresponds to the independent variables at the same index
 
 
-* Following the example data in the table, the values would be stored as follows
+* Following the example data in the above table, the values would be stored as follows
 
-.. code-block:: text
+.. code-block:: python
 
     independent_variables = [[-3.16833493e+01, 3.63253949e+01],
                             [-3.59771849e+01, 1.63633781e+01],
