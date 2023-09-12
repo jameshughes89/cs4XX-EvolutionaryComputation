@@ -137,6 +137,7 @@ DEAP
 
     * `It includes a description of genetic programming with DEAP <https://deap.readthedocs.io/en/master/tutorials/advanced/gp.html>`_
     * `It also has a guided tutorial on how to perform symbolic regression with DEAP <https://deap.readthedocs.io/en/master/examples/gp_symbreg.html>`_
+    * `Further, additional and more advanced tutorials can be found here <https://github.com/DEAP/deap/tree/master/examples/gp>`_
 
 
 
