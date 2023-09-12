@@ -199,7 +199,6 @@ Evaluation
 
 * A common mechanism for evaluating genetic programming performing symbolic regression is *mean squared error*
 
-    * The average *squared* error
     * :math:`\frac{1}{n}\sum_{i}^{n}(y_{i} - \hat{y_{i}})^{2}`
 
 
@@ -211,6 +210,7 @@ Evaluation
     * If the difference between the observed and estimated value is 1, the squared error is 1
     * If the difference is 2, the error is 4
     * If it's 3, the error is 9
+    * ...
     * In other words, it's much worse to be very wrong than it is to be a little wrong
 
 
