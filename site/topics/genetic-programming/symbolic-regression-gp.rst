@@ -114,7 +114,7 @@ Symbolic Regression
 DEAP
 ====
 
-* Due to the complexity, it is common to not implement genetic programming from scratch
+* Due to the complexity, it is not common to implement genetic programming from scratch
 * Instead, a genetic programming system will be used, which does much of the heavy lifting for the user
 * Many systems exist in various programming languages
 
