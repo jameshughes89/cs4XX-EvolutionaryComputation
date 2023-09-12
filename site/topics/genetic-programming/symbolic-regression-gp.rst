@@ -133,6 +133,12 @@ DEAP
     * It is encouraged to contribute to the repository if possible
 
 
+* It is strongly recommended to have a look at DEAP's documentation
+
+    * `It includes a description of genetic programming with DEAP <https://deap.readthedocs.io/en/master/tutorials/advanced/gp.html>`_
+    * `It also has a guided tutorial on how to perform symbolic regression with DEAP <https://deap.readthedocs.io/en/master/examples/gp_symbreg.html>`_
+
+
 
 Language
 ========
