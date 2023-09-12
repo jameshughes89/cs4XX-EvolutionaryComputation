@@ -136,7 +136,6 @@ Language
 * For this reason, it is common to see a *protected divide* used instead
 
     * If attempting to divide by zero, return infinity
-    * Note, however, it is not uncommon to see the function return 1 in this case
 
 
 .. literalinclude:: /../src/gp_symbolic_regression.py
@@ -173,7 +172,7 @@ Language
     * In this example, integers between -10 and 10 are eligible
 
 
-.. note::
+.. warning::
 
     There is no guarantee or suggestion that this is a *good* language, but it is at least a reasonable place to start.
 
