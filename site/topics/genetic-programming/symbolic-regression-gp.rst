@@ -239,7 +239,7 @@ Language
 
     * Typical arithmatic operators
     * Maybe some trigonometry functions
-    * Maybe natural log and Euler's number
+    * Maybe logarithm and exponentials or even natural log and Euler's number
 
 
 * However, there is a potential problem with divide as the evolutionary search may try to divide by zero
