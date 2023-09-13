@@ -323,6 +323,12 @@ DEAP Setup
 
 
 
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :pyobject: mean_squared_error_fitness
+
+
 Bloat Control
 -------------
 
