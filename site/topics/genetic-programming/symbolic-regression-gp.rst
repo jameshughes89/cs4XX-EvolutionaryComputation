@@ -315,13 +315,32 @@ Language
 DEAP Setup
 ==========
 
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-setting-hyperparameters]
+    :end-before: # [end-setting-hyperparameters]
+
+
 
 Bloat Control
 -------------
 
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-bloat-control]
+    :end-before: # [end-bloat-control]
+
 
 Bookkeeping
 -----------
+
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-bookkeeping]
+    :end-before: # [end-bookkeeping]
 
 
 
