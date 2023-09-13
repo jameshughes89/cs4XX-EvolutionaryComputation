@@ -151,16 +151,7 @@ if __name__ == "__main__":
 
     # [begin-run]
     population = toolbox.population(n=POPULATION_SIZE)
-    population, log = algorithms.eaSimple(
-        population,
-        toolbox,
-        CROSSOVER_RATE,
-        MUTATION_RATE,
-        GENERATIONS,
-        stats=mstats,
-        halloffame=hall_of_fame,
-        verbose=True,
-    )
+    population, log = algorithms.eaSimple( population, toolbox, CROSSOVER_RATE, MUTATION_RATE, GENERATIONS, stats=mstats, halloffame=hall_of_fame, verbose=True,)
     # [end-run]
 
     # [begin-ending]
