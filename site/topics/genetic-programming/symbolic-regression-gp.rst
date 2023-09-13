@@ -375,7 +375,10 @@ Bloat Control
 
 
 * The above sets limits on how deep and how many nodes a tree may have after a genetic operator is applied
-* This would be an area that requires some hyperparameter tuning
+* These values may need to be adjusted to improve performance
+
+    * If they are allowed to get too big, the search may take too long
+    * If they are not allowed to get big enough, it may not be possible to model the data
 
 
 Bookkeeping
