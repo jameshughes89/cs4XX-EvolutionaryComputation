@@ -359,11 +359,23 @@ DEAP Setup
 Bloat Control
 -------------
 
+* As mentioned in the previous topic, genetic programming suffers from *bloat*
+
+    * The trees tend to grow larger with no improvement in fitness
+    * This negatively impacts the algorithm's performance
+
+
+* DEAP provides simple ways to control bloat
+
 .. literalinclude:: /../src/gp_symbolic_regression.py
     :language: python
     :lineno-match:
     :start-after: # [begin-bloat-control]
     :end-before: # [end-bloat-control]
+
+
+* The above sets limits on how deep and how many nodes a tree may have after a genetic operator is applied
+* This would be an area that requires some hyperparameter tuning
 
 
 Bookkeeping
