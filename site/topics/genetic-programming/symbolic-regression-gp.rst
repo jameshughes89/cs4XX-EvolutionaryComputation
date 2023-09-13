@@ -384,11 +384,20 @@ Bloat Control
 Bookkeeping
 -----------
 
+* DEAP also provides tools for keeping track of the results throughout evolution
+
 .. literalinclude:: /../src/gp_symbolic_regression.py
     :language: python
     :lineno-match:
     :start-after: # [begin-bookkeeping]
     :end-before: # [end-bookkeeping]
+
+
+* The above code creates a ``HallOfFame``, which will keep track of the top candidate solution for each generation
+* It also keeps track of some summary statistics on some population metrics
+
+    * Population average, standard deviation, minimum, and maximum for fitness, tree height, and tree size
+    * These values will be recorded for each generation
 
 
 
