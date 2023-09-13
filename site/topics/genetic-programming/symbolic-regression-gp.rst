@@ -315,6 +315,9 @@ Language
 DEAP Setup
 ==========
 
+* Below is an example of a setup for a DEAP algorithm
+* It effectively defines what each part of the algorithm will be
+
 .. literalinclude:: /../src/gp_symbolic_regression.py
     :language: python
     :lineno-match:
@@ -322,11 +325,35 @@ DEAP Setup
     :end-before: # [end-setting-hyperparameters]
 
 
+* This code
+
+    * Sets the problem to be a minimization problem
+    * Says how the individuals (chromosomes) will be encoded
+    * Defines how the individuals and population will be generated
+    * It defines the evaluation metric
+
+        * Note that ``mean_squared_error_fitness`` is not the function described above
+        * More on this below
+
+
+    * It also sets the selection strategy and genetic operators
+
+
+* DEAP requires that the fitness function return a tuple of results
+* However, the above ``mean_squared_error`` function returns only a single value
+* Thus, another function, ``mean_squared_error_fitness``, is created that calls ``mean_squared_error``
+* This function also
+
+    * Checks if exceptions should be thrown
+    * *Compiles* the trees into something that can be functionally evaluated
+    * Wraps the mean squared error in a tuple to be returned
+
 
 .. literalinclude:: /../src/gp_symbolic_regression.py
     :language: python
     :lineno-match:
     :pyobject: mean_squared_error_fitness
+
 
 
 Bloat Control
