@@ -464,7 +464,7 @@ Funny Results
 -------------
 
 * Given the stochastic nature of the search, the final result will differ every time
-* And since genetic programming does not attempt to simplify the results, some silly looking functions may be generated
+* And since genetic programming's only goal is to fit the data, and it does not attempt to simplify the results, some silly looking functions may be generated
 
     * Below are additional examples of generated solutions that all simplify to :math:`y = x + 1`
 
