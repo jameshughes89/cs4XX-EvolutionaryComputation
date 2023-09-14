@@ -404,6 +404,79 @@ Bookkeeping
 Running and Results
 ===================
 
+* After all the setup, running the algorithm is done as follows
+
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-run]
+    :end-before: # [end-run]
+
+
+* With the above settings, output like the following will be displayed
+
+.. code-block:: text
+
+                                              fitness                              	                   height                  	                      size
+                -------------------------------------------------------------------	-------------------------------------------	-----------------------------------------------
+    gen	nevals	avg        	gen	max        	min    	nevals	std        	avg	gen	max	min	nevals	std	avg 	gen	max	min	nevals	std
+    0  	10    	3.07232e+08	0  	2.98774e+09	472.225	10    	8.93845e+08	2.3	0  	4  	1  	10    	1.1	10.2	0  	30 	2  	10    	9.67264
+    1  	10    	1.80136e+06	1  	1.66745e+07	0.00906234	10    	4.97235e+06	2.9	1  	5  	1  	10    	1.04403	9.7 	1  	26 	2  	10    	7.0859
+    2  	3     	2331.57    	2  	13844.5    	0.00906234	3     	4034.1     	2.8	2  	3  	2  	3     	0.4    	6.7 	2  	12 	4  	3     	2.75862
+    3  	7     	128527     	3  	1.26907e+06	0.00906234	7     	380187     	2.9	3  	5  	1  	7     	1.13578	6.9 	3  	14 	2  	7     	3.53412
+
+    (rows 4 -- 96 omitted for brevity)
+
+    97 	8     	1.00691    	97 	1.00691    	1.00691   	8     	0          	0  	97 	0  	0  	8     	0       	1   	97 	1  	1  	8     	0
+    98 	8     	86.9783    	98 	860.721    	1.00691   	8     	257.914    	0.1	98 	1  	0  	8     	0.3     	1.2 	98 	3  	1  	8     	0.6
+    99 	7     	1.00691    	99 	1.00691    	1.00691   	7     	0          	0  	99 	0  	0  	7     	0       	1   	99 	1  	1  	7     	0
+    100	7     	128571     	100	1.2857e+06 	1.00691   	7     	385711     	0.2	100	2  	0  	7     	0.6     	1.3 	100	4  	1  	7     	0.9
+
+
+* Viewing the results requires converting the tree to a string
+
+    * It is possible to have DEAP generate and display images of the expression trees
+    * Unfortunately, it can be difficult to get working
+
+
+* Below is an example of displaying the top result after evolution is complete
+
+.. literalinclude:: /../src/gp_symbolic_regression.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-ending]
+    :end-before: # [end-ending]
+
+
+* Below is an example result for a run of the GP
+
+.. code-block:: text
+
+    neg(neg(add(1, ARG0)))
+    (0.009062344161081039,)
+
+
+* Given that ``ARG0`` is the only independent variable, the above can be simplified to :math:`y = x + 1`
+* The mean squared error of the model when applied to the data is roughly 0.00906
+
+
+Funny Results
+-------------
+
+* Given the stochastic nature of the search, the final result will differ every time
+* And since genetic programming's only goal is to fit the data, and it does not attempt to simplify the results, some silly looking functions may be generated
+
+    * Below are additional examples of generated solutions that all simplify to :math:`y = x + 1`
+
+
+.. code-block:: text
+
+    sub(ARG0, protected_divide(ARG0, neg(ARG0)))
+    add(mul(protected_divide(ARG0, ARG0), protected_divide(ARG0, ARG0)), ARG0)
+    add(ARG0, protected_divide(ARG0, mul(7, protected_divide(ARG0, 7))))
+    add(-8, add(ARG0, 9))
+    add(mul(protected_divide(ARG0, ARG0), protected_divide(ARG0, ARG0)), mul(protected_divide(ARG0, 1), protected_divide(ARG0, ARG0)))
+
 
 
 For Next Class
