@@ -111,7 +111,7 @@ A Change of Perspective
     * Phenotype space
 
 
-* By counting the number of ones in he chromosomes, the solutions can be compared based on their encodings
+* By counting the number of ones in the chromosomes, the solutions can be compared based on their encodings
 
     * Genotype space
 

@@ -20,6 +20,8 @@ GENERATIONS = 100
 TOURNAMENT_SIZE = 2
 CROSSOVER_RATE = 0.80
 MUTATION_RATE = 0.05
+MAX_HEIGHT = 6
+MAX_NODES = 32
 # [end-hyperparameters]
 
 # [begin-data-parameters]
@@ -131,10 +133,10 @@ if __name__ == "__main__":
     # [end-setting-hyperparameters]
 
     # [begin-bloat-control]
-    toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
-    toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=6))
-    toolbox.decorate("mate", gp.staticLimit(key=len, max_value=32))
-    toolbox.decorate("mutate", gp.staticLimit(key=len, max_value=32))
+    toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=MAX_HEIGHT))
+    toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=MAX_HEIGHT))
+    toolbox.decorate("mate", gp.staticLimit(key=len, max_value=MAX_NODES))
+    toolbox.decorate("mutate", gp.staticLimit(key=len, max_value=MAX_NODES))
     # [end-bloat-control]
 
     # [begin-bookkeeping]
@@ -152,7 +154,14 @@ if __name__ == "__main__":
     # [begin-run]
     population = toolbox.population(n=POPULATION_SIZE)
     population, log = algorithms.eaSimple(
-        population, toolbox, 0.5, 0.1, GENERATIONS, stats=mstats, halloffame=hall_of_fame, verbose=True
+        population,
+        toolbox,
+        CROSSOVER_RATE,
+        MUTATION_RATE,
+        GENERATIONS,
+        stats=mstats,
+        halloffame=hall_of_fame,
+        verbose=True,
     )
     # [end-run]
 
