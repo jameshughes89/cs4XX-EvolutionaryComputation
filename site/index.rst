@@ -61,6 +61,7 @@ YouTube
     topics/genetic-operators/genetic-operators
     topics/selection/selection
     topics/genetic-programming/genetic-programming
+    topics/genetic-programming/symbolic-regression-gp
 
 
 .. toctree::
