@@ -23,7 +23,7 @@ Marking Details
 Provided Files
 ==============
 
-`Files containing JSON formatter TSP instances can be found on the github repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/tsp>`_
+`Files containing JSON formatted TSP instances can be found on the github repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/tsp>`_
 
 The instances were originally obtained from `TSPLIB <http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/>`_ but were
 parsed to be in an easier to work with format --- JSON.
@@ -63,7 +63,6 @@ The data is encoded similar to a dictionary.
 
         * This is the value that will be used for calculating the distance of a Hamiltonian cycle
         * The length of this list should be equal to the instance's ``"DIMENSION"``
-        * For implementing the GA for TSP, consider pre-calculating a distance matrix from the list of coordinates
 
 
 Python provides a simple way to load JSON files directly into dictionaries.
@@ -74,6 +73,12 @@ Python provides a simple way to load JSON files directly into dictionaries.
 
     tsp_json = open(SOME_JSON_FILE)
     tsp_dictionary = json.load(tsp_json)
+
+
+.. note::
+
+    When implementing the GA, consider creating a distance matrix based on the list of coordinates. This way, the
+    distances between each vertex only needs to be calculated once.
 
 
 
