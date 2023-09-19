@@ -134,6 +134,10 @@ Experiment Again
     * Are they different from before?
 
 
+
+Non-Numerical Hyperparameters
+=============================
+
 * The hyperparameters can be tuned, but so can the individual functional pieces of the GA
 
     * There is no rule saying the fitness function must work a certain way
