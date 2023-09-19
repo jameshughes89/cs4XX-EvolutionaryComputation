@@ -43,14 +43,37 @@ The data is encoded similar to a dictionary.
 
     * ``"NAME"`` --- The name of the instance
     * ``"COMMENT"`` --- Some comment to go along with the instance
-    * ``"TYPE"`` --- The type of the instance (all should be TSP)
-    * ``"DIMENSION"`` --- The number of verticies (cities)
-    * ``"EDGE_WEIGHT_TYPE"`` --- How the edge weight is calculated (all should be ``"EUC_2D"``)
-    * ``"NODE_COORD_SECTION"`` --- A list of numbered coordinates
+    * ``"TYPE"`` --- The type of the instance
 
-        * Each coordinate is encoded as a list containing the city number, x, and y coordinage
-        * ``[n, x, y}``
+        * All should be ``"TSP"``
 
+
+    * ``"DIMENSION"`` --- The number of vertices (cities)
+    * ``"EDGE_WEIGHT_TYPE"`` --- How the edge weight is calculated
+
+        * All should be ``"EUC_2D"``
+        * This means the weight of each edge is the Euclidean distance between the vertices
+
+
+    * ``"NODE_COORD_SECTION"`` --- A list coordinates
+
+        * Each coordinate is encoded as a list containing the city number, x, and y coordinate
+
+            * ``[n, x, y]``
+
+        * This is the value that will be used for calculating the distance of a Hamiltonian cycle
+        * The length of this list should be equal to the instance's ``"DIMENSION"``
+        * For implementing the GA for TSP, consider pre-calculating a distance matrix from the list of coordinates
+
+
+Python provides a simple way to load JSON files directly into dictionaries.
+
+.. code-block:: python
+
+    import json
+
+    tsp_json = open(SOME_JSON_FILE)
+    tsp_dictionary = json.load(tsp_json)
 
 
 
