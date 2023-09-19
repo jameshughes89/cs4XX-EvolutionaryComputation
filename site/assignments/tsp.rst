@@ -26,7 +26,6 @@ Below is a high-level overview of how points will be awarded. Details on each ta
 description.
 
 * A total of **5** points will be awarded for having a working implementation of the GA for TSP
-* A working GA is required before completing any other tasks described within the assignment
 
     * A total of **5** additional points may be awarded for adding enhancements to the GA
     * Applying a GA to a more complex version of the problem, the *Vehicle Routing Problem*, will award **5** points
@@ -38,6 +37,11 @@ description.
         * Including proper references/citations awards an additional **2** points
         * Including figures and tables awards an additional **2** points
         * Performing an effective statistical analysis will award an additional **2** points
+
+
+.. note::
+
+    A working GA is required in order to obtain any points for the additional tasks described within the assignment.
 
 
 
