@@ -182,7 +182,7 @@ problem, so feel free to attempt any of the variations.
 If this is being attempted, search for data and be sure to obtain problem instances of various sizes. It may also be
 possible to find tables of best known results online.
 
-The Wikipedia article for the vehicle routing problem provides a description of the problem <https://en.wikipedia.org/wiki/Vehicle_routing_problem>`_.
+`The Wikipedia article for the vehicle routing problem provides a description of the problem <https://en.wikipedia.org/wiki/Vehicle_routing_problem>`_.
 Be sure to read through the article if this problem is being attempted.
 
 
