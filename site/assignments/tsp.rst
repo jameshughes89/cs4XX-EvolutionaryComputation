@@ -212,4 +212,8 @@ Statistical Analysis
 What to Submit to Moodle
 ========================
 
+* Submit everything via Moodle by 11:55pm on the due date
+* Include the full implementation of the GA along with any special running instructions if necessary
+* Include the report
+* Include anything else the marker may need for effectively evaluating the work
 
