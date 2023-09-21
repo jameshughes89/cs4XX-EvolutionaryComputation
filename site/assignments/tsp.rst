@@ -164,7 +164,7 @@ better if the GA periodically presents the best path or a set of paths from the 
 real time, it is not recommended to have this happen for each generation as it would take a very long time. Instead,
 perhaps only show the visualization every so often or save images to create an animation after evolution is done.
 
-Do not feel that visualizing the routs is the only option. It could be a visualization of some mechanism within the GA,
+Do not feel that visualizing the routes is the only option. It could be a visualization of some mechanism within the GA,
 or maybe something entirely different. Like already mentioned, the more creative the better.
 
 
