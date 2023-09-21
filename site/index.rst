@@ -65,6 +65,14 @@ YouTube
 
 
 .. toctree::
+    :caption: Assignments
+    :maxdepth: 1
+    :numbered:
+
+    assignments/tsp/tsp
+
+
+.. toctree::
     :caption: Outline
     :maxdepth: 1
  
