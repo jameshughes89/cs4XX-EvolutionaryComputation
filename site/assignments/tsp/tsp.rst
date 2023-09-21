@@ -110,17 +110,81 @@ Python provides a simple way to load JSON files directly into dictionaries.
 Implementing the Genetic Algorithm
 ==================================
 
+The first portion of the assignment is to implement a GA for TSP. It does not matter how the GA is implemented as long
+as the high-level framework of the algorithm is followed. Feel free to start from the GAs available on the GitHub
+repository used for other problems. Being creative and experimental is encouraged, and further, this creativity will
+provide plenty of content to discuss in the report.
 
-Enhancements
-------------
+Do not feel compelled to use the existing implementations of GAs that are in the repository. Additionally, the language
+used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or Python,
+please ask first for approval.
+
+Make use of the provided TSP instances in JSON format. Also consider generating a distance matrix at runtime to reduce
+the total number of distance calculations the GA has to do.
+
+When running the GA for the purpose of gathering results, be sure to run it on a variety of instance of different sizes
+(small, medium, large, and unreasonably large). Take note of everything you observe as this is worth discussing in the
+report. `It is possible to find tables of the best known/optimal results online for the provided instances <http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/STSP.html>`_
+
+Assuming the GA is working and there are no serious issues, **5** points will be awarded.
+
+
+Enhancements and Modifications
+------------------------------
+
+A total of **5** additional points will be awarded for enhancing and modifying the GA. In general, each
+enhancement/modification will award **1** additional point, but depending on the complexity of the
+enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
+to obtain these marks if the goal is to obtain all **5** additional points.
+
+The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
+to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
+was done. If writing a report, add a section within the report outlining what was done. If the
+enhancements/modifications are not clear, points may not be awarded.
+
+Below is a short list of possible enhancement/modifications
+
+    * Elitism
+    * New or modified genetic operators
+    * New or modified selection
+    * Adding additional heuristics to the search
+    * Adding a new operation to the algorithm
+
 
 
 Visualization
 -------------
 
+Having the GA generate a visualization of results will provide an additional **2** points. How this is done is up to
+each individual, but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded.
+The more creative the better.
+
+For example, having a final static visualization of a route is *fine*, but not particularly interesting. It would be
+better if the GA periodically presents the best path or a set of paths from the population. If planning on doing this in
+real time, it is not recommended to have this happen for each generation as it would take a very long time. Instead,
+perhaps only show the visualization every so often or save images to create an animation after evolution is done.
+
+Do not feel that visualizing the routes is the only option. It could be a visualization of some mechanism within the GA,
+or maybe something entirely different. Like already mentioned, the more creative the better.
+
 
 Vehicle Routing Problem
 -----------------------
+
+If a GA is also applied to the *vehicle routing problem*, **5** additional points may be obtained. Be sure to have a
+working TSP implementation before attempting this more complex problem. Points will only be awarded for a complete and
+working implementation of a GA for the vehicle routing problem
+
+The vehicle routing problem is, to describe it briefly, a generalization of TSP that is multi-objective (more than one
+value needs to be optimized). Expect it to be non-trivial to apply a GA to. There are several variations of this
+problem, so feel free to attempt any of the variations.
+
+If this is being attempted, search for data and be sure to obtain problem instances of various sizes. It may also be
+possible to find tables of best known results online.
+
+`The Wikipedia article for the vehicle routing problem provides a description of the problem <https://en.wikipedia.org/wiki/Vehicle_routing_problem>`_.
+Be sure to read through the article if this problem is being attempted.
+
 
 
 
@@ -148,4 +212,8 @@ Statistical Analysis
 What to Submit to Moodle
 ========================
 
+* Submit everything via Moodle by 11:55pm on the due date
+* Include the full implementation of the GA along with any special running instructions if necessary
+* Include the report
+* Include anything else the marker may need for effectively evaluating the work
 
