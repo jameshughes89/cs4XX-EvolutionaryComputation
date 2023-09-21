@@ -171,8 +171,9 @@ or maybe something entirely different. Like already mentioned, the more creative
 Vehicle Routing Problem
 -----------------------
 
-If the TSP is also applied to the *Vehicle Routing Problem*, **5** additional points may be obtained. Be sure to have a
-working TSP implementation before attempting this more complex problem.
+If a GA is also applied to the *vehicle routing problem*, **5** additional points may be obtained. Be sure to have a
+working TSP implementation before attempting this more complex problem. Points will only be awarded for a complete and
+working implementation of a GA for the vehicle routing problem
 
 The vehicle routing problem is, to describe it briefly, a generalization of TSP that is multi-objective (more than one
 value needs to be optimized). Expect it to be non-trivial to apply a GA to. There are several variations of this
