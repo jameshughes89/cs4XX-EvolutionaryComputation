@@ -110,6 +110,24 @@ Python provides a simple way to load JSON files directly into dictionaries.
 Implementing the Genetic Algorithm
 ==================================
 
+The first portion of the assignment is to implement a GA for searching for solutions to TSP instances. It does not
+matter *how* the GA is implemented as long as the high-level framework of the algorithm is followed. Feel free to start
+from the GAs available on the GitHub repository used for other problems. Being creative and experimental is encouraged,
+and further, this creativity will provide plenty of content to discuss in the report.
+
+Do not feel compelled to use the existing implementations of GAs that are in the repository. Additionally, the language
+used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or Python,
+please ask first for approval.
+
+Make use of the provided TSP instances in JSON format. Also consider generating a distance matrix at runtime to reduce
+the total number of distance calculations the GA has to do.
+
+When running the GA for the purpose of gathering results, be sure to run it on a variety of instance of different sizes
+(small, medium, large, and unreasonably large). Take note of everything you observe as this is worth discussing in the
+report. `It is possible to find tables of the best known/optimal results online for the provided instances <http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/STSP.html>`_
+
+Assuming the GA is working and there are no serious issues, **5** points will be awarded.
+
 
 Enhancements
 ------------
