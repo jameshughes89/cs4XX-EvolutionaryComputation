@@ -132,15 +132,54 @@ Assuming the GA is working and there are no serious issues, **5** points will be
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points will be awarded for enhancing and modifying the GA. In general, each enhancement
+A total of **5** additional points will be awarded for enhancing and modifying the GA. In general, each
+enhancement/modification will award **1** additional point, but depending on the complexity of the
+enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
+to obtain these marks if the goal is to obtain all **5** additional points.
+
+The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
+to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
+was done. If writing a report, add a section within the report outlining what was done. If the
+enhancements/modifications are not clear, points may not be awarded.
+
+Below is a short list of possible enhancement/modifications
+
+    * Elitism
+    * New or modified genetic operators
+    * New or modified selection
+    * Adding additional heuristics to the search
+    * Adding a new operation to the algorithm
+
 
 
 Visualization
 -------------
 
+Having the GA generate a visualization of results will provide an additional **2** points. How this is done is up to
+each individual, but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded.
+The more creative the better.
+
+For example, having a final static visualization of a route is *fine*, but not particularly interesting. It would be
+better if the GA periodically presents the best path or a set of paths from the population. If planning on doing this in
+real time, it is not recommended to have this happen for each generation as it would take a very long time. Instead,
+perhaps only show the visualization every so often or save images to create an animation after evolution is done.
+
+Do not feel that visualizing the routs is the only option. It could be a visualization of some mechanism within the GA,
+or maybe something entirely different. Like already mentioned, the more creative the better.
+
 
 Vehicle Routing Problem
 -----------------------
+
+If the TSP is also applied to the *Vehicle Routing Problem*, **5** additional points may be obtained. Be sure to have a
+working TSP implementation before attempting this more complex problem.
+
+The vehicle routing problem is, to describe it briefly, a generalization of TSP that is multi-objective (more than one
+value needs to be optimized). Expect it to be non-trivial to apply a GA to. There are several variations of this
+problem, so feel free to attempt any of the variations.
+
+If this is being attempted, search for data and be sure to obtain problem instances of various sizes. It may also be
+possible to find tables of best known results online.
 
 
 
