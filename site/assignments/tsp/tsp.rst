@@ -187,9 +187,87 @@ Be sure to read through the article if this problem is being attempted.
 
 
 
-
 Report
 ======
+
+Writing a simple report will award up to **5** additional points; however, a total of **13** points may be obtained by
+completing all portions of the report sufficiently.
+
+.. warning::
+
+    Writing a report is non-trivial and will likely take much longer than implementing the algorithm.
+
+
+The base report will consider spelling, grammar, prose, etc. for marking, thus, the marker will be analysing the report
+both quantitatively and qualitatively.
+
+There is no *right* way to write a report, nor is there a definitive structure. The most correct way is to write a
+report that most effectively communicates what needs to be communicated.
+
+:download:`Here is an example article that shows how one could write the report <HUGHES_FMRI.pdf>`. Providing this
+example is by no means a suggesting that this is what the report should look like. It serves to provide a frame of
+reference.
+
+Below is a list of things to consider including in the report. This list is a collection of suggested ideas to consider
+and is not intended to be the standard template.
+
+* Introduction
+
+    * What is the problem?
+    * Small literature review
+
+        * What have other people done in the past that worked
+
+
+* Problem description
+
+    * What is TSP?
+    * If applicable, what is the vehicle routing problem?
+
+
+* Algorithm description
+
+    * How was the GA implemented?
+
+        * Can someone follow the description to recreate your work?
+
+
+    * What enhancements/modifications were included?
+
+        * Why were they done?
+        * How were they done?
+
+
+* Explain how the results will be analysed
+
+    * What is being compared?
+    * How will the comparison be done?
+
+        * Mean
+        * Distribution comparison
+        * Probability values?
+
+
+* Explains the results and discuss
+
+    * What happened?
+    * How would this compare to random?
+    * How would this compare to other algorithms?
+    * How were the results compared to the best known?
+    * Did any of the implemented modifications or enhancements improve the results?
+
+
+* Conclusions and possible future directions
+
+    * What are the major takeaways?
+    * How good was it?
+    * What else could be done as next steps for continuing the analysis?
+
+
+* Bibliography
+
+    * References, if included
+
 
 
 LaTeX
