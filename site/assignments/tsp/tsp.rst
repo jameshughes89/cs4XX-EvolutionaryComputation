@@ -204,12 +204,11 @@ both quantitatively and qualitatively.
 There is no *right* way to write a report, nor is there a definitive structure. The most correct way is to write a
 report that most effectively communicates what needs to be communicated.
 
-Below is a list of example articles that show how one could write the report. Providing these examples is by no means a
-suggesting that this is what the report should look like. They simply serve to provide a frame of reference. Further,
-these were written by me more than a decade ago, so you're not allowed to make fun of them.
+:download:`Here is an example article that shows how one could write the report <HUGHES_FMRI.pdf>`. Providing this
+example is by no means a suggesting that this is what the report should look like. It serves to provide a frame of
+reference.
 
 
-* Examples....
 
 
 LaTeX
