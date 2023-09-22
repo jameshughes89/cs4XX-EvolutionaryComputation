@@ -187,9 +187,29 @@ Be sure to read through the article if this problem is being attempted.
 
 
 
-
 Report
 ======
+
+Writing a simple report will award up to **5** additional points; however, a total of **13** points may be obtained by
+completing all portions of the report sufficiently.
+
+.. warning::
+
+    Writing a report is non-trivial and will likely take much longer than implementing the algorithm.
+
+
+The base report will consider spelling, grammar, prose, etc. for marking, thus, the marker will be analysing the report
+both quantitatively and qualitatively.
+
+There is no *right* way to write a report, nor is there a definitive structure. The most correct way is to write a
+report that most effectively communicates what needs to be communicated.
+
+Below is a list of example articles that show how one could write the report. Providing these examples is by no means a
+suggesting that this is what the report should look like. They simply serve to provide a frame of reference. Further,
+these were written by me more than a decade ago, so you're not allowed to make fun of them.
+
+
+* Examples....
 
 
 LaTeX
