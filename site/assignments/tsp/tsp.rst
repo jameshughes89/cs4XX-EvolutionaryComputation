@@ -111,9 +111,18 @@ Implementing the Genetic Algorithm
 ==================================
 
 The first portion of the assignment is to implement a GA for TSP. It does not matter how the GA is implemented as long
-as the high-level framework of the algorithm is followed. Feel free to start from the GAs available on the GitHub
-repository used for other problems. Being creative and experimental is encouraged, and further, this creativity will
-provide plenty of content to discuss in the report.
+as the high-level framework of the algorithm is followed. The GA should at least have
+
+    * Initialization
+    * Fitness evaluation
+    * Selection
+    * Mutation
+    * Crossover
+    * Termination
+
+
+Feel free to start from the GAs available on the GitHub repository used for other problems. Being creative and
+experimental is encouraged, and further, this creativity will provide plenty of content to discuss in the report.
 
 Do not feel compelled to use the existing implementations of GAs that are in the repository. Additionally, the language
 used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or Python,
