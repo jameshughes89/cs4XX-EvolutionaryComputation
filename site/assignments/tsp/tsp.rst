@@ -317,6 +317,12 @@ Statistical Analysis
 What to Submit to Moodle
 ========================
 
+.. warning::
+
+    Completing a requirement does not guarantee that the corresponding points will be awarded. Each requirement must be
+    completed to the satisfaction of the marker.
+
+
 * Submit everything via Moodle by 11:55pm on the due date
 * Include the full implementation of the GA along with any special running instructions if necessary
 * Include the report
