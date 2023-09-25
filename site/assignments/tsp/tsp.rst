@@ -286,6 +286,49 @@ LaTeX
 References and Citations
 ------------------------
 
+Including effective and proper references/citations may award an additional **2** points.
+
+There is no correct number of references to include as that depends on the report itself.
+
+LaTeX and BibTeX makes references and citations relatively simple. Further, with
+`Google Scholar <https://scholar.google.com/>`_, getting references correct is trivial.
+
+#. `Google Scholar <https://scholar.google.com/>`_
+#. `Search for an article <https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing>`_
+#. Select the "Cite" link with stylised quotations next to it
+
+    .. figure:: google_scholar_cite.png
+        :width: 500 px
+        :align: center
+        :target: https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing
+
+        Top query result when searching for "introduction to evolutionary computing" on Google Scholar. The "Cite" link
+        is highlighted in the above figure.
+
+
+#. `A list of citation styles are presented for the article <https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing#d=gs_cit>`_.
+#. Select the "BibTeX" link at the bottom of the list
+
+    .. figure:: google_scholar_bibtex.png
+        :width: 500 px
+        :align: center
+        :target: https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing#d=gs_cit
+
+        List of popular citation styles. The "BibTeX" link is highlighted in the above figure.
+
+
+#. Copy the information from this page to a BibTeX file
+
+    .. code-block:: text
+
+        @book{eiben2015introduction,
+          title={Introduction to evolutionary computing},
+          author={Eiben, Agoston E and Smith, James E},
+          year={2015},
+          publisher={Springer}
+        }
+
+
 
 Figures and Tables
 ------------------
