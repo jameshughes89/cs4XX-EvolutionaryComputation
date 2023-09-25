@@ -316,6 +316,32 @@ distributions of results, etc.
 Statistical Analysis
 --------------------
 
+Including proper statistical comparisons of results may reward an additional **2** points.
+
+Typically, different results will be obtained every time the algorithm is run. This is due to the stochastic nature of
+these algorithms. For this reason, it is not possible to run these algorithms once to compare the results. Instead,
+*distributions* of results need to be obtained and these distributions are then compared to one another.
+
+In evolutionary computation, it is common to see 30 runs of each algorithm to obtain the distributions (30 runs of the
+same algorithm with the same setup and hyperparameters).
+
+It is not possible to say which statistical methods should be used for the analysis as that depends on what the goal is.
+Below is a general guideline.
+
+    * General summary statistics for each distribution
+
+        * Mean, standard deviation, etc.
+
+
+    * Comparing distributions
+
+        * Student t-test or Mann-Whitney U
+
+
+    * Measuring the difference between distributions (effect)
+
+        * Cohen's D test
+
 
 
 What to Submit to Moodle
