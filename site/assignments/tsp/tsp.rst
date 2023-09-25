@@ -308,6 +308,10 @@ References and Citations
 Figures and Tables
 ------------------
 
+Effectively including figures, tables, etc. in the report may award an additional **2** points. Examples include an
+algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
+distributions of results, etc.
+
 
 Statistical Analysis
 --------------------
