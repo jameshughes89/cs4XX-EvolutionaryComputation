@@ -294,7 +294,8 @@ If using LaTeX, the report must be written with the
 `IEEE <https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn>`_  conference template. Overleaf
 makes it simple to start using the template.
 
-Although it is possible to write the bibliography in the document with ``\bibitem``, it is far simpler to use BibTeX.
+Although it is possible to write the bibliography in the document with ``\bibitem``, it is far simpler to use
+`BibTeX <https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex>`_.
 
 Although LaTeX and BibTeX is not being taught, it should not be too difficult to get used to it with the help of
 tutorials and examples available online.
