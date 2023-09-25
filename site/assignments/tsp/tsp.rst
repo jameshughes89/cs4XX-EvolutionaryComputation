@@ -321,7 +321,7 @@ distributions of results, etc.
 Statistical Analysis
 --------------------
 
-Including proper statistical comparisons of results may reward an additional **2** points.
+Including proper statistical comparisons of results may award an additional **2** points.
 
 Typically, different results will be obtained every time the algorithm is run. This is due to the stochastic nature of
 these algorithms. For this reason, it is not possible to run these algorithms once to compare the results. Instead,
