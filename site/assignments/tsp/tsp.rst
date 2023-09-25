@@ -290,7 +290,7 @@ Although it is possible to download, write, and build everything locally on a pe
 recommended to use `Overleaf <https://www.overleaf.com/>`_. Overleaf is an online editor that takes care a lot of
 tedious setup and it automatically backs up all work.
 
-If using LaTeX, the report must be written with the
+If using LaTeX, it is recommended that the report be written with the
 `IEEE <https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn>`_  conference template. Overleaf
 makes it simple to start using the template.
 
