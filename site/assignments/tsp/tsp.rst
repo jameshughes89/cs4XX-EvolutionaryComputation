@@ -141,7 +141,7 @@ Assuming the GA is working and there are no serious issues, **5** points will be
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points will be awarded for enhancing and modifying the GA. In general, each
+A total of **5** additional points may be awarded for enhancing and modifying the GA. In general, each
 enhancement/modification will award **1** additional point, but depending on the complexity of the
 enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
 to obtain these marks if the goal is to obtain all **5** additional points.
@@ -164,7 +164,7 @@ Below is a short list of possible enhancement/modifications
 Visualization
 -------------
 
-Having the GA generate a visualization of results will provide an additional **2** points. How this is done is up to
+Having the GA generate a visualization of results may provide an additional **2** points. How this is done is up to
 each individual, but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded.
 The more creative the better.
 
