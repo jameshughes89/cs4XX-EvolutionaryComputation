@@ -312,6 +312,11 @@ Effectively including figures, tables, etc. in the report may award an additiona
 algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
 distributions of results, etc.
 
+.. note::
+
+    The tables and figures must effectively communicate relevant information. For example, a giant table of results is
+    difficult to interpret. Instead, think of how the data can be represented succinctly and clearly.
+
 
 Statistical Analysis
 --------------------
