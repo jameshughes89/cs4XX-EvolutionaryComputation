@@ -278,9 +278,26 @@ and is not intended to be the standard template.
     * References, if included
 
 
-
 LaTeX
 -----
+
+An additional **2** points may be obtained if the report is written in LaTeX.
+
+LaTeX is powerful software for writing and typesetting documents. Everything is written in plain text with various tags
+that LaTeX will use to format the document nicely.
+
+Although it is possible to download, write, and build everything locally on a personal computer, it is highly
+recommended to use `Overleaf <https://www.overleaf.com/>`_. Overleaf is an online editor that takes care a lot of
+tedious setup and it automatically backs up all work.
+
+If using LaTeX, the report must be written with the
+`IEEE <https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn>`_  conference template. Overleaf
+makes it simple to start using the template.
+
+Although it is possible to write the bibliography in the document with ``\bibitem``, it is far simpler to use BibTeX.
+
+Although LaTeX and BibTeX is not being taught, it should not be too difficult to get used to it with the help of
+tutorials and examples available online.
 
 
 References and Citations
