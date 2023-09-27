@@ -141,7 +141,7 @@ Assuming the GA is working and there are no serious issues, **5** points will be
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points will be awarded for enhancing and modifying the GA. In general, each
+A total of **5** additional points may be awarded for enhancing and modifying the GA. In general, each
 enhancement/modification will award **1** additional point, but depending on the complexity of the
 enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
 to obtain these marks if the goal is to obtain all **5** additional points.
@@ -164,7 +164,7 @@ Below is a short list of possible enhancement/modifications
 Visualization
 -------------
 
-Having the GA generate a visualization of results will provide an additional **2** points. How this is done is up to
+Having the GA generate a visualization of results may provide an additional **2** points. How this is done is up to
 each individual, but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded.
 The more creative the better.
 
@@ -304,18 +304,102 @@ tutorials and examples available online.
 References and Citations
 ------------------------
 
+Including effective and proper references/citations may award an additional **2** points.
+
+There is no correct number of references to include as that depends on the report itself.
+
+LaTeX and BibTeX makes references and citations relatively simple. Further, with
+`Google Scholar <https://scholar.google.com/>`_, getting references correct is trivial.
+
+#. `Google Scholar <https://scholar.google.com/>`_
+#. `Search for an article <https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing>`_
+#. Select the "Cite" link with stylised quotations next to it
+
+    .. figure:: google_scholar_cite.png
+        :width: 500 px
+        :align: center
+        :target: https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing
+
+        Top query result when searching for "introduction to evolutionary computing" on Google Scholar. The "Cite" link
+        is highlighted in the above figure.
+
+
+#. `A list of citation styles are presented for the article <https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing#d=gs_cit>`_.
+#. Select the "BibTeX" link at the bottom of the list
+
+    .. figure:: google_scholar_bibtex.png
+        :width: 500 px
+        :align: center
+        :target: https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=introduction+to+evolutionary+computing#d=gs_cit
+
+        List of popular citation styles. The "BibTeX" link is highlighted in the above figure.
+
+
+#. Copy the information from this page to a BibTeX file
+
+    .. code-block:: text
+
+        @book{eiben2015introduction,
+          title={Introduction to evolutionary computing},
+          author={Eiben, Agoston E and Smith, James E},
+          year={2015},
+          publisher={Springer}
+        }
+
+
 
 Figures and Tables
 ------------------
+
+Effectively including figures, tables, etc. in the report may award an additional **2** points. Examples include an
+algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
+distributions of results, etc.
+
+.. note::
+
+    The tables and figures must effectively communicate relevant information. For example, a giant table of results is
+    difficult to interpret. Instead, think of how the data can be represented succinctly and clearly.
 
 
 Statistical Analysis
 --------------------
 
+Including proper statistical comparisons of results may award an additional **2** points.
+
+Typically, different results will be obtained every time the algorithm is run. This is due to the stochastic nature of
+these algorithms. For this reason, it is not possible to run these algorithms once to compare the results. Instead,
+*distributions* of results need to be obtained and these distributions are then compared to one another.
+
+In evolutionary computation, it is common to see 30 runs of each algorithm to obtain the distributions (30 runs of the
+same algorithm with the same setup and hyperparameters).
+
+It is not possible to say which statistical methods should be used for the analysis as that depends on what the goal is.
+Below is a general guideline.
+
+    * General summary statistics for each distribution
+
+        * Mean, standard deviation, etc.
+
+
+    * Comparing distributions
+
+        * Student t-test or Mann-Whitney U
+
+
+    * Measuring the difference between distributions (effect)
+
+        * Cohen's D test
+
 
 
 What to Submit to Moodle
 ========================
+
+.. warning::
+
+    Completing a requirement does not guarantee that the corresponding points will be awarded. Each requirement must be
+    completed to the satisfaction of the marker.
+
 
 * Submit everything via Moodle by 11:55pm on the due date
 * Include the full implementation of the GA along with any special running instructions if necessary
