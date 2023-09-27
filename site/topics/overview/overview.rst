@@ -304,7 +304,7 @@ Initialization and Termination
 * Termination can be done however the user wants
 
     * After a predetermined number of generations
-    * After a debited fitness value is achieved
+    * After a desired fitness value is achieved
     * After some diversity threshold is met
     * If fitness has not improved for some time
 
