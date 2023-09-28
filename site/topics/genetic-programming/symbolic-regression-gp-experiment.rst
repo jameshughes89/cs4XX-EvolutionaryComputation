@@ -50,11 +50,6 @@ Multi-Objective Problem
 
 
 
-Comparing Results
-=================
-
-
-
 For Next Class
 ==============
 
