@@ -62,6 +62,7 @@ YouTube
     topics/selection/selection
     topics/genetic-programming/genetic-programming
     topics/genetic-programming/symbolic-regression-gp
+    topics/genetic-programming/symbolic-regression-gp-experiment
 
 
 .. toctree::
