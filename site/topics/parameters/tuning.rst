@@ -24,20 +24,21 @@ Symbolic vs. Numeric Hyperparameters
     * A crossover rate needs to be set
     * A decision needs to be made on which selection to use
 
-        * If tournament selection is selected, this will introduce another numeric parameter --- the tournament size
+        * Symbolic hyperparameters may introduce additional numeric hyperparameters
+        * For example, if tournament selection is selected, the tournament size needs to be specified
 
 
-* Typically, symbolic parameters are more high-level
+* Typically, symbolic hyperparameters are more high-level
 
     * They make up the evolutionary computation algorithm
 
 
-* The numerical parameters are low-level
+* The numerical hyperparameters are low-level
 
     * Specifies the details of the algorithm's variant a
 
 
-* An *evolutionary computation algorithm instance* is one that has all the necessary parameters set
+* An *evolutionary computation algorithm instance* is one that has all the necessary hyperparameters set
 
 
 
