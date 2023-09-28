@@ -36,6 +36,18 @@ Language
 Multi-Objective Problem
 =======================
 
+* A strategy for managing bloat is to add negative selection pressure to larger chromosomes
+
+    * Given chromosomes with similar or identical fitness values, it is better to select those with smaller trees
+
+
+* Try adding tree size as part of the fitness measure and see if this helps simplify the generated chromosomes
+
+    * Going through DEAP's documentation will be helpful for learning how to do this
+
+        * `Defining a fitness that has more than one objective <https://deap.readthedocs.io/en/master>`_
+        * `Having a fitness function return multiple values <https://deap.readthedocs.io/en/master>`_
+
 
 
 Comparing Results
