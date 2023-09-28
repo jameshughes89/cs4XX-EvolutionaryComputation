@@ -45,8 +45,8 @@ Multi-Objective Problem
 
     * Going through DEAP's documentation will be helpful for learning how to do this
 
-        * `Defining a fitness that has more than one objective <https://deap.readthedocs.io/en/master>`_
-        * `Having a fitness function return multiple values <https://deap.readthedocs.io/en/master>`_
+        * `Defining a fitness that has more than one objective <https://deap.readthedocs.io/en/master/tutorials/basic/part2.html#a-first-individual>`_
+        * `Having a fitness function return multiple values <https://deap.readthedocs.io/en/master/tutorials/basic/part2.html#evaluation>`_
 
 
 
