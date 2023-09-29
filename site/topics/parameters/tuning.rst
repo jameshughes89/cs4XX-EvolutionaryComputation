@@ -35,7 +35,7 @@ Symbolic vs. Numeric Hyperparameters
 
 * The numerical hyperparameters are low-level
 
-    * Specifies the details of the algorithm's variant a
+    * Specifies the details of the algorithm's implementation 
 
 
 * An *evolutionary computation algorithm instance* is one that has all the necessary hyperparameters set
