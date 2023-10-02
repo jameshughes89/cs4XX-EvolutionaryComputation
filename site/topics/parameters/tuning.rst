@@ -99,6 +99,42 @@ Starting Places
 Empirical Tinkering
 -------------------
 
+* Once the hyperparameters are initially set, the algorithm should be run to get a sense of performance
+* Based on the performance, the hyperparameter values need to be adjusted
+
+.. figure:: relevant_irrelevant_hyperparameter.png
+    :width: 500 px
+    :align: center
+
+    Changing the value of hyperparameters may or may not have an impact. When tuning the hyperparameter values, focus on
+    those that appear to make a difference. Note, however, that some hyperparameters may appear to be irrelevant but
+    do matter once other hyperparameter values are changed.
+
+
+* The difficulty here is that the hyperparameters have complex interactions with one another
+
+    * Increasing population size may require increasing tournament size
+    * Increasing mutation rate may require more generations
+    * Suddenly the crossover rate matters once mutation rate grew past a certain value
+
+
+* To make matters worse, *good* hyperparameter settings is highly problem dependant
+
+.. figure:: problem_vs_hyperparameter_vs_performance.png
+    :width: 500 px
+    :align: center
+
+    Certain hyperparameter values may work well on one problem, but not other. All tuning must be done per problem.
+
+
+* It is foolish to search for the "best" hyperparameter configuration
+
+    * There are literally uncountably infinite configurations
+    * It's a pipe dream
+
+
+* The trick is to run the algorithm repeatedly and tune the hyperparameters until adequate results are obtained
+
 
 Automated Approaches
 --------------------
