@@ -135,9 +135,13 @@ Empirical Tinkering
 
 * The trick is to run the algorithm repeatedly and tune the hyperparameters until adequate results are obtained
 
+    * With experience, this process gets easier
 
-Automated Approaches
---------------------
+
+.. note::
+
+    Automated algorithms for tuning hyperparameters do exist, but they tend to not be overly popular. Feel free to
+    explore these, but do not be surprised if they end up being less helpful than desired.
 
 
 
