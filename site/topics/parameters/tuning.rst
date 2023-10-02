@@ -53,8 +53,47 @@ Symbolic vs. Numeric Hyperparameters
 Tuning Hyperparameters
 ======================
 
+* There is no silver bullet strategy strategy for finding the best hyperparameters
+* Often, some reasonable starting values are selected and then tuned based on the algorithm's results
+
+
 Starting Places
 ---------------
+
+* There is no *correct* starting values for any hyperparameters
+
+    * With experience, a general intuition will form on what is *reasonable*
+
+
+* Additionally, what one may argue is typical will differ between evolutionary computation algorithms
+* For a genetic algorithm, common values for variation operators to start with are
+
+    * Crossover of 80%
+    * Mutation rage of 20%
+
+
+* However, for genetic programming, a mutation rate of 20% would be considered shockingly high
+
+* Some symbolic hyperparameter choices may have numerical hyperparameters that need to be set
+
+    * For example, tournament selection requires a tournament size
+    * A safe starting value for tournament selection is 2
+
+
+* For population size and number of generations, it's difficult to say as this depends heavily on the problem
+
+    * For example, was 1,000 generations enough to converge?
+    * If not, try 10,000 generations
+    * If that was not enough, try 100,000
+    * ...
+
+
+* Further, some hyperparameter values may need to be adjusted as other hypermarkets are changed
+
+    * Consider population size
+    * It is reasonable to increase the population size if results improve as it grows
+    * However, depending on the selection strategy used, as population sizes grow, selection pressure may decrease
+    * Thus, if the population size grows, the size of the tournament for tournament selection may need to increase
 
 
 Empirical Tinkering
