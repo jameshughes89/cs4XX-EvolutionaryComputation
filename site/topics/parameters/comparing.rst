@@ -71,7 +71,7 @@ Random Variables
 
     * They may effectively be the same
     * The two groups do not take different amounts of time to recover from the flu
-    * The squirrel I named Jerry does not actually bury more nuts than the squirrel I named Jimbo
+    * The squirrel I named Jimbo does not actually bury more nuts than the squirrel I named Sir Lora
     * There really isn't more blond people this year vs. last
     * My algorithm isn't really performing better than the next persons'
 
