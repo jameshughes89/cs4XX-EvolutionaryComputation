@@ -86,6 +86,17 @@ Example --- Drug Trial
 Null Hypothesis
 ---------------
 
+* Always start by assuming that there is no real difference
+* This is called the *Null Hypothesis*
+
+* It may feel like an arbitrary position to take, but with this assumption, it allows one to start to form an argument
+
+#. Assume the drug has no actual impact on the recovery time
+#. If the drug has no impact, then it would be like both groups had the placebo
+#. If both groups had the placebo, it really would not have mattered which person was assigned to which group
+#. Thus, it should be possible to assign each individual and their corresponding recovery time to one of the two groups randomly
+#. The resulting distributions should be similar
+
 
 Permutation/Randomization Test
 ------------------------------
