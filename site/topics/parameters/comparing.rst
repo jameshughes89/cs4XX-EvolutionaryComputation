@@ -7,6 +7,8 @@ Random Variables
 ================
 
 
+
+
 Example --- Drug Trial
 ======================
 
