@@ -95,7 +95,7 @@ Null Hypothesis
 #. If the drug has no impact, then it would be like both groups had the placebo
 #. If both groups had the placebo, it really would not have mattered which person was assigned to which group
 #. Thus, it should be possible to assign each individual and their corresponding recovery time to one of the two groups randomly
-#. The resulting distributions should be similar
+#. Therefore, the difference in the average recovery times between the two randomly assigned groups would be an example of what one would get by dumb luck
 
 
 Permutation/Randomization Test
