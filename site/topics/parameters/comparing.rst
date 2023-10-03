@@ -25,7 +25,7 @@ Random Variables
 * Consider the following two random variables
 
 .. figure:: random_variable_1.png
-    :width: 500 px
+    :width: 666 px
     :align: center
 
     Output of some random variable represented as a box. The data is shown as a list of numbers and as a distribution.
@@ -33,7 +33,7 @@ Random Variables
 
 
 .. figure:: random_variable_2.png
-    :width: 500 px
+    :width: 666 px
     :align: center
 
     Output of another random variable represented as a box. The data is shown as a list of numbers and as a
@@ -54,7 +54,7 @@ Random Variables
 
 
 .. figure:: random_variables_together.png
-    :width: 500 px
+    :width: 666 px
     :align: center
 
     The two random variables' measurements plotted against each other.
