@@ -2,6 +2,8 @@
 What Comparing Distributions *Means*
 ************************************
 
+* Given two evolutionary computation instances, how does one determine which is *better*?
+
 
 Random Variables
 ================
