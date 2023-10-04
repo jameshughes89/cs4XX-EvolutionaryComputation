@@ -11,7 +11,7 @@ Representation
     * Binary
     * Integer
     * Real value/floating point numbers
-    * permutations
+    * Permutations
     * Tree structures
     * Finite state machines
     * ...
