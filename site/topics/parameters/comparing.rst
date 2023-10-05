@@ -126,7 +126,7 @@ Null Hypothesis
 * It may feel like an arbitrary position to take, but with this assumption, it allows one to start to form an argument
 
 #. Assume the drug has no actual impact on the recovery time
-#. If the drug has no impact, then it would be like both groups had the placebo
+#. If the drug has no impact, then it could be expected that the average recovery time would be no different than the placebo
 #. If both groups had the placebo, it really would not have mattered which person was assigned to which group
 #. Thus, it should be possible to assign each individual and their corresponding recovery time to one of the two groups randomly
 #. Therefore, the difference in the average recovery times between the two randomly assigned groups would be an example of what one would get by dumb luck
@@ -170,15 +170,15 @@ Interpreting Results
 
 
 * Of the :math:`1,000,000` combinations randomly generated
-* There were :math:`205` with a by chance recovery time the same or better than what was originally observed
-* In other words, there is a 0.205% chance that the original observation happened by dumb luck
+* There were :math:`205` with a by chance recovery time the same or better than the originally observed 1.6 days faster
+* In other words, there is a 0.0205% chance that the original observation happened by dumb luck
 
-    * :math:`\frac{205}{1000000} = 0.00205 = 0.205\%`
-    * There is a roughly one in 5,000 chance this would have happened by dumb luck
+    * :math:`\frac{205}{1000000} = 0.000205 = 0.0205\%`
+    * There is a roughly one in 50,000 chance this would have happened by dumb luck
 
 
 * This is where the idea of a probability value (p-value) comes in
-* There is a 0.00205 probability that the drug's improved recovery time happened by chance
+* There is a 0.000205 probability that the drug's improved recovery time happened by chance
 
 
 T-Tests and Mann-Whitney U tests
