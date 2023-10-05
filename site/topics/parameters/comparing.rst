@@ -104,7 +104,7 @@ Example --- Drug Trial
 
     * The average recovery time for the placebo group was roughly 15.4 days
     * The average recovery time for the drug group was roughly 13.8 days
-    * The drug group recovered, on average, 1.6 faster
+    * The drug group recovered, on average, 1.6 days faster
 
 
 * One may be tempted to conclude that the drug clearly works
