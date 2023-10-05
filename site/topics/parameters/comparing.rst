@@ -107,13 +107,14 @@ Permutation/Randomization Test
 * It is possible to generate all possible combinations of assigning the 100 people to two groups
 * If all possible combinations are generated, all possible average *by chance* differences can be calculated
 
-    * Although, there are a lot
+    * Although, in this example, there are a lot
     * A total of :math:`1.01 \times 10^{29}` combinations of splitting 100 people into two groups of 50
     * In cases where it is intractable to generate all combinations, simply generate some large number of combinations
+    * Here, :math:`1,000,000` combinations will be generated
 
 
 .. figure:: chance_average_group_differences.png
-    :width: 666 px
+    :width: 500 px
     :align: center
 
     Distribution of the "by chance" average group differences after 1,000,000 shuffles of the two groups. This
