@@ -1,6 +1,6 @@
-****************
-Student Lectures
-****************
+********************************
+Student Lecture Task Description
+********************************
 
 * **Maximum Points**: 10
 * **Topic Selection Due Date**: October 11, 2023
