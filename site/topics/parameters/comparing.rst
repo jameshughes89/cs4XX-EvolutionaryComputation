@@ -139,4 +139,4 @@ T-Tests and Mann-Whitney U tests
 For Next Class
 ==============
 
-* TBD
+* Although not entirely related, `check out 3 Blue 1 Brown's video on Bayes' Rule <https://www.youtube.com/watch?v=lG4VkPoG3ko>`_
