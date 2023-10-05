@@ -82,6 +82,36 @@ Random Variables
 Example --- Drug Trial
 ======================
 
+* Consider a drug trial
+* A group of 50 people is given a new drug that is intended to reduce the recovery time of the flu
+* Another group is given a placebo
+* No one in either group knows if they are given the new drug or the placebo
+
+* Here, the random variables are the two groups and the observations are the recovery times of the people in each group
+
+.. figure:: random_variables_same_distro.png
+    :width: 500 px
+    :align: center
+
+    Distributions of group recovery times for individuals in the placebo group and drug group.
+
+
+* With the above example
+
+    * The average recovery time for the placebo group was roughly 15.4 days
+    * The average recovery time for the drug group was roughly 13.8 days
+    * The drug group recovered, on average, 1.6 faster
+
+
+* One may be tempted to conclude that the drug clearly works
+* However, the average recovery time is a summary statistic of a distribution
+* When observing the distributions, it is clear that there is more nuance
+
+* Additionally, there were only 50 observations fro each group
+* Every individual is different and every observation is different
+* If I were to do this again, the distributions would look different
+* What are the odds that this result just happened by chance?
+
 
 Null Hypothesis
 ---------------
@@ -100,6 +130,25 @@ Null Hypothesis
 
 Permutation/Randomization Test
 ------------------------------
+
+* Assuming the null hypothesis
+* Shuffling the groups once and calculating the difference between the group averages will give one example of a *chance* difference
+
+* It is possible to generate all possible combinations of assigning the 100 people to two groups
+* If all possible combinations are generated, all possible average *by chance* differences can be calculated
+
+    * Although, in this example, there are a lot
+    * A total of :math:`1.01 \times 10^{29}` combinations of splitting 100 people into two groups of 50
+    * In cases where it is intractable to generate all combinations, simply generate some large number of combinations
+    * Here, :math:`1,000,000` combinations will be generated
+
+
+.. figure:: chance_average_group_differences.png
+    :width: 500 px
+    :align: center
+
+    Distribution of the "by chance" average group differences after 1,000,000 shuffles of the two groups. This
+    distribution is **not** the recovery times like in the above distributions.
 
 
 Interpreting Results
