@@ -111,7 +111,7 @@ Example --- Drug Trial
 * However, the average recovery time is a summary statistic of a distribution
 * When observing the distributions, it is clear that there is more nuance
 
-* Additionally, there were only 50 observations fro each group
+* Additionally, there were only 50 observations from each group
 * Every individual is different and every observation is different
 * If I were to do this again, the distributions would look different
 * What are the odds that this result just happened by chance?
