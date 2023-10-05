@@ -89,6 +89,10 @@ Example --- Drug Trial
 
 * Here, the random variables are the two groups and the observations are the recovery times of the people in each group
 
+    * Further, the recovery time is itself a random variable
+    * This is the property/characteristic trying to be understood
+
+
 .. figure:: random_variables_same_distro.png
     :width: 500 px
     :align: center
