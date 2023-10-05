@@ -105,6 +105,16 @@ Permutation/Randomization Test
 Interpreting Results
 --------------------
 
+* The key question to ask now is, *how likely is it that our original observation actually happened by chance?*
+
+
+.. figure:: chance_average_group_differences_with_observation.png
+    :width: 666 px
+    :align: center
+
+    Observed average group difference in recovery time between the drug group and the placebo group shown on the
+    distribution of the chance average group differences. The number of chance observations with the same or lower
+    recovery times than the observed will inform how likely our original observation could happen by chance.
 
 
 For Next Class
