@@ -128,6 +128,13 @@ Interpreting Results
 * There is a 0.00205 probability that the drug's improved recovery time happened by chance
 
 
+T-Tests and Mann-Whitney U tests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The permutation test is explained to provide the intuition into what p-values actually mean
+* In practice, using a t-test or Mann-Whitney U test is sufficient for this course
+
+
 
 For Next Class
 ==============
