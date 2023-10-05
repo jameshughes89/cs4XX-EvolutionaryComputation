@@ -67,6 +67,14 @@ YouTube
 
 
 .. toctree::
+    :caption: Student Lectures
+    :maxdepth: 1
+    :numbered:
+
+    student-lectures/description
+
+
+.. toctree::
     :caption: Assignments
     :maxdepth: 1
     :numbered:
