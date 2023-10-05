@@ -62,6 +62,9 @@ Pull requests must be merged at least one day before the date of the lecture.
 Once the pull request is merged, the GitHub repository will automatically create the webpage with Sphinx and update the
 course website with the new content.
 
+The reStructuredText files that are to be submitted via a pull request are to be added under the "student-lecture"
+directory within the GitHub repository.
+
 
 
 Provided Files
