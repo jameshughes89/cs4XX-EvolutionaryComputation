@@ -154,9 +154,38 @@ Permutation/Randomization Test
 Interpreting Results
 --------------------
 
+* The key question to ask now is, *how likely is it that the original observation actually happened by chance?*
+
+.. figure:: chance_average_group_differences_with_observation.png
+    :width: 500 px
+    :align: center
+
+    Original observed average group difference in recovery time between the drug group and the placebo group shown on
+    the distribution of the chance average group differences. The number of chance observations with the same or lower
+    recovery times than the originally observed will inform how likely our observation could happen by chance.
+
+
+* Of the :math:`1,000,000` combinations randomly generated
+* There were :math:`205` with a by chance recovery time the same or better than what was originally observed
+* In other words, there is a 0.205% chance that the original observation happened by dumb luck
+
+    * :math:`\frac{205}{1000000} = 0.00205 = 0.205\%`
+    * There is a roughly one in 5,000 chance this would have happened by dumb luck
+
+
+* This is where the idea of a probability value (p-value) comes in
+* There is a 0.00205 probability that the drug's improved recovery time happened by chance
+
+
+T-Tests and Mann-Whitney U tests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The permutation test is explained to provide the intuition into what p-values actually mean
+* In practice, using a t-test or Mann-Whitney U test is sufficient for this course
+
 
 
 For Next Class
 ==============
 
-* TBD
+* Although not entirely related, `check out 3 Blue 1 Brown's video on Bayes' Rule <https://www.youtube.com/watch?v=lG4VkPoG3ko>`_
