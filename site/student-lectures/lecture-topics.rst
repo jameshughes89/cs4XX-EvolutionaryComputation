@@ -4,16 +4,16 @@ Student Lectures
 
 * **Maximum Points**: 10
 * **Topic Selection Due Date**: October 11, 2023
-* **PR Merge Date**: At Least One Day Before Lecture Date
-* **Lecture Date***: Ongoing --- TBD
+* **PR Merge Date**: At Least One Day Before the Lecture Date
+* **Lecture Date***: Ongoing
 
 
 
 Base Task
 =========
 
-Each student must give a 15 -- 20min lecture on a topic of their choice. All lectures must be created as a webpage using
-*reStructuredText* and Sphinx. Lectures will be submitted as pull requests to the course GitHub repository and all
+Each student must give a 15 -- 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
+using *reStructuredText* and Sphinx. Lectures will be submitted as pull requests to the course GitHub repository and all
 lectures must be posted to the course website. The lectures will only be posted once approved by the instructor.
 
 
@@ -51,6 +51,19 @@ on a first-come first-served basis. Any students unable to select a date will be
 
 
 
+Submitting a Pull Request
+=========================
+
+Each lecture will be submitted via a pull request for the course's GitHub repository. The pull request must be approved
+by the instructor before it can be added to the course website and ultimately presented.
+
+Pull requests must be merged at least one day before the date of the lecture.
+
+Once the pull request is merged, the GitHub repository will automatically create the webpage with Sphinx and update the
+course website with the new content.
+
+
+
 Provided Files
 ==============
 
@@ -74,12 +87,3 @@ Points will be awarded based on the lecture quality and clarity. Points are awar
 itself along with how the content is delivered.
 
 The key to making a *good* lecture is to ensure that it is not *boring*.
-
-
-
-Submitting a Pull Request
-=========================
-
-
-
-...
