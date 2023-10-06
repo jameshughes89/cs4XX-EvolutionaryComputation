@@ -32,6 +32,14 @@ Multi-Objective Problems
     * Low price
 
 
+.. figure:: house_multiobjective_plot.png
+    :width: 500 px
+    :align: center
+
+    One may want a large house but to pay as little as possible. These objectives are in conflict with one another. Each
+    point represents a potential house. 
+
+
 
 Scalarization
 =============
