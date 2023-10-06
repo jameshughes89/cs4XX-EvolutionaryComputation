@@ -4,7 +4,7 @@ Multi-Objective Problems
 
 * For the most part, all problems looked at have been single objective problems
 * However, it is not uncommon to have multiple objectives to optimize
-* Sometimes these objectives component each other, and sometimes they are in conflict with one another
+* Sometimes these objectives compliment each other, and sometimes they are in conflict with one another
 
 * Consider buying a house
 
@@ -18,6 +18,7 @@ Multi-Objective Problems
 * Some of these features are subjective
 
     * Style
+    * The amenities one cares about
 
 
 * Some complement one another
