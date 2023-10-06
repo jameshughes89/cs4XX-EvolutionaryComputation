@@ -27,7 +27,7 @@ Only one student may do a lecture on a particular topic. Topics will be selected
 topic choices along with preferred lecture date are to be submitted to the instructor via email.
 
 
-* Differential Evolution
+* Differential Evolution **(ALREADY SELECTED)**
 * Evolutionary Programming
 * Evolutionary Strategies
 * Ant Colony Optimization
@@ -56,7 +56,7 @@ All topic choices along with preferred lecture date are to be submitted to the i
 Student Lecture Dates:
 
 * November 14th (2 slots available)
-* November 15th (2 slots available)
+* November 15th (1 slot available)
 * November 17th (2 slots available)
 * November 21st (2 slots available)
 * November 22nd (2 slots available)
