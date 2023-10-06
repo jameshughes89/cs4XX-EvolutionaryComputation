@@ -3,9 +3,9 @@ Student Lecture Task Description
 ********************************
 
 * **Maximum Points**: 10
-* **Topic Selection Due Date**: October 11, 2023
+* **Topic Selection Due Date**: October 11, 2023, submitted via email
 * **PR Merge Date**: At Least One Day Before the Lecture Date
-* **Lecture Date***: Ongoing
+* **Lecture Date**: November 14th -- 24th
 
 
 
@@ -23,9 +23,11 @@ Potential Lecture Topics
 
 Below is a list of possible topics, but students may pick other topics as long as they are approved by the instructor.
 
-Only one student may do a lecture on a particular topic. Topics will be selected on a first-come first-served basis.
+Only one student may do a lecture on a particular topic. Topics will be selected on a first-come first-served basis. All
+topic choices along with preferred lecture date are to be submitted to the instructor via email.
 
-* Differential Evolution
+
+* Differential Evolution **(ALREADY SELECTED)**
 * Evolutionary Programming
 * Evolutionary Strategies
 * Ant Colony Optimization
@@ -48,6 +50,17 @@ Lecture Dates
 
 It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
 on a first-come first-served basis. Any students unable to select a date will be assigned one by the instructor.
+
+All topic choices along with preferred lecture date are to be submitted to the instructor via email.
+
+Student Lecture Dates:
+
+* November 14th (2 slots available)
+* November 15th (1 slot available)
+* November 17th (2 slots available)
+* November 21st (2 slots available)
+* November 22nd (2 slots available)
+* November 24th (2 slots available)
 
 
 
