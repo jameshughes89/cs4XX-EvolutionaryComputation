@@ -5,7 +5,7 @@ Student Lecture Task Description
 * **Maximum Points**: 10
 * **Topic Selection Due Date**: October 11, 2023
 * **PR Merge Date**: At Least One Day Before the Lecture Date
-* **Lecture Date***: Ongoing
+* **Lecture Date**: Ongoing
 
 
 
