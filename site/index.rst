@@ -81,6 +81,7 @@ YouTube
     :numbered:
 
     assignments/tsp/tsp
+    assignments/gp/gp
 
 
 .. toctree::
