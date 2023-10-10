@@ -60,6 +60,8 @@ Weighted Sum
 
     :math:`w_{1}f_{1}(x) + w_{2}f_{2}(x) + w_{3}f_{3}(x) + ... + w_{m}f_{m}(x)`
 
+    Or
+
     :math:`\sum_{i}^{m}w_{i}f_{i}(x)`
 
 
@@ -67,8 +69,8 @@ Weighted Sum
 
     * :math:`x` is some chromosome
     * :math:`m` is the number of objectives being optimized
-    * :math:`f_{i}(x)` is a function returning the :math:`i^{th}` objective's fitness
-    * :math:`w_i` is the scale of objective :math:`i`
+    * :math:`f_{i}(x)` is a function returning the :math:`i^{th}` objective's fitness on chromosome :math:`x`
+    * :math:`w_i` is the weight/scale of objective :math:`i`
 
 
 * If one objective is more important than another, assign it a stronger weight
