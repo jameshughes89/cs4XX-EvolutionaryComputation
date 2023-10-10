@@ -25,11 +25,11 @@ effectively to receive all 30 points.
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of the GA for TSP
+* A total of **5** points will be awarded for having a working implementation of GP for Symbolic Regression
 
-    * A total of **5** additional points may be awarded for adding enhancements to the GA
-    * Applying a GA to a more complex version of the problem, the *Vehicle Routing Problem*, will award **5** points
-    * Generating an effective visualization for solutions may award up to **2** additional points
+    * A total of **5** additional points may be awarded for adding enhancements to the GP implementation
+    * Using GP for a typed problem may award an additional **5** points
+    * Generating an effective visualization for evolution/solutions may award up to **2** additional points
 
     * A complete report will award up to **5** points
 
@@ -41,7 +41,8 @@ description.
 
 .. note::
 
-    A working GA is required in order to obtain any points for the additional tasks described within the assignment.
+    A working GP implementation is required in order to obtain any points for the additional tasks described within the
+    assignment.
 
 
 
