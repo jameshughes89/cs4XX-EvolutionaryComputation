@@ -69,6 +69,18 @@ make the problems more difficult. The goal is to find the function that was used
 Implementing Genetic Programming
 ================================
 
+The first portion of the assignment is to implement GP for symbolic regression. It does not matter how the GP is
+implemented as long as the high-level framework of the algorithm is followed.
+
+Feel free to start from the GP implementations available on the GitHub repository. Being creative and experimental is
+encouraged, and further, this creativity will provide plenty of content to discuss in the report.
+
+Do not feel compelled to use the existing implementations of the GP that are in the repository. Additionally, the
+language used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or
+Python, please ask first for approval.
+
+Assuming the GP implementation is working and there are no serious issues, **5** points will be awarded.
+
 
 Enhancements and Modifications
 ------------------------------
