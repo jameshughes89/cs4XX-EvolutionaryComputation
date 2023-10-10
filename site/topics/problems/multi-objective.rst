@@ -76,9 +76,8 @@ Weighted Sum
 * If one objective is more important than another, assign it a stronger weight
 * Use negative weights to account for objectives that are to be minimized/maximized
 
-
-Limitations
------------
+* Unfortunately, however, weighted sums do not work too well beyond two or three objectives
+* Further, it's not always easy to assign the weights
 
 
 
