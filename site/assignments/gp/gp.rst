@@ -10,8 +10,8 @@ Genetic Programming
 Base Task
 =========
 
-The base task is to implement a Genetic Algorithm (GA) for the
-`Travelling Salesperson Problem (TSP) <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_.
+The base task is to implement Genetic Programming (GP) for
+`Symbolic Regression <https://en.wikipedia.org/wiki/Symbolic_regression>`_.
 
 
 
