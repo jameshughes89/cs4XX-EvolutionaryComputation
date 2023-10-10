@@ -44,10 +44,20 @@ Multi-Objective Problems
 Scalarization
 =============
 
+* Scalarization is the process of *scaling* the various features to be optimized and combining them into a single value
+
+    * It is a way to turn multi-objective problems into a single objective problem
+
+
+* It is an *a priori* process, meaning the decisions about the scaling must be done before the search starts
 
 
 Weighted Sum
 ------------
+
+
+Limitations
+-----------
 
 
 
