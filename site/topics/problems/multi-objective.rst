@@ -55,6 +55,25 @@ Scalarization
 Weighted Sum
 ------------
 
+* The simplest strategy is a *weighted sum*
+* Scale each individual objective being optimized and add them together to make a single value
+
+    :math:`w_{1}f_{1}(x) + w_{2}f_{2}(x) + w_{3}f_{3}(x) + ... + w_{m}f_{m}(x)`
+
+    :math:`\sum_{i}^{m}w_{i}f_{i}(x)`
+
+
+* Where
+
+    * :math:`x` is some chromosome
+    * :math:`m` is the number of objectives being optimized
+    * :math:`f_{i}(x)` is a function returning the :math:`i^{th}` objective's fitness
+    * :math:`w_i` is the scale of objective :math:`i`
+
+
+* If one objective is more important than another, assign it a stronger weight
+* Use negative weights to account for objectives that are to be minimized/maximized
+
 
 Limitations
 -----------
