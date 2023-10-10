@@ -115,6 +115,17 @@ the better.
 Typed Problems
 --------------
 
+An additional **5** points may be awarded if GP is effective used on a typed problem. No data will be provided, thus
+finding an interesting problem and related data will be required. It must be made clear to the marker that GP was
+sufficiently applied to the problem and that the problem is interesting enough to earn the additional points.
+
+Problems/data that are used for tutorial implementations of typed GP for the used GP system will not be eligible for the
+additional points. For example, one of the tutorials for DEAP used typed GP for spam detection. Thus, spam detection is
+a problem that is not eligible for receiving additional points.
+
+If struggling to find a problem, check out the `UCI Machine Learning Repository <https://archive.ics.uci.edu/>`_.
+
+
 
 Report
 ======
