@@ -85,10 +85,31 @@ Assuming the GP implementation is working and there are no serious issues, **5**
 Enhancements and Modifications
 ------------------------------
 
+A total of **5** additional points may be awarded for enhancing and modifying the GP implementation. In general, each
+enhancement/modification will award **1** additional point, but depending on the complexity of the
+enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
+to obtain these marks if the goal is to obtain all **5** additional points.
+
+The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
+to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
+was done. If writing a report, add a section within the report outlining what was done. If the
+enhancements/modifications are not clear, points may not be awarded.
+
+Below is a short list of possible enhancement/modifications
+
+    * Elitism
+    * New or modified genetic operators
+    * New or modified selection
+    * Adding additional heuristics to the search
+    * Adding a new operation to the algorithm
 
 
 Visualization
 -------------
+
+Generating a visualization of results may provide an additional **2** points. How this is done is up to each individual,
+but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded. The more creative
+the better.
 
 
 Typed Problems
