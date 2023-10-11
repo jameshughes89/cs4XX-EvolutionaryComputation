@@ -115,6 +115,23 @@ Dominance
     points.
 
 
+* In the above example,
+
+    * Point `a` is better than `b` in both dimensions
+    * Point `a` is better than `c` in one dimension, but equal in another
+    * Point `a` is worse than `e` in both dimensions
+    * It is difficult to compare points `a` and `d` since one is better in one dimension but worse in the other
+
+
+* Here, one would say point `a` *dominates* points `b` and `c`
+
+    * Although `a` and `c` are equal along the x-axis, `a` is still better in the y-axis
+    * Thus, one would still choose `a` as the better data point
+
+
+* Further, point `a` is dominated by point `e`
+
+
 
 Pareto Sets
 -----------
