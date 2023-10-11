@@ -84,6 +84,18 @@ Weighted Sum
 Dominance
 =========
 
+.. figure:: house_multiobjective_dominance_plot.png
+    :width: 500 px
+    :align: center
+
+    Given the goal of buying the largest house for as little as possible, it is difficult to pick a data point on the
+    plot that is the "best" option. This is because it may be difficult to compare data points across dimensions (price
+    vs. size). However, although it is difficult to select the "best" option, it may be simple to identify options that
+    are better than others.
+
+
+
+
 Pareto Sets
 -----------
 
