@@ -111,7 +111,8 @@ Dominance
     :align: center
 
     Five data points (a, b, c, d, e) for some two-dimensional minimization problem. Each dimension represents some
-    objective to be minimized.
+    objective to be minimized. Some data points are difficult to compare, but data points are "dominated" by other
+    points.
 
 
 
