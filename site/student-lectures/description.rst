@@ -34,7 +34,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Artificial Immune Systems
 * Cultural Algorithms **(ALREADY SELECTED)**
 * Self Organization
-* Artificial Life
+* Artificial Life **(ALREADY SELECTED)**
 * Evolutionary Art
 * Memetic Algorithms **(ALREADY SELECTED)**
 * Search Space Analysis **(ALREADY SELECTED)**
@@ -57,7 +57,7 @@ Student Lecture Dates:
 
 * November 14th (0 slots available)
 * November 15th (0 slot available)
-* November 17th (1 slots available)
+* November 17th (0 slots available)
 * November 21st (1 slots available)
 * November 22nd (2 slots available)
 * November 24th (1 slots available)
