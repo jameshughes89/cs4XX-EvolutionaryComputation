@@ -30,15 +30,15 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Differential Evolution **(ALREADY SELECTED)**
 * Evolutionary Programming
 * Evolutionary Strategies
-* Ant Colony Optimization
+* Ant Colony Optimization **(ALREADY SELECTED)**
 * Artificial Immune Systems
 * Cultural Algorithms **(ALREADY SELECTED)**
 * Self Organization
 * Artificial Life
 * Evolutionary Art
-* Memetic Algorithms
-* Search Space Analysis
-* Coevolution
+* Memetic Algorithms **(ALREADY SELECTED)**
+* Search Space Analysis **(ALREADY SELECTED)**
+* Coevolution **(ALREADY SELECTED)**
 * Neuroevolution
 * Fitness Predictors
 * Novelty Search **(ALREADY SELECTED)**
@@ -56,11 +56,11 @@ All topic choices along with preferred lecture date are to be submitted to the i
 Student Lecture Dates:
 
 * November 14th (0 slots available)
-* November 15th (1 slot available)
-* November 17th (2 slots available)
-* November 21st (2 slots available)
+* November 15th (0 slot available)
+* November 17th (1 slots available)
+* November 21st (1 slots available)
 * November 22nd (2 slots available)
-* November 24th (2 slots available)
+* November 24th (1 slots available)
 
 
 
