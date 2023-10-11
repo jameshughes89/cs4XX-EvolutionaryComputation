@@ -103,9 +103,15 @@ Dominance
 
 * However, it may be clear that some options are better/worse than others
 
-    * If a house is bigger *and* cheaper than another, then that's good 
+    * If a house is bigger *and* cheaper than another, then that's good
 
 
+.. figure:: example_dominance_plot.png
+    :width: 333 px
+    :align: center
+
+    Five data points (a, b, c, d, e) for some two-dimensional minimization problem. Each dimension represents some
+    objective to be minimized.
 
 
 
