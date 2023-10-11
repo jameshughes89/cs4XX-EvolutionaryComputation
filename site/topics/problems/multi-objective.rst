@@ -94,6 +94,19 @@ Dominance
     are better than others.
 
 
+* Sometimes it is not possible to truly select the *best* option
+
+    * If one house has a lower price than another, then that's good
+    * And if one house is bigger than another, then that's good
+    * But, how does one compare price to size?
+
+
+* However, it may be clear that some options are better/worse than others
+
+    * If a house is bigger *and* cheaper than another, then that's good 
+
+
+
 
 
 Pareto Sets
