@@ -28,7 +28,7 @@ Ho to do it
     :width: 500 px
     :align: center
 
-    This is a caption     
+    This is a caption.
 
 
 * With the above example
