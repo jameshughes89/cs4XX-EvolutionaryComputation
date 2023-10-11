@@ -10,8 +10,8 @@ What is it?
 * It's super cool, i swear!
 
 
-Example --- Drug Trial
-======================
+Ho to do it
+===========
 
 * Consider a drug trial
 * A group of 50 people is given a new drug that is intended to reduce the recovery time of the flu
@@ -24,11 +24,11 @@ Example --- Drug Trial
     * This is the property/characteristic trying to be understood
 
 
-.. figure:: random_variables_same_distro.png
+.. figure:: the_name_of_my_fig.png
     :width: 500 px
     :align: center
 
-    Distributions of group recovery times for individuals in the placebo group and drug group.
+    This is a caption     
 
 
 * With the above example
