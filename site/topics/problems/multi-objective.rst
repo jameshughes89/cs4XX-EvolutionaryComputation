@@ -132,6 +132,15 @@ Dominance
 * Further, point `a` is dominated by point `e`
 
 
+.. figure:: example_dominance_plot_general.png
+    :width: 333 px
+    :align: center
+
+    Portions of a two-dimensional space dominated by some data point x (top right --- worse than x in both dimensions)
+    and dominating data point x (bottom left --- points that are better than x in both dimensions). The other portions
+    of the space (top left/bottom right) are difficult to compare to x as they are better than x in one dimension but
+    not the other.
+
 
 Pareto Sets
 -----------
