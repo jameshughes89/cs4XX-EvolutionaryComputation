@@ -72,7 +72,7 @@ Assuming the PSO implementation is working and there are no serious issues, **5*
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points may be awarded for enhancing and modifying the GP implementation. In general, each
+A total of **5** additional points may be awarded for enhancing and modifying the PSO implementation. In general, each
 enhancement/modification will award **1** additional point, but depending on the complexity of the
 enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
 to obtain these marks if the goal is to obtain all **5** additional points.
@@ -82,13 +82,11 @@ to find what was done. If choosing not to write a report, at least provide a tex
 was done. If writing a report, add a section within the report outlining what was done. If the
 enhancements/modifications are not clear, points may not be awarded.
 
-Below is a short list of possible enhancement/modifications
+Below is a short list of possible enhancement/modifications:
 
-    * Elitism
-    * New or modified genetic operators
-    * New or modified selection
-    * Adding additional heuristics to the search
-    * Adding a new operation to the algorithm
+    * Charged PSO
+    * Applying speed limits
+    * Bounding the search space
 
 
 Visualization
