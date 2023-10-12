@@ -136,13 +136,13 @@ and is not intended to be the standard template.
 
 * Problem description
 
-    * What is symbolic regression?
-    * If applicable, what is the typed problem?
+    * What is the point of the test problems?
+    * If applicable, what are multi-objective problems?
 
 
 * Algorithm description
 
-    * How was GP implemented?
+    * How was PSO implemented?
 
         * Can someone follow the description to recreate your work?
 
@@ -272,7 +272,7 @@ What to Submit to Moodle
 
 
 * Submit everything via Moodle by 11:55pm on the due date
-* Include the full implementation of GP along with any special running instructions if necessary
+* Include the full implementation of PSO along with any special running instructions if necessary
 * Include the report
 * Include anything else the marker may need for effectively evaluating the work
 
