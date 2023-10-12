@@ -145,6 +145,22 @@ Dominance
 Pareto Sets
 -----------
 
+* Given the set of solutions :math:`S` and some subset of solutions :math:`Q \subset S`
+* A data point :math:`x \in S` is *non-dominated* by the set :math:`D` if no solution :math:`y \in D` dominates :math:`x`
+
+* A set of non-dominated solutions :math:`N \subset S` defines the *Pareto-Optimal Set*
+
+    * It is possible to create multiple Pareto Sets by repeatedly applying this process on the set difference :math:`S - N`
+
+
+.. figure:: pareto_sets.png
+    :width: 333 px
+    :align: center
+
+    Data points in some two-dimensional minimization problem. Four Pareto Sets exist --- S1, S2, S3, and S4. All
+    solutions in S1 are non-dominated by any other solutions. All solutions in S2 are non-dominated by solution other
+    than those in S1. Similarly for S3 and S4.
+
 
 
 For Next Class
