@@ -65,6 +65,7 @@ YouTube
     topics/genetic-programming/symbolic-regression-gp-experiment
     topics/parameters/tuning
     topics/parameters/comparing
+    topics/problems/multi-objective
 
 
 .. toctree::
