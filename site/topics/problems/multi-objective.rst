@@ -84,6 +84,64 @@ Weighted Sum
 Dominance
 =========
 
+.. figure:: house_multiobjective_dominance_plot.png
+    :width: 500 px
+    :align: center
+
+    Given the goal of buying the largest house for as little as possible, it is difficult to pick a data point on the
+    plot that is the "best" option. This is because it may be difficult to compare data points across dimensions (price
+    vs. size). However, although it is difficult to select the "best" option, it may be simple to identify options that
+    are better than others.
+
+
+* Sometimes it is not possible to truly select the *best* option
+
+    * If one house has a lower price than another, then that's good
+    * And if one house is bigger than another, then that's good
+    * But, how does one compare price to size?
+
+
+* However, it may be clear that some options are better/worse than others
+
+    * If a house is bigger *and* cheaper than another, then that's good
+
+
+.. figure:: example_dominance_plot.png
+    :width: 333 px
+    :align: center
+
+    Five data points (a, b, c, d, e) for some two-dimensional minimization problem. Each dimension represents some
+    objective to be minimized. Some data points are difficult to compare, but data points are "dominated" by other
+    points.
+
+
+* In the above example,
+
+    * Point `a` is better than `b` in both dimensions
+    * Point `a` is better than `c` in one dimension, but equal in another
+    * Point `a` is worse than `e` in both dimensions
+    * It is difficult to compare points `a` and `d` since one is better in one dimension but worse in the other
+
+
+* Here, one would say point `a` *dominates* points `b` and `c`
+
+    * Although `a` and `c` are equal along the x-axis, `a` is still better in the y-axis
+    * Thus, one would still choose `a` as the better data point
+
+
+* Further, point `a` is dominated by point `e`
+
+
+.. figure:: example_dominance_plot_general.png
+    :width: 333 px
+    :align: center
+
+    Portions of a two-dimensional space dominated by some data point x (top right --- worse than x in both dimensions)
+    and dominating data point x (bottom left --- points that are better than x in both dimensions). The other portions
+    of the space (top left/bottom right) are difficult to compare to x as they are better than x in one dimension but
+    not the other.
+
+
 Pareto Sets
 -----------
 
