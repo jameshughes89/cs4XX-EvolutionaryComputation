@@ -82,6 +82,7 @@ YouTube
 
     assignments/tsp/tsp
     assignments/gp/gp
+    assignments/pso/pso
 
 
 .. toctree::
