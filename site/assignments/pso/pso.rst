@@ -10,9 +10,8 @@ Particle Swarm Optimization
 Base Task
 =========
 
-The base task is to implement Genetic Programming (GP) for
-`Symbolic Regression <https://en.wikipedia.org/wiki/Symbolic_regression>`_.
-
+The base task is to implement Particle Swarm Optimization (PSO) to be run on a series of
+`test optimization functions <https://en.wikipedia.org/wiki/Test_functions_for_optimization>`_.
 
 
 Marking Details
@@ -25,10 +24,10 @@ effectively to receive all 30 points.
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of GP for Symbolic Regression
+* A total of **5** points will be awarded for having a working implementation of PSO for the test functions
 
-    * A total of **5** additional points may be awarded for adding enhancements to the GP implementation
-    * Using GP for a typed problem may award an additional **5** points
+    * A total of **5** additional points may be awarded for adding enhancements to the PSO algorithm
+    * Using PSO for a multi-objective problems may award an additional **5** points
     * Generating an effective visualization for evolution/solutions may award up to **2** additional points
 
     * A complete report will award up to **5** points
@@ -41,7 +40,7 @@ description.
 
 .. note::
 
-    A working GP implementation is required in order to obtain any points for the additional tasks described within the
+    A working PSO implementation is required in order to obtain any points for the additional tasks described within the
     assignment.
 
 
