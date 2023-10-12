@@ -87,6 +87,7 @@ Below is a short list of possible enhancement/modifications:
     * Charged PSO
     * Applying speed limits
     * Bounding the search space
+    * Using Pareto-Sets on multi-objective problems
 
 
 Visualization
