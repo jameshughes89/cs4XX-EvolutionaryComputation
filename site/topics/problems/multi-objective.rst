@@ -162,6 +162,21 @@ Pareto Sets
     than those in S1. Similarly for S3 and S4.
 
 
+Evolutionary Algorithms and Pareto Style Multi-Objective Optimization
+---------------------------------------------------------------------
+
+* Since EC algorithms are typically population based, they work well with Pareto style multi-objective optimization
+* The population can be ranked into Pareto Sets
+* The Pareto-Optimal set will contain all *good* solutions
+
+* Consider the issue with weighted sum and selecting weights for difficult to quantify and compare feature
+
+    * With a Pareto-Optimal Set, there is no need to decide on the weights
+    * A set of solutions is presented in the end which can then be selected from
+    * It may still be difficult to select a single solution from this Pareto-Optimal set
+    * But at least that's not something the algorithm is trying to figure out for the user
+
+
 
 For Next Class
 ==============
