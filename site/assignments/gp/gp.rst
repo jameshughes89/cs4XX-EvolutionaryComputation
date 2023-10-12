@@ -115,7 +115,7 @@ the better.
 Typed Problems
 --------------
 
-An additional **5** points may be awarded if GP is effective used on a typed problem. No data will be provided, thus
+An additional **5** points may be awarded if GP is effectively used on a typed problem. No data will be provided, thus
 finding an interesting problem and related data will be required. It must be made clear to the marker that GP was
 sufficiently applied to the problem and that the problem is interesting enough to earn the additional points.
 
