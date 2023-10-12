@@ -34,7 +34,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Artificial Immune Systems **(ALREADY SELECTED)**
 * Cultural Algorithms **(ALREADY SELECTED)**
 * Self Organization
-* Artificial Life
+* Artificial Life **(ALREADY SELECTED)**
 * Evolutionary Art **(ALREADY SELECTED)**
 * Memetic Algorithms **(ALREADY SELECTED)**
 * Search Space Analysis **(ALREADY SELECTED)**
