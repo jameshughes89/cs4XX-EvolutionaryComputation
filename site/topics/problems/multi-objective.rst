@@ -154,7 +154,7 @@ Pareto Sets
 
 
 .. figure:: pareto_sets.png
-    :width: 333 px
+    :width: 500 px
     :align: center
 
     Data points in some two-dimensional minimization problem. Four Pareto Sets exist --- S1, S2, S3, and S4. All
