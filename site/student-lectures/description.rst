@@ -59,7 +59,7 @@ Student Lecture Dates:
 * November 15th (0 slot available)
 * November 17th (0 slots available)
 * November 21st (0 slots available)
-* November 22nd (2 slots available)
+* November 22nd (1 slots available)
 * November 24th (0 slots available)
 
 
