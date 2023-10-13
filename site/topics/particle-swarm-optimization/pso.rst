@@ -69,9 +69,23 @@ Representation
 * Each particle has a
 
     * Position in space, represented as an :math:`n` dimensional vector containing a position in space
+
+        * :math:`\vec{x}(t)` --- Position at time :math:`t`
+
+
     * Velocity, which is also represented as an :math:`n` dimensional vector containing deltas
+
+        * :math:`\vec{v}(t)` --- Velocity at time :math:`t`
+
+
     * Best visited position (:math:`n` dimensional vector)
+
+        * :math:`\vec{p}_{best}` --- Particle's best known position
+
+
     * Access to the swarm's best known position in space (:math:`n` dimensional vector)
+
+        * :math:`\vec{g}_{best}` --- Global best known position
 
 
 
