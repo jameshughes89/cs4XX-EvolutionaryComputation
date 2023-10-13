@@ -57,8 +57,21 @@ Particles
 Representation
 --------------
 
-* PSO
-* Each particle is represented as an :math:`n` dimensional vector
+* POS is often used for real/floating point number optimization
+* Thus, each particle is typically represented as an :math:`n` dimensional vector encoding its position in space
+
+    * Where :math:`n` is the dimensionality of the problem
+    * For example, in the above figure, each particle would be represented as a three-dimensional vector
+    * ``<1.42345478, 4.334678, 3.31345786555567>``
+
+
+* Each particle has a
+
+    * Position in space, represented as an :math:`n` dimensional vector containing a position in space
+    * Velocity, which is also represented as an :math:`n` dimensional vector containing deltas
+    * Best visited position (:math:`n` dimensional vector)
+    * Access to the swarm's best known position in space (:math:`n` dimensional vector)
+
 
 
 Velocity
