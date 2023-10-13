@@ -41,7 +41,7 @@ Particles
     * While also having a propensity to move to the best part of the search space the population has encountered
 
 
-* Each particle also has velocity and momentum
+* Each particle also has velocity and inertia
 
 
 .. figure:: particles_moving.gif
