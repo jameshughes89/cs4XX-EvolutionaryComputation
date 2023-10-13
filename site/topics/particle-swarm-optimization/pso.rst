@@ -40,6 +40,18 @@ Particles
     * While also having a propensity to move to the best part of the search space the population has encountered
 
 
+* Each particle also has velocity and momentum
+
+
+.. figure:: particles_moving.gif
+    :width: 500 px
+    :align: center
+
+    Particles moving through a three-dimensional space represented in two-dimensions with the third dimension being
+    represented by colour. Arrows associated with each particle represents the particle's velocity. Over time, the
+    particles, although acting independent, while also being influenced by particles within the population, cluster
+    around the global minimum.
+
 
 
 Velocity
