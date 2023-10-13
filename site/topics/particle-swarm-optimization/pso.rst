@@ -47,6 +47,7 @@ Particles
 .. figure:: particles_moving.gif
     :width: 500 px
     :align: center
+    :target: https://en.wikipedia.org/wiki/Particle_swarm_optimization
 
     Particles moving through a three-dimensional space represented in two-dimensions with the third dimension being
     represented by colour. Arrows associated with each particle represents the particle's velocity. Over time, the
