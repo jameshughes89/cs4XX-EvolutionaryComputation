@@ -8,6 +8,7 @@ Particle Swarm Optimization
 
 
 * It consists of *particles* that all act independently, but are influenced by the population
+* PSO is particularly well designed for real/floating point number optimization
 
 
 .. figure:: birds_flying.gif
@@ -52,6 +53,12 @@ Particles
     particles, although acting independent, while also being influenced by particles within the population, cluster
     around the global minimum.
 
+
+Representation
+--------------
+
+* PSO
+* Each particle is represented as an :math:`n` dimensional vector
 
 
 Velocity
