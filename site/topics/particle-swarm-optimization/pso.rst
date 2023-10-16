@@ -143,6 +143,46 @@ Inertia Term: :math:`\omega\vec{v_{i}}(t)`
 Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Each particle *wants* to move towards the area of the search space it prefers
+
+    * The best known location for that particle
+
+
+* Thus, part of the velocity update alters the velocity such that it will move the towards this part of the space
+
+    * :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
+
+
+* Where
+
+    * :math:`c_{1}` is some coefficient used to control how much the particle is influenced by its best known position
+
+        * :math:`c_{1} \in [0, 2]`
+        * The higher the :math:`c_{1}`, the more the particle is influenced by its best known position
+        * Particles with high :math:`c_{1}` values are called "introverts"
+
+
+    * :math:`r_{1}` is some stochastic vector discussed below
+    * :math:`\vec{p_{i}}_{best}` is the particle's best known position within the search space
+    * :math:`\vec{x_{i}}(t)` is the particle's current position
+
+
+* The difference between the particle's best known position and current position dictates where the particle needs to go
+
+    * :math:`\vec{p_{i}}_{best} - \vec{x_{i}}(t)`
+
+
+* :math:`c_{1}` and :math:`r_{1}` scale the vector
+
+
+.. figure:: plot_best_vs_current_position.png
+    :width: 333 px
+    :align: center
+
+    Vector (blue) showing the difference between the particle's best known position (red) and its current position
+    (green). The vector :math:`(-1, -3)` is shown starting at the current position :math:`(3, 4)`. If the particle
+    were to have exactly this velocity for one time step, it would return to the best known position.
+
 
 Social Term: :math:`c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
