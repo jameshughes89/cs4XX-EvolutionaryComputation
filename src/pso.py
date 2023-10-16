@@ -32,7 +32,7 @@ def matyas_function(x, y):
 
 
 if __name__ == "__main__":
-    # Initialize
+    # [begin-initialization]
     particles = []
     for _ in range(NUMBER_OF_PARTICLES):
         particle = {
@@ -42,26 +42,30 @@ if __name__ == "__main__":
         particle["best_known_position"] = particle["position"]
         particles.append(particle)
     global_best = particles[0]["position"]
+    # [end-initialization]
 
-    # Run for a Specified Number of Iterations (Termination)
+    # [begin-iteration-loop]
     for _ in range(ITERATIONS):
-        # Calculate fitness
+        # [begin-evaluation]
         for particle in particles:
             particle_value = matyas_function(*particle["position"])
             if particle_value < matyas_function(*particle["best_known_position"]):
                 particle["best_known_position"] = particle["position"]
             if particle_value < matyas_function(*global_best):
                 global_best = particle["position"]
+        # [end-evaluation]
 
-        # Update velocity and position (variation)
+        # [begin-position-update]
         for particle in particles:
-            r1 = np.random.rand()
-            r2 = np.random.rand()
+            r1 = np.random.rand(FUNCTION_DIMENSIONS)
+            r2 = np.random.rand(FUNCTION_DIMENSIONS)
             particle["velocity"] = (
                 INERTIA * particle["velocity"]
                 + COGNITIVE * r1 * (particle["best_known_position"] - particle["position"])
                 + SOCIAL * r2 * (global_best - particle["position"])
             )
             particle["position"] = particle["position"] + particle["velocity"]
+        # [end-position-update]
+    # [end-iteration-loop]
 
     print(global_best, matyas_function(*global_best))
