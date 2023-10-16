@@ -166,7 +166,7 @@ Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 
 
 .. figure:: plot_best_vs_current_position.png
-    :width: 333 px
+    :width: 500 px
     :align: center
 
     Vector (blue) showing the difference between the particle's best known position (red) and its current position
