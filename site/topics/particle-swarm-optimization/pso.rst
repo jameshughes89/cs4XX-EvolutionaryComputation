@@ -124,7 +124,7 @@ Inertia Term: :math:`\omega\vec{v_{i}}(t)`
 * Where
 
     * :math:`i` is some particle
-    * :math:`\vec{v_{i}}(t)` is the particle's current velocity
+    * :math:`\vec{v_{i}}(t)` is the particle's velocity at time :math:`t`
     * :math:`\omega` is some coefficient use to control how much the particles want to resist change
 
         * :math:`\omega \in [0, 1]`
@@ -150,12 +150,11 @@ Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 
         * :math:`c_{1} \in [0, 2]`
         * The higher the :math:`c_{1}`, the more the particle is influenced by its best known position
-        * Particles with high :math:`c_{1}` values are called "introverts"
 
 
     * :math:`r_{1}` is some stochastic vector discussed below
     * :math:`\vec{p_{i}}_{best}` is the particle's best known position within the search space
-    * :math:`\vec{x_{i}}(t)` is the particle's current position
+    * :math:`\vec{x_{i}}(t)` is the particle's position at time :math:`t`
 
 
 * The difference between the particle's best known position and current position dictates where the particle needs to go
@@ -192,7 +191,7 @@ Social Term: :math:`c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))`
 
     * :math:`r_{2}` is some stochastic vector discussed below
     * :math:`\vec{g}_{best}` is the population's best known position within the search space
-    * :math:`\vec{x_{i}}(t)` is the particle's current position
+    * :math:`\vec{x_{i}}(t)` is the particle's position at time :math:`t`
 
 
 
@@ -202,7 +201,7 @@ Random/Stochastic Components: :math:`\vec{r_{1}}` and :math:`\vec{r_{2}}`
 * The cognitive and social portions of the velocity update included the vectors :math:`\vec{r_{1}}` and :math:`\vec{r_{2}}` respectively
 * These vectors have values between :math:`[0, 1]` that are stochastically determined
 
-    * Randomly determined for each velocity update calculate
+    * Randomly determined for each velocity update calculation for each particle
 
 
 * These random/stochastic vectors are important as they add a chance for novelty
@@ -227,7 +226,7 @@ Putting the Velocity Update Together
 
 
 * As discussed, there are three coefficients that need to be tuned for the algorithm
-* As a starting place, `van den Bergh <https://repository.up.ac.za/bitstream/handle/2263/24297/00thesis.pdf?sequence=1>` suggests
+* As a starting place, `van den Bergh <https://repository.up.ac.za/bitstream/handle/2263/24297/00thesis.pdf?sequence=1>`_ suggests
 
     * :math:`\omega = 0.729844`
     * :math:`c_{1} = c_{2} = 1.496180`
