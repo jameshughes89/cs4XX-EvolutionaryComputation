@@ -141,7 +141,7 @@ Position Update
 * After the particle's velocity is calculated, the particle's new position can be determined
 * The new position is the sum of its current position and its current velocity
 
-    .. math::
+.. math::
 
     \vec{x_{i}}(t+1) = \vec{x_{i}}(t) + \vec{v_{i}}(t+1)
 
@@ -149,15 +149,15 @@ Position Update
 * Consider the below figure
 
     * The particle's current position :math:`\vec{x_{i}}(t)` is represented as the green vector
-    * The particle's velocity \vec{v_{i}}(t+1) is represented as the blue vector
+    * The particle's velocity :math:`\vec{v_{i}}(t+1)` is represented as the blue vector
     * The particle's new position is represented as the red dashed vector
 
         * The sum of the particle's current position and velocity
-        * :math:`(3, 2)` + (-1, 1) = (2, 3)`
+        * :math:`(3, 2) + (-1, 1) = (2, 3)`
 
 
 .. figure:: plot_position_update.png
-    :width: 333 px
+    :width: 500 px
     :align: center
 
     The summation of the particle's current position (green) and its velocity (blue) results in the particle's new
