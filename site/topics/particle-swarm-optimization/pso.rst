@@ -106,17 +106,6 @@ Velocity Calculation
     * The *population's* best known position in space
 
 
-* Velocity update for some particle :math:`i`
-
-.. math::
-
-    \vec{v_{i}}(t+1) = \omega\vec{v_{i}}(t)
-        + c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))
-        + c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))
-
-
-* The above may seem intimidating, but it can be explained in parts
-
 
 Inertia Term: :math:`\omega\vec{v_{i}}(t)`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,6 +123,7 @@ Inertia Term: :math:`\omega\vec{v_{i}}(t)`
 
 * Where
 
+    * :math:`i` is some particle
     * :math:`\vec{v_{i}}(t)` is the particle's current velocity
     * :math:`\omega` is some coefficient use to control how much the particles want to resist change
 
@@ -155,6 +145,7 @@ Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 
 * Where
 
+    * :math:`i` is some particle
     * :math:`c_{1}` is some coefficient used to control how much the particle is influenced by its best known position
 
         * :math:`c_{1} \in [0, 2]`
@@ -193,6 +184,7 @@ Social Term: :math:`c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))`
 
 * Where
 
+    * :math:`i` is some particle
     * :math:`c_{2}` is some coefficient used to control how much the particle is influenced by the population's best
 
         * :math:`c_{2} \in [0, 2]`
@@ -215,6 +207,34 @@ Random/Stochastic Components: :math:`\vec{r_{1}}` and :math:`\vec{r_{2}}`
 
 * These random/stochastic vectors are important as they add a chance for novelty
 * Further, they have been empirically shown to improve the search and prevent premature convergence
+
+
+Putting the Velocity Update Together
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The velocity update is the sum of the parts of the update
+
+    * Inertia term + cognitive term + social term
+
+
+* Velocity update for some particle :math:`i`
+
+.. math::
+
+    \vec{v_{i}}(t+1) = \omega\vec{v_{i}}(t)
+        + c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))
+        + c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))
+
+
+* As discussed, there are three coefficients that need to be tuned for the algorithm
+* As a starting place, `van den Bergh <https://repository.up.ac.za/bitstream/handle/2263/24297/00thesis.pdf?sequence=1>` suggests
+
+    * :math:`\omega = 0.729844`
+    * :math:`c_{1} = c_{2} = 1.496180`
+
+
+* However, one should always aim to tune these values for their needs
+
 
 
 Position Update
