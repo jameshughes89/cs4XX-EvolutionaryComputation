@@ -37,8 +37,8 @@ Velocity Calculation
 * Velocities are typically initialized with some random values within some range
 * But as the algorithm executes, the velocity of the particles change as they become influenced by
 
-    * The particles' best known position in space
-    * The population's best known position in space
+    * The *particles'* best known position in space
+    * The *population's* best known position in space
 
 
 * Velocity update for some particle :math:`i`
