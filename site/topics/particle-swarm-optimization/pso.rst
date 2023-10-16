@@ -121,6 +121,24 @@ Velocity Calculation
 Inertia Term: :math:`\omega\vec{v_{i}}(t)`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Each particle has some velocity
+* When particles' velocities are being updated, the changes are applied to an already moving particle
+* These particles *want* to continue moving the way they are
+
+    * They resist change
+
+
+* Thus, the first part of a velocity update takes into consideration the current velocity of the particle
+
+    * :math:`\omega\vec{v_{i}}(t)`
+
+* Where
+
+    * :math:`\vec{v_{i}}(t)` is the particle's current velocity
+    * :math:`\omega` is some coefficient use to control how much the particles want to resist change
+
+        * :math:`\omega \in [0, 1]`
+
 
 Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
