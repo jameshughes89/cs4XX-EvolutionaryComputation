@@ -187,10 +187,34 @@ Cognitive Term: :math:`c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))`
 Social Term: :math:`c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Similarly, each particle is influenced by the population's best known position
+
+    * :math:`c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))`
+
+* Where
+
+    * :math:`c_{2}` is some coefficient used to control how much the particle is influenced by the population's best
+
+        * :math:`c_{2} \in [0, 2]`
+
+
+    * :math:`r_{2}` is some stochastic vector discussed below
+    * :math:`\vec{g}_{best}` is the population's best known position within the search space
+    * :math:`\vec{x_{i}}(t)` is the particle's current position
+
+
 
 Random/Stochastic Components: :math:`\vec{r_{1}}` and :math:`\vec{r_{2}}`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* The cognitive and social portions of the velocity update included the vectors :math:`\vec{r_{1}}` and :math:`\vec{r_{2}}` respectively
+* These vectors have values between :math:`[0, 1]` that are stochastically determined
+
+    * Randomly determined for each velocity update calculate
+
+
+* These random/stochastic vectors are important as they add a chance for novelty
+* Further, they have been empirically shown to improve the search and prevent premature convergence
 
 
 Position Update
