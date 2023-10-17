@@ -24,20 +24,28 @@ Base Task
 Marking Details
 ===============
 
-A total of 30 points may be obtained on this assignment. Although it is not required to complete all portions of the
-assignment (one may choose to only try to obtain, for example, 20 points), all portions must be completed correctly and
+A total of 30 points may be obtained for the project. Although it is not required to complete all portions of the
+project (one may choose to only try to obtain, for example, 20 points), all portions must be completed correctly and
 effectively to receive all 30 points.
 
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of PSO for the test functions
+* A total of **10** points will be awarded for having a working implementation of the project topic
 
-    * A total of **5** additional points may be awarded for adding enhancements to the PSO algorithm
-    * Using PSO for a multi-objective problems may award an additional **5** points
-    * Generating an effective visualization for evolution/solutions may award up to **2** additional points
+    * **10** additional points may be awarded for enhancements/modifications, novelty, interesting-ness, analysis, etc.
 
-    * A complete report will award up to **5** points
+
+* A total of **10** additional points may be awarded for completing a project presentation *or* report
+
+    * A project presentation will award up to **4** points
+
+        * Including proper references/citations awards an additional **2** points
+        * Including figures and tables awards an additional **2** points
+        * Performing an effective statistical analysis will award an additional **2** points
+
+
+    * A complete report will award up to **2** points
 
         * Using LaTeX to generate the report will award an additional **2** points
         * Including proper references/citations awards an additional **2** points
@@ -47,8 +55,8 @@ description.
 
 .. note::
 
-    A working PSO implementation is required in order to obtain any points for the additional tasks described within the
-    assignment.
+    Points will be awarded for *either* a project presentation *or* a final report. In other words, it is only necessary
+    to complete one of the two options (presentation or report).
 
 
 
