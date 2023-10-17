@@ -96,67 +96,6 @@ that what was done is worth the points.
 
 
 
-Provided Files
-==============
-
-No files are provided, however, a series of test optimization problems can be found on
-`Wikipedia <https://en.wikipedia.org/wiki/Test_functions_for_optimization>`_.
-
-
-
-Implementing Particle Swarm Optimization
-========================================
-
-The first portion of the assignment is to implement PSO for various test optimization problems. It does not matter how
-PSO is implemented as long as the high-level framework of the algorithm is followed.
-
-Feel free to start from the PSO implementations available on the GitHub repository. Being creative and experimental is
-encouraged, and further, this creativity will provide plenty of content to discuss in the report.
-
-Do not feel compelled to use the existing implementations of the PSO that are in the repository. Additionally, the
-language used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or
-Python, please ask first for approval.
-
-Assuming the PSO implementation is working and there are no serious issues, **5** points will be awarded.
-
-
-Enhancements and Modifications
-------------------------------
-
-A total of **5** additional points may be awarded for enhancing and modifying the PSO implementation. In general, each
-enhancement/modification will award **1** additional point, but depending on the complexity of the
-enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
-to obtain these marks if the goal is to obtain all **5** additional points.
-
-The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
-to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
-was done. If writing a report, add a section within the report outlining what was done. If the
-enhancements/modifications are not clear, points may not be awarded.
-
-Below is a short list of possible enhancement/modifications:
-
-    * Charged PSO
-    * Applying speed limits
-    * Bounding the search space
-    * Using Pareto-Sets on multi-objective problems
-
-
-Visualization
--------------
-
-Generating a visualization of results may provide an additional **2** points. How this is done is up to each individual,
-but ensure it is interesting, effective, clear, and well presented to ensure the points are awarded. The more creative
-the better.
-
-
-Multi-Objective Optimization
-----------------------------
-
-An additional **5** points may be awarded if PSO is used on multi-objective problems.
-`The Wikipedia article contains several multi-objective problems to choose from <https://en.wikipedia.org/wiki/Test_functions_for_optimization>`_.
-
-
-
 Report
 ======
 
