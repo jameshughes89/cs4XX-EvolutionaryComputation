@@ -8,8 +8,6 @@ Particle Swarm Optimization
 
 
 * It consists of *particles* that all act independently, but are influenced by the population
-* PSO is particularly well designed for real/floating point number optimization
-
 
 .. figure:: birds_flying.gif
     :width: 500 px
@@ -17,6 +15,15 @@ Particle Swarm Optimization
 
     A flock of birds. Each bird is making decisions independently that are informed by other birds around them. As a
     result, it appears as if the flock is moving in some well coordinated way.
+
+
+* PSO is particularly well designed for real/floating point number optimization
+* It is relatively simple to implement compared to other forms of evolutionary computation
+
+    * It has relatively few hyperparameters to tune too
+
+
+* Further, it is simple to extend and enhance
 
 
 
