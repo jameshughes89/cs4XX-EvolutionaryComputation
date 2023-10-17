@@ -13,8 +13,12 @@ Project Description
 Base Task
 =========
 
-The base task is to implement Particle Swarm Optimization (PSO) to be run on a series of
-`test optimization functions <https://en.wikipedia.org/wiki/Test_functions_for_optimization>`_.
+* Select a topic for a project
+* Implement the project idea
+* Produce a report or give a presentation
+* Submit the final implementation
+* Groups of up to two are permitted
+
 
 
 Marking Details
