@@ -277,6 +277,43 @@ Position Update
 Algorithm
 =========
 
+* The high-level idea of the algorithm is presented below
+
+.. code-block:: text
+
+    Initialize the particles randomly
+    Initialize the velocities randomly
+    While stopping criteria is not met
+        For all particles
+            Evaluate the particle's fitness
+            Update particle's and global bests if necessary
+
+        For all particles
+            Calculate the particle's new velocity
+            Update the particle's position
+
+
+* It may not be immediately obvious, but look for the similarities between this algorithm and a genetic algorithm
+
+    * Initialization
+    * Generational loop
+    * Fitness evaluation
+    * Apply variation operations
+
+
+* The major differences are that
+
+    * There is no real selection as all particles *survive*
+
+        * Although, this *is* a selection strategy
+
+
+    * The velocity and position updates are not mutation and crossover
+
+        * However, consider the cognitive and social aspects of the velocity update
+        * This *is* a mechanism for exploration and exploitation
+        * In other words, they are in fact variation operators
+
 
 
 Simple Enhancements
