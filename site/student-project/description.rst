@@ -83,6 +83,18 @@ All topic choices, along with preferred presentation date (if choosing to give a
 the instructor via email.
 
 
+Modifications, enhancements, novelty , etc.
+-------------------------------------------
+
+How the points for the modifications, enhancements, etc. are awarded will depend heavily on the specific project. Thus
+it is difficult to be specific about how the points will be awarded. As a starting place, consider that the points will
+be awarded for a combination of modifications, enhancements, novelty, analysis, interesting-ness, etc.
+
+Like with most aspects of the course, the instructor and marker will be looking for excuses to award points to students
+for their work. In other words, be creative, emphasize what is felt to be worth points, and make clear *why* it is felt
+that what was done is worth the points.
+
+
 
 Provided Files
 ==============
