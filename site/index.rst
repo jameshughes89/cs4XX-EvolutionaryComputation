@@ -77,6 +77,14 @@ YouTube
 
 
 .. toctree::
+    :caption: Student Projects
+    :maxdepth: 1
+    :numbered:
+
+    student-projects/description
+
+
+.. toctree::
     :caption: Assignments
     :maxdepth: 1
     :numbered:
