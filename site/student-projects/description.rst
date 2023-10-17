@@ -105,15 +105,76 @@ Points will only be awarded for either a final report or a project presentation.
 Project Presentation
 --------------------
 
-Groups may choose to give a 20 minute project presentation. The presentations
+Groups may choose to give a 20 minute project presentation. The presentations will follow the same general format as a
+report (intro, literature review, problem description, etc.) but will be presented as a webpage on the course website.
 
 
-- points
-- when
-- how (refer to lecture, but kinda like the report style, but have fun)
-- pull request (new dir under the student project dir)
+Presentation Dates
+^^^^^^^^^^^^^^^^^^
+
+It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
+on a first-come first-served basis. Any groups unable to select a date will be assigned one by the instructor.
+
+All project topic choices along with preferred presentation dates, if applicable, are to be submitted to the instructor
+via email.
+
+Group Presentation Dates:
+
+* November 28th (2 slots available)
+* November 29th (2 slots available)
+* December 1st (2 slots available)
+* December 6th (2 slots available)
 
 
+.. note::
+
+    No presentation dates need to be selected for those groups choosing not to give a project presentation.
+
+
+Points
+^^^^^^
+
+Giving a project presentation will provide up to **4** additional points; however, a total of **10** points may be
+obtained by effectively giving a presentation.
+
+    * Including proper references/citations may award an additional **2** points
+    * Including figures and tables may award an additional **2** points
+    * Performing an effective statistical analysis may award an additional **2** points
+
+
+
+Presentation Format
+^^^^^^^^^^^^^^^^^^^
+
+The format of the presentation is up to the groups, but they should be similar to the layout of the reports (discussed
+in detail in the following section). For a high-level idea of what to include, see the below list:
+
+    * Intro
+    * Related Works
+    * Project Topic Description
+    * Methodology
+    * Results & Discussion
+    * Conclusions and Future Work
+
+
+It is up to the groups to decide how best to communicate their project idea and results. Like the lectures, be sure
+that the presentation is not boring. Points may be lost if the presentation does not effectively communicate what was
+done.
+
+
+Submitting a Pull Request
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Like the student lectures, project presentations are to be submitted via a pull request to the course GitHub repository.
+:doc:`Refer to the Student Lecture Description page for more details. </student-lectures/description>` The only major
+difference is that the group will make a sub-directory for their project under the "student-projects" directory as
+opposed to the "student-lectures" directory.
+
+.. warning::
+
+    Although the pull request merge date is required to be at least one day before the presentation date, note that
+    pull requests will not be accepted unless deemed acceptable by the instructor. This means that *submitting* a pull
+    should be done sufficiently early that any required changes can be adequately addressed before the merging deadline.
 
 
 Report
@@ -137,7 +198,7 @@ Below is a list of things to consider including in the report. This list is a co
 and is not intended to be the standard template.
 
 * Introduction
-* Literature review
+* Related Works
 
     * What have others done that is related to the project idea
 
