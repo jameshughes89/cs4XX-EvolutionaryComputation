@@ -277,14 +277,88 @@ Position Update
 Algorithm
 =========
 
+* The high-level idea of the algorithm is presented below
+
+.. code-block:: text
+
+    Initialize the particles' positions randomly
+    Initialize the velocities randomly
+    While stopping criteria is not met
+        For all particles
+            Evaluate the particle's fitness
+            Update particle's and global bests if necessary
+
+        For all particles
+            Calculate the particle's new velocity
+            Update the particle's position
+
+
+* It may not be immediately obvious, but look for the similarities between this algorithm and a genetic algorithm
+
+    * Initialization
+    * Generational loop
+    * Fitness evaluation
+    * Variation operations
+
+
+* The major differences are that
+
+    * There is no real selection as all particles *survive*
+
+        * Although, this *is* a selection strategy
+
+
+    * The velocity and position updates are not mutation and crossover
+
+        * However, consider the cognitive and social aspects of the velocity update
+        * This *is* a mechanism for exploration and exploitation
+        * In other words, they are in fact variation operators
+
 
 
 Simple Enhancements
 ===================
+
+* PSO's ability to be modified is one of the reasons it's popular
+
+    * Like with most forms evolutionary computation, anything could be done
+
+
+* Some quick examples of some modifications are
+
+    * Neighbourhoods
+
+        * Each particle is part of some *neighbourhood*
+        * The neighbourhood's best is also recorded and impacts the velocity updates
+        * :math:`c_{3}\vec{r_{3}}(\vec{n_j}_{best} - \vec{x_{i}}(t))` is added to the velocity update calculation
+        * Where :math:`\vec{n_j}_{best}` is the :math:`j^{th}` neighbourhood's best known location
+        * And :math:`c_{3}` is some tunable constant and :math:`\vec{r_{3}}` is another randomly determined vector
+
+
+    * Velocity clamping
+
+        * Disallow particles from having velocities over a certain value
+        * This could be done by setting a ceiling, or an exponentially decaying velocity
+
+
+    * Boundary/Position clamping
+
+        * Dissalow particles from going beyond some boundaries
+        * One could just set a limit and not allow particles beyond it
+        * More creative strategies include having particles jump to the other side of the space
+        * Or have the particles *bounce* off the boundary back in the other direction
+
+
+    * Charged PSO
+
+        * Particles repel one another
+        * The velocity update includes a term for the particles' propensity to move away from one another
 
 
 
 For Next Class
 ==============
 
-* TBD
+* Check out the following script
+
+    * :download:`The Selection Script </../src/pso.py>`

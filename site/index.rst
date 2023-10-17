@@ -66,6 +66,7 @@ YouTube
     topics/parameters/tuning
     topics/parameters/comparing
     topics/problems/multi-objective
+    topics/particle-swarm-optimization/pso
 
 
 .. toctree::
