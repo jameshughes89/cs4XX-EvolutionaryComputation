@@ -96,10 +96,30 @@ that what was done is worth the points.
 
 
 
-Report
-======
+Project Presentation or Report
+==============================
 
-Writing a simple report will award up to **5** additional points; however, a total of **13** points may be obtained by
+Points will only be awarded for either a final report or a project presentation.
+
+
+Project Presentation
+--------------------
+
+Groups may choose to give a 20 minute project presentation. The presentations
+
+
+- points
+- when
+- how (refer to lecture, but kinda like the report style, but have fun)
+- pull request (new dir under the student project dir)
+
+
+
+
+Report
+------
+
+Writing a simple report will award up to **2** additional points; however, a total of **10** points may be obtained by
 completing all portions of the report sufficiently.
 
 .. warning::
@@ -117,25 +137,13 @@ Below is a list of things to consider including in the report. This list is a co
 and is not intended to be the standard template.
 
 * Introduction
+* Literature review
 
-    * What is the problem?
-    * Small literature review
-
-        * What have other people done in the past that worked
+    * What have others done that is related to the project idea
 
 
 * Problem description
-
-    * What is the point of the test problems?
-    * If applicable, what are multi-objective problems?
-
-
 * Algorithm description
-
-    * How was PSO implemented?
-
-        * Can someone follow the description to recreate your work?
-
 
     * What enhancements/modifications were included?
 
@@ -144,61 +152,23 @@ and is not intended to be the standard template.
 
 
 * Explain how the results will be analysed
-
-    * What is being compared?
-    * How will the comparison be done?
-
-        * Mean
-        * Distribution comparison
-        * Probability values?
-
-
 * Explains the results and discuss
-
-    * What happened?
-    * How would this compare to random?
-    * How would this compare to other algorithms?
-    * How were the results compared to the best known?
-    * Did any of the implemented modifications or enhancements improve the results?
-
-
 * Conclusions and possible future directions
-
-    * What are the major takeaways?
-    * How good was it?
-    * What else could be done as next steps for continuing the analysis?
-
-
 * Bibliography
-
-    * References, if included
 
 
 LaTeX
------
+^^^^^
 
 An additional **2** points may be obtained if the report is written in LaTeX.
-
-LaTeX is powerful software for writing and typesetting documents. Everything is written in plain text with various tags
-that LaTeX will use to format the document nicely.
-
-Although it is possible to download, write, and build everything locally on a personal computer, it is highly
-recommended to use `Overleaf <https://www.overleaf.com/>`_. Overleaf is an online editor that takes care a lot of
-tedious setup and it automatically backs up all work.
 
 If using LaTeX, it is recommended that the report be written with the
 `IEEE <https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn>`_  conference template. Overleaf
 makes it simple to start using the template.
 
-Although it is possible to write the bibliography in the document with ``\bibitem``, it is far simpler to use
-`BibTeX <https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex>`_.
-
-Although LaTeX and BibTeX is not being taught, it should not be too difficult to get used to it with the help of
-tutorials and examples available online.
-
 
 References and Citations
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Including effective and proper references/citations may award an additional **2** points.
 
@@ -209,20 +179,15 @@ LaTeX and BibTeX makes references and citations relatively simple. Further, with
 
 
 Figures and Tables
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Effectively including figures, tables, etc. in the report may award an additional **2** points. Examples include an
 algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
 distributions of results, etc.
 
-.. note::
-
-    The tables and figures must effectively communicate relevant information. For example, a giant table of results is
-    difficult to interpret. Instead, think of how the data can be represented succinctly and clearly.
-
 
 Statistical Analysis
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Including proper statistical comparisons of results may award an additional **2** points.
 
@@ -232,23 +197,6 @@ these algorithms. For this reason, it is not possible to run these algorithms on
 
 In evolutionary computation, it is common to see 30 runs of each algorithm to obtain the distributions (30 runs of the
 same algorithm with the same setup and hyperparameters).
-
-It is not possible to say which statistical methods should be used for the analysis as that depends on what the goal is.
-Below is a general guideline.
-
-    * General summary statistics for each distribution
-
-        * Mean, standard deviation, etc.
-
-
-    * Comparing distributions
-
-        * Student t-test or Mann-Whitney U
-
-
-    * Measuring the difference between distributions (effect)
-
-        * Cohen's D test
 
 
 
@@ -261,8 +209,8 @@ What to Submit to Moodle
     completed to the satisfaction of the marker.
 
 
-* Submit everything via Moodle by 11:55pm on the due date
-* Include the full implementation of PSO along with any special running instructions if necessary
-* Include the report
-* Include anything else the marker may need for effectively evaluating the work
+* Submit relevant implementations via Moodle by 11:55pm on the due date
+
+    * Include the report is applicable
+    * Include anything else the marker may need for effectively evaluating the work
 
