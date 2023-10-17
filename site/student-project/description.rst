@@ -59,6 +59,30 @@ description.
     to complete one of the two options (presentation or report).
 
 
+Project Topics
+==============
+
+It is the students' responsibility to select a project topic and have it approved by the instructor. Once approved, the
+project direction is up to the students. Students are encouraged to be creative and ambitious. Further, marks will not
+be lost due to the quality of the final results.
+
+Most project ideas fall under one of the following categories:
+
+    * Application --- Apply an algorithm to a particular problem of interest
+    * Enhancements/Modifications --- Implement a novel idea into an algorithm and analyze results
+    * New Algorithm --- Create a new algorithm tha follows the high-level idea of evolutionary computation
+
+
+Do not be afraid to try something different. The instructor values creativity will make every attempt to be as accepting
+of project ideas as possible.
+
+Topics will be selected on a first-come first-served basis, however, if multiple groups want to do the same project, the
+instructor will work the the groups to direct them such that the details differ between groups.
+
+All topic choices, along with preferred presentation date (if choosing to give a presentation) are to be submitted to
+the instructor via email.
+
+
 
 Provided Files
 ==============
