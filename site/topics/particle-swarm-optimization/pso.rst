@@ -281,7 +281,7 @@ Algorithm
 
 .. code-block:: text
 
-    Initialize the particles randomly
+    Initialize the particles' positions randomly
     Initialize the velocities randomly
     While stopping criteria is not met
         For all particles
@@ -298,7 +298,7 @@ Algorithm
     * Initialization
     * Generational loop
     * Fitness evaluation
-    * Apply variation operations
+    * Variation operations
 
 
 * The major differences are that
