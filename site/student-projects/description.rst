@@ -83,7 +83,7 @@ All topic choices, along with preferred presentation date (if choosing to give a
 the instructor via email.
 
 
-Modifications, enhancements, novelty , etc.
+Modifications, Enhancements, Novelty , Etc.
 -------------------------------------------
 
 How the points for the modifications, enhancements, etc. are awarded will depend heavily on the specific project. Thus
@@ -105,8 +105,9 @@ Points will only be awarded for either a final report or a project presentation.
 Project Presentation
 --------------------
 
-Groups may choose to give a 20 minute project presentation. The presentations will follow the same general format as a
-report (intro, literature review, problem description, etc.) but will be presented as a webpage on the course website.
+Groups may choose to give a 15 -- 20 minute project presentation. The presentations will follow the same general format
+as a report (intro, literature review, problem description, etc.) but will be presented as a webpage on the course
+website.
 
 
 Presentation Dates
@@ -182,11 +183,6 @@ Report
 
 Writing a simple report will award up to **2** additional points; however, a total of **10** points may be obtained by
 completing all portions of the report sufficiently.
-
-.. warning::
-
-    Writing a report is non-trivial and will likely take much longer than implementing the algorithm.
-
 
 The base report will consider spelling, grammar, prose, etc. for marking, thus, the marker will be analysing the report
 both quantitatively and qualitatively.
