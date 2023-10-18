@@ -10,8 +10,8 @@ Project Description
 
 .. warning::
 
-    Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is a
-    (a) a serious form of academic misconduct --- falsifying results --- and (b) against the student code of conduct.
+    Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is (a) a
+    serious form of academic misconduct --- falsifying results --- and (b) against the student code of conduct.
 
     These violations are subject to severe penalty. All violations will be reported and investigated fully.
 
