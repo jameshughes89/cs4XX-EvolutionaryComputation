@@ -8,6 +8,13 @@ Project Description
 * **Presentation Date**: November 28th -- December 6th
 * **DUE**: Wednesday December 6th, 2023 at 11:55pm; submitted on MOODLE.
 
+.. warning::
+
+    Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is a
+    (a) a serious form of academic misconduct --- falsifying results --- and (b) against the student code of conduct.
+
+    These violations are subject to severe penalty. All violations will be reported and investigated fully.
+
 
 
 Base Task

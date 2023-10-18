@@ -6,6 +6,14 @@ Travelling Salesperson Problem
 * **DUE**: Monday October 9, 2023 at 11:55pm; submitted on MOODLE.
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/tsp>`_
 
+.. warning::
+
+    Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is a
+    (a) a serious form of academic misconduct --- falsifying results --- and (b) against the student code of conduct.
+
+    These violations are subject to severe penalty. All violations will be reported and investigated fully.
+
+
 
 Base Task
 =========
