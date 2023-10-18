@@ -92,6 +92,8 @@ as images or data files. **Note:** Keep the files small as large files may be re
     requests will not be accepted unless deemed acceptable by the instructor. This means that submitting a pull should
     be done sufficiently early that any required changes can be adequately addressed before the merging deadline.
 
+
+
 Provided Files
 ==============
 
