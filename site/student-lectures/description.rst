@@ -76,7 +76,7 @@ if they are deemed inadequate.
 When a pull request is submitted, the instructor will review the pull request and provide feedback and request chances.
 It is possible that there will be several series of changes requested that take multiple attempts before being approved
 and merged. For this reason, submit pull requests early. A total of **0** points may be awarded if the pull request is
-not merged before the deadline. 
+not merged before the deadline.
 
 Once the pull request is merged, the GitHub repository will automatically create the webpage with Sphinx and update the
 course website with the new content.
@@ -91,8 +91,6 @@ as images or data files. **Note:** Keep the files small as large files may be re
     Although the pull request merge date is required to be at least one day before the presentation date, note that pull
     requests will not be accepted unless deemed acceptable by the instructor. This means that submitting a pull should
     be done sufficiently early that any required changes can be adequately addressed before the merging deadline.
-
-
 
 Provided Files
 ==============
