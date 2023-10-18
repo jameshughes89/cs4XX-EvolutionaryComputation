@@ -68,4 +68,6 @@ if __name__ == "__main__":
         # [end-position-update]
     # [end-iteration-loop]
 
+    # [begin-ending]
     print(global_best, matyas_function(*global_best))
+    # [end-ending]
