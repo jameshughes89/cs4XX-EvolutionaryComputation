@@ -32,6 +32,26 @@ Update Velocity & Speed
 Termination Requirement
 =======================
 
+* Any stopping criteria could be used
+* Here, a predetermined set of iterations was specified
+* In other words, the fitness and position update processes are repeated within a loop until all iterations complete
+
+
+.. literalinclude:: /../src/pso.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-iteration-loop]
+    :end-before: # [end-iteration-loop]
+
+
+* Finally, once complete, the global best position will be the best position found by the PSO algorithm
+
+.. literalinclude:: /../src/pso.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-ending]
+    :end-before: # [end-ending]
+
 
 
 For Next Class
