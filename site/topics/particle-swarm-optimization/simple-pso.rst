@@ -12,6 +12,24 @@ Implementing PSO
 Problem
 =======
 
+* PSO is often used for real/floating point number optimization
+* Any real number optimization problem would work, but there there exist several benchmark test functions
+
+    * `Wikipedia has a list of popular test functions <https://en.wikipedia.org/wiki/Test_functions_for_optimization>`_
+
+
+* The goal is
+
+    * Given some :math:`n` dimensional real/floating point number function
+
+        * The function takes :math:`n` real/floating point numbers as arguments
+        * The function returns a single real/floating point number
+
+
+    * Find the arguments for the function that produces the smallest/largest output
+
+        * Depending on if it is a minimization or maximization problem
+
 
 
 Initialization
