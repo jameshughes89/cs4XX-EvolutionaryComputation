@@ -8,6 +8,7 @@ function being optimized.
 
 import numpy as np
 
+# [begin-hyperparameters]
 FUNCTION_DIMENSIONS = 2
 LOW_BOUND = -10
 HIGH_BOUND = 10
@@ -16,6 +17,7 @@ ITERATIONS = 100
 INERTIA = 0.729844
 COGNITIVE = 1.496180
 SOCIAL = 1.496180
+# [end-hyperparameters]
 
 
 def matyas_function(x, y):
