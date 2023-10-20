@@ -96,6 +96,8 @@ Representation
 
 
 
+.. _pso_velocity:
+
 Velocity
 ========
 
@@ -242,6 +244,8 @@ Putting the Velocity Update Together
 * However, one should always aim to tune these values for their needs
 
 
+
+.. _pso_position:
 
 Position Update
 ===============
