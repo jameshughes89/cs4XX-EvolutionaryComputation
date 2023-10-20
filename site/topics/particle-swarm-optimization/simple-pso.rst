@@ -30,7 +30,7 @@ Initialization
     :end-before: # [end-initialization]
 
 
-* Notice in the above code that the particles' starting positions, although randomly selected, are bound
+* Notice in the above code that the particles' starting positions, although randomly selected, are bounded 
 * Also notice that the particles' best and global best positions are initialized
 
 
