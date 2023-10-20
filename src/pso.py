@@ -8,14 +8,18 @@ function being optimized.
 
 import numpy as np
 
+# [begin-hyperparameters]
 FUNCTION_DIMENSIONS = 2
-LOW_BOUND = -10
-HIGH_BOUND = 10
+START_POSITION_LOW_BOUND = -10
+START_POSITION_HIGH_BOUND = 10
+START_VELOCITY_LOW_BOUND = -0.1
+START_VELOCITY_HIGH_BOUND = 0.1
 NUMBER_OF_PARTICLES = 10
 ITERATIONS = 100
 INERTIA = 0.729844
 COGNITIVE = 1.496180
 SOCIAL = 1.496180
+# [end-hyperparameters]
 
 
 def matyas_function(x, y):
@@ -36,8 +40,8 @@ if __name__ == "__main__":
     particles = []
     for _ in range(NUMBER_OF_PARTICLES):
         particle = {
-            "position": np.random.uniform(LOW_BOUND, HIGH_BOUND, FUNCTION_DIMENSIONS),
-            "velocity": np.random.uniform(-0.1, 0.1, FUNCTION_DIMENSIONS),
+            "position": np.random.uniform(START_POSITION_LOW_BOUND, START_POSITION_HIGH_BOUND, FUNCTION_DIMENSIONS),
+            "velocity": np.random.uniform(START_VELOCITY_LOW_BOUND, START_VELOCITY_HIGH_BOUND, FUNCTION_DIMENSIONS),
         }
         particle["best_known_position"] = particle["position"]
         particles.append(particle)
