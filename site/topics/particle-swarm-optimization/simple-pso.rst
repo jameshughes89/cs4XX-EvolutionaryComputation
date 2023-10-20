@@ -131,6 +131,7 @@ Update Velocity & Speed
 * Once the random vectors for the cognitive and social terms are determined
 * :ref:`Each particle's velocity is updated <pso_velocity>`
 
+
 .. math::
 
     \vec{v_{i}}(t+1) = \omega\vec{v_{i}}(t)
