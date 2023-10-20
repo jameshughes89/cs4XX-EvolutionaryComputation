@@ -106,6 +106,23 @@ Hyperparameters
 Evaluation
 ==========
 
+* A particle's position corresponds to the arguments that are to be provided to the function
+* Therefore, provide the particle's coordinates to the function to evaluate
+
+* Once the function's value is returned, update the particle's best known position and global best position if necessary
+
+* Notice that each particle does not need to know what it's fitness value is
+* The algorithm only cares about
+
+    * Each particle's best known *position*
+    * The global best *position*
+
+
+.. literalinclude:: /../src/pso.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-evaluation]
+    :end-before: # [end-evaluation]
 
 
 Update Velocity & Speed
