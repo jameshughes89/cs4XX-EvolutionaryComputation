@@ -129,7 +129,8 @@ Update Velocity & Speed
 =======================
 
 * Once the random vectors for the cognitive and social terms are determined
-* Each particle's velocity is updated
+* :ref:`Each particle's velocity is updated <pso_velocity>`
+
 
 .. math::
 
@@ -138,7 +139,7 @@ Update Velocity & Speed
         + c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))
 
 
-* And with an updated velocity, the particle's position can then be updated
+* :ref:`And with an updated velocity, the particle's position can then be updated <pso_position>`
 
 .. math::
 
