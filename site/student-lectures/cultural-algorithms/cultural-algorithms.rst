@@ -13,7 +13,7 @@ Introduction
     :align: center
 
     It has two space, the belief space and the population. ``Accept()`` and ``Influence()`` are used to do communications
-    between these two spaces. ``Update()`` acts on the belief space. ``Select()`` and ``object()`` act on the population.
+    between these two spaces. ``Update()` acts on the belief space. ``Select()`` and ``object()`` act on the population.
 
 * ``Object()`` is the fitness function
 * The most important part of the cultural algorithm is:
@@ -110,6 +110,7 @@ Update Function
 * Then use one of individuals :math:`[6, 5]` return from acceptance function to update the belief space:
 
     .. code-block:: python
+
         # individual: [6, 5], its fitness: 61
 
         # 1. update situational knowledge
@@ -128,7 +129,7 @@ Update Function
         # 2.1.1 update min and Lower for x_1
         if individual[0] <= bound[0] or fitness(individual) < bound[2]:
             bound[0] = individual[0]
-            bound[3] = fitness(individual)
+            bound[2] = fitness(individual)
         # this satisfy fitness(individual) < bound[2], which is 61 < 100
         # so update: [-10, 10, 100, 100]  ->  [6, 10, 61, 100]
 
