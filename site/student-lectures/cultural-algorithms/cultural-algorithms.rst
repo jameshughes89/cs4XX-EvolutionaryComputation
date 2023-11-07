@@ -4,20 +4,23 @@ Cultural Algorithms
 
 Introduction
 ============
-* It is a branch of evolutionary computation
-* Unlike genetic algorithms, cultural algorithms have not only **population space** but also **belief space**
-* Here shows the components of cultural algorithms and its structure [#]_:
+* It is a branch of evolutionary computation, simulating the evolution of human society
+* It uses the **belief space** to capture, consolidate and preserve the knowledge in the evolution of human society
+* The belief space influences the evolution of population space, enabling the speed of population evolution exceeds the speed of population evolution relying only on biological genetic inheritance
+* This figure shows the components of the culture algorithm [#]_:
 
 .. figure:: ca_components.png
     :align: center
 
+    It has two space, the belief space and the population. ``Accept()`` and ``Influence()`` are used to do communications
+    between these two spaces. `Update()`` acts on the belief space. ``Select()`` and ``object()`` act on the population.
 
-* Object() is the fitness function
+* ``Object()`` is the fitness function
 * The most important part of the cultural algorithm is:
 
-    * Accept() picks top n individuals from population
-    * Update() updates belief space based on the individuals pick from Accept()
-    * Influence() is to use the knowledge in belief space to update population
+    * ``Accept()`` picks top :math:`n` individuals from the population
+    * ``Update()`` updates the belief space based on the individuals pick from ``Accept()``
+    * ``Influence()`` is to use the knowledge in the belief space to update the population
 
 
 
@@ -29,24 +32,26 @@ Example Problem -- Minimization
 
 * Fitness function:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
-    :pyobject: fitness_function
+    :pyobject: value_fitness
 
 
 * Initialize population:
 * This is to generate :math:`(x_1, x_2)` where :math:`x_1` and :math:`x_2` are both floats between :math:`-10` and :math:`10`
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
-    :pyobject: initialize_population
+    :emphasize-lines: 2
+    :start-after: # [begin-initialize-population]
+    :end-before: # [end-initialize-population]
 
 
 Belief Space
 ============
-* Belief space contains a number of components (at least following two) to represent the cultural information
+* The belief space contains a number of components (at least following two) to represent the cultural information
 * **Situational knowledge**: keep track of best solution found in each generation
 * **Normative knowledge**: provides standards for individual behaviours, such as a rough guideline during crossover/mutation operations.
 
@@ -60,7 +65,7 @@ Belief Space
 
 * Initialize belief space:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: initialize_belief_space
@@ -78,14 +83,16 @@ Belief Space
 
 Acceptance Function
 ===================
-* Pick top n individuals from population
+* Pick top :math:`n` individuals from population
 * This is used to update belief space
 * There are two ways of method to pick top n individuals: **static method** and **dynamic method**
-* Static method: select a certain percentage (fixed number) of individuals from the population
-* Dynamic methods: the number is variable and changes from generation to generation
-* In the minimization example, static method is used.
 
-.. literalinclude:: ca.py
+    * Static method: select a certain percentage (fixed number) of individuals from the population
+    * Dynamic methods: the number is variable and changes from generation to generation
+
+* In the minimization example, the **static method** is used
+
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: accept
@@ -100,11 +107,11 @@ Update Function
 
 * The mathematical expression for updating normative knowledge is slightly complex. I will illustrate with the following example
 * For example, now I have the initialized belief space
-* Then use one of individuals :math:`(6, 5)` return from acceptance function to update the belief space:
+* Then use one of individuals :math:`[6, 5]` return from acceptance function to update the belief space:
 
     .. code-block:: python
 
-        # individual: (6, 5), its fitness: 61
+        # individual: [6, 5], its fitness: 61
 
         # 1. update situational knowledge
         best = situational
@@ -115,7 +122,7 @@ Update Function
         # 2. update normative knowledge (this part use loop, but I separate them for explanation
 
         # 2.1 update the bound for x_1, which is [-10, 10, 100, 100], representing [min, max, Lower, Upper]
-        # individual = (6, 5)  -> individual[0] = 6
+        # individual = [6, 5]  -> individual[0] = 6
         # bound[0] is min value for x_1, bound[2] is Lower bound for x_1 fitness value
         # bound[1] is max value for x_1, bound[2] is Upper bound for x_1 fitness value
 
@@ -137,10 +144,10 @@ Update Function
         # do same thing
         # so x_2 is update to [5, 5, 61, 61]
 
-* Above is updated based on one individuals (6, 5). There are other individuals, repeat above process for them.
+* Above is updated based on one individual [6, 5]. There are other individuals, repeat above process for them
 * The update function:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: update
@@ -154,10 +161,10 @@ Influence Function
 
 Method 1
 --------
-* Only the normative knowledge source to determine the step size
-* step size = bound[max] - bound[min]
+* Only using the normative knowledge to influence the population
+* ``step_size = bound[max] - bound[min]``
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: influence_method_1
@@ -181,7 +188,7 @@ Method 2
 
 * The whole update function:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: influence_method_2
@@ -205,7 +212,7 @@ Method 3
 
 * The whole update function:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: influence_method_3
@@ -227,11 +234,11 @@ Method 4
     elif individual[j] > bound[1]:
         individual[j] -= abs(size * N)
     else:
-        individual[j] += beta * N
+        individual[j] += beta * size * N
 
 * The whole update function:
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :pyobject: influence_method_4
@@ -240,12 +247,12 @@ Method 4
 General Process
 ===============
 
-.. literalinclude:: ca.py
+.. literalinclude:: /../src/cultural_algorithm.py
     :language: python
     :lineno-match:
     :emphasize-lines: 2
-    :start-after: # [begin-main]
-    :end-before: # [end-main]
+    :start-after: # [begin-evolve]
+    :end-before: # [end-evolve]
 
 
 
