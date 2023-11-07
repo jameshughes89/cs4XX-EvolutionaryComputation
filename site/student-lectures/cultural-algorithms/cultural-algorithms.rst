@@ -116,7 +116,7 @@ Update Function
         best = situational
         if situational is None or fitness(individual) < fitness(best):
             situational = individual
-        # situational is None originally, now update to (6, 5)
+        # situational is None originally, now update to [6, 5]
 
         # 2. update normative knowledge (this part use loop, but I separate them for explanation
 
@@ -135,7 +135,7 @@ Update Function
         # 2.1.2 update max and Upper for x_1
         if individual[0] >= bound[1] or fitness(individual) < bound[3]:
             bound[0] = individual[0]
-            bound[2] = fitness(individual)
+            bound[3] = fitness(individual)
         # this satisfy fitness(individual) < bound[2], which is 61 < 100
         # so update: [6, 10, 61, 100]  ->  [6, 6, 61, 61]
 
