@@ -13,7 +13,7 @@ Introduction
     :align: center
 
     It has two space, the belief space and the population. ``Accept()`` and ``Influence()`` are used to do communications
-    between these two spaces. ``Update()` acts on the belief space. ``Select()`` and ``object()`` act on the population.
+    between these two spaces. ``Update()`` acts on the belief space. ``Select()`` and ``object()`` act on the population.
 
 * ``Object()`` is the fitness function
 * The most important part of the cultural algorithm is:
@@ -21,6 +21,10 @@ Introduction
     * ``Accept()`` picks top :math:`n` individuals from the population
     * ``Update()`` updates the belief space based on the individuals pick from ``Accept()``
     * ``Influence()`` is to use the knowledge in the belief space to update the population
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84238c0 (add unit tests for the code and change some of descriptions)
 
 
 Example Problem -- Minimization
