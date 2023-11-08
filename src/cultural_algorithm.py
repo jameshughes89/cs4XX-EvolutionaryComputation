@@ -1,4 +1,4 @@
-import math
+import copy
 import random
 import numpy as np
 
@@ -9,7 +9,7 @@ ACCEPT_NUMBER = 2
 
 def value_fitness(individual):
     if len(individual) != 2:
-        raise ValueError(f"The length of individual is incorrect!")
+        raise ValueError(f"The length of individual is incorrect: {len(individual)}")
     return individual[0] ** 2 + individual[1] ** 2
 
 
@@ -27,12 +27,11 @@ def accept(population, population_fitness):
     combined_data = list(zip(population, population_fitness))
     sorted_combined_data = sorted(combined_data, key=lambda x: x[1])
     sorted_population, sorted_population_fitness = zip(*sorted_combined_data)
-    # ACCEPT_NUMBER is a constant
     return list(sorted_population[:ACCEPT_NUMBER])
 
 
 def update(belief_space, n_accepted):
-    update_belief_space = belief_space.copy()
+    update_belief_space = copy.deepcopy(belief_space)
     for x_l in n_accepted:
         # update situational
         if update_belief_space["situational"] is None:
@@ -55,7 +54,7 @@ def update(belief_space, n_accepted):
 
 
 def influence_method_1(population, belief_space):
-    influence_population = population.copy()
+    influence_population = copy.deepcopy(population)
     for i in range(len(influence_population)):
         for j in range(2):
             bound = belief_space["normative"][j]
@@ -65,7 +64,7 @@ def influence_method_1(population, belief_space):
 
 
 def influence_method_2(population, belief_space):
-    influence_population = population.copy()
+    influence_population = copy.deepcopy(population)
     for i in range(len(influence_population)):
         for j in range(2):
             s = belief_space["situational"]
@@ -80,7 +79,7 @@ def influence_method_2(population, belief_space):
 
 
 def influence_method_3(population, belief_space):
-    influence_population = population.copy()
+    influence_population = copy.deepcopy(population)
     for i in range(len(population)):
         for j in range(2):
             s = belief_space["situational"]
@@ -96,7 +95,7 @@ def influence_method_3(population, belief_space):
 
 
 def influence_method_4(population, belief_space):
-    influence_population = population.copy()
+    influence_population = copy.deepcopy(population)
     for i in range(len(influence_population)):
         for j in range(2):
             bound = belief_space["normative"][j]
