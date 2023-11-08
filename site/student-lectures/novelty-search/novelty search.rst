@@ -17,7 +17,7 @@ defines the topology of the search space. The algorithm's task then is to curate
 traverse this space in the pursuit of finding a global optimum.
 
 The problem that frequently arises is that the population gets "stuck" around local optima and cannot progress past them
-to explore new areas of the search space - so-called *early convergence*.
+to explore new areas of the search space --- so-called *early convergence*.
 
 For example, imagine the algorithm's task is to solve a maze. It is presented with the following maze:
 
@@ -33,7 +33,7 @@ While evolutionary computation doesn't *always* take the greedy solution of simp
 reward individuals in the population who get closer. Effectively, it rewards that behavior *more often than not*.
 
 So, it is entirely possible that the computation will reach a point where it has a population clustered around the dead
-end - the local optimum - and that attempts to vary that population will fail to move it away towards a new area in the
+end --- the local optimum --- and that attempts to vary that population will fail to move it away towards a new area in the
 search space.
 
 
@@ -42,8 +42,8 @@ Stepping Stones
 ---------------
 
 While this is an oversimplified toy problem, this is a fundamental problem that appears again and again in evolutionary
-computation. The obvious intuition to a human observer is that the maze finder first had to move down - *against* the
-direction of its objective function - into a new area. Only then would resuming pursuit of the objective function be
+computation. The obvious intuition to a human observer is that the maze finder first had to move down --- *against* the
+direction of its objective function --- into a new area. Only then would resuming pursuit of the objective function be
 helpful.
 
     .. figure:: stepping.png
@@ -72,7 +72,7 @@ A problem for which a sensible objective function often leads away from the step
 In a nutshell, deception is the reason why evolutionary computation is hard. Much of the work of creating better
 evolutionary algorithms boils down to thinking of different ways to overcome deception.
 
-While the many techniques for overcoming deception are interesting, the problem that presents itself is that not all
+While many techniques for overcoming deception are interesting, the problem that presents itself is that not all
 techniques work equally well for all problems. The exact nature or workings of the deception may vary, and it is
 possible that *none* of the currently known techniques may be effective for a given problem.
 
@@ -92,7 +92,7 @@ Novelty Search
 
 It is important to realize that using a fitness function to solve problems was in fact a *choice*. While it is very
 often a good and sensible choice, in the case of a highly deceptive problem it may be best to re-evaluate the assumption
-that using fitness to guide search was a good idea.
+that using fitness to guide the search was a good idea.
 
     "The best way to solve any problem is to remove its cause."
 
@@ -102,25 +102,28 @@ But what are the alternatives? Random search certainly will not be an acceptable
 true that we do need *something* to guide the search. In particular, is there an alternative approach that would guide
 search towards finding those elusive stepping stones?
 
-Consider the following thought experiment: Imagine an evolutionary algorithm just performed mutation on some individual.
+Consider the following thought experiment: Imagine an evolutionary algorithm just performed a mutation on an individual.
 According to a traditional objective based search, there are three categories of outcome:
 
-* The fitness of the individual is now higher. (Good)
-* The fitness is now lower. (Bad)
-* The fitness is now relatively unchanged. (Neutral)
+- The fitness of the individual is now higher. (Good)
+- The fitness is now lower. (Bad)
+- The fitness is now relatively unchanged. (Neutral)
 
-Imagine though that a mutation was neutral - *but* created a new individual that represented something *very different*
+Imagine though that a mutation was neutral --- *but* created a new individual that represented something *very different*
 from anything seen before. Is that really a neutral outcome?
 
     .. figure:: saddle.png
         :width: 600 px
         :align: center
+        :target: https://en.wikipedia.org/wiki/Monkey_saddle#/media/File:Monkey_Saddle_Surface_(Shaded).png
+
+    Image credit: `User Inductiveload on Wikipedia <https://en.wikipedia.org/wiki/Monkey_saddle#/media/File:Monkey_Saddle_Surface_(Shaded).png>`_
 
 No!
 
-That neutral change brought us to an unexplored area of the search. It, or neighbours near it, may well be one of the
-stepping stones our search needs to find. Intuitively, it makes sense that a search that would reward such a mutation
-could be beneficial.
+That neutral change brought us to an unexplored area of the search space. It, or neighbours near it, may well be one of
+the stepping stones our search needs to find. Intuitively, it makes sense that a search that would reward such a
+mutation could be beneficial.
 
 In practice, a novelty based search algorithm is very similar to a traditional fitness based search, with two key
 differences.
@@ -141,11 +144,12 @@ supposedly novel solutions and stop venturing out further into the search space.
     .. figure:: archive.png
         :width: 600 px
         :align: center
+        :target: https://unsplash.com/photos/people-in-sofa-uu0cOMPdM2g
 
     Think of each individual as being a researcher striving to get some new finding interesting enough to be published.
     Photo credit: `Niklas Ohlrogge <https://unsplash.com/@ohlrogge>`_
 
-The compromise to be made is remembering *some* of the past - this is called the *archive*. When an individual from the
+The compromise to be made is remembering *some* of the past --- this is called the *archive*. When an individual from the
 population achieves a sufficiently high novelty score, it is enshrined in the archive. The novelty of an individual is
 compared against the population *and* the archive. The archived individuals in effect "push" the population away from
 that part of the search space during selection, guiding the search towards unexplored parts of the space.
@@ -180,6 +184,7 @@ Or, as a picture:
     .. figure:: sparsity.png
         :width: 600 px
         :align: center
+        :target: https://www.cerebras.net/blog/harnessing-the-power-of-sparsity-for-large-gpt-ai-models
 
     The points on the right are generally in more *sparse* regions of the space than the points on the left.
     Image credit: `Sean Lie <https://www.cerebras.net/blog/harnessing-the-power-of-sparsity-for-large-gpt-ai-models>`_
@@ -226,7 +231,7 @@ But what happens if we remove the walls?
 
         The maze without walls.
 
-If the x and y dimensions are unbounded - that is to say the potential area to explore is infinite - intuitively, there
+If the x and y dimensions are unbounded --- that is to say the potential area to explore is infinite --- intuitively, there
 is no assurance that the search will be guided towards the solution. It would be possible to endlessly discover novel
 solutions in farther and farther regions of the space.
 
@@ -245,10 +250,12 @@ of those points, it is perhaps unlikely that one of the points will achieve it e
     .. figure:: unoptimized.png
         :width: 600 px
         :align: center
+        :target: https://en.wikipedia.org/wiki/Monkey_saddle#/media/File:Monkey_Saddle_Surface_(Shaded).png
 
         A potential solution that is clearly in need of being further optimized.
+        Image credit: `User Inductiveload on Wikipedia <https://en.wikipedia.org/wiki/Monkey_saddle#/media/File:Monkey_Saddle_Surface_(Shaded).png>`_
 
-What the solutions provided by a novelty search provide are good *starting* points for a traditional objective based
+What the solutions found by a novelty search provide are good *starting* points for a traditional objective based
 search. In other words, they may require some fine-tuning. This can be achieved by evaluating them and performing an
 objective based search around the objectively best novel solution. Alternatively, you could take the approach of
 beginning with a multi-objective search for novelty *and* fitness.
@@ -269,6 +276,7 @@ progressively harder to evaluate.
     .. figure:: bookshelf.png
         :width: 600 px
         :align: center
+        :target: https://unsplash.com/photos/books-on-white-wooden-shelf-q23lcKhJYCE
 
         A smaller archive.
         Image credit: `Darren Richardson <https://unsplash.com/@campfire_guy>`_
@@ -314,6 +322,7 @@ In such a case, can novelty search still perform well?
 
     As the precision decreases, larger areas of the behavior space are conflated as being the same single point.
     The novelty metric is unable to distinguish between different behaviors that are in the same grid.
+    Image of maze taken from Lehman and Stanley. [1]_
 
 Again, the answer here is not clear in general, but Lehman and Stanley had the following finding [1]_:
 
@@ -358,6 +367,7 @@ be more successful at finding the necessary stepping stones to move towards a gl
 .. figure:: food.png
     :width: 600 px
     :align: center
+    :target: https://unsplash.com/photos/white-plates-with-assorted-foods-Q_Moi2xjieU
 
     Image credit: `Stefan Vladimirov <https://unsplash.com/@vladimirov>`_
 
