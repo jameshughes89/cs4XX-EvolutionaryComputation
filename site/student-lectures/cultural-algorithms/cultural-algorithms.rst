@@ -51,7 +51,8 @@ Example Problem -- Minimization
 
 Belief Space
 ============
-* The belief space contains a number of components (at least following two) to represent the cultural information
+* The belief space could contains a number of components to represent the cultural information
+* The **situational knowledge** and the **normative knowledge** are two popular components.
 * **Situational knowledge**: keep track of best solution found in each generation
 * **Normative knowledge**: provides standards for individual behaviours, such as a rough guideline during crossover/mutation operations.
 
