@@ -21,10 +21,7 @@ Introduction
     * ``Accept()`` picks top :math:`n` individuals from the population
     * ``Update()`` updates the belief space based on the individuals pick from ``Accept()``
     * ``Influence()`` is to use the knowledge in the belief space to update the population
-<<<<<<< HEAD
-=======
 
->>>>>>> 84238c0 (add unit tests for the code and change some of descriptions)
 
 
 Example Problem -- Minimization
