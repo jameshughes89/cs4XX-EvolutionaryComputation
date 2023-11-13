@@ -45,7 +45,7 @@ Like we have gone over in previous classes, Conway's Game of Life is a cellular 
 * Visit `this website <https://conwaylife.com/>`_ and play with Conway's Game of Life
 
 
-.. figure:: game_of_life_puffer.gif
+.. figure:: /topics/origin/game_of_life_puffer.gif
     :width: 1000 px
     :align: center
     :target: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
