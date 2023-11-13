@@ -77,6 +77,7 @@ YouTube
 
     student-lectures/description
     student-lectures/novelty-search/novelty-search
+    student-lectures/cultural-algorithms/cultural-algorithms
 
 
 .. toctree::
