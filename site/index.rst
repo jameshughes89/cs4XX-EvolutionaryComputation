@@ -67,6 +67,7 @@ YouTube
     topics/parameters/comparing
     topics/problems/multi-objective
     topics/particle-swarm-optimization/pso
+    topics/particle-swarm-optimization/simple-pso
 
 
 .. toctree::
@@ -75,6 +76,8 @@ YouTube
     :numbered:
 
     student-lectures/description
+    student-lectures/novelty-search/novelty-search
+    student-lectures/cultural-algorithms/cultural-algorithms
 
 
 .. toctree::
