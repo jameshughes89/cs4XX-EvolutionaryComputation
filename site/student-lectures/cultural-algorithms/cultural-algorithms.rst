@@ -13,7 +13,7 @@ Introduction
     :align: center
 
     It has two space, the belief space and the population. ``Accept()`` and ``Influence()`` are used to do communications
-    between these two spaces. `Update()`` acts on the belief space. ``Select()`` and ``object()`` act on the population.
+    between these two spaces. ``Update()`` acts on the belief space. ``Select()`` and ``object()`` act on the population.
 
 * ``Object()`` is the fitness function
 * The most important part of the cultural algorithm is:
@@ -118,14 +118,14 @@ Update Function
         best = situational
         if situational is None or fitness(individual) < fitness(best):
             situational = individual
-        # situational is None originally, now update to (6, 5)
+        # situational is None originally, now update to [6, 5]
 
         # 2. update normative knowledge (this part use loop, but I separate them for explanation
 
         # 2.1 update the bound for x_1, which is [-10, 10, 100, 100], representing [min, max, Lower, Upper]
         # individual = [6, 5]  -> individual[0] = 6
         # bound[0] is min value for x_1, bound[2] is Lower bound for x_1 fitness value
-        # bound[1] is max value for x_1, bound[2] is Upper bound for x_1 fitness value
+        # bound[1] is max value for x_1, bound[3] is Upper bound for x_1 fitness value
 
         # 2.1.1 update min and Lower for x_1
         if individual[0] <= bound[0] or fitness(individual) < bound[2]:
@@ -137,7 +137,7 @@ Update Function
         # 2.1.2 update max and Upper for x_1
         if individual[0] >= bound[1] or fitness(individual) < bound[3]:
             bound[0] = individual[0]
-            bound[2] = fitness(individual)
+            bound[3] = fitness(individual)
         # this satisfy fitness(individual) < bound[2], which is 61 < 100
         # so update: [6, 10, 61, 100]  ->  [6, 6, 61, 61]
 
