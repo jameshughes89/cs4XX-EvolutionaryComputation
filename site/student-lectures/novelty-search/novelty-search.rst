@@ -84,7 +84,7 @@ function persistently lead us astray?
 Novelty Search
 ==============
 
-    .. figure:: stepping.png
+    .. figure:: example.png
         :width: 419 px
         :align: center
 
@@ -141,7 +141,7 @@ That is obviously not a practical approach, since it grows unbounded both in ter
 Without considering the past though, it is possible that the search could alternate between rediscovering the same
 supposedly novel solutions and stop venturing out further into the search space.
 
-    .. figure:: archive.png
+    .. figure:: archive.jpg
         :width: 600 px
         :align: center
         :target: https://unsplash.com/photos/people-in-sofa-uu0cOMPdM2g
@@ -273,7 +273,7 @@ If the length of the archive is allowed to grow though, it is actually even wors
 will be more and more elements in the archive to compare against. This means that the novelty metric becomes
 progressively harder to evaluate.
 
-    .. figure:: bookshelf.png
+    .. figure:: bookshelf.jpg
         :width: 600 px
         :align: center
         :target: https://unsplash.com/photos/books-on-white-wooden-shelf-q23lcKhJYCE
@@ -364,7 +364,7 @@ be more successful at finding the necessary stepping stones to move towards a gl
 
     But maybe some other Jamaican dishes are really good! It could be an area worth more exploration.
 
-.. figure:: food.png
+.. figure:: food.jpg
     :width: 600 px
     :align: center
     :target: https://unsplash.com/photos/white-plates-with-assorted-foods-Q_Moi2xjieU
