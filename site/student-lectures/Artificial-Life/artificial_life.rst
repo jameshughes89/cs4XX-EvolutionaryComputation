@@ -87,6 +87,28 @@ Additional Applications
 =======================
 Digital Evolution is a subclass of artificial life that focuses on evolving digital organisms and follows the similar evolution steps of a GA, mutation, crossover, and selection.
 
+* In a seminal work from 1994, Karl Sims evolved virtual 3D creatures to walk, jump, and swim in a simulated environment. 
+
+    * The simulation itself only had the base rules with gravity and friction.
+    * The creatures evolved not only their morphology/shape but also the "brain" to control the body.
+    * What was expected was that the creatures would evolve to move in a way that would be similar to how animals move in the real world, utilizing legs and arms. 
+
+* Instead, as seen below, the creatures evolved slightly differently...
+
+.. figure:: youtube-video-gif-2.gif
+    :width: 300 px
+    :align: center
+    :target: https://www.youtube.com/watch?v=TaXUZfwACVE&list=PL5278ezwmoxQODgYB0hWnC0-Ob09GZGe2&index=9
+    
+    Examples of 3D creatures that evolved in Karl Sims' simulation
+
+
+Artificial life is also a pretty common genre of video games, including the Sims, Spore, and even Tamagatchii.
+
+.. figure:: spore.jpeg
+    :width: 300 px
+    :align: center
+    :target: https://en.wikipedia.org/wiki/Spore_%282008_video_game%29
 
 
 Conclusion
