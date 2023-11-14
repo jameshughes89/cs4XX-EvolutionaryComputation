@@ -1,6 +1,6 @@
-**********************************
-Introduction to Memetic Algorithms
-**********************************
+******************
+Memetic Algorithms
+******************
 
 * Genetic Algorithms (GA): Genetic algorithms are inspired by the process of natural selection and evolution. They involve creating a population of potential solutions to a problem, selecting the best ones, and using genetic operators (like crossover and mutation) to produce new solutions. This mimics the way traits are passed on and evolve in biological organisms.
 * Local Search: This is a more focused exploration of the solution space. Instead of making big changes to solutions, local search methods make small adjustments to improve the current solution. It's like fine-tuning.
@@ -20,9 +20,8 @@ Memetic algorithm using a chef's recipe as an analogy
 	The chef makes small adjustments to those recipes (local search).
 	The chef shares successful tips with other chefs and incorporates those tips into the recipes (memetic algorithm).
 
-**************************************************
 Comparison: Memetic algorithm vs Genetic algorithm
-**************************************************
+==================================================
 
 * Exploration and Exploitation:
 	GAs are generally better at exploration.
@@ -43,9 +42,8 @@ Comparison: Memetic algorithm vs Genetic algorithm
 
 In summary, memetic algorithms extend genetic algorithms by incorporating local search mechanisms to enhance the exploitation of solutions. The choice between them depends on the specific characteristics of the optimization problem you are addressing.
 
-**************************
 Types of memetic algorithm
-**************************
+==========================
 
 * Memetic algorithms come in various types, each with its own way of combining and evolving solutions. 
 
@@ -66,9 +64,8 @@ Types of memetic algorithm
 
 In a nutshell, these types of memetic algorithms are like different flavors of problem-solving teams. Some are more adaptive, some work in parallel, some focus on cooperation, and others blend the best of various approaches. They all aim to efficiently find optimal solutions by evolving and combining ideas in different ways.
 
-********************************
 Memetic Algorithm Implementation
-********************************
+================================
 
 Here's a basic implementation of a memetic algorithm for finding the minimum of a sum equation i.e. the sum of squares = sum(i**2)
 
@@ -297,9 +294,8 @@ Analysis of implementation using MA and GA for sum equation
 	
 In summary, for the task of minimizing the sum of squares equation, the Memetic algorithm has outperformed the Genetic algorithm both in terms of finding a solution closer to the global optimum and in the stability and speed of convergence as evidenced by the plot and fitness values.
 
-********************************************
 Real life applications of memetic algorithms
-********************************************
+============================================
 
 * Optimizing Supply Chain Routes: Companies can use memetic algorithms to find the most efficient routes for transporting goods, considering factors like traffic, weather, and delivery time.
 * Network Design: In telecommunications, memetic algorithms can help design optimal network configurations, considering factors such as data traffic, signal strength, and hardware limitations.
