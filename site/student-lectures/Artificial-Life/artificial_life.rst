@@ -16,19 +16,19 @@ The modeling philosophy of artificial life strongly differs from traditional mod
 
 The main goal of artificial life is to understand the basic principles of living systems by means of a bottom-up approach, where the focus is on complex systems emerging from the interaction of simple components and rules.
 
-.. figure:: Logical_deterministic_individual-based_cellular_automata_model_of_single_species_population_growth.gif
+.. figure:: Logical_deterministic_individual_based_cellular_automata_model_of_single_species_population_growth.gif
     :width: 500 px
     :align: center
     :target: https://en.wikipedia.org/wiki/Artificial_life
 
     Logical deterministic individual-based cellular automata model of an ecosystem with one species. The model demonstrates a mechanism of S-shaped population growth.
 
-.. figure:: Logical_deterministic_individual-based_cellular_automata_model_of_interspecific_competition_for_a_single_limited_resource.gif
+.. figure:: Logical_deterministic_individual_based_cellular_automata_model_of_interspecific_competition_for_a_single_limited_resource.gif
     :width: 500 px
     :align: center
     :target: https://en.wikipedia.org/wiki/Artificial_life
 
-    Logical deterministic individual-based cellular automata model of interspecific competition for a single limited resource
+    Logical deterministic individual-based cellular automata model of interspecific competition for a single limited resource.
 
 Conway's Game of Life
 ---------------------
@@ -100,7 +100,7 @@ Digital Evolution is a subclass of artificial life that focuses on evolving digi
     :align: center
     :target: https://www.youtube.com/watch?v=TaXUZfwACVE&list=PL5278ezwmoxQODgYB0hWnC0-Ob09GZGe2&index=9
     
-    Examples of 3D creatures that evolved in Karl Sims' simulation
+    Examples of 3D creatures that evolved in Karl Sims' simulation.
 
 
 Artificial life is also a pretty common genre of video games, including the Sims, Spore, and even Tamagatchii.
