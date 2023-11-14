@@ -5,7 +5,7 @@ Introduction to Differential Evolution (DE)
 * It's a type of metaheuristic, making few assumptions about the problem, enabling exploration of large solution spaces.
 * DE works well for multidimensional real-valued functions, not requiring differentiability, allowing application to non-continuous, noisy, or time-varying problem.
 
-    .. figure:: Differential_Evolution_flow_chart.png
+    .. figure:: Differential_evolution_flow_chart.png
         :width: 224 px
         :align: center
 
@@ -101,15 +101,14 @@ Evolution and Termination
 
 The evolution process involves repeating the mutation, crossover, and selection steps until a termination criterion is met.
 
-This documentation provides a comprehensive overview of the DE algorithm, highlighting the mathematical concepts that underpin each step.
+This provides a comprehensive overview of the DE algorithm, highlighting the mathematical concepts that underpin each step.
 
-    .. figure:: iDifferential_Evolution_optimizing_the_2D_Ackley_function.gif
-        :width: 224 px
-        :align: center
+  .. image:: Differential_evolution_optimizing_the_2D_ackley_function.gif
+    :width: 224px
+    :align: center
 
-        Figure 2: The Differential Evolution (DE) algorithm is an iterative process that starts with a population of candidate solutions, and iteratively improves them by combining them with other solutions.
-            Image credit: `Pablormier <https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python>`_
-
+    Figure 2: The Differential Evolution (DE) algorithm is an iterative process that starts with a population of candidate solutions, and iteratively improves them by combining them with other solutions.
+    Image credit: `Pablormier <https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python>`_
 
 *************************
 Advantages and Challenges
@@ -138,4 +137,4 @@ Differential Evolution (DE) vs. Genetic Algorithm (GA) on the Traveling Salesman
 * DE's approach is more computationally intensive but provides more consistent results towards global optima.
 * GA can quickly find satisfactory solutions but may not be optimal.
 * For larger TSP instances, DE tends to outperform GA in finding optimal solutions despite taking longer.
-* credit: `Pablormier <http://www.micai.org/2009/proceedings/complementary/cd/ws-imso/88/paper88.micai09.pdf>`_
+* credit: `Brian Hegerty, Chih-Cheng Hung, and Kristen Kasprak <http://www.micai.org/2009/proceedings/complementary/cd/ws-imso/88/paper88.micai09.pdf>`_
