@@ -15,31 +15,31 @@ Memetic algorithm using a chef's recipe as an analogy
 * Memetic Algorithm: Here's where the memetic algorithm comes in. "Memetic" is derived from "meme," which, in this context, means a unit of cultural information that is passed from one generation to another. In a memetic algorithm, you combine the ideas of genetic algorithms and local search to create a more robust optimization process. Going back to our chef analogy, it's like the chef not only selecting the best recipes but also sharing tips with other chefs and incorporating those tips into the recipes to make them even better.
 
 * Putting it all together:
-	* The chef starts with various recipes (genetic algorithm population).
-	* The chef selects the best recipes (genetic algorithm selection).
-	* The chef makes small adjustments to those recipes (local search).
-	* The chef shares successful tips with other chefs and incorporates those tips into the recipes (memetic algorithm).
+	The chef starts with various recipes (genetic algorithm population).
+	The chef selects the best recipes (genetic algorithm selection).
+	The chef makes small adjustments to those recipes (local search).
+	The chef shares successful tips with other chefs and incorporates those tips into the recipes (memetic algorithm).
 
 **************************************************
 Comparison: Memetic algorithm vs Genetic algorithm
 **************************************************
 
 * Exploration and Exploitation:
-	* GAs are generally better at exploration.
-	* MAs are designed to balance both exploration and exploitation.
+	GAs are generally better at exploration.
+	MAs are designed to balance both exploration and exploitation.
 
 * Convergence:
-	* MAs often converge faster due to the inclusion of local search.
-	* GAs may take more generations to converge.
+	MAs often converge faster due to the inclusion of local search.
+	GAs may take more generations to converge.
 
 * Representation:
-	* Both algorithms use similar representations for solutions.
+	Both algorithms use similar representations for solutions.
 
 * Flexibility:
-	* MAs are more flexible and can be adapted to different problem characteristics by adjusting the local search component.
+	MAs are more flexible and can be adapted to different problem characteristics by adjusting the local search component.
 
 * Performance:
-	* The performance depends on the problem at hand; for some problems, GAs might be more suitable, while for others, MAs could outperform GAs.
+	The performance depends on the problem at hand; for some problems, GAs might be more suitable, while for others, MAs could outperform GAs.
 
 In summary, memetic algorithms extend genetic algorithms by incorporating local search mechanisms to enhance the exploitation of solutions. The choice between them depends on the specific characteristics of the optimization problem you are addressing.
 
@@ -72,53 +72,51 @@ Memetic Algorithm Implementation
 
 Here's a basic implementation of a memetic algorithm for finding the minimum of a sum equation i.e. the sum of squares = sum(i**2)
 
-* This function calculates the sum of squares of elements in an array x. It's the objective function for the optimization.
-
-How will the below code look like
+* Sum of squares equation function calculates the sum of squares of elements in an array x. It's the objective function for the optimization.
 
 .. code-block:: python
-   :linenos: 7-15
-
+   :linenos: 7-16
 	def sum_of_squares_equation(x):
 		"""
 		Calculate the sum of squares for a list of numbers.
-		Args:
-			x (list of numbers): The list of numbers for which the sum of squares will be calculated.
-		Returns:
-			float: The sum of squares of the input numbers.
+
+		:param x: List of numbers for which the sum of squares will be calculated.
+		:type x: list of numbers
+		:return: The sum of squares of the input numbers.
+		:rtype: float
 		"""
-			return sum([i**2 for i in x])
+		return sum([i**2 for i in x])
 
 * Fitness function Calculates the fitness of a solution using the sum_equation
 
 .. code-block:: python
-   :linenos: 31-39
-
+   :linenos: 32-41
     def fitness(self, solution):
-        """
-        Calculate the fitness score of a given solution.
-        Parameters:
-        solution: A list or data structure representing the solution to be evaluated.
-        Returns:
-        fitness_score: A numerical value representing the fitness score of the solution.
-        """
+		"""
+		Calculate the fitness score of a given solution.
+
+		:param solution: A list or data structure representing the solution to be evaluated.
+		:type solution: list or data structure
+		:return: A numerical value representing the fitness score of the solution.
+		:rtype: float
+		"""
         return sum_of_squares_equation(solution)
 
 * select_parents function implements tournament selection for choosing parents for crossover.
 
 .. code-block:: python
-   :linenos: 41-58
-
+   :linenos: 43-61
     def select_parents(self):
-        """
-        Perform tournament selection to choose parents for the next generation.
-        This function conducts a tournament selection process to select parents from the current population.
-        It randomly pairs individuals and selects the one with the higher fitness value as a parent.
-        Returns:
-        numpy.ndarray: An array containing the selected parents for the next generation.
-        Note:
-        The number of selected parents is equal to the population size defined for the genetic algorithm.
-        """
+		"""
+		Perform tournament selection to choose parents for the next generation.
+		This function conducts a tournament selection process to select parents from the current population.
+		It randomly pairs individuals and selects the one with the higher fitness value as a parent.
+
+		:return: An array containing the selected parents for the next generation.
+		:rtype: numpy.ndarray
+		.. note::
+		The number of selected parents is equal to the population size defined for the genetic algorithm.
+		"""
         parents = []
         for _ in range(self.pop_size):
             i, j = np.random.randint(0, self.pop_size, 2)
@@ -131,18 +129,18 @@ How will the below code look like
 * crossover function performs crossover between two parent solutions based on the crossover rate.
 
 .. code-block:: python
-   :linenos: 60-83
-
+   :linenos: 63-83
     def crossover(self, parent1, parent2):
-        """
-        Perform crossover operation between two parent individuals.
-        Args:
-        parent1 (array-like): The first parent individual.
-        parent2 (array-like): The second parent individual.
-        Returns:
-        tuple: A tuple containing two child individuals resulting from the crossover operation.
-        If the crossover rate is below the specified threshold, the function returns the parents unaltered.
-        """
+		"""
+		Perform a crossover operation between two parent individuals.
+
+		:param parent1: The first parent individual.
+		:type parent1: array-like
+		:param parent2: The second parent individual.
+		:type parent2: array-like
+		:returns: A tuple containing two child individuals resulting from the crossover operation. If the crossover rate is below the specified threshold, the function returns the parents unaltered.
+		:rtype: tuple
+		"""
         if np.random.rand() < self.crossover_rate:
             crossover_point = np.random.randint(1, self.dimensions)
             child1 = np.concatenate([parent1[:crossover_point], parent2[crossover_point:]])
@@ -154,24 +152,22 @@ How will the below code look like
 * mutate function mutates a given solution based on the mutation rate.
 
 .. code-block:: python
-   :linenos: 85-106
-
+   :linenos: 85-107
     def mutate(self, solution):
-        """
-        Apply mutation to the given solution.
-        Args:
-        solution (numpy.ndarray): The solution to be mutated, represented as a NumPy array.
-        Returns:
-        numpy.ndarray: The mutated solution, with random changes applied to some elements.
+		"""
+		Apply mutation to the given solution. 
+		This method applies mutation to the input solution by randomly altering the values of
+		its elements. The mutation is controlled by the `mutation_rate` property of the object.
+		For each element in the solution, a random value is generated using a standard normal
+		distribution (mean = 0, standard deviation = 1), and if a randomly generated value is
+		less than the `mutation_rate`, the corresponding element in the solution is modified
+		by adding the random value. Returns the mutated solution as a NumPy array.
 
-        This method applies mutation to the input solution by randomly altering the values of
-        its elements. The mutation is controlled by the `mutation_rate` property of the object.
-        For each element in the solution, a random value is generated using a standard normal
-        distribution (mean = 0, standard deviation = 1), and if a randomly generated value is
-        less than the `mutation_rate`, the corresponding element in the solution is modified
-        by adding the random value.
-        Returns the mutated solution as a NumPy array.
-        """
+		:param solution: The solution to be mutated, represented as a NumPy array.
+		:type solution: numpy.ndarray
+		:returns: The mutated solution, with random changes applied to some elements.
+		:rtype: numpy.ndarray
+		"""
         for i in range(self.dimensions):
             if np.random.rand() < self.mutation_rate:
                 solution[i] += np.random.randn()
@@ -180,23 +176,17 @@ How will the below code look like
 * local_search function implements a hill-climbing local search to improve solutions.
 
 .. code-block:: python
-   :linenos: 108-127
-
+   :linenos: 109-124
     def local_search(self, solution):
-        """
-        Perform Hill Climbing local search to improve a given solution.
-        Parameters:
-        - solution: numpy array-like
-            The initial solution to be optimized.
-        Returns:
-        - numpy.ndarray
-            The optimized solution after a number of local search steps.
-            This function applies Hill Climbing local search by iteratively generating new solutions by adding small random steps
-            to the current solution. If a generated solution results in a better fitness value than the current solution, it
-            replaces the current solution with the new one. This process is repeated for a fixed number of iterations (10 by
-            default).
-        The `fitness` method of the calling object is used to evaluate the fitness of each solution.
-        """
+		"""
+		Perform Hill Climbing local search to improve a given solution. This function applies Hill Climbing 
+		local search by iteratively generating new solutions by adding small random steps to the current solution. 
+		If a generated solution results in a better fitness value than the current solution, it replaces the 
+		current solution with the new one. This process is repeated for a fixed number of iterations (10 by default).
+
+		:param solution: numpy array-like. The initial solution to be optimized.
+		:return: numpy.ndarray. The optimized solution after a number of local search steps.
+		"""
         for _ in range(10):  # number of local search steps
             new_solution = solution + np.random.randn(self.dimensions) * 0.1  # small random step
             if self.fitness(new_solution) < self.fitness(solution):
@@ -206,19 +196,19 @@ How will the below code look like
 * run function runs the algorithm for a specified number of generations, updating the population through selection, crossover, mutation, and local search. It also keeps track of the best solution and its fitness.
 
 .. code-block:: python
-   :linenos: 129-161
-
+   :linenos: 126-159
     def run(self):
-        """
-        Evolve a population of solutions over multiple generations using a genetic algorithm.
-        This method runs the genetic algorithm for a specified number of generations, aiming to find the
-        best solution with the highest fitness in the population.
-        Returns:
-            Tuple[Any, float]: A tuple containing the best solution found and its fitness score.
-        Note:
-            This method updates the internal state of the genetic algorithm object, including the
-            population, fitness history, and the best solution found so far.
-        """
+		"""
+		Evolve a population of solutions over multiple generations using a genetic algorithm.
+		This method runs the genetic algorithm for a specified number of generations, aiming to find the
+		best solution with the highest fitness in the population.
+
+		:param max_generations: The number of generations to run the genetic algorithm.
+		:type max_generations: int
+		:return: A tuple containing the best solution found and its fitness score.
+		:rtype: Tuple[Any, float]
+		:note: This method updates the internal state of the genetic algorithm object, including the population, fitness history, and the best solution found so far.
+		"""
         for generation in range(self.max_generations):
             new_population = []
             parents = self.select_parents()
