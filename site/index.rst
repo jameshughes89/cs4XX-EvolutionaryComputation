@@ -78,7 +78,8 @@ YouTube
     student-lectures/description
     student-lectures/novelty-search/novelty-search
     student-lectures/cultural-algorithms/cultural-algorithms
-    student-lectures/Differential_evolution/Differential_evolution
+    student-lectures/memetic-algorithms/memetic-algorithms
+    student-lectures/Differential_Evolution/Differential_Evolution
 
 .. toctree::
     :caption: Student Projects

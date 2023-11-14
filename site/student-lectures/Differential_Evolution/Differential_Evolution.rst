@@ -1,11 +1,16 @@
-*******************************************
+**********************
+Differential Evolution
+**********************
+
+
 Introduction to Differential Evolution (DE)
-*******************************************
+===========================================
 * DE is a method in evolutionary computation that optimizes solutions to problem by iteratively improving a candidate solution based on a quality measure.
 * It's a type of metaheuristic, making few assumptions about the problem, enabling exploration of large solution spaces.
 * DE works well for multidimensional real-valued functions, not requiring differentiability, allowing application to non-continuous, noisy, or time-varying problem.
 
     .. figure:: Differential_evolution_flow_chart.png
+
         :width: 224 px
         :align: center
 
@@ -13,8 +18,10 @@ Introduction to Differential Evolution (DE)
             Image credit: `Xiu Zhang <https://www.researchgate.net/publication/310811940_Shift_based_adaptive_differential_evolution_for_PID_controller_designs_using_swarm_intelligence_algorithm>`_
 
 
+
 Algorithm overview and mechanics
 ================================
+
 * DE maintains a population of candidate solutions, creating new ones by combining existing solutions using simple formulae.
 * The algorithm operates as a black box, only requiring a measure of quality for candidate solutions.
 * It's iterative, with the aim (not guarantee) of discovering a satisfactory solution.
@@ -37,9 +44,9 @@ Algorithm overview and mechanics
 
 
 
-
 Initialization of agents
 ========================
+
 
 DE starts with the random positioning of agents (candidate solutions) within the search-space:
 
@@ -50,9 +57,9 @@ DE starts with the random positioning of agents (candidate solutions) within the
 where \( X_i \) represents the position of the \( i^{th} \) agent, \( X_{\text{min}} \) and \( X_{\text{max}} \) are the lower and upper bounds of the search space, respectively.
 
 
-
 Mutation in DE
 ==============
+
 Mutation involves the generation of a new candidate vector by the weighted difference between two random vectors added to a third vector:
 
 .. math::
@@ -62,10 +69,9 @@ Mutation involves the generation of a new candidate vector by the weighted diffe
 Here, \( X_{\text{r1}}, X_{\text{r2}}, X_{\text{r3}} \) are three distinct vectors randomly selected from the population, and \( F \) is the mutation factor.
 
 
-
-
 Crossover process
 =================
+
 
 During crossover, a trial vector is created by mixing parameters from the mutated vector with those from a target vector:
 
@@ -80,7 +86,6 @@ During crossover, a trial vector is created by mixing parameters from the mutate
   where \( CR \) is the crossover rate, and \( \text{rand}(D) \) ensures that \( U_i \) gets at least one component from \( V_i \).
 
 
-
 Selection mechanism
 ===================
 
@@ -93,7 +98,6 @@ The selection mechanism is based on the fitness of the trial vector compared to 
     U_i & \text{if fitness}(U_i) \leq \text{fitness}(X_i) \\
     X_i & \text{otherwise}
     \end{cases}
-
 
 
 Evolution and termination
@@ -113,6 +117,8 @@ This provides a comprehensive overview of the DE algorithm, highlighting the mat
 
 Advantages and challenges
 =========================
+
+
 * Advantages: DE's simplicity, efficiency in handling non-differentiable, noisy, or changing problems.
 * Challenges: Parameter setting can be critical; it does not guarantee finding the global optimum.
 
@@ -121,15 +127,16 @@ Advantages and challenges
 Applications and recent advances
 ================================
 
+
 * Global optimisation is necessary in fields such as engineering, statistics, and finance.
 * Many practical problems have objective functions that are non-differentiable, non-continuous, non-linear, noisy, flat, multi-dimensional, or have many local minima, constraints or stochasticity.
 * Such problems are difficult, if not impossible, to solve analytically.
 * Differential Evolution (DE) can be used to find approximate solutions to such problems.
 
 
-
 Differential evolution (DE) vs. Genetic algorithm (GA) on the Traveling salesman problem (TSP)
 ===============================================================================================
+
 
 * DE has a higher computational complexity due to complex vector operations.
 * GA converges faster but is more prone to premature convergence, often getting stuck at local optima.
