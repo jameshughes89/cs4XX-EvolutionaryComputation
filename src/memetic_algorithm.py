@@ -4,8 +4,14 @@ import matplotlib.animation as animation
 
 
 # Problem settings
-def sum_equation(x):
-    """Example equation: the sum of squares."""
+def sum_of_squares_equation(x):
+    """
+    Calculate the sum of squares for a list of numbers.
+    Args:
+        x (list of numbers): The list of numbers for which the sum of squares will be calculated.
+    Returns:
+        float: The sum of squares of the input numbers.
+    """
     return sum([i**2 for i in x])
 
 
@@ -23,10 +29,25 @@ class MemeticAlgorithm:
         self.fitness_history = []
 
     def fitness(self, solution):
-        return sum_equation(solution)
+        """
+        Calculate the fitness score of a given solution.
+        Parameters:
+        solution: A list or data structure representing the solution to be evaluated.
+        Returns:
+        fitness_score: A numerical value representing the fitness score of the solution.
+        """
+        return sum_of_squares_equation(solution)
 
     def select_parents(self):
-        """Tournament selection"""
+        """
+        Perform tournament selection to choose parents for the next generation.
+        This function conducts a tournament selection process to select parents from the current population.
+        It randomly pairs individuals and selects the one with the higher fitness value as a parent.
+        Returns:
+        numpy.ndarray: An array containing the selected parents for the next generation.
+        Note:
+        The number of selected parents is equal to the population size defined for the genetic algorithm.
+        """
         parents = []
         for _ in range(self.pop_size):
             i, j = np.random.randint(0, self.pop_size, 2)
@@ -36,8 +57,24 @@ class MemeticAlgorithm:
                 parents.append(self.population[j])
         return np.array(parents)
 
-    def crossover(self, parent1, parent2):
-        if np.random.rand() < self.crossover_rate:
+    def crossover(self, parent1, parent2, rand=None):
+        """
+        Perform crossover between two parent solutions.
+        Args:
+            parent1: The first parent solution.
+            parent2: The second parent solution.
+            rand (float or None): Optional random value for testing purposes. If not provided,
+                it will use `np.random.rand()`.
+        Returns:
+            Tuple[Any, Any]: A tuple containing two child solutions resulting from crossover.
+        Note:
+            If `rand` is provided, it should be a random value between 0 and 1. If `rand` is not
+            provided, it will use `np.random.rand()` internally.
+        """
+        if rand is None:
+            rand = np.random.rand()
+
+        if rand < self.crossover_rate:
             crossover_point = np.random.randint(1, self.dimensions)
             child1 = np.concatenate([parent1[:crossover_point], parent2[crossover_point:]])
             child2 = np.concatenate([parent2[:crossover_point], parent1[crossover_point:]])
@@ -45,14 +82,44 @@ class MemeticAlgorithm:
         else:
             return parent1, parent2
 
-    def mutate(self, solution):
+    def mutate(self, solution, rand_values=None):
+        """
+        Apply mutation to a solution.
+        Args:
+            solution: The solution to be mutated.
+            rand_values (Iterable[float] or None): Optional pre-defined random values for testing purposes.
+                If not provided, it will use `np.random.rand()` internally.
+        Returns:
+            Any: The mutated solution.
+        Note:
+            If `rand_values` is provided, it should be an iterable of random values between 0 and 1, with
+            one value for each dimension of the solution. If `rand_values` is not provided, it will use
+            `np.random.rand()` internally for each dimension.
+        """
+        if rand_values is None:
+            rand_values = np.random.rand(self.dimensions)
+
         for i in range(self.dimensions):
-            if np.random.rand() < self.mutation_rate:
+            if rand_values[i] < self.mutation_rate:
                 solution[i] += np.random.randn()
+
         return solution
 
     def local_search(self, solution):
-        """Hill climbing local search"""
+        """
+        Perform Hill Climbing local search to improve a given solution.
+        Parameters:
+        - solution: numpy array-like
+            The initial solution to be optimized.
+        Returns:
+        - numpy.ndarray
+            The optimized solution after a number of local search steps.
+            This function applies Hill Climbing local search by iteratively generating new solutions by adding small random steps
+            to the current solution. If a generated solution results in a better fitness value than the current solution, it
+            replaces the current solution with the new one. This process is repeated for a fixed number of iterations (10 by
+            default).
+        The `fitness` method of the calling object is used to evaluate the fitness of each solution.
+        """
         for _ in range(10):  # number of local search steps
             new_solution = solution + np.random.randn(self.dimensions) * 0.1  # small random step
             if self.fitness(new_solution) < self.fitness(solution):
@@ -60,6 +127,16 @@ class MemeticAlgorithm:
         return solution
 
     def run(self):
+        """
+        Evolve a population of solutions over multiple generations using a genetic algorithm.
+        This method runs the genetic algorithm for a specified number of generations, aiming to find the
+        best solution with the highest fitness in the population.
+        Returns:
+            Tuple[Any, float]: A tuple containing the best solution found and its fitness score.
+        Note:
+            This method updates the internal state of the genetic algorithm object, including the
+            population, fitness history, and the best solution found so far.
+        """
         for generation in range(self.max_generations):
             new_population = []
             parents = self.select_parents()
