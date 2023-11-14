@@ -83,6 +83,12 @@ Now not only does each type cell have relationships with others of its type it a
 
 * This is a very simple example of how artificial life can be used to model complex systems.
 
+Additional Applications
+=======================
+Digital Evolution is a subclass of artificial life that focuses on evolving digital organisms and follows the similar evolution steps of a GA, mutation, crossover, and selection.
+
+
+
 Conclusion
 ==========
 When making an artificial life program you don't start with an idea of what you want the end result to be. If that approach was used the simulation would already have been completed and there would be no need to study it further. 

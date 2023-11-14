@@ -151,19 +151,3 @@ cython_debug/
 # IntelliJ/PyCharm stuff
 .idea
 *.iml
-
-.gitignore
-.buildinfo
-*.html
-*.inv
-*.js
-outline/
-_downloads/
-_images/
-_sources/
-_static/
-.doctrees/
-outline/
-assignments/
-student-lectures/
-student-projects/
