@@ -101,5 +101,5 @@ YouTube
 .. toctree::
     :caption: Outline
     :maxdepth: 1
- 
+
     /outline/outline
