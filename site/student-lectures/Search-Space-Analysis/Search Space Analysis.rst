@@ -1,381 +1,208 @@
-********************************
-Implementing a Genetic Algorithm
-********************************
+**********************************************
+Search Space Analysis in Computational Systems
+**********************************************
 
-* The purpose of this topic is to see a simple genetic algorithm (GA)
-* Although simple, it includes all the necessary parts to make it a complete GA
-* Despite never seeing a GA before, or knowing the intuition behind the underlying ideas, the topic should be manageable
+Introduction to Search Spaces
+----------------------------
 
+Search Space Terminology 
+------------------------
+* search space size #S
+* number of (optimal) solutions #S' ,solution density #S'/#S
+* search space diameter (:math:`G_{N}`) = maximal distance between any two candidate solutions
+* N(:math:`pi`)  is the  neighbourhood relation of a given candaicae slution (:math:`pi`)
+* g(:math:`pi`) is the fitress of a given candaicae slution (:math:`pi`)
+* all together L(:math:`pi`) is the seach landscape and it is based off of S(:math:`pi`) , N(:math:`pi`),and  g(:math:`pi`) 
+### Local vs Global Optimization
 
+![ Local vs GlobalSmooth vs Jagged Comparison](Example-of-local-and-global-solutions-in-an-optimization-problem.png)
 
-Problem
-=======
+> Fig 1. from Calculation of Detector Positions for a Source Localizing Radiation Portal Monitor System Using a Modified Iterative Genetic Algorithm - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Example-of-local-and-global-solutions-in-an-optimization-problem_fig3_322270023 [accessed 8 Nov, 2023]
 
-.. note::
+* Local optimization focuses on finding the best solution in a small region, while global optimization seeks the best solution overall.
+* Discuss the trade-offs between exploring locally and exploiting globally.
 
-    The problem being *solved* is deliberately kept very simple. This is because (a) the purpose of this topic is to
-    see a working GA, not solve a complex problem, and (b) well understood problems are often much simpler to reason
-    about. Knowing what a good/bad solution is, and having an idea of why certain solving strategies work or not, will
-    help with building the intuition around how GAs work.
+Types Search Spaces
+--------------------------------------------
+### Discrete Search Spaces
+Discrete search spaces consist of distinct, separate elements or configurations. Problems such as the traveling salesman, where the solution is a sequence of cities visited exactly once, are examples of discrete search spaces.
 
+- **Example**: In the Traveling Salesman Problem (TSP), the search space includes all possible orderings of cities.
+- **Impact on Search**: Evolutionary algorithms use operators like permutation to navigate discrete spaces efficiently.
 
-* The problem being solved is to maximize the integer value of an unsigned binary number
+### Continuous Search Spaces
+Continuous search spaces are characterized by an infinite number of possible solutions within a bounded space. Real-number optimization problems, where the solution can be any real value within a range, typically have continuous search spaces.
 
-    * Find the largest binary number representable with :math:`n` bits
+- **Example**: Optimizing aerodynamic shapes, where any shape within certain parameters is possible.
+- **Impact on Search**: These spaces often require the use of real-coded genetic algorithms and operators that can handle real numbers.
 
+### Mixed Search Spaces
+Mixed search spaces contain both discrete and continuous elements. Real-world problems often fall into this category, requiring a hybrid approach in evolutionary algorithms.
 
-* For this problem, the **search space** is all possible unsigned binary numbers of length :math:`n`
+- **Example**: Robot design optimization, where the robot's dimensions (continuous) and component types (discrete) are both variables.
+- **Impact on Search**: Algorithms need to balance discrete and continuous operators to navigate these spaces effectively.
 
-* Given this problem description, the best solution is obviously a string of :math:`n` ones
-* Consider an example with :math:`n=10`, how would these candidate solutions be ranked in terms of *goodness*?
+## Topology
 
-    * :math:`1111111111` (1023)
-    * :math:`1011001001` (713)
-    * :math:`0001111111` (127)
-    * :math:`0000000000` (0)
+- **Non-degenerate (or invertible)**: A function is considered non-degenerate or invertible if assigning the same output to two different inputs is not possible. This means that each output is unique to a single input, which allows the function to be reversed.
 
+* ∀s, s₀ ∈ S : [g(s) = g(s₀) ⇒ s = s₀];
 
-* Thus, the GA being written will *evolve* bit strings to maximize the integer value of an unsigned binary number
+- **Locally invertible**: A function is locally invertible if, within a small vicinity around any given input, it acts invertibly. That is, within this local neighborhood, each output can still be traced back to one specific input.
 
-* Realistically, one would not use a GA to solve such a problem
+* ∀r ∈ S : ∀s, s₀ ∈ N(r) ∪ {r} : [g(s) = g(s₀) ⇒ s = s₀];
 
-    * GAs are typically used for very challenging problems with no other effective means of solving
+- **Non-neutral**: A function is non-neutral if it does not produce the same output for distinct but close inputs. In other words, nearby inputs must lead to different outputs, ensuring the function distinguishes between closely spaced inputs.
 
 
-* However, this problem provides an opportunity to consider how the GA can and must work to find the best solution
+* ∀s ∈ S : ∀s₀ ∈ N(s) : [g(s) = g(s₀) ⇒ s = s₀].
 
+### Position Type Characteristics Based on Neighboring Values
 
+| Position Type             | > (larger) | = (equal) | < (smaller) |
+|---------------------------|------------|-----------|-------------|
+| SLMIN (strict local min)  | True       | False     | False       |
+| LMIN (local min)          | True       | True      | False       |
+| IPLAT (interior plateau)  | False      | True      | False       |
+| SLOPE                     | True       | False     | True        |
+| LEDGE                     | True       | True      | True        |
+| LMAX (local max)          | False      | True      | True        |
+| SLMAX (strict local max)  | False      | False     | True        |
 
-Initialization
-==============
+>table and definitions from from Lecture_05_on_Local_Search.pdf (toronto.edu)
+### Barriers
+Barriers refer to the points in the search space that act as thresholds between different regions. They are characterized by the lowest evaluation function values at the edge of each region.
 
-* Before evolution can begin, an initial **population** of **candidate solutions** needs to be created
-* A single candidate solution is a potential solution to the problem being solved
-* For example, :math:`1011001001` is a valid candidate solution for finding the largest binary value where :math:`n=10`
+- **Implication**: The height of a barrier indicates the difficulty of moving from one region to another using local search strategies. Higher barriers suggest more effort is needed to transition between solutions.
 
 
-Representation
---------------
 
-* It is sometimes non-trivial to determine how a candidate solution should be represented, or encoded, in the program
+### Separability
+Separability describes whether the solution variables are interdependent (non-separable) or can be optimized independently (separable).
 
-    * An encoded candidate solution is called a **chromosome**
+- **Example**: If optimizing one variable at a time leads to the optimum, the space is separable.
+- **Impact on Search**: Non-separable spaces often require more complex operators that can consider interactions between variables.
 
+## Smooth vs Jagged 
 
-* For the integer maximization of an unsigned binary number, there are some obvious reasonable and simple encodings
-* Here, a list of ``0``\s and ``1``\s will be used
-* Thus, the candidate solution :math:`1011001001` can be encoded as the chromosome ``[1, 0, 1, 1, 0, 0, 1, 0, 0, 1]``
+### Basins
+Basins define the collection of solutions that converge to a specific local minimum when a gradient descent method is applied.
 
-* A single chromosome can be created by generating random lists of ``0``\s and ``1``\s of some predetermined length
+- **Implication**: The size of the basin determines the pull or the attraction strength a local minimum exerts on the search. Larger basins mean a stronger attraction, increasing the likelihood that a local search method will converge to that minimum.
 
-    * For the example used here, the length was :math:`n=10`
+### Basin Size and Depth
+The size and depth of a basin provide insights into the landscape's topography and the potential challenges an algorithm may face.
 
+- **Basin Size**: Represents the volume of the basin, quantifying how many solutions belong to it.
+- **Basin Depth**: Measures how much lower the local minimum is compared to the surrounding barriers.
 
-Population
-----------
+- **Implication**: A deep and large basin suggests a significant local minimum that could potentially be mistaken for a global minimum by search algorithms.
 
-* A **population** is a collection of candidate solutions
-* A population can be created by creating a list of randomly generated chromosomes
+### Basin Hopping
+Basin hopping is a technique designed to overcome the limitations of local search by combining large jumps in the search space with local optimization.
 
-* In this example, a single chromosome is a list of ``0``\s and ``1``\s
+- **Strategy**: After reaching a local minimum, the algorithm makes a substantial, often random, leap to another point in the search space, followed by a gradient descent to the nearest local minimum.
 
-    ``[1, 0, 1, 1, 0, 0, 1, 0, 0, 1]``
+- **Implication**: This approach is particularly useful in rugged landscapes, where it can prevent the algorithm from becoming trapped in suboptimal local minima.
 
+By analyzing the barriers and basins of a fitness landscape, we can better understand the challenges inherent to the search space and tailor search algorithms to navigate the landscape more effectively.
 
-* A population is a list of chromosomes
+![Smooth vs Jagged Comparison](smoothVSjagged.png)
 
-    .. code-block:: text
+> Fig 2. Smooth vs Jagged Terrain Comparison.Lecture_05_on_Local_Search.pdf (toronto.edu)
 
-        [[1, 0, 1, 1, 0, 0, 1, 0, 0, 1],
-         [0, 0, 0, 1, 1, 0, 1, 0, 0, 0],
-         [1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-         ...
-         ...
-         [0, 1, 1, 1, 1, 0, 0, 0, 0, 1]]
+The empirical autocorrelation function `r(i)` for lag `i` is defined as:
+r(i) := 1/(m − i) · sum_{k=1}^{m−i} (g_k − ḡ) · (g_{k+i} − ḡ) / (1/m · sum_{k=1}^{m}(g_k − ḡ)^2)
 
+Where:
+- `m` is the total number of points (evaluation function values).
+- `g_k` is the evaluation function value at step `k`.
+- `ḡ` is the average evaluation function value across all steps.
+- `i` is the lag, representing the step difference between points being compared.
 
-* Each chromosome is randomly generated
-* Below is an example of how one could create a population for this problem
+The numerator calculates the average product of differences from the mean for pairs of points `i` steps apart, measuring the predictability of the evaluation function values at one point on the value at another point `i` steps away. 
 
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-initialization]
-    :end-before: # [end-initialization]
+The denominator is the average of the squares of differences from the mean for all points, a measure of the variance of the evaluation function values.
 
+The ratio of these two gives us `r(i)`, the autocorrelation at lag `i`. A value close to 1 indicates a strong positive correlation; a value close to 0 indicates no correlation.
 
-* The number of chromosomes within the population is defined by a hyperparameter called ``POPULATION_SIZE``
-* The number of bits in the binary number (:math:`n`) is called ``BIT_STRING_LENGTH``
+### Empirical Autocorrelation Coefficient (ACC) `ξ`:
 
+The empirical autocorrelation coefficient (ACC) `ξ` is derived from the first lag of the autocorrelation function `r(1)`: ξ = 1/(1 − r(1))
 
 
-Evaluation
-==========
+The ACC provides a summary measure of the autocorrelation for the entire search space:
 
-* After generating the population, the candidate solutions are often not particularly *good*
-* However, some will likely be better than others
-* Regardless, a mechanism for evaluating the quality, or **fitness**, of candidate solutions is needed
-* This mechanism is called the **fitness function**
+- A high `ξ` (close to 1) suggests a "smooth" search space where neighboring solutions have similar fitness values.
+- A low `ξ` (close to 0) suggests a "rugged" search space with neighboring solutions likely to have very different fitness values.
 
-* Below is an example fitness function for this problem
+This coefficient is crucial for understanding the behavior of the search space and affects the design and application of SLS algorithms in their exploration and exploitation to find optimal solutions.
 
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :pyobject: value_fitness
 
 
-* With this fitness function, the fitness of each candidate solution within the population can be calculated and stored
+Dimensionality and Its Challenges
+---------------------------------
 
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-evaluation]
-    :end-before: # [end-evaluation]
+* Dimensionality refers to the number of variables or features in a dataset or problem.
+* High dimensionality can lead to the "curse of dimensionality," making optimization computationally expensive.
 
 
+### Search Space Reduction Techniques
 
-Selection
-=========
+To manage complexity and improve the efficiency of evolutionary algorithms, various search space reduction techniques can be employed. These methods aim to simplify the search space, thereby accelerating the search process and potentially improving the quality of solutions.
 
-* Ideally, more fit candidate solutions should be *more likely* to persist within the population
+#### Feature Selection
+Feature selection involves choosing a subset of relevant features for model construction, which reduces the number of dimensions and simplifies the problem.
 
-    * And less fit candidate solutions should be more likely to die off
+- **Example**: In a dataset with hundreds of features, feature selection might identify a dozen that are most predictive of the outcome.
+- **Impact on Search**: By eliminating irrelevant or redundant features, the search space is reduced, leading to faster convergence and less computational overhead.
 
+#### Dimensionality Reduction
+Dimensionality reduction techniques transform high-dimensional data into a lower-dimensional space, preserving as much information as possible.
 
-* However, it is not as simple as always selecting the best candidate solutions
+- **Example**: Principal Component Analysis (PCA) can reduce the dimensions of a dataset by projecting it onto a smaller set of orthogonal features.
+- **Impact on Search**: Reducing dimensionality helps to alleviate the curse of dimensionality, allowing evolutionary algorithms to operate more efficiently.
 
-    * Doing so would cause the population to **converge** too early
-    * This can result in finding sub-optimal solutions
+#### Constraint Handling
+Integrating constraints into the search process can effectively reduce the feasible search space by eliminating invalid solutions.
 
+- **Example**: In a vehicle routing problem, constraints might include vehicle capacity or delivery time windows.
+- **Impact on Search**: Constraint handling ensures that the evolutionary algorithm focuses on viable solutions, improving the overall search quality and resource utilization.
 
-* This is where it becomes important to think about the population, not individual candidate solutions
-* The fitness function is a metric for the ultimate goal --- finding a *candidate solution* that best solves the problem
-* But focusing on this metric is detrimental to the *population*
-* Instead, the population should also emphasize **diversity**
+Implementing these reduction techniques can significantly enhance the performance of evolutionary algorithms, especially in complex problems with large and intricate search spaces.
 
-* This can be done in any way someone wants
 
-    * There are no hard rules on how selection is to be done
+## Fitness Functions and Landscape
 
+The fitness function in evolutionary computing plays a pivotal role in defining the search space by assigning a fitness value to each candidate solution, which reflects its quality or suitability.
 
-* A simple and popular selection technique is ``tournament_selection``
+### Role of Fitness Functions
+Fitness functions quantify the objective(s) of the problem, guiding the evolutionary search towards optimal solutions.
 
-    * Randomly select a subset of chromosomes within the population
-    * Select the best of the subset
-    * Repeat until the next generation's population is full
+- **Example**:  binary number
 
+- **Impact on Search**: The design of the fitness function affects the search's efficiency and the algorithm's ability to find global optima by influencing which areas of the search space are more attractive.
 
-.. literalinclude:: /../src/selection.py
-    :language: python
-    :lineno-match:
-    :pyobject: tournament_selection
 
+![ones](ones.png)
 
-* This ``tournament_selection`` function returns a single chromosome
-* This function must be run multiple times until the next generation's population is full
+> Fig 3. Search space using Ones fitness
 
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-selection]
-    :end-before: # [end-selection]
 
+![valeu](value_fitness.png)
 
-* In the above code, the list ``mating_pool`` will ultimately become the next generation's population
-* The size of the tournament is defined by a hyperparameter called ``TOURNAMENT_SIZE``
+> Fig 2. Search space using value fitness fitness
 
 
-Variation Operators
-===================
 
-* Variation operators, sometimes called genetic operators, are used to alter the chromosomes
 
-    * With only selection, the chromosomes will never change
+----------------------
 
+.. [#] Sources for lecture 
 
-* Like most things with GAs, there are no real hard rules on how this is done
-* Typically there should be a way to exploit what is already known to be good
-* And there should be a way to add some new information to the chromosomes to better explore the search space
+Search Space Structure and SLS Performance (ubc.ca)
 
+Lecture_05_on_Local_Search.pdf (toronto.edu)
 
-Crossover
----------
-
-* Crossover is a variation operator that acts on two chromosomes
-* The idea is, if two candidate solutions are relatively good, then mixing them together may produce something good
-
-* Again, there is no one correct way to perform crossover
-* A simple crossover one could use is ``one_point_crossover``
-
-    * Given two chromosomes
-    * Select an arbitrary index
-    * Swap the contents of the chromosomes from that index to the end
-
-
-* For example, selecting index ``2`` for the following chromosomes
-
-    .. code-block:: text
-
-               v                    v
-        [0, 0, 0, 0, 0]      [0, 0, 1, 1, 1]
-                         ->
-        [1, 1, 1, 1, 1]      [1, 1, 0, 0, 0]
-               ^                    ^
-
-
-.. literalinclude:: /../src/crossover.py
-    :language: python
-    :lineno-match:
-    :pyobject: one_point_crossover
-
-
-* This function only returns two chromosomes, so it must be run multiple times
-
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :emphasize-lines: 2
-    :start-after: # [begin-crossover]
-    :end-before: # [end-crossover]
-
-
-* Notice that the crossover is applied to adjacent candidate solutions within the ``mating_pool`` list
-
-    * The fact that they are adjacent is arbitrary
-
-
-* Also notice ``random() < CROSSOVER_RATE``
-* Crossover is typically not always applied
-* Thus, this provides a way for selected candidate solutions to persist in the next generation unchanged
-* The probability of crossover being applied is defined by a hyperparameter called ``CROSSOVER_RATE``
-
-    * Value would be ``0 <= CROSSOVER_RATE <= 1``
-
-
-Potential Problem
-^^^^^^^^^^^^^^^^^
-
-* There is a potential problem with this crossover on this problem
-* Consider the following population on a smaller version of the problem where :math:`n=5`
-
-    .. code-block:: text
-
-        [[1, 0, 1, 1, 1],
-         [1, 0, 0, 0, 1],
-         [0, 0, 1, 1, 1],
-         [1, 0, 1, 1, 1],
-         [0, 0, 0, 1, 0]]
-
-
-* Notice how there exists no ``1`` in any of the chromosomes' index ``1``
-* Because of this, it is actually not possible to ever find the optimal solution through crossover
-* This is because there is no way to add new information to the candidate solutions
-* It is only possible to transfer the existing information between the candidate solutions
-
-
-Mutation
---------
-
-* Mutation is a variation operator that acts on a single chromosome
-* It is also great for adding new information to the candidate solutions
-
-* Like crossover, there is no correct way to perform mutation
-* Here, a ``bit_flip_mutation`` will be used
-
-    * Given a chromosome
-    * Select an arbitrary index
-    * Flip the bit at the selected index (``0`` -> ``1``/``1`` -> ``0``)
-
-
-* For example, selecting index 2 for the following chromosome
-
-    .. code-block:: text
-
-        [0, 0, 0, 0, 0]  ->  [0, 0, 1, 0, 0]
-               ^                    ^
-
-
-.. literalinclude:: /../src/mutation.py
-    :language: python
-    :lineno-match:
-    :pyobject: bit_flip_mutation
-
-
-* Similar to crossover, the application of mutation is probabilistic based on a hyperparameter called ``MUTATION_RATE``
-
-    * Where ``0 <= MUTATION_RATE <= 1``
-
-
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :emphasize-lines: 2
-    :start-after: # [begin-mutation]
-    :end-before: # [end-mutation]
-
-
-
-Termination Requirement
-=======================
-
-* The above describes a single generation of the GA
-* For this algorithm to work, many generations will need to be executed
-* This then begs the question, *when does one stop the algorithm*
-
-    * After some set number of generations?
-    * After the optimal solution is found?
-    * After there have been no improvements in the population?
-    * ...
-
-
-* Again, like most things with GAs, there really is no correct answer
-* Here, for ease, the algorithm is run for some number of generations specified by the hyperparameter ``GENERATIONS``
-
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-generation-loop]
-    :end-before: # [end-generation-loop]
-
-
-* Notice that this generation loop performs
-
-    * Evaluation
-    * Selection
-    * Variation Operators
-
-
-* Also notice the bookkeeping variables storing some values from evolution
-
-    * ``generation_max_fitness`` and ``generation_average_fitness``
-    * These are not required, but help with visualizing what happened
-
-
-* Also notice the tags like ``# [begin-evaluation]``
-
-    * These can be ignored
-    * They are only there for making it easier to reference the code in the course notes
-
-
-* Once the loop terminates, the population should be evaluated one last time to find the best candidate solution
-
-.. literalinclude:: /../src/ga_max_bitstring.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-ending]
-    :end-before: # [end-ending]
-
-
-
-For Next Class
-==============
-
-* Check out the following scripts
-
-    * :download:`The Selection Script </../src/selection.py>`
-    * :download:`The Crossover Script </../src/crossover.py>`
-    * :download:`The Mutation Script </../src/mutation.py>`
-    * :download:`Bitstring GA </../src/ga_max_bitstring.py>`
-
+2108.09126v1.pdf (arxiv.org)
 
