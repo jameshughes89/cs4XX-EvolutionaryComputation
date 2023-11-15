@@ -2,7 +2,6 @@
 Differential Evolution
 **********************
 
-
 Introduction to Differential Evolution (DE)
 ===========================================
 * DE is a method in evolutionary computation that optimizes solutions to problem by iteratively improving a candidate solution based on a quality measure.
@@ -13,10 +12,8 @@ Introduction to Differential Evolution (DE)
 
         :width: 224 px
         :align: center
-
         Figure 1: Differential Evolution (DE) is a type of evolutionary algorithm that optimizes a problem by iteratively improving a candidate solution with regard to a given measure of quality.
             Image credit: `Xiu Zhang <https://www.researchgate.net/publication/310811940_Shift_based_adaptive_differential_evolution_for_PID_controller_designs_using_swarm_intelligence_algorithm>`_
-
 
 
 Algorithm overview and mechanics
@@ -43,10 +40,8 @@ Algorithm overview and mechanics
 
 
 
-
 Initialization of agents
 ========================
-
 
 DE starts with the random positioning of agents (candidate solutions) within the search-space:
 
@@ -71,7 +66,6 @@ Here, \( X_{\text{r1}}, X_{\text{r2}}, X_{\text{r3}} \) are three distinct vecto
 
 Crossover process
 =================
-
 
 During crossover, a trial vector is created by mixing parameters from the mutated vector with those from a target vector:
 
@@ -100,12 +94,25 @@ The selection mechanism is based on the fitness of the trial vector compared to 
     \end{cases}
 
 
+
 Evolution and termination
 =========================
 
 The evolution process involves repeating the mutation, crossover, and selection steps until a termination criterion is met.
 
 This provides a comprehensive overview of the DE algorithm, highlighting the mathematical concepts that underpin each step.
+
+  .. image:: Differential_Evolution_optimizing_the_2D_ackley_function.gif
+    :width: 224px
+    :align: center
+
+    Figure 2: The Differential Evolution (DE) algorithm is an iterative process that starts with a population of candidate solutions, and iteratively improves them by combining them with other solutions.
+    Image credit: `Pablormier <https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python>`_
+
+
+Advantages and challenges
+=========================
+
 
   .. image:: Differential_evolution_optimizing_the_2D_ackley_function.gif
     :width: 224px
@@ -117,7 +124,6 @@ This provides a comprehensive overview of the DE algorithm, highlighting the mat
 
 Advantages and challenges
 =========================
-
 
 * Advantages: DE's simplicity, efficiency in handling non-differentiable, noisy, or changing problems.
 * Challenges: Parameter setting can be critical; it does not guarantee finding the global optimum.
@@ -134,9 +140,9 @@ Applications and recent advances
 * Differential Evolution (DE) can be used to find approximate solutions to such problems.
 
 
+
 Differential evolution (DE) vs. Genetic algorithm (GA) on the Traveling salesman problem (TSP)
 ===============================================================================================
-
 
 * DE has a higher computational complexity due to complex vector operations.
 * GA converges faster but is more prone to premature convergence, often getting stuck at local optima.
