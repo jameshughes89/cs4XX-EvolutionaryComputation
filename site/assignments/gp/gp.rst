@@ -3,8 +3,22 @@ Genetic Programming
 *******************
 
 * **Maximum Points**: 30
-* **DUE**: Monday October 30, 2023 at 11:55pm; submitted on MOODLE.
+* **DUE**: **UPDATED** Monday November 6, 2023 at 11:55pm; submitted on MOODLE. 
+
+	* This is the Monday of reading week 
+	* Y'all asked for this 
+	* If the fact that it's reading week bothers you, then submit it before the original due date
+
+
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/regression-data>`_
+
+.. warning::
+
+    Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is (a) a
+    serious form of academic misconduct --- falsifying results --- and (b) against the student code of conduct.
+
+    These violations are subject to severe penalty. All violations will be reported and investigated fully.
+
 
 
 Base Task
@@ -115,7 +129,7 @@ the better.
 Typed Problems
 --------------
 
-An additional **5** points may be awarded if GP is effective used on a typed problem. No data will be provided, thus
+An additional **5** points may be awarded if GP is effectively used on a typed problem. No data will be provided, thus
 finding an interesting problem and related data will be required. It must be made clear to the marker that GP was
 sufficiently applied to the problem and that the problem is interesting enough to earn the additional points.
 

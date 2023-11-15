@@ -65,6 +65,9 @@ YouTube
     topics/genetic-programming/symbolic-regression-gp-experiment
     topics/parameters/tuning
     topics/parameters/comparing
+    topics/problems/multi-objective
+    topics/particle-swarm-optimization/pso
+    topics/particle-swarm-optimization/simple-pso
 
 
 .. toctree::
@@ -73,6 +76,19 @@ YouTube
     :numbered:
 
     student-lectures/description
+    student-lectures/novelty-search/novelty-search
+    student-lectures/cultural-algorithms/cultural-algorithms
+    student-lectures/Artificial-Life/artificial_life
+    student-lectures/Memetic-Algorithms/Memetic-Algorithms
+    student-lectures/Differential_Evolution/Differential_Evolution
+
+
+.. toctree::
+    :caption: Student Projects
+    :maxdepth: 1
+    :numbered:
+
+    student-projects/description
 
 
 .. toctree::
@@ -82,10 +98,11 @@ YouTube
 
     assignments/tsp/tsp
     assignments/gp/gp
+    assignments/pso/pso
 
 
 .. toctree::
     :caption: Outline
     :maxdepth: 1
- 
+
     /outline/outline
