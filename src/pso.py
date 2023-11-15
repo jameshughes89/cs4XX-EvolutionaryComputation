@@ -8,14 +8,18 @@ function being optimized.
 
 import numpy as np
 
+# [begin-hyperparameters]
 FUNCTION_DIMENSIONS = 2
-LOW_BOUND = -10
-HIGH_BOUND = 10
+START_POSITION_LOW_BOUND = -10
+START_POSITION_HIGH_BOUND = 10
+START_VELOCITY_LOW_BOUND = -0.1
+START_VELOCITY_HIGH_BOUND = 0.1
 NUMBER_OF_PARTICLES = 10
 ITERATIONS = 100
 INERTIA = 0.729844
 COGNITIVE = 1.496180
 SOCIAL = 1.496180
+# [end-hyperparameters]
 
 
 def matyas_function(x, y):
@@ -32,36 +36,42 @@ def matyas_function(x, y):
 
 
 if __name__ == "__main__":
-    # Initialize
+    # [begin-initialization]
     particles = []
     for _ in range(NUMBER_OF_PARTICLES):
         particle = {
-            "position": np.random.uniform(LOW_BOUND, HIGH_BOUND, FUNCTION_DIMENSIONS),
-            "velocity": np.random.uniform(-0.1, 0.1, FUNCTION_DIMENSIONS),
+            "position": np.random.uniform(START_POSITION_LOW_BOUND, START_POSITION_HIGH_BOUND, FUNCTION_DIMENSIONS),
+            "velocity": np.random.uniform(START_VELOCITY_LOW_BOUND, START_VELOCITY_HIGH_BOUND, FUNCTION_DIMENSIONS),
         }
         particle["best_known_position"] = particle["position"]
         particles.append(particle)
     global_best = particles[0]["position"]
+    # [end-initialization]
 
-    # Run for a Specified Number of Iterations (Termination)
+    # [begin-iteration-loop]
     for _ in range(ITERATIONS):
-        # Calculate fitness
+        # [begin-evaluation]
         for particle in particles:
             particle_value = matyas_function(*particle["position"])
             if particle_value < matyas_function(*particle["best_known_position"]):
                 particle["best_known_position"] = particle["position"]
             if particle_value < matyas_function(*global_best):
                 global_best = particle["position"]
+        # [end-evaluation]
 
-        # Update velocity and position (variation)
+        # [begin-position-update]
         for particle in particles:
-            r1 = np.random.rand()
-            r2 = np.random.rand()
+            r1 = np.random.rand(FUNCTION_DIMENSIONS)
+            r2 = np.random.rand(FUNCTION_DIMENSIONS)
             particle["velocity"] = (
                 INERTIA * particle["velocity"]
                 + COGNITIVE * r1 * (particle["best_known_position"] - particle["position"])
                 + SOCIAL * r2 * (global_best - particle["position"])
             )
             particle["position"] = particle["position"] + particle["velocity"]
+        # [end-position-update]
+    # [end-iteration-loop]
 
+    # [begin-ending]
     print(global_best, matyas_function(*global_best))
+    # [end-ending]

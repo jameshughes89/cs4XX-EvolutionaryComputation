@@ -29,16 +29,16 @@ topic choices along with preferred lecture date are to be submitted to the instr
 
 * Differential Evolution **(ALREADY SELECTED)**
 * Evolutionary Programming
-* Evolutionary Strategies
-* Ant Colony Optimization
-* Artificial Immune Systems
+* Evolutionary Strategies **(ALREADY SELECTED)**
+* Ant Colony Optimization **(ALREADY SELECTED)**
+* Artificial Immune Systems **(ALREADY SELECTED)**
 * Cultural Algorithms **(ALREADY SELECTED)**
 * Self Organization
-* Artificial Life
-* Evolutionary Art
-* Memetic Algorithms
-* Search Space Analysis
-* Coevolution
+* Artificial Life **(ALREADY SELECTED)**
+* Evolutionary Art **(ALREADY SELECTED)**
+* Memetic Algorithms **(ALREADY SELECTED)**
+* Search Space Analysis **(ALREADY SELECTED)**
+* Coevolution **(ALREADY SELECTED)**
 * Neuroevolution
 * Fitness Predictors
 * Novelty Search **(ALREADY SELECTED)**
@@ -56,11 +56,11 @@ All topic choices along with preferred lecture date are to be submitted to the i
 Student Lecture Dates:
 
 * November 14th (0 slots available)
-* November 15th (1 slot available)
-* November 17th (2 slots available)
-* November 21st (2 slots available)
-* November 22nd (2 slots available)
-* November 24th (2 slots available)
+* November 15th (0 slot available)
+* November 17th (0 slots available)
+* November 21st (0 slots available)
+* November 22nd (1 slots available)
+* November 24th (0 slots available)
 
 
 
@@ -70,17 +70,27 @@ Submitting a Pull Request
 Each lecture will be submitted via a pull request for the course's GitHub repository. The pull request must be approved
 by the instructor before it can be added to the course website and ultimately presented.
 
-Pull requests must be merged at least one day before the date of the lecture.
+Pull requests must be **merged** at least one day before the date of the lecture. Pull requests will **not** be merged
+if they are deemed inadequate.
+
+When a pull request is submitted, the instructor will review the pull request and provide feedback and request chances.
+It is possible that there will be several series of changes requested that take multiple attempts before being approved
+and merged. For this reason, submit pull requests early. A total of **0** points may be awarded if the pull request is
+not merged before the deadline.
 
 Once the pull request is merged, the GitHub repository will automatically create the webpage with Sphinx and update the
 course website with the new content.
 
-The reStructuredText files that are to be submitted via a pull request are to be added under the "student-lecture"
+The reStructuredText files that are to be submitted via a pull request are to be added under the "student-lectures"
 directory within the GitHub repository. Create a sub-directory with an appropriate name for the specific lecture being
 created. This sub-directory will contain (a) the reStructuredText (.rst) file along with (b) any related resources such
 as images or data files. **Note:** Keep the files small as large files may be rejected.
 
+.. warning::
 
+    Although the pull request merge date is required to be at least one day before the presentation date, note that pull
+    requests will not be accepted unless deemed acceptable by the instructor. This means that submitting a pull should
+    be done sufficiently early that any required changes can be adequately addressed before the merging deadline.
 
 Provided Files
 ==============
