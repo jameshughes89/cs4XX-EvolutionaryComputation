@@ -130,7 +130,7 @@ Representation
     represent operators while the darker nodes represent operands, both constants and variables.
 
 
-* Consider the above program/function above for the breast cancer identification problem
+* Consider the above program/function for the breast cancer identification problem
 
     * ``If size > 4 and (shape == 3 or shape == 5) then malignant else benign``?
 

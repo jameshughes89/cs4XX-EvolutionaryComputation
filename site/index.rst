@@ -61,10 +61,48 @@ YouTube
     topics/genetic-operators/genetic-operators
     topics/selection/selection
     topics/genetic-programming/genetic-programming
+    topics/genetic-programming/symbolic-regression-gp
+    topics/genetic-programming/symbolic-regression-gp-experiment
+    topics/parameters/tuning
+    topics/parameters/comparing
+    topics/problems/multi-objective
+    topics/particle-swarm-optimization/pso
+    topics/particle-swarm-optimization/simple-pso
+
+
+.. toctree::
+    :caption: Student Lectures
+    :maxdepth: 1
+    :numbered:
+
+    student-lectures/description
+    student-lectures/novelty-search/novelty-search
+    student-lectures/cultural-algorithms/cultural-algorithms
+    student-lectures/Artificial-Life/artificial_life
+    student-lectures/Memetic-Algorithms/Memetic-Algorithms
+    student-lectures/Differential_Evolution/Differential_Evolution
+
+
+.. toctree::
+    :caption: Student Projects
+    :maxdepth: 1
+    :numbered:
+
+    student-projects/description
+
+
+.. toctree::
+    :caption: Assignments
+    :maxdepth: 1
+    :numbered:
+
+    assignments/tsp/tsp
+    assignments/gp/gp
+    assignments/pso/pso
 
 
 .. toctree::
     :caption: Outline
     :maxdepth: 1
- 
+
     /outline/outline

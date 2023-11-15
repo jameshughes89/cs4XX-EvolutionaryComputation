@@ -32,7 +32,7 @@ def value_fitness(chromosome: list) -> int:
     :raises ValueError: If the chromosome is empty
     """
     if len(chromosome) == 0:
-        raise ValueError(f"Empty chromosome cannot be evaluated")
+        raise ValueError(f"Empty chromosome cannot be evaluated: {chromosome}")
     return int("".join(str(bit) for bit in chromosome), 2)
 
 
@@ -45,7 +45,7 @@ def ones_fitness(chromosome: list) -> int:
     :raises ValueError: If the chromosome is empty
     """
     if len(chromosome) == 0:
-        raise ValueError(f"Empty chromosome cannot be evaluated")
+        raise ValueError(f"Empty chromosome cannot be evaluated: {chromosome}")
     number_of_ones = 0
     for bit in chromosome:
         number_of_ones += bit

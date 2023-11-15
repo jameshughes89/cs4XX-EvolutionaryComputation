@@ -75,7 +75,7 @@ Experiment
 #. Add *elitism* to the algorithm
 
     * Elitism is when the top :math:`x` candidate solutions are automatically copied to the subsequent generation
-    * Typically, :math:`x` is kept low (like 1), but try larger values to see how it impacts the serach
+    * Typically, :math:`x` is kept low (like 1), but try larger values to see how it impacts the search
 
 
 #. What is the best settings of the hyperparameters found?
@@ -111,7 +111,7 @@ A Change of Perspective
     * Phenotype space
 
 
-* By counting the number of ones in he chromosomes, the solutions can be compared based on their encodings
+* By counting the number of ones in the chromosomes, the solutions can be compared based on their encodings
 
     * Genotype space
 
@@ -133,6 +133,10 @@ Experiment Again
 
     * Are they different from before?
 
+
+
+Non-Numerical Hyperparameters
+=============================
 
 * The hyperparameters can be tuned, but so can the individual functional pieces of the GA
 
