@@ -9,8 +9,10 @@ Introduction
 
     .. figure:: Safari_ants.png
         :align: center
-    Ant behavior was the inspiration for the metaheuristic optimization technique.
-    By Mehmet Karatay - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2179109
+
+        Ant behavior was the inspiration for the metaheuristic optimization technique. By Mehmet Karatay - Own work, CC BY-SA 3.0
+        :target: https://commons.wikimedia.org/w/index.php?curid=2179109
+
 
 * These tiny insects, despite their individual simplicity, collectively exhibit remarkable problem-solving capabilities, especially in finding the shortest paths between their nest and food sources.
 
@@ -29,7 +31,9 @@ In nature, ants are often tasked with finding the shortest path between their ne
 
     .. figure:: Artificial_ants.png
         :align: center
-    By Jean-Baptiste Waldner - Source : &quot;Nanocomputers and Swarm Intelligence&quot;, Jean-Baptiste Waldner, John Wiley &amp; Sons, 2008., CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=3435721
+
+        By Jean-Baptiste Waldner - Source : &quot;Nanocomputers and Swarm Intelligence&quot;, Jean-Baptiste Waldner, John Wiley &amp; Sons, 2008., CC BY 3.0.
+        :target: https://commons.wikimedia.org/w/index.php?curid=3435721
 
 * Many algorithms claiming to be "ant colonies" diverge from the standard optimization framework. The commonality lies in utilizing information exchange among ants through the environment, termed "stigmergy." This principle unifies a range of algorithms, with authors coining the term "value" to categorize methods focused on tasks like searching for food and cooperative transportation.
 
@@ -72,114 +76,135 @@ ACO Algorithm Basics
 
 * The term "daemon" in this context implies a background process or entity that operates independently to enhance the overall performance of the algorithm.
 
-1. **Problem Definition:**
+#. **Problem Definition:**
    - ACO is applied to combinatorial optimization problems where the goal is to find the best combination of elements from a finite set.
 
-2. **Solution Representation:**
+#. **Solution Representation:**
    - Solutions are represented as paths or tours through a solution space. Each component of the solution corresponds to a decision variable.
 
-3. **Pheromone Representation:**
+#. **Pheromone Representation:**
    - ACO uses artificial pheromones to model the communication among ants. Pheromones are associated with solution components, and their intensity represents the desirability of that component.
 
-4. **Initialization:**
+#. **Initialization:**
    - Initialize pheromone levels on all solution components. Typically, initial pheromone levels are set to a constant value.
 
-5. **Ant Movement:**
-   - Ants construct solutions by iteratively selecting solution components based on a probabilistic rule that considers both pheromone levels and a heuristic measure.
+#. **Ant Movement:**
+    - Ants construct solutions by iteratively selecting solution components based on a probabilistic rule that considers both pheromone levels and a heuristic measure.
 
-6. **Solution Evaluation:**
+#. **Solution Evaluation:**
    - Evaluate the quality of the solutions constructed by ants.
 
-7. **Pheromone Update:**
+#. **Pheromone Update:**
    - Update pheromone levels based on the quality of the solutions. Good solutions receive higher pheromone deposits.
 
-8. **Iteration:**
+#. **Iteration:**
    - Repeat the ant movement, solution evaluation, and pheromone update steps for a specified number of iterations or until a termination criterion is met.
 
     .. figure:: Aco_shortpath.svs.png
         :align: center
-    By Nojhan - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=821076
+
+        By Nojhan - Own work, CC BY-SA 3.0.
+        :target: https://commons.wikimedia.org/w/index.php?curid=821076
 
 
 Applications of ACO
 -------------------
-
-* Ant Colony Optimization (ACO) algorithms have found widespread application in solving diverse combinatorial optimization problems. From quadratic assignment and protein folding to vehicle routing, these algorithms and their derivatives have been adapted for dynamic problems, real variables, stochastic scenarios, multi-targets, and parallel implementations.
-
-\
-
 * ACO offers advantages over approaches like simulated annealing and genetic algorithms, particularly in scenarios where the graph dynamically changes. The continuous adaptability of the ant colony algorithm in real-time makes it well-suited for applications in network routing and urban transportation systems.
-
-    * Traveling Salesman Problem (TSP)
-    * Job Scheduling
-    * Vehicle Routing
-    * Network Routing
 
 * Traveling Salesman Problem (TSP):
 
     .. figure:: 1920px-Aco_TSP.svg.png
         :align: center
 
-    1) An ant choose a path among other, and lay a pheromonal trail on it.
-    2) All the ants are travelling some paths, laying a trail proportionnal to the quality of the solution.
-    3) Each edge of the best path is more reinforced than others.
-    4) Evaporation ensures that the bad solutions disappear.
+    #. An ant choose a path among other, and lay a pheromonal trail on it.
+    #. All the ants are travelling some paths, laying a trail proportionnal to the quality of the solution.
+    #. Each edge of the best path is more reinforced than others.
+    #. Evaporation ensures that the bad solutions disappear.
 
-* Visualisation
 
     .. figure:: Ant_Colony_Algorihm_applied_to_the_Travelling_Salesman_Problem.gif
         :align: center
+
+* Real-life examples:
+
+    * Job Scheduling: Imagine you are a manager in a manufacturing company responsible for scheduling production tasks on different machines. Each task has a specific processing time, and machines have varying capacities. The objective is to minimize the total completion time of all tasks
+
+        #. Graph Representation:
+            * Nodes represent tasks; edges represent transitions between tasks on different machines.
+            * Pheromone values on edges indicate transition attractiveness.
+        #. Ant Movement:
+            * Ants construct schedules by selecting tasks based on pheromone levels and heuristics (e.g., processing time).
+        #. Solution Evaluation:
+            * Evaluate solutions based on the total completion time of tasks.
+        #. Pheromone Update:
+            * Update pheromone levels on edges according to solution quality.
+        #. Iteration:
+            * Repeat the process for a set number of iterations.
+        #. Best Solution:
+            * The best solution found represents an optimized job schedule.
+
+    * Vehicle Routing: Efficiently route a fleet of vehicles to deliver goods to a set of locations, minimizing the total distance traveled.
+        #. Graph Representation:
+            * Nodes represent delivery locations, and edges represent possible routes between locations.
+            * Pheromone values on edges indicate the desirability of a route.
+        #. Ant Movement:
+            * Ants construct routes by selecting locations based on pheromone levels and heuristics (e.g., distance to the location).
+        #. Solution Evaluation:
+            * Evaluate solutions based on the total distance traveled by the fleet of vehicles.
+        #. Pheromone Update:
+            * Update pheromone levels on edges based on the quality of the solutions. Shorter routes receive higher pheromone levels.
+        #. Iteration:
+            * Repeat the process for a set number of iterations.
+        #. Best Solution:
+            * The best solution found represents an optimized set of routes for the fleet, minimizing the total distance traveled.
 
 Advantages and Challenges
 -------------------------
 **Advantages of ACO in optimization problems**
 
-1. **Combinatorial Problems:**
+#. **Combinatorial Problems:**
    - Well-suited for combinatorial optimization problems where the solution space is discrete and represented as a graph.
 
-2. **Nature-Inspired Parallelism:**
+#. **Nature-Inspired Parallelism:**
    - Mimicking the foraging behavior of ants, ACO naturally incorporates parallelism, allowing multiple agents (ants) to explore different regions concurrently.
 
-3. **Adaptability to Dynamic Environments:**
+#. **Adaptability to Dynamic Environments:**
    - ACO can adapt to changes in the optimization landscape, making it suitable for dynamic environments where the optimal solution may change over time.
 
-4. **Solution Construction Heuristics:**
+#. **Solution Construction Heuristics:**
    - ACO provides a solution construction mechanism that incrementally builds solutions, leveraging both pheromone information and heuristic knowledge.
 
-5. **Scalability:**
+#. **Scalability:**
    - ACO is scalable and can handle large problem instances by distributing the exploration across multiple agents.
 
-6. **Applicability to Various Domains:**
+#. **Applicability to Various Domains:**
    - ACO has been successfully applied to a wide range of problems, including the Traveling Salesman Problem (TSP), Job Scheduling, Network Routing, and more.
 
-7. **Natural Robustness:**
+#. **Natural Robustness:**
    - ACO exhibits a degree of robustness to noise and uncertainty, making it suitable for real-world problems with imperfect information.
 
 **Challenges and Limitations of ACO**
 
-1. **Convergence Speed:**
+#. **Convergence Speed:**
    - ACO can sometimes converge slowly, especially in large and complex problem spaces. Fine-tuning parameters may be required for faster convergence.
 
-2. **Sensitivity to Parameters:**
+#. **Sensitivity to Parameters:**
    - The performance of ACO is sensitive to parameter settings, and finding optimal parameter values can be challenging.
 
-3. **Memory and Storage Requirements:**
+#. **Memory and Storage Requirements:**
    - ACO may require significant memory and storage resources, particularly when dealing with large problem instances or a large number of iterations.
 
-4. **Dependency on Heuristics:**
+#. **Dependency on Heuristics:**
    - The success of ACO often relies on the availability of effective heuristic information, and the choice of heuristics can impact the algorithm's performance.
 
-5. **Limited Handling of Continuous Spaces:**
+#. **Limited Handling of Continuous Spaces:**
    - ACO is inherently designed for discrete problems, and adapting it to continuous optimization spaces can be non-trivial.
 
-6. **Local Optima:**
+#. **Local Optima:**
    - ACO may struggle in scenarios with deceptive landscapes, where local optima mislead the algorithm away from the global optimum.
 
-Conclusion
------------
-* In summary, ACO algorithms offer a powerful and flexible optimization approach, marked by their ability to produce near-optimal solutions across diverse problem domains. Their ongoing success and adaptability position them as valuable tools in addressing complex combinatorial optimization challenges.
+Question?
+---------
 
 
-
-
-.. [1] Ant colony optimization algorithms https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
+.. [1] Ant colony optimization algorithms: https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
