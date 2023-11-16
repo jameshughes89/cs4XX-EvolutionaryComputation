@@ -9,9 +9,10 @@ Introduction
 
     .. figure:: Safari_ants.png
         :align: center
+        :target: https://commons.wikimedia.org/w/index.php?curid=2179109
 
         Ant behavior was the inspiration for the metaheuristic optimization technique. By Mehmet Karatay - Own work, CC BY-SA 3.0
-        :target: https://commons.wikimedia.org/w/index.php?curid=2179109
+
 
 
 * These tiny insects, despite their individual simplicity, collectively exhibit remarkable problem-solving capabilities, especially in finding the shortest paths between their nest and food sources.
@@ -31,9 +32,10 @@ In nature, ants are often tasked with finding the shortest path between their ne
 
     .. figure:: Artificial_ants.png
         :align: center
+        :target: https://commons.wikimedia.org/w/index.php?curid=3435721
 
         By Jean-Baptiste Waldner - Source : &quot;Nanocomputers and Swarm Intelligence&quot;, Jean-Baptiste Waldner, John Wiley &amp; Sons, 2008., CC BY 3.0.
-        :target: https://commons.wikimedia.org/w/index.php?curid=3435721
+
 
 * Many algorithms claiming to be "ant colonies" diverge from the standard optimization framework. The commonality lies in utilizing information exchange among ants through the environment, termed "stigmergy." This principle unifies a range of algorithms, with authors coining the term "value" to categorize methods focused on tasks like searching for food and cooperative transportation.
 
@@ -102,9 +104,10 @@ ACO Algorithm Basics
 
     .. figure:: Aco_shortpath.svs.png
         :align: center
+        :target: https://commons.wikimedia.org/w/index.php?curid=821076
 
         By Nojhan - Own work, CC BY-SA 3.0.
-        :target: https://commons.wikimedia.org/w/index.php?curid=821076
+
 
 
 Applications of ACO
@@ -125,9 +128,9 @@ Applications of ACO
     .. figure:: Ant_Colony_Algorihm_applied_to_the_Travelling_Salesman_Problem.gif
         :align: center
 
-* Real-life examples:
+**Real-life examples**:
 
-    * Job Scheduling: Imagine you are a manager in a manufacturing company responsible for scheduling production tasks on different machines. Each task has a specific processing time, and machines have varying capacities. The objective is to minimize the total completion time of all tasks
+* Job Scheduling: Imagine you are a manager in a manufacturing company responsible for scheduling production tasks on different machines. Each task has a specific processing time, and machines have varying capacities. The objective is to minimize the total completion time of all tasks
 
         #. Graph Representation:
             * Nodes represent tasks; edges represent transitions between tasks on different machines.
@@ -143,7 +146,9 @@ Applications of ACO
         #. Best Solution:
             * The best solution found represents an optimized job schedule.
 
-    * Vehicle Routing: Efficiently route a fleet of vehicles to deliver goods to a set of locations, minimizing the total distance traveled.
+
+* Vehicle Routing: Efficiently route a fleet of vehicles to deliver goods to a set of locations, minimizing the total distance traveled.
+
         #. Graph Representation:
             * Nodes represent delivery locations, and edges represent possible routes between locations.
             * Pheromone values on edges indicate the desirability of a route.
