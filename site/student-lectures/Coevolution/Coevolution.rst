@@ -48,8 +48,9 @@ Antagonistic Coevolution
 .. figure:: coevolution_butterflies.png
    :width: 400 px
    :align: center
+   :target: https://www.expii.com/t/coevolution-definition-examples-10963
 
-   An illustration of the coevolutionary dynamics between predators (birds) and prey (butterflies), showcasing the evolutionary adaptations in response to each other. From: https://www.expii.com/t/coevolution-definition-examples-10963
+   An illustration of the coevolutionary dynamics between predators (birds) and prey (butterflies), showcasing the evolutionary adaptations in response to each other.
 
 
 
@@ -74,6 +75,53 @@ Types of CEAs
 
 Models and Strategies in CEAs
 =============================
+
+
+Cooperative Coevolution Model
+-----------------------------
+
+Entities deconstruct problems and evolve cooperatively --- i.e. collaborate by typically partitioning a larger problem into smaller components, each of which evolves separately but contributes to solving the overarching problem.
+
+Examples
+--------
+
+Evolution of Vehicle Control Algorithms
+---------------------------------------
+
+* Create two populations: one for designing vehicle control algorithms (with random parameters and strategies) and another for simulating various driving scenarios.
+
+* Simulate various driving scenarios using a separate population and evaluate algorithm performance in terms of safety and efficiency.
+
+* Evaluate the performance of each control algorithm based on criteria such as safety, efficiency, and compliance with traffic rules.
+
+* Select the best-performing control algorithms and use them as a basis for generating the next generation of algorithms. 
+
+* Repeat the process iteratively, with control algorithms and driving scenarios coevolving. 
+
+* As control algorithms improve, driving scenarios become more complex, and vice versa --- until the CEAs converge to produce highly effective and adaptable vehicle control algorithms capable of handling a wide range of real-world driving conditions.
+
+
+
+NN Architecture and Weight Optimization:
+----------------------------------------
+
+* Consider the challenge of optimizing a neural network's structure and weights. One can partition this into two distinct problems: designing the architecture (number of layers, neurons per layer, etc.) and tuning the weights. 
+
+* Separate populations could evolve for each task. The architecture population suggests structures, while the weight population fine-tunes these structures. They evolve cooperatively, aiming to improve the network's performance on a task.
+
+* Over evolutionary generations, the process can lead to both efficient neural network architectures and well-tuned weights, resulting in optimized deep learning models.
+
+
+Robot Motion Planning:
+----------------------
+
+* In robotics, different evolutionary populations focus on different aspect of motion such as trajectory planning, obstacle avoidance, and energy optimization for effective motion through complex environments.
+
+* Periodically, the best trajectories, avoidance strategies, and energy patterns are combined, and the robot's performance in a simulated environment measures their cooperative effectiveness.
+
+* Through cooperative coevolution, harmonized robot motion plans emerge that are efficient, safe, and energy-optimized.
+
+
 
 Competitive Coevolution Model
 -----------------------------
@@ -101,34 +149,6 @@ Intrusion Detection Systems:
 * The fitness of a hacker strategy might be determined by its success rate against the detection strategies, and vice versa.
 
 * The detection system becomes more robust as it is continuously tested against an evolving set of threat strategies, leading to more secure systems.
-
-
-Cooperative Coevolution Model
------------------------------
-
-Entities deconstruct problems and evolve cooperatively --- i.e. collaborate by typically partitioning a larger problem into smaller components, each of which evolves separately but contributes to solving the overarching problem.
-
-Examples
---------
-
-NN Architecture and Weight Optimization:
-----------------------------------------
-
-* Consider the challenge of optimizing a neural network's structure and weights. One can partition this into two distinct problems: designing the architecture (number of layers, neurons per layer, etc.) and tuning the weights. 
-
-* Separate populations could evolve for each task. The architecture population suggests structures, while the weight population fine-tunes these structures. They evolve cooperatively, aiming to improve the network's performance on a task.
-
-* Over evolutionary generations, the process can lead to both efficient neural network architectures and well-tuned weights, resulting in optimized deep learning models.
-
-
-Robot Motion Planning:
-----------------------
-
-* In robotics, different evolutionary populations focus on different aspect of motion such as trajectory planning, obstacle avoidance, and energy optimization for effective motion through complex environments.
-
-* Periodically, the best trajectories, avoidance strategies, and energy patterns are combined, and the robot's performance in a simulated environment measures their cooperative effectiveness.
-
-* Through cooperative coevolution, harmonized robot motion plans emerge that are efficient, safe, and energy-optimized.
 
 
 
@@ -230,4 +250,4 @@ References
 * IEEE Transactions on Evolutionary Computation, IEEE.
 * "Evolutionary Computation" Journal, MIT Press Journals.
 * Mitchell, M. (1998). "An Introduction to Genetic Algorithms." MIT Press.
-* Expii.com "Coevolution — Definition & Examples". https://www.expii.com/t/coevolution-definition-examples-10963
+* Expii.com "Coevolution — Definition & Examples".
