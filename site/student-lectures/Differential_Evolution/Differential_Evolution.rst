@@ -2,7 +2,7 @@
 Differential Evolution
 **********************
 
-Introduction to Differential Evolution (DE)
+Introduction to Differential evolution (DE)
 ===========================================
 * DE is a method in evolutionary computation that optimizes solutions to problem by iteratively improving a candidate solution based on a quality measure.
 * It's a type of metaheuristic, making few assumptions about the problem, enabling exploration of large solution spaces.
