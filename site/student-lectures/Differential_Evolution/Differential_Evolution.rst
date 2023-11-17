@@ -8,13 +8,13 @@ Introduction to Differential Evolution (DE)
 * It's a type of metaheuristic, making few assumptions about the problem, enabling exploration of large solution spaces.
 * DE works well for multidimensional real-valued functions, not requiring differentiability, allowing application to non-continuous, noisy, or time-varying problem.
 
+    .. figure:: Differential_evolution_flow_chart.png
 
-  .. figure:: Differential_Evolution_flow_chart.png
-    :width: 500 px
-    :align: center
+        :width: 224 px
+        :align: center
+        Figure 1: Differential Evolution (DE) is a type of evolutionary algorithm that optimizes a problem by iteratively improving a candidate solution with regard to a given measure of quality.
+            Image credit: `Xiu Zhang <https://www.researchgate.net/publication/310811940_Shift_based_adaptive_differential_evolution_for_PID_controller_designs_using_swarm_intelligence_algorithm>`_
 
-    Figure 1: DE is a type of evolutionary algorithm that optimizes a problem by iteratively improving a candidate solution with regard to a given measure of quality.
-    Image credit: `Xiu Zhang <https://www.researchgate.net/publication/310811940_Shift_based_adaptive_differential_evolution_for_PID_controller_designs_using_swarm_intelligence_algorithm>`_
 
 Algorithm Overview and Mechanics
 ================================
@@ -22,18 +22,6 @@ Algorithm Overview and Mechanics
 * DE maintains a population of candidate solutions, creating new ones by combining existing solutions using simple formulae.
 * The algorithm operates as a black box, only requiring a measure of quality for candidate solutions.
 * It's iterative, with the aim (not guarantee) of discovering a satisfactory solution.
-
-Differential Evolution (DE) is a versatile optimization algorithm known for its simplicity and effectiveness. Here's an overview of its mechanics:
-
-- **Black Box Optimization:** DE is considered a black-box optimizer, meaning it requires only a measure of quality (fitness function) for the candidate solutions. It does not need derivative information or other problem-specific knowledge.
-
-- **Diversity and Convergence:** Achieving a balance between diversity (exploration of the search space) and convergence (exploitation of the best solutions) is a critical aspect of DE. Parameters like the mutation factor and crossover probability play a vital role in maintaining this balance.
-
-- **Adaptability:** DE's mechanics are simple yet powerful, making it adaptable to a wide range of optimization problems. It has been successfully applied in areas such as engineering design, pattern recognition, and machine learning.
-
-- **Stochastic Nature:** Like other evolutionary algorithms, DE is stochastic. This means it employs random processes, though it converges to a solution through deterministic rules based on the fitness of the solutions.
-
-
 
   .. code-block:: text
 
@@ -51,7 +39,6 @@ Differential Evolution (DE) is a versatile optimization algorithm known for its 
       return best solution found
 
 
-
 Initialization of agents
 ------------------------
 
@@ -65,7 +52,7 @@ where \( X_i \) represents the position of the \( i^{th} \) agent, \( X_{\text{m
 
 
 Mutation in DE
---------------
+==============
 
 Mutation involves the generation of a new candidate vector by the weighted difference between two random vectors added to a third vector:
 
@@ -78,7 +65,6 @@ Here, \( X_{\text{r1}}, X_{\text{r2}}, X_{\text{r3}} \) are three distinct vecto
 
 Crossover process
 -----------------
-
 
 During crossover, a trial vector is created by mixing parameters from the mutated vector with those from a target vector:
 
@@ -105,7 +91,6 @@ The selection mechanism is based on the fitness of the trial vector compared to 
     U_i & \text{if fitness}(U_i) \leq \text{fitness}(X_i) \\
     X_i & \text{otherwise}
     \end{cases}
-
 
 
 Simple Example of Differential evolution
@@ -190,108 +175,34 @@ Evolution and Termination
     Image credit: `Pablormier <https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python>`_
 
 
+Advantages and challenges
+=========================
 
 
-Advantages and Challenges of Differential Evolution
-===================================================
+  .. image:: Differential_evolution_optimizing_the_2D_ackley_function.gif
+    :width: 224px
+    :align: center
 
-Advantages
-----------
-- **Simplicity and Ease of Implementation:**
-  - DE has a straightforward algorithmic structure. Its simplicity makes it easy to implement and understand, which is particularly beneficial for practitioners who may not have deep expertise in optimization algorithms.
+    Figure 2: The Differential Evolution (DE) algorithm is an iterative process that starts with a population of candidate solutions, and iteratively improves them by combining them with other solutions.
+    Image credit: `Pablormier <https://pablormier.github.io/2017/09/05/a-tutorial-on-differential-evolution-with-python>`_
 
-- **Efficiency with Complex Problems:**
-  - DE is known for its efficiency in optimizing complex, high-dimensional functions that are non-differentiable, noisy, or change over time. This makes it suitable for a wide range of applications, including those in engineering and economics.
 
-- **Robustness:**
-  - The algorithm is robust to the initialization of parameters and can escape local optima effectively. This is partly due to its mechanism of using differential perturbations to generate new candidate solutions.
+Advantages and challenges
+=========================
 
-- **Handling Non-Linear, Non-Differentiable Problems:**
-  - DE does not require the gradient information of the objective function, making it suitable for non-linear and non-differentiable optimization problems.
+* Advantages: DE's simplicity, efficiency in handling non-differentiable, noisy, or changing problems.
+* Challenges: Parameter setting can be critical; it does not guarantee finding the global optimum.
 
-- **Adaptability:**
-  - It can be adapted and combined with other optimization techniques to enhance performance in specific applications.
-
-Challenges
-----------
-- **Parameter Sensitivity:**
-  - The performance of DE is significantly influenced by the choice of its control parameters, such as mutation factor and crossover rate. Finding the optimal set of parameters can be challenging and may require empirical tuning.
-
-- **No Guarantee of Finding Global Optimum:**
-  - While DE is efficient in exploring the search space, there is no theoretical guarantee that it will find the global optimum, especially in highly complex, multimodal landscapes.
-
-- **Computational Cost in Large-Scale Problems:**
-  - For problems with a very large number of variables, the computational cost of DE can become a concern. The algorithm may require a large number of function evaluations to converge, which can be computationally expensive.
-
-- **Balance Between Exploration and Exploitation:**
-  - Achieving a balance between exploration (searching new areas of the search space) and exploitation (refining solutions in known good areas) is critical for the success of DE. This balance is hard to maintain and is influenced by parameter settings and the specific problem being solved.
-
-- **Lack of Theoretical Convergence Analysis:**
-  - Compared to some other optimization algorithms, DE lacks a comprehensive theoretical analysis of convergence properties. This makes it more of an empirical method, reliant on practical results rather than theoretical guarantees.
-
-* In summary, while DE offers significant advantages in terms of simplicity and effectiveness for a wide range of problems, it also presents challenges related to parameter setting, computational efficiency, and the lack of theoretical guarantees for global optimization. Understanding these aspects is crucial for effectively applying DE to real-world problems.
-
-Applications and Recent Advances
-================================
-
-* **Applications:**
-
-  - Engineering Design Optimization:
-    DE is used extensively in various engineering fields for optimizing design parameters. This includes areas such as aerospace, structural design, electrical circuit design, and control systems, where optimal solutions are critical.
-
-  - Image Processing and Computer Vision:
-    In these fields, DE is applied to tasks like image segmentation, feature extraction, and pattern recognition. The algorithm's ability to handle non-linear, multi-modal problems makes it well-suited for image analysis tasks.
-
-  - Machine Learning and Data Mining:
-    DE is utilized for feature selection, parameter tuning of algorithms, and optimizing neural network architectures. It helps in improving the performance of machine learning models by optimizing their parameters.
-
-  - Bioinformatics and Computational Biology:
-    DE is applied in protein structure prediction, gene expression data analysis, and modeling biological systems, where the search space is often large and complex.
-
-  - Financial Modeling:
-    In finance, DE is used for portfolio optimization, option pricing, and risk management, where the markets are highly unpredictable and complex.
-
-  - Environmental Modeling:
-    DE helps in water resource management, environmental risk assessment, and climate modeling by optimizing complex models with many variables and uncertain data.
-
-* **Recent Advances:**
-
-  - Hybridization:
-    Recent research focuses on combining DE with other optimization techniques like Particle Swarm Optimization (PSO) or genetic algorithms to enhance performance and convergence speed.
-
-  - Adaptive Strategies:
-    There's ongoing work in developing adaptive DE algorithms that can adjust their parameters automatically during the optimization process, making them more efficient and robust.
-
-  - Handling Constraints:
-    Advances in constraint-handling techniques within DE have made it more applicable to real-world problems where constraints are a critical component.
-
-  - Parallel and Distributed Implementations:
-    The development of parallel DE algorithms leverages modern computing architectures, significantly reducing computation times for large-scale problems.
-
-  - Application-Specific Variants:
-    Tailored versions of DE for specific application domains (like bioinformatics or renewable energy optimization) have been developed, showing improved performance in those areas.
-
-  - Improving Exploration and Exploitation Balance:
-    Research into dynamic balancing of exploration (diversification) and exploitation (intensification) in DE helps in avoiding local optima and improves convergence towards global optima.
-
-  - Multi-Objective DE:
-    Advances in multi-objective DE address problems with multiple conflicting objectives, which are common in real-world scenarios.
-
-In conclusion, Differential Evolution continues to evolve and expand its applicability across various domains, proving its robustness and efficiency in solving complex optimization problems. These advancements not only enhance its performance but also broaden the scope of problems it can effectively tackle.
 
 
 Types of Differential Evolution
 ===============================
 
+
 * Global optimisation is necessary in fields such as engineering, statistics, and finance.
 * Many practical problems have objective functions that are non-differentiable, non-continuous, non-linear, noisy, flat, multi-dimensional, or have many local minima, constraints or stochasticity.
 * Such problems are difficult, if not impossible, to solve analytically.
 * Differential Evolution (DE) can be used to find approximate solutions to such problems.
-
-Classic Differential Evolution (DE)
------------------------------------
-- **Characteristics:** The basic DE algorithm involves three main steps: mutation, crossover, and selection. It uses a simple yet effective strategy to evolve the candidate solutions towards the optimum.
-- **Applications:** Ideal for straightforward optimization problems; used as a baseline for comparing other advanced DE algorithms.
 
 Adaptive Differential Evolution (ADE)
 -------------------------------------
@@ -333,8 +244,7 @@ Hybrid DE
 - **Characteristics:** Combines DE with other optimization techniques, leveraging the strengths of each. This can lead to improved convergence rates and solution accuracies.
 - **Applications:** Applicable in situations where a single algorithm may not be effective enough, such as highly complex or specialized optimization problems.
 
-Coconclusion
-============
+Conclusion
+==========
 
-In conclusion, Differential Evolution (DE) has a wide range of applications and continues to advance, offering solutions to complex optimization problems. Its adaptability, robustness, and simplicity make it invaluable across various domains, while recent advancements further enhance its performance and scope. Understanding the diverse types of DE algorithms can aid in selecting the most suitable approach for specific optimization challenges.
-
+In conclusion, Differential evolution (DE) has a wide range of applications and continues to advance, offering solutions to complex optimization problems. Its adaptability, robustness, and simplicity make it invaluable across various domains, while recent advancements further enhance its performance and scope. Understanding the diverse types of DE algorithms can aid in selecting the most suitable approach for specific optimization challenges.
