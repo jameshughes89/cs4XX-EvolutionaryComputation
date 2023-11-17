@@ -81,7 +81,7 @@ YouTube
     student-lectures/Artificial-Life/artificial_life
     student-lectures/Memetic-Algorithms/Memetic-Algorithms
     student-lectures/Differential_Evolution/Differential_Evolution
-    student-lectures/ant-colony/ant-colony
+    student-lectures/ant-colony/ant-colony-optimization
 
 .. toctree::
     :caption: Student Projects
