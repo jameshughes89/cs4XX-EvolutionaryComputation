@@ -1,8 +1,7 @@
 *********************
 Search Space Analysis
 *********************
-
-test 
+ 
 
 Search Space Terminology 
 ========================
