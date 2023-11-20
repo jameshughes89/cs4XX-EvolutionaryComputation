@@ -1,10 +1,10 @@
 .. _lecture:
 
 Artificial Immune System
-===============================
+========================
 
 **What is Artificial Immune Systems?**
----------------------------------------
+--------------------------------------
    In artificial intelligence, artificial immune systems (AIS) are a
    class of computationally intelligent, rule-based machine learning
    systems inspired by the principles and processes of the vertebrate
@@ -34,7 +34,7 @@ Now, we will learn about some terms :
    :align: center
 
 **Framework of AIS**
-----------------------
+--------------------
 a.Recognition via regions of complementarity and Shape space(S)
 
 b.Cross reactivity
@@ -60,7 +60,7 @@ Types of shape space:
 
 
 **Techniques which are inspired by the immune system**
----------------------------------------------------------
+------------------------------------------------------
 .. image:: \image005.jpg
    :alt: Algorithms in AIS
    :align: center
@@ -94,7 +94,7 @@ Types of shape space:
 
 
 **Clonal Selection Algorithm**
-----------------------------------
+------------------------------
 .. image:: \image006.png
    :alt: Clonal Algorithm
    :align: center
@@ -121,7 +121,7 @@ In order to get more diversity among population, we use four different maturity 
 
 
 **Applications of AIS**
---------------------------
+-----------------------
 - **Cybersecurity and Anomaly Detection:**
   AIS are particularly well-suited for identifying unusual patterns or anomalies which makes them invaluable in cybersecurity. They can detect novel viruses, intrusions, or other cyber threats that deviate from normal network behavior.
 
@@ -157,7 +157,7 @@ In order to get more diversity among population, we use four different maturity 
 
 
 **Conclusion**
----------------
+--------------
 AIS stands at a promising juncture. As we continue to unravel more intricacies of the immune system, the potential for more sophisticated and nuanced AIS algorithms grows. Challenges such as scalability and integration with other AI paradigms remain, but they also present opportunities for innovative research and development. The future of AIS, thus, holds the promise of not only advancing our computational capabilities but also deepening our understanding of one of the most complex biological systems.
 
 In summary, Artificial Immune Systems, with their unique blend of biology and computation, continue to offer a rich domain for exploration and innovation, holding the potential to address some of the most challenging problems in the field of artificial intelligence and beyond.
