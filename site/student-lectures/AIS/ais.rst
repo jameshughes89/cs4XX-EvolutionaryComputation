@@ -65,33 +65,17 @@ Types of shape space:
    :alt: Algorithms in AIS
    :align: center
 
-**1.Clonal selection algorithm:** Clonal selection algorithms are
-   most commonly applied to optimization and pattern recognition.
+**1. Clonal Selection Algorithm (CSA):**
+Based on the biological clonal selection theory, this algorithm focuses on the reproduction and mutation of the most stimulated immune cells. It's widely used in optimization and machine learning for tasks like pattern recognition and anomaly detection. The algorithm involves generating clones of the better-performing antibodies, mutating them, and then selecting the next generation based on their performance.
 
-**2.Negative selection algorithm:** This class of algorithms are
-   typically used for classification and pattern recognition problem
-   domains where the problem space is modeled in the complement of
-   available knowledge. For example, in the case of an anomaly detection
-   domain the algorithm prepares a set of exemplar pattern detectors
-   trained on normal (non-anomalous) patterns that model and detect
-   unseen or anomalous patterns.
+**2. Negative Selection Algorithm (NSA):**
+Inspired by the way the immune system distinguishes between self and non-self cells, NSA is used primarily for anomaly detection. It generates detectors that do not match known 'normal' patterns and then uses these detectors to identify anomalies or deviations in new data.
 
-**3.Immune network algorithm:** This class of algorithms focus on
-   the network graph structures involved where antibodies (or antibody
-   producing cells) represent the nodes and the training algorithm
-   involves growing or pruning edges between the nodes based on affinity
-   (similarity in the problems representation space). Immune network
-   algorithms have been used in clustering, data visualization, control,
-   and optimization domains, and share properties with artificial neural
-   networks.
+**3. Immune Network Algorithm (INA):**
+This algorithm models the immune network theory where antibodies interact with each other forming a network. It's useful in clustering, data analysis, and pattern recognition. The algorithm focuses on the dynamics of the immune network, including memory, recognition, and learning.
 
-**4.Dendritic cell algorithm:** The DCA is abstracted and
-   implemented through a process of examining and modeling various
-   aspects of DC function, from the molecular networks present within
-   the cell to the behaviour exhibited by a population of cells as a
-   whole. Within the DCA information is granulated at different layers,
-   achieved through multi-scale processing.
-
+**4. Dendritic Cell Algorithm (DCA):**
+Abstracted from the function of dendritic cells in the immune system, DCA is used for classifying data and anomaly detection. It involves collecting signals, processing information, and making context-dependent decisions, mimicking the behavior of biological dendritic cells.
 
 **Clonal Selection Algorithm**
 ------------------------------
@@ -161,3 +145,8 @@ In order to get more diversity among population, we use four different maturity 
 AIS stands at a promising juncture. As we continue to unravel more intricacies of the immune system, the potential for more sophisticated and nuanced AIS algorithms grows. Challenges such as scalability and integration with other AI paradigms remain, but they also present opportunities for innovative research and development. The future of AIS, thus, holds the promise of not only advancing our computational capabilities but also deepening our understanding of one of the most complex biological systems.
 
 In summary, Artificial Immune Systems, with their unique blend of biology and computation, continue to offer a rich domain for exploration and innovation, holding the potential to address some of the most challenging problems in the field of artificial intelligence and beyond.
+
+**References**
+--------------
+- https://en.wikipedia.org/wiki/Artificial_immune_system
+- https://www.elsevier.es/en-revista-journal-applied-research-technology-jart-81-articulo-proposing-features-preprocessing-method-based-S1665642315000486
