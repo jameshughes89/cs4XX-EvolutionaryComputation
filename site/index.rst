@@ -83,6 +83,7 @@ YouTube
     student-lectures/Differential_Evolution/Differential_Evolution
     student-lectures/ant-colony/ant-colony-optimization
     student-lectures/coevolution/coevolution
+    student-lectures/AIS/index
 
 
 .. toctree::
