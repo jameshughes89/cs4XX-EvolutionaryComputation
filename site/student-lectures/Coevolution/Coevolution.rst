@@ -11,12 +11,12 @@ Definition of Coevolution
 * Coevolution denotes an evolutionary trajectory where multiple species influence each other's evolutionary paths. This unfolds through dynamics such as mutualism and antagonism, molding adaptive terrains that species navigate over time.
 
 
-Significance in Computational Domains
--------------------------------------
+In Computational Domain
+-----------------------
 
 * Translating biological coevolution to computational terms, Coevolutionary Algorithms (CEAs) take inspiration from how different species evolve together in nature and apply this idea to computer programs. 
 
-* They use the rules of evolution to find solutions to complex problems, adapting and changing these solutions as the situation or environment changes.
+* They use the rules of coevolution to find solutions to complex problems, adapting and changing these solutions as the situation or environment changes.
 
 
 Coevolution in Biological Systems
@@ -26,10 +26,10 @@ Mutualistic Coevolution
 -----------------------
 
 * Species interact symbiotically, bestowing mutual benefits. The relationship between pollinators (bees, birds) and plants serves as a prime example:
-#. Plants evolve to have different traits to attact bees for example, for pollination.
-#. These include:  nectar production, colorful flowers, and pleasant scents to entice pollinators.
-#. In return, pollinators benefit from the food source provided by the plants while inadvertently aiding in plant reproduction through pollen transfer. 
-#. This mutualistic relationship drives ongoing adaptation and benefits both parties.
+   * Plants evolve to have different traits to attact bees for example, for pollination.
+   * These include:  nectar production, colorful flowers, and pleasant scents to entice pollinators.
+   * In return, pollinators benefit from the food source provided by the plants while inadvertently aiding in plant reproduction through pollen transfer. 
+   * This mutualistic relationship drives ongoing adaptation and benefits both parties.
 
 
 
@@ -39,11 +39,11 @@ Antagonistic Coevolution
 
 * An evolutionary "arms race" between interacting species, usually involving predators and their prey. The predator-prey dynamics, such as those between cheetahs and gazelles, exemplify this. 
 
-* Another example involves birds and butterflies:
-#. Many birds avoid certain butterflies that taste bad, like the Monarch, which acquires its bitter taste from feeding on milkweed. 
-#. To deter birds, some butterflies have evolved to resemble the Monarch.
-#. These birds then learn (evolve) to distinguish Monarch bbutterflies from other kinds of butterflies.
-#. Leading to an ongoing coevolutionary cycle.
+* A good example involves birds and butterflies:
+   * Many birds avoid certain butterflies that taste bad, like the Monarch, which acquires its bitter taste from feeding on milkweed. 
+   * To deter birds, some butterflies have evolved to resemble the Monarch.
+   * These birds then learn (evolve) to distinguish Monarch bbutterflies from other kinds of butterflies.
+   * Leading to an ongoing coevolutionary cycle.
 
 .. figure:: coevolution_butterflies.png
    :width: 400 px
@@ -68,8 +68,8 @@ Fundamental Principles
 Types of CEAs
 -------------
 
-#. Competitive Coevolution: Entities evolve in competition (Antagonistic).
 #. Cooperative Coevolution: Entities evolve through collaboration and sharing (Mutualistic).
+#. Competitive Coevolution: Entities evolve in competition (Antagonistic).
 
 
 
@@ -85,8 +85,8 @@ Entities deconstruct problems and evolve cooperatively --- i.e. collaborate by t
 Examples
 --------
 
-Evolution of Vehicle Control Algorithms
----------------------------------------
+Vehicle Control Algorithms
+--------------------------
 
 * Create two populations: one for designing vehicle control algorithms (with random parameters and strategies) and another for simulating various driving scenarios.
 
@@ -134,7 +134,9 @@ Examples
 Game Strategy Development:
 --------------------------
 
-* In a chess game, two populations are evolved concurrently - one playing as white and the other as black. The strategies of one population are tested against those of the other, driving evolutionary progress. 
+* In a chess game, two populations are evolved concurrently - one playing as white and the other as black. 
+
+* The strategies of one population are tested against those of the other, with individuals in each population representing different chess strategies. 
 
 * As strategies in one population improve, they serve as a stronger selection pressure for the other population.
 
@@ -144,11 +146,11 @@ Game Strategy Development:
 Intrusion Detection Systems:
 ----------------------------
 
-* In cybersecurity, we can evolve a population of potential security breaches or hacks while simultaneously evolving a population of intrusion detection strategies. 
+* In cybersecurity, we can evolve a population of potential security breaches or hacks (attackers) while simultaneously evolving a population of intrusion detection strategies (defenders). 
 
 * The fitness of a hacker strategy might be determined by its success rate against the detection strategies, and vice versa.
 
-* The detection system becomes more robust as it is continuously tested against an evolving set of threat strategies, leading to more secure systems.
+* The detection system becomes more robust as it is continuously tested against an evolving set of threat strategies, leading to development of more robust and effective intrusion detection systems over time.
 
 
 
@@ -180,7 +182,7 @@ Technical Challenges
 
 * **Parameter Tuning**: Like other evolutionary algorithms, CEAs can be sensitive to parameter settings, demanding meticulous tuning. Finding the right combination of parameters that ensures efficient convergence and effective coevolutionary dynamics is a non-trivial task. This tuning process often requires experimentation and expertise.
 
-* **Convergence Concerns**: Ensuring that CEAs converge to a solution, especially in highly dynamic environments, remains a technical hurdle. Because of the interaction between different populations which can lead to complex dynamics erupting.
+* **Convergence Concerns**: Ensuring that CEAs converge to a solution, especially in highly dynamic (evolving) environments, remains a technical hurdle. Because of the interaction between different populations which can lead to complex dynamics erupting.
 
 
 Practical Challenges
@@ -238,7 +240,7 @@ Conclusion
 
 * From simulating life's intricacies to modeling financial systems, they show a lot of potential. 
 
-* As we harness this potential, CEAs underscore the profound ways nature's ever-changing strategies can be repurposed to solve our most complex problems.
+* As we exploit this potential, CEAs underscore the profound ways nature's ever-changing strategies can be repurposed to solve our most complex problems.
 
 
 
