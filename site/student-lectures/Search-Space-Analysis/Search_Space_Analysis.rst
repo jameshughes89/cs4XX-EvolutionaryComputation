@@ -8,9 +8,9 @@ Search Space Terminology
 - search space size #S
 - number of (optimal) solutions #S' ,solution density #S'/#S
 - search space diameter (:math:`G_{N}`) = maximal distance between any two candidate solutions
-- N(:math:`\pi`)  is the  neighbourhood relation of a given candaicae slution (:math:`\pi`)
-- g(:math:`\pi`) is the fitress of a given candaicae slution (:math:`\pi`)
-- all together L(:math:`\pi`) is the seach landscape and it is based off of S(:math:`\pi`) , N(:math:`\pi`),and  g(:math:`\pi`) 
+- N(:math:`\pi`)  is the  neighborhood relation of a given candidate solution (:math:`\pi`)
+- g(:math:`\pi`) is the fitness of a given candidate solution (:math:`\pi`)
+- all together L(:math:`\pi`) is the search landscape and it is based off of S(:math:`\pi`) , N(:math:`\pi`),and  g(:math:`\pi`) 
 
 Local vs Global Optimization
 ============================
@@ -54,7 +54,7 @@ Topology
 
   * ∀s, s₀ ∈ S : [g(s) = g(s₀) ⇒ s = s₀];
 
-- **Locally invertible**: A function is locally invertible if, within a small vicinity around any given input, it acts invertibly. That is, within this local neighborhood, each output can still be traced back to one specific input.
+- **Locally invertible**: A function is locally invertible if, within a small vicinity around any given input, it acts invertible. That is, within this local neighborhood, each output can still be traced back to one specific input.
 
   * ∀r ∈ S : ∀s, s₀ ∈ N(r) ∪ {r} : [g(s) = g(s₀) ⇒ s = s₀];
 
