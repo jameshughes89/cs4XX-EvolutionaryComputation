@@ -8,10 +8,10 @@ Overview
 
 Evolutionary Art is a branch of Generated Art (art created by an autonomous system) in which alterations are made to an initial state over many iterations. Evolutionary Art can be used to create artificially generated visual randomness, stylized recreations of existing images, and infinitely changing/evolving images.
 
-* `Evolutionary Art can be carried out in a variety of ways: <https://franciscouzo.github.io/>`_
+* `Evolutionary Art can be carried out in a variety of ways: <https://franciscouzo.github.io/>`_ some popular ones include:
     #. Building something out of nothing (Maze Generator, Fractals, Chaotic Map)
     #. Manipulating and producing new art based on an existing initial input (Genetic Art, Ishihara Plate Generator)
-    #. Continually changing and evolving visual that can respond to feedback (Random Art)
+    #. A continually changing and evolving visual that can respond to feedback (Random Art)
 
 It is important to separate Evolutionary Art from Biological Art, which uses organic living material as opposed to, paint, metal, wood, and computer code.
 
@@ -21,12 +21,12 @@ Variations From other GAs (Genetic Algorithms)
 Art is a much more subjective medium than strictly logistical problems. Because of this, evaluating fitness is executed differently than in most other GAs.
 
 * Many Evolutionary Art GAs have strict process rules between generations
-    #. An example of this is found in `Conway's Game of Life <https://electricsheep.org/>`_, where the number of living neighbours determines whether a cell will be alive or dead next generation
+    * An example of this is found in `Conway's Game of Life <https://electricsheep.org/>`_, where the number of living neighbours determines whether a cell will be alive or dead next generation
 
 
 * Other programs implement user input to assist with fitness evaluation, where users are prompted to choose one or more of their favourite models
-    #. `Electric Sheep <https://electricsheep.org/>`_ is a modern implementation of evolutionary art that allows users to contribute and influence selection on a massive population
-    #. Sheep with the most votes will be selected for breeding and mutation into tomorrow's population pool
+    * `Electric Sheep <https://electricsheep.org/>`_ is a modern implementation of evolutionary art that allows users to contribute and influence selection on a massive population
+    * Sheep with the most votes will be selected for breeding and mutation into tomorrow's population pool
 
 
 .. figure:: electric_sheep_example.gif
@@ -37,7 +37,7 @@ Art is a much more subjective medium than strictly logistical problems. Because 
     The Electric Sheep UI allows users to vote for or against individuals in the population, collectively contributing to their fitness like a hive mind
 
 * In rare cases, it is left to the computer to handle fitness evaluation
-    #. See `Procedural Paintings <https://shahriyarshahrabi.medium.com/procedural-paintings-with-genetic-evolution-algorithm-6838a6e64703>`_ by Shahriar Shahrabi for an example of this
+    * See `Procedural Paintings <https://shahriyarshahrabi.medium.com/procedural-paintings-with-genetic-evolution-algorithm-6838a6e64703>`_ by Shahriar Shahrabi for an example of this
 
 Evolutionary Music
 ==================
