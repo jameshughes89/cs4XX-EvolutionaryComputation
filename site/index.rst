@@ -85,6 +85,8 @@ YouTube
     student-lectures/ant-colony/ant-colony-optimization
     student-lectures/coevolution/coevolution
     student-lectures/evolutionary-strategies/evolutionary-strategies
+    student-lectures/Evolutionary_Art/evolutionary_art
+
     
 
 .. toctree::
