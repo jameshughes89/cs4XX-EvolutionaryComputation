@@ -2,7 +2,7 @@
 Differential Evolution
 **********************
 
-Introduction to Differential Evolution (DE)
+Introduction to Differential evolution (DE)
 ===========================================
 * DE is a method in evolutionary computation that optimizes solutions to problem by iteratively improving a candidate solution based on a quality measure.
 * It's a type of metaheuristic, making few assumptions about the problem, enabling exploration of large solution spaces.
@@ -49,7 +49,6 @@ Differential Evolution (DE) is a versatile optimization algorithm known for its 
         end-for
       end-loop
       return best solution found
-
 
 
 Initialization of agents
@@ -105,7 +104,6 @@ The selection mechanism is based on the fitness of the trial vector compared to 
     U_i & \text{if fitness}(U_i) \leq \text{fitness}(X_i) \\
     X_i & \text{otherwise}
     \end{cases}
-
 
 
 Simple Example of Differential evolution
@@ -231,8 +229,10 @@ Challenges
 
 * In summary, while DE offers significant advantages in terms of simplicity and effectiveness for a wide range of problems, it also presents challenges related to parameter setting, computational efficiency, and the lack of theoretical guarantees for global optimization. Understanding these aspects is crucial for effectively applying DE to real-world problems.
 
+
 Applications and Recent Advances
 ================================
+
 
 * **Applications:**
 
@@ -283,11 +283,6 @@ In conclusion, Differential Evolution continues to evolve and expand its applica
 Types of Differential Evolution
 ===============================
 
-* Global optimisation is necessary in fields such as engineering, statistics, and finance.
-* Many practical problems have objective functions that are non-differentiable, non-continuous, non-linear, noisy, flat, multi-dimensional, or have many local minima, constraints or stochasticity.
-* Such problems are difficult, if not impossible, to solve analytically.
-* Differential Evolution (DE) can be used to find approximate solutions to such problems.
-
 Classic Differential Evolution (DE)
 -----------------------------------
 - **Characteristics:** The basic DE algorithm involves three main steps: mutation, crossover, and selection. It uses a simple yet effective strategy to evolve the candidate solutions towards the optimum.
@@ -333,8 +328,10 @@ Hybrid DE
 - **Characteristics:** Combines DE with other optimization techniques, leveraging the strengths of each. This can lead to improved convergence rates and solution accuracies.
 - **Applications:** Applicable in situations where a single algorithm may not be effective enough, such as highly complex or specialized optimization problems.
 
-Coconclusion
-============
+
+Conclusion
+==========
 
 In conclusion, Differential Evolution (DE) has a wide range of applications and continues to advance, offering solutions to complex optimization problems. Its adaptability, robustness, and simplicity make it invaluable across various domains, while recent advancements further enhance its performance and scope. Understanding the diverse types of DE algorithms can aid in selecting the most suitable approach for specific optimization challenges.
+
 
