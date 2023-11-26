@@ -81,7 +81,6 @@ YouTube
     student-lectures/Artificial-Life/artificial_life
     student-lectures/Memetic-Algorithms/Memetic-Algorithms
     student-lectures/Differential_Evolution/Differential_Evolution
-    student-lectures/ant-colony/ant-colony-optimization
     student-lectures/Search-Space-Analysis/Search_Space_Analysis
     student-lectures/ant-colony/ant-colony-optimization
     student-lectures/coevolution/coevolution
