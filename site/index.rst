@@ -89,6 +89,7 @@ YouTube
     :numbered:
 
     student-projects/description
+    student-projects/Game-Speedrun/speedrun-game
 
 
 .. toctree::
