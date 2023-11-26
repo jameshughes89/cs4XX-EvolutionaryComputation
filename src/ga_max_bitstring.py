@@ -15,13 +15,13 @@ from src.selection import tournament_selection
 
 # [begin-hyperparameters]
 BIT_STRING_LENGTH = 10
-POPULATION_SIZE = 20  # Must be multiple of two
+POPULATION_SIZE = 10  # Must be multiple of two
 TOURNAMENT_SIZE = 2
-GENERATIONS = 10
+GENERATIONS = 25
 CROSSOVER_RATE = 0.70
 MUTATION_RATE = 0.10
-ELITE_COUNT = 2
 # [end-hyperparameters]
+
 
 def value_fitness(chromosome: list) -> int:
     """
@@ -77,16 +77,8 @@ if __name__ == "__main__":
         generation_max_fitness.append(max(population_fitness))
         generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
 
-        # [begin-elitism]
-        # Sort the population based on fitness in descending order
-        population_fitness, population = zip(*sorted(zip(population_fitness, population), reverse=True))
-        # Select the top elite_count chromosomes as elite solutions
-        elite_solutions = population[:ELITE_COUNT]
-        # Create the next generation, initially empty
-        mating_pool = list(elite_solutions)
-        # [end-elitism]
-
         # [begin-selection]
+        mating_pool = []
         for _ in range(POPULATION_SIZE):
             tournament_indices = choices(range(POPULATION_SIZE), k=TOURNAMENT_SIZE)
             chromosome = tournament_selection(population, population_fitness, tournament_indices)
@@ -124,10 +116,10 @@ if __name__ == "__main__":
     generation_average_fitness.append(sum(population_fitness) // len(population_fitness))
     # [end-ending]
 
-    plt.plot(generation_max_fitness, label="Best Fitness")
-    plt.plot(generation_average_fitness, label="Average Fitness")
-    plt.title("Fitness Over Time")
-    plt.xlabel("Generation")
-    plt.ylabel("Fitness")
-    plt.legend()
-    plt.show()
+    # plt.plot(generation_max_fitness, label="Best Fitness")
+    # plt.plot(generation_average_fitness, label="Average Fitness")
+    # plt.title("Fitness Over Time")
+    # plt.xlabel("Generation")
+    # plt.ylabel("Fitness")
+    # plt.legend()
+    # plt.show()
