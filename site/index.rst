@@ -87,6 +87,8 @@ YouTube
     student-lectures/evolutionary-strategies/evolutionary-strategies
     student-lectures/Evolutionary_Art/evolutionary_art
 
+
+
 .. toctree::
     :caption: Student Projects
     :maxdepth: 1
