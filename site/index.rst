@@ -87,7 +87,7 @@ YouTube
     student-lectures/evolutionary-strategies/evolutionary-strategies
     student-lectures/Evolutionary_Art/evolutionary_art
 
-    
+
 
 .. toctree::
     :caption: Student Projects
@@ -95,6 +95,7 @@ YouTube
     :numbered:
 
     student-projects/description
+    student-projects/Game-Speedrun/speedrun-game
 
 
 .. toctree::
