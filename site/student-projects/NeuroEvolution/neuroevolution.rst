@@ -125,3 +125,17 @@ This implementation showcases the practical utility of NEAT in a real-world appl
 
 **Pretty "NEAT" Results**
 ADD in later
+
+
+
+**Sorces**
+Sure, I can put the sources in that format for you. Here is the result:
+
+[1] `NEAT - Wikipedia <https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies>`_
+[2] `Evolving Neural Networks through Augmenting Topologies <http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf>`_
+[3] `NeuroEvolution of Augmenting Topologies (NEAT) in Python <https://www.geeksforgeeks.org/neuroevolution-of-augmenting-topologies-neat-in-python/>`_
+[4] `NEAT-Python <https://github.com/CodeReclaimers/neat-python>`_
+[5] `NEAT Implementations <https://github.com/NEAT-Implementations>`_
+[6] `Neural Networks Research Group <http://nn.cs.utexas.edu/>`_
+[7] `The Hundred-Page Machine Learning Book by Andriy Burkov <https://themlbook.com/>`_
+[8] `what is a  Neural Network MIT <https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414>`_
