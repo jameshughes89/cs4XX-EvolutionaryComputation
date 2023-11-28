@@ -3,7 +3,7 @@ Neuroevolution with NEAT
 
 Introduction
 ------------
-This lecture offers a look int neuroevolution in artificial intelligence. While beginning with an overview of fundamental neural network training concepts like backpropagation, loss functions, and optimization algorithms. By evolving both the structure and parameters of neural networks, NEAT and similar methods mark a shift from traditional neural network training techniques. 
+This lecture offers a look into neuroevolution in artificial intelligence. While beginning with an overview of fundamental neural network training concepts like backpropagation, loss functions, and optimization algorithms. By evolving both the structure and parameters of neural networks, NEAT and similar methods mark a shift from traditional neural network training techniques. 
 
 Understanding Neural Networks
 -----------------------------
@@ -24,7 +24,7 @@ Understanding Neural Networks
 
 **Why are Neural Networks Important?**
    Neural networks are a cornerstone of machine learning and artificial intelligence. They enable computers to perform tasks that, until recently, only humans could do, such as recognizing speech, identifying images, and making predictions. Their ability to learn from data makes them incredibly versatile and powerful in handling a wide range of applications.
-al networks learn through a process where they adjust their weights based on the error of their output compared to the expected result. This process, typically achieved through backpropagation and an optimization algorithm, enables the network to improve its performance over time.
+All networks learn through a process where they adjust their weights based on the error of their output compared to the expected result. This process, typically achieved through backpropagation and an optimization algorithm, enables the network to improve its performance over time.
 
 
 How Does a Neural Network Learn?
