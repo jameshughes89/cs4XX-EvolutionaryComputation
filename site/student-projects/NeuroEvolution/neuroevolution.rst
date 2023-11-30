@@ -164,27 +164,64 @@ This implementation showcases the practical utility of NEAT in a real-world appl
 **NEAT Implementation**
    - **NEAT-Python**: We used the `NEAT Python <https://neat-python.readthedocs.io/en/latest/index.html>`_ library to implement NEAT. This library provides a simple and intuitive interface for creating and training neural networks using NEAT.
 
-.. literalinclude:: /../src/neuroevolution.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-read-data]
-    :end-before: # [end-read-data]
+.. code-block:: python
+
+   with open("Project/pruned.csv", "r", encoding="utf8") as file:
+      reader = csv.reader(file)
+      data = np.array(list(reader)).astype(float)
+      inputs = data[:, :-1]
+      outputs = data[:, -1]
 
 The above code reads the data from the csv file and stores it in a numpy array. 
 
-.. literalinclude:: /../src/neuroevolution.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-evaluation]
-    :end-before: # [end-evaluation]
+.. code-block:: python
+
+   def eval_genomes(genomes, config):
+      for genome_id, genome in genomes:
+         genome.fitness = float(len(outputs))
+         net = neat.nn.FeedForwardNetwork.create(genome, config)
+         for xi, xo in zip(inputs, outputs):
+               output = net.activate(xi)
+               genome.fitness -= (output[0] - xo) ** 2
 
 The above code evaluates the fitness of each genome in the population. The fitness is calculated as the mean squared error between the network's output and the expected output.
 
-.. literalinclude:: /../src/neuroevolution.py
-    :language: python
-    :lineno-match:
-    :start-after: # [begin-run]
-    :end-before: # [end-run]
+.. code-block:: python
+
+   def run(config_file):
+      # Load configuration.
+      config = neat.Config(
+         neat.DefaultGenome,
+         neat.DefaultReproduction,
+         neat.DefaultSpeciesSet,
+         neat.DefaultStagnation,
+         config_file,
+      )
+
+      # Create the population, which is the top-level object for a NEAT run.
+      p = neat.Population(config)
+
+      # Add a stdout reporter to show progress in the terminal.
+      p.add_reporter(neat.StdOutReporter(True))
+      stats = neat.StatisticsReporter()
+      p.add_reporter(stats)
+
+      # Run for up to 300 generations.
+      winner = p.run(eval_genomes, 1000)
+
+      # Display the winning genome.
+      print("\nBest genome:\n{!s}".format(winner))
+
+      # Show output of the most fit genome against training data.
+      print("\nOutput:")
+      winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
+      error_rate = 0
+      for xi, xo in zip(inputs, outputs):
+         output = winner_net.activate(xi)
+         if round(output[0]) != xo:
+               error_rate += 1
+         print("input {!r}, expected output {!r}, got {!r}".format(xi, xo, output))
+      print("Error rate: ", error_rate / len(outputs))
 
 The above code runs the NEAT algorithm for 1000 generations, with a population size of 1000. The algorithm uses the above evaluation function to calculate the fitness of each genome in the population. The algorithm also uses the above config file to configure the algorithm.
 
