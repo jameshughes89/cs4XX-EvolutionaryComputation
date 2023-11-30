@@ -277,6 +277,7 @@ The above code runs the NEAT algorithm for 1000 generations, with a population s
 
 
 **Sources**
+
 [1] `NEAT - Wikipedia <https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies>`_
 [2] `Evolving Neural Networks through Augmenting Topologies <http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf>`_
 [3] `NeuroEvolution of Augmenting Topologies (NEAT) in Python <https://www.geeksforgeeks.org/neuroevolution-of-augmenting-topologies-neat-in-python/>`_
