@@ -83,7 +83,7 @@ YouTube
     student-lectures/Differential_Evolution/Differential_Evolution
     student-lectures/Search-Space-Analysis/Search_Space_Analysis
     student-lectures/ant-colony/ant-colony-optimization
-    student-lectures/coevolution/coevolution
+    student-lectures/Coevolution/Coevolution
     student-lectures/evolutionary-strategies/evolutionary-strategies
     student-lectures/Evolutionary_Art/evolutionary_art
 
@@ -96,6 +96,7 @@ YouTube
 
     student-projects/description
     student-projects/Game-Speedrun/speedrun-game
+    student-projects/NeuroEvolution/neuroevolution
 
 
 .. toctree::

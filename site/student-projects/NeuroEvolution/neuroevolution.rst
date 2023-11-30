@@ -115,7 +115,7 @@ Our Implementation of NEAT
 **Our Dataset**
    For our demonstration of NEAT, we developed a neural network to identify spam emails. This application was selected for its broad relevance and the ease with which it can be compared to traditional neural networks using standard loss functions.
 
-   Our chosen dataset for this project was specifically curated to effectively train and test the neural network in distinguishing spam from non-spam emails. It contained [ADD NUMBER OF FEATURES HERE] features that are critical in identifying spam emails. [ADD DETAILS ABOUT THE DATASET FEATURES HERE, SUCH AS TYPES OF FEATURES AND WHY THEY ARE IMPORTANT FOR SPAM DETECTION]
+   Our chosen dataset for this project was specifically curated to effectively train and test the neural network in distinguishing spam from non-spam emails. It contained 10 features that are critical in identifying spam emails. [ADD DETAILS ABOUT THE DATASET FEATURES HERE, SUCH AS TYPES OF FEATURES AND WHY THEY ARE IMPORTANT FOR SPAM DETECTION]
 
    The ability of the NEAT algorithm to evolve both the structure and parameters of the neural network makes it particularly suited for this task. It allows the network to adaptively emphasize the most relevant features for accurate spam detection, potentially leading to more effective results compared to traditional neural network approaches.
 
@@ -124,11 +124,29 @@ Our Implementation of NEAT
 This implementation showcases the practical utility of NEAT in a real-world application, demonstrating its potential for creating sophisticated and efficient neural network models.
 
 **Pretty "NEAT" Results**
-ADD in later
+.. figure:: visualize-pruned.png
+    :width: 500 px
+    :align: center
+    :target: google.com
+
+    The above image shows the final pruned network after training. The network has 10 input nodes, 1 output node, and 5 hidden nodes. The network was trained for 1000 generations, with a population size of 1000.
+
+.. figure:: avg_fitness.png
+    :width: 500 px
+    :align: center
+    :target: google.com
+
+    The above graph shows the average fitness of the population over 1000 generations. The fitness is calculated as the mean squared error between the network's output and the expected output. The fitness increases over time as the network learns to better predict the correct output.
+
+.. figure:: Speciation.png
+    :width: 500 px
+    :align: center
+    :target: google.com
+
+    The above graph shows the number of species and the number of genomes in each in the population over 1000 generations. The number of species decreases over time as the initial population species stagnates and gets removed.
 
 
-
-**Sorces**
+**Sources**
 Sure, I can put the sources in that format for you. Here is the result:
 
 [1] `NEAT - Wikipedia <https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies>`_
