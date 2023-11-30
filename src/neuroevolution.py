@@ -9,7 +9,7 @@ import visualize
 import numpy as np
 import csv
 
-
+# [begin-read-data]
 with open("site/student-projects/NeuroEvolution/pruned.csv", "r", encoding="utf8") as file:
     reader = csv.reader(file)
 
@@ -17,8 +17,9 @@ with open("site/student-projects/NeuroEvolution/pruned.csv", "r", encoding="utf8
 
     inputs = data[:, :-1]
     outputs = data[:, -1]
+# [end-read-data]
 
-
+# [begin-evaluation]
 def eval_genomes(genomes, config):
     for genome_id, genome in genomes:
         genome.fitness = float(len(outputs))
@@ -26,8 +27,9 @@ def eval_genomes(genomes, config):
         for xi, xo in zip(inputs, outputs):
             output = net.activate(xi)
             genome.fitness -= (output[0] - xo) ** 2
+# [end-evaluation]
 
-
+# [begin-run]
 def run(config_file):
     # Load configuration.
     config = neat.Config(
@@ -58,7 +60,7 @@ def run(config_file):
     for xi, xo in zip(inputs, outputs):
         output = winner_net.activate(xi)
         print("input {!r}, expected output {!r}, got {!r}".format(xi, xo, output))
-
+    # [end-run]
     node_names = {
         -1: "char_freq_!",
         -2: "capital_run_length_longest",

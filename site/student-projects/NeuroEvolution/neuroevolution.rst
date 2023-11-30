@@ -161,6 +161,34 @@ The ability of the NEAT algorithm to evolve both the structure and parameters of
 
 This implementation showcases the practical utility of NEAT in a real-world application, demonstrating its potential for creating sophisticated and efficient neural network models.
 
+**NEAT Implementation**
+   - **NEAT-Python**: We used the `NEAT Python <https://neat-python.readthedocs.io/en/latest/index.html>`_ library to implement NEAT. This library provides a simple and intuitive interface for creating and training neural networks using NEAT.
+
+.. literalinclude:: /../src/neuroevolution.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-read-data]
+    :end-before: # [end-read-data]
+
+The above code reads the data from the csv file and stores it in a numpy array. 
+
+.. literalinclude:: /../src/neuroevolution.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-evaluation]
+    :end-before: # [end-evaluation]
+
+The above code evaluates the fitness of each genome in the population. The fitness is calculated as the mean squared error between the network's output and the expected output.
+
+.. literalinclude:: /../src/neuroevolution.py
+    :language: python
+    :lineno-match:
+    :start-after: # [begin-run]
+    :end-before: # [end-run]
+
+The above code runs the NEAT algorithm for 1000 generations, with a population size of 1000. The algorithm uses the above evaluation function to calculate the fitness of each genome in the population. The algorithm also uses the above config file to configure the algorithm.
+
+
 **Pretty "NEAT" Results**
 
 .. figure:: visualize-pruned.png
@@ -186,8 +214,6 @@ This implementation showcases the practical utility of NEAT in a real-world appl
 
 
 **Sources**
-Sure, I can put the sources in that format for you. Here is the result:
-
 [1] `NEAT - Wikipedia <https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies>`_
 [2] `Evolving Neural Networks through Augmenting Topologies <http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf>`_
 [3] `NeuroEvolution of Augmenting Topologies (NEAT) in Python <https://www.geeksforgeeks.org/neuroevolution-of-augmenting-topologies-neat-in-python/>`_
