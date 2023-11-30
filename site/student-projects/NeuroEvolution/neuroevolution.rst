@@ -60,11 +60,11 @@ Forward Propagation
 
    Fig 2. activatiom function from https://www.slideshare.net/kongqk/introduction-to-artificial-neural-network
 
-Calculating the Error (Loss)
+Calculating the Error 
 ----------------------------
    :math:`\Delta w = Error \times \frac{ds}{dZ} \times Z`
 
-   - The network’s output is then compared to the expected output. The difference between these two is termed as the 'error' or 'loss'. The size of the error indicates how far off the network's prediction is from the actual answer.
+   - The network’s output is then compared to the expected output. The difference between these two is termed as the 'error'. The size of the error indicates how far off the network's prediction is from the actual answer. The error is computed for the collection of samples and the mean squared error is calculated. The goal of the network is to minimize this error. This is done by adjusting the weights of the network.
 
 Backpropagation
 ---------------
@@ -187,6 +187,71 @@ The ability of the NEAT algorithm to evolve both the structure and parameters of
 .. literalinclude:: /../site/student-projects/NeuroEvolution/config-feedforward
     :language: python
 
+**NEAT Implementation**
+   - **NEAT-Python**: We used the `NEAT Python <https://neat-python.readthedocs.io/en/latest/index.html>`_ library to implement NEAT. This library provides a simple and intuitive interface for creating and training neural networks using NEAT.
+
+.. code-block:: python
+
+   with open("Project/pruned.csv", "r", encoding="utf8") as file:
+      reader = csv.reader(file)
+      data = np.array(list(reader)).astype(float)
+      inputs = data[:, :-1]
+      outputs = data[:, -1]
+
+The above code reads the data from the csv file and stores it in a numpy array. 
+
+.. code-block:: python
+
+   def eval_genomes(genomes, config):
+      for genome_id, genome in genomes:
+         genome.fitness = float(len(outputs))
+         net = neat.nn.FeedForwardNetwork.create(genome, config)
+         for xi, xo in zip(inputs, outputs):
+               output = net.activate(xi)
+               genome.fitness -= (output[0] - xo) ** 2
+
+The above code evaluates the fitness of each genome in the population. The fitness is calculated as the mean squared error between the network's output and the expected output.
+
+.. code-block:: python
+
+   def run(config_file):
+      # Load configuration.
+      config = neat.Config(
+         neat.DefaultGenome,
+         neat.DefaultReproduction,
+         neat.DefaultSpeciesSet,
+         neat.DefaultStagnation,
+         config_file,
+      )
+
+      # Create the population, which is the top-level object for a NEAT run.
+      p = neat.Population(config)
+
+      # Add a stdout reporter to show progress in the terminal.
+      p.add_reporter(neat.StdOutReporter(True))
+      stats = neat.StatisticsReporter()
+      p.add_reporter(stats)
+
+      # Run for up to 300 generations.
+      winner = p.run(eval_genomes, 1000)
+
+      # Display the winning genome.
+      print("\nBest genome:\n{!s}".format(winner))
+
+      # Show output of the most fit genome against training data.
+      print("\nOutput:")
+      winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
+      error_rate = 0
+      for xi, xo in zip(inputs, outputs):
+         output = winner_net.activate(xi)
+         if round(output[0]) != xo:
+               error_rate += 1
+         print("input {!r}, expected output {!r}, got {!r}".format(xi, xo, output))
+      print("Error rate: ", error_rate / len(outputs))
+
+The above code runs the NEAT algorithm for 1000 generations, with a population size of 1000. The algorithm uses the above evaluation function to calculate the fitness of each genome in the population. The algorithm also uses the above config file to configure the algorithm.
+
+
 **Pretty "NEAT" Results**
 
 .. figure:: visualize-pruned.png
@@ -212,8 +277,6 @@ The ability of the NEAT algorithm to evolve both the structure and parameters of
 
 
 **Sources**
-Sure, I can put the sources in that format for you. Here is the result:
-
 [1] `NEAT - Wikipedia <https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies>`_
 [2] `Evolving Neural Networks through Augmenting Topologies <http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf>`_
 [3] `NeuroEvolution of Augmenting Topologies (NEAT) in Python <https://www.geeksforgeeks.org/neuroevolution-of-augmenting-topologies-neat-in-python/>`_
