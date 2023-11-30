@@ -24,6 +24,7 @@ Understanding Neural Networks
 
 **Why are Neural Networks Important?**
    Neural networks are a cornerstone of machine learning and artificial intelligence. They enable computers to perform tasks that, until recently, only humans could do, such as recognizing speech, identifying images, and making predictions. Their ability to learn from data makes them incredibly versatile and powerful in handling a wide range of applications.
+
 All networks learn through a process where they adjust their weights based on the error of their output compared to the expected result. This process, typically achieved through backpropagation and an optimization algorithm, enables the network to improve its performance over time.
 
 
@@ -115,35 +116,73 @@ Our Implementation of NEAT
 **Our Dataset**
    For our demonstration of NEAT, we developed a neural network to identify spam emails. This application was selected for its broad relevance and the ease with which it can be compared to traditional neural networks using standard loss functions.
 
-   Our chosen dataset for this project was specifically curated to effectively train and test the neural network in distinguishing spam from non-spam emails. It contained 10 features that are critical in identifying spam emails. [ADD DETAILS ABOUT THE DATASET FEATURES HERE, SUCH AS TYPES OF FEATURES AND WHY THEY ARE IMPORTANT FOR SPAM DETECTION]
+   Our chosen dataset for this project was specifically curated to effectively train and test the neural network in distinguishing spam from non-spam emails. It contained 10 features that are critical in identifying spam emails. The `dataset <https://archive.ics.uci.edu/dataset/94/spambase>`_ originally contained 57 features and had 4601 rows, but we reduced the number of features to 10 to help with the training process and they were chosen based on having the highest AUC scores. The features are as follows:
 
-   The ability of the NEAT algorithm to evolve both the structure and parameters of the neural network makes it particularly suited for this task. It allows the network to adaptively emphasize the most relevant features for accurate spam detection, potentially leading to more effective results compared to traditional neural network approaches.
+.. list-table:: Dataset Features
+   :widths: 5 25 50
+   :header-rows: 1
 
-[ADD TABLE HERE WITH FEATURE DESCRIPTIONS IF APPLICABLE]
+   * - Index
+     - Feature Measurement
+     - Description
+   * - 51 
+     - char_freq\_! 
+     - Percentage of characters in email that are the character ‘!’
+   * - 55
+     - capital_run_length_longest
+     - Longest consecutive length of capital letters in the email
+   * - 54
+     - capital_run_length_average
+     - Average length of consecutive capital letters
+   * - 20
+     - word_freq_your
+     - Percentage of words in email that are the word ‘your’
+   * - 56
+     - capital_run_length_total
+     - Total number of capital letters
+   * - 52
+     - char_freq\_$
+     - Percentage of characters in email that are the character ‘$’
+   * - 15
+     - word_freq_free
+     - Percentage of words in email that are the word ‘free’
+   * - 4
+     - word_freq_our
+     - Percentage of words in email that are the word ‘our’
+   * - 18
+     - word_freq_you
+     - Percentage of words in email that are the word ‘you’
+   * - 6
+     - word_freq_remove
+     - Percentage of words in email that are the word ‘remove’
+
+The ability of the NEAT algorithm to evolve both the structure and parameters of the neural network makes it particularly suited for this task. It allows the network to adaptively emphasize the most relevant features for accurate spam detection, potentially leading to more effective results compared to traditional neural network approaches.
+
 
 This implementation showcases the practical utility of NEAT in a real-world application, demonstrating its potential for creating sophisticated and efficient neural network models.
 
 **Pretty "NEAT" Results**
-.. figure:: visualize-pruned.png
-    :width: 500 px
-    :align: center
-    :target: google.com
 
-    The above image shows the final pruned network after training. The network has 10 input nodes, 1 output node, and 5 hidden nodes. The network was trained for 1000 generations, with a population size of 1000.
+.. figure:: visualize-pruned.png
+   :width: 500 px
+   :align: center
+   :target: google.com
+
+   The above image shows the final pruned network after training. The network has 10 input nodes, 1 output node, and 5 hidden nodes. The network was trained for 1000 generations, with a population size of 1000.
 
 .. figure:: avg_fitness.png
-    :width: 500 px
-    :align: center
-    :target: google.com
+   :width: 500 px
+   :align: center
+   :target: google.com
 
-    The above graph shows the average fitness of the population over 1000 generations. The fitness is calculated as the mean squared error between the network's output and the expected output. The fitness increases over time as the network learns to better predict the correct output.
+   The above graph shows the average fitness of the population over 1000 generations. The fitness is calculated as the mean squared error between the network's output and the expected output. The fitness increases over time as the network learns to better predict the correct output.
 
 .. figure:: Speciation.png
-    :width: 500 px
-    :align: center
-    :target: google.com
+   :width: 500 px
+   :align: center
+   :target: google.com
 
-    The above graph shows the number of species and the number of genomes in each in the population over 1000 generations. The number of species decreases over time as the initial population species stagnates and gets removed.
+   The above graph shows the number of species and the number of genomes in each in the population over 1000 generations. The number of species decreases over time as the initial population species stagnates and gets removed.
 
 
 **Sources**
