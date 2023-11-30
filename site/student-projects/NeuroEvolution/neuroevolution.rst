@@ -37,8 +37,8 @@ How Does a Neural Network Learn?
 **Forward Propagation**
    - Once the input data is fed into the network, it goes through the layers of neurons. Each neuron performs a simple calculation on the data and passes it on to the next layer. This process continues until the output layer produces a result. This result is the network's attempt to give the correct answer based on its current state of knowledge.
 
-**Calculating the Error (Loss)**
-   - The network’s output is then compared to the expected output. The difference between these two is termed as the 'error' or 'loss'. The size of the error indicates how far off the network's prediction is from the actual answer.
+**Calculating the Error**
+   - The network’s output is then compared to the expected output. The difference between these two is termed as the 'error'. The size of the error indicates how far off the network's prediction is from the actual answer. The error is computed for the collection of samples and the mean squared error is calculated. The goal of the network is to minimize this error. This is done by adjusting the weights of the network.
 
 **Backpropagation**
    - To improve, the network needs to adjust its weights, which are the parameters defining the importance of inputs. This is done through a process called backpropagation. Backpropagation involves going backwards through the network (from output to input) and slightly adjusting the weights in a way that minimizes the error.
