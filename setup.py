@@ -33,7 +33,7 @@ if __name__ == "__main__":
             "deap==1.4.1",
             "flake8==6.1.0",
             "flake8-black==0.3.6",
-            "flake8-isort==6.1.0",
+            "flake8-isort==6.1.1",
             "isort==5.12.0",
             "matplotlib==3.8.1",
             "mdformat==0.7.17",
