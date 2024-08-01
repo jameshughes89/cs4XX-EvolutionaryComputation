@@ -39,7 +39,7 @@ if __name__ == "__main__":
             "mdformat==0.7.17",
             "mdformat-gfm==0.3.6",
             "mdformat-black==0.1.1",
-            "numpy==2.0.0",
+            "numpy==2.0.1",
             "sphinx==7.3.7",
             "sphinx-rtd-theme==2.0.0",
         ],
