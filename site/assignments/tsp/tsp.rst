@@ -2,7 +2,7 @@
 Travelling Salesperson Problem
 ******************************
 
-* **Maximum Points**: 30
+* **Maximum Points**: 25
 * **DUE**: Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/tsp>`_
 
@@ -26,20 +26,20 @@ The base task is to implement a Genetic Algorithm (GA) for the
 Marking Details
 ===============
 
-A total of 30 points may be obtained on this assignment. Although it is not required to complete all portions of the
+A total of 25 points may be obtained on this assignment. Although it is not required to complete all portions of the
 assignment (one may choose to only try to obtain, for example, 20 points), all portions must be completed correctly and
-effectively to receive all 30 points.
+effectively to receive all 25 points.
 
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of the GA for TSP
+* A total of **4** points will be awarded for having a working implementation of the GA for TSP
 
-    * A total of **5** additional points may be awarded for adding enhancements to the GA
-    * Applying a GA to a more complex version of the problem, the *Vehicle Routing Problem*, will award **5** points
+    * A total of **3** additional points may be awarded for adding enhancements to the GA
+    * Applying a GA to a more complex version of the problem, the *Vehicle Routing Problem*, will award **4** points
     * Generating an effective visualization for solutions may award up to **2** additional points
 
-    * A complete report will award up to **5** points
+    * A complete report will award up to **4** points
 
         * Using LaTeX to generate the report will award an additional **2** points
         * Including proper references/citations awards an additional **2** points
@@ -143,16 +143,16 @@ When running the GA for the purpose of gathering results, be sure to run it on a
 (small, medium, large, and unreasonably large). Take note of everything you observe as this is worth discussing in the
 report. `It is possible to find tables of the best known/optimal results online for the provided instances <http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/STSP.html>`_
 
-Assuming the GA is working and there are no serious issues, **5** points will be awarded.
+Assuming the GA is working and there are no serious issues, **4** points will be awarded.
 
 
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points may be awarded for enhancing and modifying the GA. In general, each
+A total of **3** additional points may be awarded for enhancing and modifying the GA. In general, each
 enhancement/modification will award **1** additional point, but depending on the complexity of the
 enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
-to obtain these marks if the goal is to obtain all **5** additional points.
+to obtain these marks if the goal is to obtain all **3** additional points.
 
 The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
 to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
@@ -188,7 +188,7 @@ or maybe something entirely different. Like already mentioned, the more creative
 Vehicle Routing Problem
 -----------------------
 
-If a GA is also applied to the *vehicle routing problem*, **5** additional points may be obtained. Be sure to have a
+If a GA is also applied to the *vehicle routing problem*, **4** additional points may be obtained. Be sure to have a
 working TSP implementation before attempting this more complex problem. Points will only be awarded for a complete and
 working implementation of a GA for the vehicle routing problem
 
@@ -207,7 +207,7 @@ Be sure to read through the article if this problem is being attempted.
 Report
 ======
 
-Writing a simple report will award up to **5** additional points; however, a total of **13** points may be obtained by
+Writing a simple report will award up to **4** additional points; however, a total of **12** points may be obtained by
 completing all portions of the report sufficiently.
 
 .. warning::

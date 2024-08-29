@@ -2,7 +2,7 @@
 Genetic Programming
 *******************
 
-* **Maximum Points**: 30
+* **Maximum Points**: 25
 * **DUE**: **UPDATED** Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
 
 	* This is the Monday of reading week 
@@ -32,20 +32,20 @@ The base task is to implement Genetic Programming (GP) for
 Marking Details
 ===============
 
-A total of 30 points may be obtained on this assignment. Although it is not required to complete all portions of the
+A total of 25 points may be obtained on this assignment. Although it is not required to complete all portions of the
 assignment (one may choose to only try to obtain, for example, 20 points), all portions must be completed correctly and
-effectively to receive all 30 points.
+effectively to receive all 25 points.
 
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of GP for Symbolic Regression
+* A total of **4** points will be awarded for having a working implementation of GP for Symbolic Regression
 
-    * A total of **5** additional points may be awarded for adding enhancements to the GP implementation
-    * Using GP for a typed problem may award an additional **5** points
+    * A total of **3** additional points may be awarded for adding enhancements to the GP implementation
+    * Using GP for a typed problem may award an additional **4** points
     * Generating an effective visualization for evolution/solutions may award up to **2** additional points
 
-    * A complete report will award up to **5** points
+    * A complete report will award up to **4** points
 
         * Using LaTeX to generate the report will award an additional **2** points
         * Including proper references/citations awards an additional **2** points
@@ -93,16 +93,16 @@ Do not feel compelled to use the existing implementations of the GP that are in 
 language used does not particularly matter; however, if you would like to use a language other than C, C++, C#, Java, or
 Python, please ask first for approval.
 
-Assuming the GP implementation is working and there are no serious issues, **5** points will be awarded.
+Assuming the GP implementation is working and there are no serious issues, **4** points will be awarded.
 
 
 Enhancements and Modifications
 ------------------------------
 
-A total of **5** additional points may be awarded for enhancing and modifying the GP implementation. In general, each
+A total of **3** additional points may be awarded for enhancing and modifying the GP implementation. In general, each
 enhancement/modification will award **1** additional point, but depending on the complexity of the
 enhancement/modification, additional or fewer points may be awarded. To be safe, do not aim to put in minimal effort
-to obtain these marks if the goal is to obtain all **5** additional points.
+to obtain these marks if the goal is to obtain all **3** additional points.
 
 The enhancements/modifications must be made clear to the marker as they will not dig through the implementation to try
 to find what was done. If choosing not to write a report, at least provide a text file containing a description of what
@@ -129,7 +129,7 @@ the better.
 Typed Problems
 --------------
 
-An additional **5** points may be awarded if GP is effectively used on a typed problem. No data will be provided, thus
+An additional **4** points may be awarded if GP is effectively used on a typed problem. No data will be provided, thus
 finding an interesting problem and related data will be required. It must be made clear to the marker that GP was
 sufficiently applied to the problem and that the problem is interesting enough to earn the additional points.
 
@@ -144,7 +144,7 @@ If struggling to find a problem, check out the `UCI Machine Learning Repository 
 Report
 ======
 
-Writing a simple report will award up to **5** additional points; however, a total of **13** points may be obtained by
+Writing a simple report will award up to **4** additional points; however, a total of **12** points may be obtained by
 completing all portions of the report sufficiently.
 
 .. warning::
