@@ -3,7 +3,7 @@ Genetic Programming
 *******************
 
 * **Maximum Points**: 30
-* **DUE**: **UPDATED** Monday November 6, 2023 at 11:55pm; submitted on MOODLE. 
+* **DUE**: **UPDATED** Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
 
 	* This is the Monday of reading week 
 	* Y'all asked for this 

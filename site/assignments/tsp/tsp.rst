@@ -3,7 +3,7 @@ Travelling Salesperson Problem
 ******************************
 
 * **Maximum Points**: 30
-* **DUE**: Monday October 9, 2023 at 11:55pm; submitted on MOODLE.
+* **DUE**: Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/tsp>`_
 
 .. warning::
