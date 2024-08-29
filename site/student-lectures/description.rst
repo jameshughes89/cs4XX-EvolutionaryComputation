@@ -3,9 +3,9 @@ Student Lecture Task Description
 ********************************
 
 * **Maximum Points**: 10
-* **Topic Selection Due Date**: October 11, 2023, submitted via email
+* **Topic Selection Due Date**: TBD, 2024 at 11:55pm; submitted via email
 * **PR Merge Date**: At Least One Day Before the Lecture Date
-* **Lecture Date**: November 14th -- 24th
+* **Lecture Date**: TBD
 
 
 
@@ -27,21 +27,21 @@ Only one student may do a lecture on a particular topic. Topics will be selected
 topic choices along with preferred lecture date are to be submitted to the instructor via email.
 
 
-* Differential Evolution **(ALREADY SELECTED)**
+* Differential Evolution
 * Evolutionary Programming
-* Evolutionary Strategies **(ALREADY SELECTED)**
-* Ant Colony Optimization **(ALREADY SELECTED)**
-* Artificial Immune Systems **(ALREADY SELECTED)**
-* Cultural Algorithms **(ALREADY SELECTED)**
+* Evolutionary Strategies
+* Ant Colony Optimization
+* Artificial Immune Systems
+* Cultural Algorithms
 * Self Organization
-* Artificial Life **(ALREADY SELECTED)**
-* Evolutionary Art **(ALREADY SELECTED)**
-* Memetic Algorithms **(ALREADY SELECTED)**
-* Search Space Analysis **(ALREADY SELECTED)**
-* Coevolution **(ALREADY SELECTED)**
+* Artificial Life
+* Evolutionary Art
+* Memetic Algorithms
+* Search Space Analysis
+* Coevolution
 * Neuroevolution
 * Fitness Predictors
-* Novelty Search **(ALREADY SELECTED)**
+* Novelty Search
 
 
 
@@ -55,12 +55,7 @@ All topic choices along with preferred lecture date are to be submitted to the i
 
 Student Lecture Dates:
 
-* November 14th (0 slots available)
-* November 15th (0 slot available)
-* November 17th (0 slots available)
-* November 21st (0 slots available)
-* November 22nd (1 slots available)
-* November 24th (0 slots available)
+* TBD (2 slots available)
 
 
 
