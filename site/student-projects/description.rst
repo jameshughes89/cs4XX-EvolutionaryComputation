@@ -128,10 +128,8 @@ via email.
 
 Group Presentation Dates:
 
-* November 28th (2 slots available)
-* November 29th (2 slots available)
-* December 1st (2 slots available)
-* December 6th (2 slots available)
+* November TBD (2 slots available)
+
 
 
 .. note::
