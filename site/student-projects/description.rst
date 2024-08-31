@@ -3,10 +3,10 @@ Project Description
 *******************
 
 * **Maximum Points**: 30
-* **Topic Selection Due Date**: October 25, 2023, submitted via email
+* **Topic Selection Due Date**: TBD, 2024 at 11:55pm; submitted via email
 * **PR Merge Date**: If Applicable, At Least One Day Before the Lecture Date
-* **Presentation Date**: November 28th -- December 6th
-* **DUE**: Wednesday December 6th, 2023 at 11:55pm; submitted on MOODLE.
+* **Presentation Date**: TBD
+* **DUE**: TBD, 2023 at 11:55pm; submitted on MOODLE.
 
 .. warning::
 
@@ -128,10 +128,8 @@ via email.
 
 Group Presentation Dates:
 
-* November 28th (2 slots available)
-* November 29th (2 slots available)
-* December 1st (2 slots available)
-* December 6th (2 slots available)
+* November TBD (2 slots available)
+
 
 
 .. note::

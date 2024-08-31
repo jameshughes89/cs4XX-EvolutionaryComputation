@@ -1,5 +1,5 @@
 *********************************
-Welcome to CSCI 340 --- Fall 2023
+Welcome to CSCI 340 --- Fall 2024
 *********************************
 
 Evolutionary computation is a family of powerful optimization algorithms often used to find solutions to computationally
@@ -76,17 +76,6 @@ YouTube
     :numbered:
 
     student-lectures/description
-    student-lectures/novelty-search/novelty-search
-    student-lectures/cultural-algorithms/cultural-algorithms
-    student-lectures/Artificial-Life/artificial_life
-    student-lectures/Memetic-Algorithms/Memetic-Algorithms
-    student-lectures/Differential_Evolution/Differential_Evolution
-    student-lectures/Search-Space-Analysis/Search_Space_Analysis
-    student-lectures/ant-colony/ant-colony-optimization
-    student-lectures/Coevolution/Coevolution
-    student-lectures/evolutionary-strategies/evolutionary-strategies
-    student-lectures/Evolutionary_Art/evolutionary_art
-
 
 
 .. toctree::
@@ -95,8 +84,6 @@ YouTube
     :numbered:
 
     student-projects/description
-    student-projects/Game-Speedrun/speedrun-game
-    student-projects/NeuroEvolution/neuroevolution
 
 
 .. toctree::

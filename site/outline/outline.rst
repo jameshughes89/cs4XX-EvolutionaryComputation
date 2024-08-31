@@ -3,7 +3,7 @@ Computer Science 340 --- Evolutionary Computation
 =================================================
 
 
-Fall 2023
+Fall 2024
 =========
 
 
@@ -116,15 +116,15 @@ from mistakes.
       - Mandatory
       - Due Date
     * - Assignment 1
-      - 30
+      - 25
       - ``False``
       - End of September-ish
     * - Assignment 2
-      - 30
+      - 25
       - ``False``
       - Mid October-ish
     * - Assignment 3
-      - 30
+      - 25
       - ``False``
       - Early November-ish
     * - Final Project
@@ -139,7 +139,7 @@ from mistakes.
 
 * Each *point* equals one percent of the final grade
 * Individual assignments descriptions will include details on what tasks can be completed
-* Although there are 130 points available, the maximum grade that can be obtained is 100% (99% due to system constraints)
+* Although there are 115 points available, the maximum grade that can be obtained is 100% (99% due to system constraints)
 * Both the lecture and final project are mandatory to pass
 
     * If not completed, the final grade will be no more than 45%
@@ -157,12 +157,12 @@ assignments and projects. Most of these marks will be awarded for sufficiently c
 traditional method of losing marks for mistakes. Details for the breakdown for individual assignments will be included
 with the assignment description. To gain a general idea, consider the following example:
 
-    * Implementing an algorithm will award 5 points
+    * Implementing an algorithm will award 4 points
 
-        * Adding enhancements to the algorithm may award an additional 5 points
-        * Using the algorithm to solve a more complex problem may award an additional 5 points
+        * Adding enhancements to the algorithm may award an additional 3 points
+        * Using the algorithm to solve a more complex problem may award an additional 4 points
         * Creating an effective visualization for the algorithm for the problem will award an additional 2 points
-        * Writing a report will award up to 5 points
+        * Writing a report will award up to 4 points
 
             * Using LaTeX will award an additional 2 points
             * Including proper references/citations awards an additional 2 points
