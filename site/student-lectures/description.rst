@@ -31,14 +31,14 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Evolutionary Programming
 * Evolutionary Strategies
 * Ant Colony Optimization
-* Artificial Immune Systems
+* Artificial Immune Systems --- TAKEN
 * Cultural Algorithms
 * Self Organization
 * Artificial Life
-* Evolutionary Art
+* Evolutionary Art --- TAKEN
 * Memetic Algorithms
 * Search Space Analysis
-* Coevolution
+* Coevolution --- TAKEN
 * Neuroevolution
 * Fitness Predictors
 * Novelty Search
