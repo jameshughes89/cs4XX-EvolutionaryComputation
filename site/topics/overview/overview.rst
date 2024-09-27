@@ -258,7 +258,7 @@ Mutation
 * Small changes
 * Stochastic changes
 * Stochastic chance to happen
-* Typically distinctive
+* Typically destructive
 
 
 .. figure:: ../overview/single_point_mutation.png
