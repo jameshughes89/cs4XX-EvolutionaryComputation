@@ -39,7 +39,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Memetic Algorithms
 * Search Space Analysis
 * Coevolution --- TAKEN
-* Neuroevolution
+* Neuroevolution --- TAKEN
 * Fitness Predictors
 * Novelty Search
 
