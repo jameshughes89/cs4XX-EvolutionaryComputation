@@ -30,7 +30,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Differential Evolution
 * Evolutionary Programming
 * Evolutionary Strategies
-* Ant Colony Optimization
+* Ant Colony Optimization --- TAKEN
 * Artificial Immune Systems --- TAKEN
 * Cultural Algorithms
 * Self Organization
