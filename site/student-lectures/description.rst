@@ -36,7 +36,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Self Organization --- TAKEN
 * Artificial Life
 * Evolutionary Art --- TAKEN
-* Memetic Algorithms
+* Memetic Algorithms --- TAKEN
 * Search Space Analysis
 * Coevolution --- TAKEN
 * Neuroevolution --- TAKEN
