@@ -41,7 +41,7 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Coevolution --- TAKEN
 * Neuroevolution
 * Fitness Predictors
-* Novelty Search
+* Novelty Search --- TAKEN 
 
 
 
