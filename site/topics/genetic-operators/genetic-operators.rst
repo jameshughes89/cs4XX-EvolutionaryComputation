@@ -237,7 +237,7 @@ Order Crossover
         Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
 
 
-#. Copy elements from the other parent to the child in the order they appear, starting at the larger index
+#. Copy missing elements from the other parent to the child in the order they appear, starting at the larger index
 
     * Wrap to index 0 where necessary
     * Here, the copying would start at index 7, which contains the element 1
@@ -282,13 +282,14 @@ Partially Mapped Crossover
         Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
 
 
-#. Starting at the first selected index in the other parent, copy non-copied elements in the child by
+#. Starting at the first selected index and value in the other parent, copy non-copied elements to the child by
 
-    * Finding the index of the element that exists in the child at the index of the non-copied index
-    * Here, the value of 8 was not copied and exists at index 4
-    * The value in index 4 of the child is 4
-    * The value of 4 exists at index 8 in the parent
-    * Thus, the value of 8 is copied into index 8
+    * Find the index of the element that exists in the child in the non-copied parent
+
+        * Here, the value of 8 is at index 3 in the non-copied parent and is also not in the child
+        * The value in index 3 of the child is 4
+        * The value of 4 exists at index 8 in the non-copied parent
+        * Thus, the value of 8 is placed into index 8
 
     * It is possible that the index the value should be copied to is already filled
 
