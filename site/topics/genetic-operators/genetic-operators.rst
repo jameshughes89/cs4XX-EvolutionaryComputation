@@ -237,7 +237,7 @@ Order Crossover
         Copy the elements between the selected indices to a child. Only one child chromosome is shown here.
 
 
-#. Copy elements from the other parent to the child in the order they appear, starting at the larger index
+#. Copy missing elements from the other parent to the child in the order they appear, starting at the larger index
 
     * Wrap to index 0 where necessary
     * Here, the copying would start at index 7, which contains the element 1
