@@ -265,7 +265,7 @@ Stochastic Universal Sampling
     :align: center
     :target: https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_parent_selection.htm
 
-    Example of a roulette wheel where :math:\lambda=2`.
+    Example of a roulette wheel where :math:`\lambda=2`.
 
 
 
