@@ -32,9 +32,9 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Evolutionary Strategies
 * Ant Colony Optimization --- TAKEN
 * Artificial Immune Systems --- TAKEN
-* Cultural Algorithms
+* Cultural Algorithms --- TAKEN
 * Self Organization --- TAKEN
-* Artificial Life
+* Artificial Life --- TAKEN
 * Evolutionary Art --- TAKEN
 * Memetic Algorithms --- TAKEN
 * Search Space Analysis
