@@ -201,7 +201,7 @@ Language
     * Like the numerical operators and operands discussed above
 
 
-Types vs. Untyped
+Typed vs. Untyped
 -----------------
 
 * Notice that the mathematical expression example above only worked with numerical values
