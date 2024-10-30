@@ -3,7 +3,7 @@ Particle Swarm Optimization
 ***************************
 
 * **Maximum Points**: 25
-* **DUE**: Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
+* **DUE**: Monday November 25, 2024 at 11:55pm; submitted on MOODLE.
 
 .. warning::
 
