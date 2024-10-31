@@ -41,7 +41,9 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Coevolution --- TAKEN
 * Neuroevolution --- TAKEN
 * Fitness Predictors
-* Novelty Search --- TAKEN 
+* Novelty Search --- TAKEN
+* Learning Classifier Systems
+* Grammatical Evolution
 
 
 
