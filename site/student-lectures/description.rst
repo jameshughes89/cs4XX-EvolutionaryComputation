@@ -3,7 +3,7 @@ Student Lecture Task Description
 ********************************
 
 * **Maximum Points**: 10
-* **Topic Selection Due Date**: TBD, 2024 at 11:55pm; submitted via email
+* **Topic Selection Due Date**: Friday November 1, 2024 at 11:55pm; submitted via email
 * **PR Merge Date**: At Least One Day Before the Lecture Date
 * **Lecture Date**: TBD
 
@@ -12,7 +12,7 @@ Student Lecture Task Description
 Base Task
 =========
 
-Each student must give a 15 -- 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
+Each student may give a 15 -- 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
 using *reStructuredText* and Sphinx. Lectures will be submitted as pull requests to the course GitHub repository and all
 lectures must be posted to the course website. The lectures will only be posted once approved by the instructor.
 
