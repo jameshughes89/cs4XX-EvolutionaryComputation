@@ -30,9 +30,9 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Artificial Immune Systems --- TAKEN
 * Artificial Life --- TAKEN
 * Coevolution
-* Cultural Algorithms --- TAKEN
+* Cultural Algorithms
 * Differential Evolution
-* Evolutionary Art
+* Evolutionary Art --- TAKEN
 * Evolutionary Programming
 * Evolutionary Strategies --- TAKEN
 * Fitness Predictors --- TAKEN
