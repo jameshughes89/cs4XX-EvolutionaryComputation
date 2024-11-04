@@ -3,10 +3,10 @@ Project Description
 *******************
 
 * **Maximum Points**: 30
-* **Topic Selection Due Date**: TBD, 2024 at 11:55pm; submitted via email
+* **Topic Selection Due Date**: Friday November 8, 2024 at 11:55pm; submitted via email
 * **PR Merge Date**: If Applicable, At Least One Day Before the Lecture Date
 * **Presentation Date**: TBD
-* **DUE**: TBD, 2023 at 11:55pm; submitted on MOODLE.
+* **DUE**: TBD, 2024 at 11:55pm; submitted on MOODLE.
 
 .. warning::
 
