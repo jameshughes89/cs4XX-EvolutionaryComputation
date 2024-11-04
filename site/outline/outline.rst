@@ -133,7 +133,7 @@ from mistakes.
       - End of November-ish
     * - Lecture
       - 10
-      - ``True``
+      - ``False``
       - Second Half of Semester
 
 
