@@ -34,12 +34,12 @@ topic choices along with preferred lecture date are to be submitted to the instr
 * Differential Evolution
 * Evolutionary Art --- TAKEN
 * Evolutionary Programming
-* Evolutionary Strategies --- TAKEN
+* Evolutionary Strategies
 * Fitness Predictors --- TAKEN
 * Grammatical Evolution
 * Learning Classifier Systems
 * Memetic Algorithms
-* Neuroevolution --- TAKEN
+* Neuroevolution
 * Novelty Search --- TAKEN
 * Search Space Analysis
 * Self Organization
