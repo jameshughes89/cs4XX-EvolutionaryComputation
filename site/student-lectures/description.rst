@@ -56,10 +56,9 @@ All topic choices along with preferred lecture date are to be submitted to the i
 
 Student Lecture Dates:
 
-
-* November 19 (2 slots available)
-* November 20 (2 slots available)
-* November 22 (2 slots available)
+* November 19: CG & KR
+* November 20: AJ & GD
+* November 22: TDC & XH
 
 
 
