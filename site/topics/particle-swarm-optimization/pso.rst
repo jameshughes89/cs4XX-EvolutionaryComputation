@@ -56,10 +56,11 @@ Particles
     :align: center
     :target: https://en.wikipedia.org/wiki/Particle_swarm_optimization
 
-    Particles moving through a three-dimensional space represented in two-dimensions with the third dimension being
-    represented by colour. Arrows associated with each particle represents the particle's velocity. Over time, the
-    particles, although acting independent, while also being influenced by particles within the population, cluster
-    around the global minimum.
+    Particles moving through a two-dimensional space with a third dimension, a function of the two-dimensions, being
+    represented by colour. In this example, the particles are trying to move towards positions that minimize the the
+    third dimension. Arrows associated with each particle represents the particle's velocity. Over time, the particles,
+    although acting independent, while also being influenced by particles within the population, cluster around the
+    global minimum.
 
 
 Representation
@@ -69,8 +70,8 @@ Representation
 * Thus, each particle is typically represented as an :math:`n` dimensional vector encoding its position in space
 
     * Where :math:`n` is the dimensionality of the problem
-    * For example, in the above figure, each particle would be represented as a three-dimensional vector
-    * ``<1.42345478, 4.334678, 3.31345786555567>``
+    * For example, in the above figure, each particle would be represented as a two-dimensional vector
+    * ``<1.42345478, -2.31345786555567>``
 
 
 * Each particle has a
