@@ -3,7 +3,7 @@ Student Lecture Task Description
 ********************************
 
 * **Maximum Points**: 10
-* **Topic Selection Due Date**: TBD, 2024 at 11:55pm; submitted via email
+* **Topic Selection Due Date**: Friday November 1, 2024 at 11:55pm; submitted via email
 * **PR Merge Date**: At Least One Day Before the Lecture Date
 * **Lecture Date**: TBD
 
@@ -12,7 +12,7 @@ Student Lecture Task Description
 Base Task
 =========
 
-Each student must give a 15 -- 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
+Each student may give a 15 -- 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
 using *reStructuredText* and Sphinx. Lectures will be submitted as pull requests to the course GitHub repository and all
 lectures must be posted to the course website. The lectures will only be posted once approved by the instructor.
 
@@ -26,22 +26,23 @@ Below is a list of possible topics, but students may pick other topics as long a
 Only one student may do a lecture on a particular topic. Topics will be selected on a first-come first-served basis. All
 topic choices along with preferred lecture date are to be submitted to the instructor via email.
 
-
+* Ant Colony Optimization --- TAKEN
+* Artificial Immune Systems --- TAKEN
+* Artificial Life --- TAKEN
+* Coevolution
+* Cultural Algorithms
 * Differential Evolution
+* Evolutionary Art --- TAKEN
 * Evolutionary Programming
 * Evolutionary Strategies
-* Ant Colony Optimization
-* Artificial Immune Systems
-* Cultural Algorithms
-* Self Organization
-* Artificial Life
-* Evolutionary Art
+* Fitness Predictors --- TAKEN
+* Grammatical Evolution
+* Learning Classifier Systems
 * Memetic Algorithms
-* Search Space Analysis
-* Coevolution
 * Neuroevolution
-* Fitness Predictors
-* Novelty Search
+* Novelty Search --- TAKEN
+* Search Space Analysis
+* Self Organization
 
 
 
@@ -55,7 +56,9 @@ All topic choices along with preferred lecture date are to be submitted to the i
 
 Student Lecture Dates:
 
-* TBD (2 slots available)
+* November 19: CG & KR
+* November 20: AJ & GD
+* November 22: TDC & XH
 
 
 

@@ -3,13 +3,7 @@ Genetic Programming
 *******************
 
 * **Maximum Points**: 25
-* **DUE**: **UPDATED** Monday TBD, 2024 at 11:55pm; submitted on MOODLE.
-
-	* This is the Monday of reading week 
-	* Y'all asked for this 
-	* If the fact that it's reading week bothers you, then submit it before the original due date
-
-
+* **DUE**: Tuesday November 12, 2024 at 11:55pm; submitted on MOODLE.
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/regression-data>`_
 
 .. warning::
