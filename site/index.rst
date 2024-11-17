@@ -76,7 +76,7 @@ YouTube
     :numbered:
 
     student-lectures/description
-    student-lectures/ant/ants
+    student-lectures/Ant Colony Optimization/Ant Colony Optimization
 
 
 .. toctree::

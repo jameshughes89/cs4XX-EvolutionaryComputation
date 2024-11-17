@@ -31,7 +31,7 @@ def calculate_total_distance(tour):
     total_distance += distances[tour[-1]][tour[0]]  # Return to start
     return total_distance
 
-
+# [BEGIN PHEROMONE UPDATE]
 # Function to update pheromones based on the ants' paths
 def update_pheromones(pheromones, ants_paths, ants_distances):
     for i in range(n_cities):
@@ -41,6 +41,8 @@ def update_pheromones(pheromones, ants_paths, ants_distances):
     for path, dist in zip(ants_paths, ants_distances):
         for i in range(len(path) - 1):
             pheromones[path[i]][path[i + 1]] += Q / dist  # Deposit pheromones
+# [END PHEROMONE UPDATE]
+
 
 # [START SELECT PATH]
 # Function to select the next city for an ant based on pheromone and distance
