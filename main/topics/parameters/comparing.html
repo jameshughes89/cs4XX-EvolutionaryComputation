@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. What Comparing Distributions Means &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../../_static/duck_face.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17. Multi-Objective Problems" href="../problems/multi-objective.html" />
+    <link rel="prev" title="15. Tuning Hyperparameters" href="tuning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. What Comparing Distributions <em>Means</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#random-variables">16.1. Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-drug-trial">16.2. Example — Drug Trial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#null-hypothesis">16.2.1. Null Hypothesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permutation-randomization-test">16.2.2. Permutation/Randomization Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpreting-results">16.2.3. Interpreting Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#t-tests-and-mann-whitney-u-tests">16.2.3.1. T-Tests and Mann-Whitney U tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#for-next-class">16.3. For Next Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">16. </span>What Comparing Distributions <em>Means</em></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/topics/parameters/comparing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="what-comparing-distributions-means">
+<h1><span class="section-number">16. </span>What Comparing Distributions <em>Means</em><a class="headerlink" href="#what-comparing-distributions-means" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Given two evolutionary computation instances, how does one determine which is <em>better</em>?</p></li>
+</ul>
+<section id="random-variables">
+<h2><span class="section-number">16.1. </span>Random Variables<a class="headerlink" href="#random-variables" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The content within this topic is kept at a high level and deliberately skips some formalisms and rigor. For the
+purpose of this course, the level of detail provided should be sufficient.</p>
+</div>
+<ul>
+<li><p>Consider a random variable as some phenomenon that can be observed</p></li>
+<li><p>When observing the random variable, some quantitative measurement can be taken</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The time it takes to recover from the flu</p></li>
+<li><p>The amount of nuts a squirrel buries a day</p></li>
+<li><p>The number of people with blond hair that walk by this building between 10am – 11am on Tuesdays</p></li>
+<li><p>The best fitness value of a genetic algorithm run</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Whatever the measurement is, they can be recorded and represented as distributions</p></li>
+<li><p>Consider the following two random variables</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/random_variable_1.png"><img alt="../../_images/random_variable_1.png" src="../../_images/random_variable_1.png" style="width: 666px;" /></a>
+<figcaption>
+<p><span class="caption-text">Output of some random variable represented as a box. The data is shown as a list of numbers and as a distribution.
+A total of 50 data points were observed and recorded.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/random_variable_2.png"><img alt="../../_images/random_variable_2.png" src="../../_images/random_variable_2.png" style="width: 666px;" /></a>
+<figcaption>
+<p><span class="caption-text">Output of another random variable represented as a box. The data is shown as a list of numbers and as a
+distribution. A total of 50 data points were observed and recorded.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Regardless of what these random variables are, one may wonder, <em>are these random variables actually different</em>?</p>
+<blockquote>
+<div><ul>
+<li><p>If considering the flu recovery time</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The random variables may be recovery times of two different groups of people</p></li>
+<li><p>Does one group recover faster?</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>With the squirrels, does one squirrel bury more nuts in a day than the other?</p></li>
+<li><p>Does one year have more blond people walking past the building on Tuesdays from 10am – 11am?</p></li>
+<li><p>Does one evolutionary computation algorithm implementation perform better than another?</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/random_variables_together.png"><img alt="../../_images/random_variables_together.png" src="../../_images/random_variables_together.png" style="width: 666px;" /></a>
+<figcaption>
+<p><span class="caption-text">The two random variables’ measurements plotted against each other.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>When visually analyzing the above comparison of the two random variables, there does appear to be a difference</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>But the data is clearly noisy</p></li>
+<li><p>A range of values are obtained for each random variable</p></li>
+<li><p>And there are only 50 observations of each random variable</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>It is difficult to say if these random variables are truly producing different distributions</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>They may effectively be the same</p></li>
+<li><p>The two groups do not take different amounts of time to recover from the flu</p></li>
+<li><p>The squirrel I named Jimbo does not actually bury more nuts than the squirrel I named Sir Lora</p></li>
+<li><p>There really isn’t more blond people this year vs. last</p></li>
+<li><p>My algorithm isn’t really performing better than the next persons’</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="example-drug-trial">
+<h2><span class="section-number">16.2. </span>Example — Drug Trial<a class="headerlink" href="#example-drug-trial" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Consider a drug trial</p></li>
+<li><p>A group of 50 people is given a new drug that is intended to reduce the recovery time of the flu</p></li>
+<li><p>Another group is given a placebo</p></li>
+<li><p>No one in either group knows if they are given the new drug or the placebo</p></li>
+<li><p>Here, the random variables are the two groups and the observations are the recovery times of the people in each group</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Further, the recovery time is itself a random variable</p></li>
+<li><p>This is the property/characteristic trying to be understood</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/random_variables_same_distro.png"><img alt="../../_images/random_variables_same_distro.png" src="../../_images/random_variables_same_distro.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Distributions of group recovery times for individuals in the placebo group and drug group.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>With the above example</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The average recovery time for the placebo group was roughly 15.4 days</p></li>
+<li><p>The average recovery time for the drug group was roughly 13.8 days</p></li>
+<li><p>The drug group recovered, on average, 1.6 days faster</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>One may be tempted to conclude that the drug clearly works</p></li>
+<li><p>However, the average recovery time is a summary statistic of a distribution</p></li>
+<li><p>When observing the distributions, it is clear that there is more nuance</p></li>
+<li><p>Additionally, there were only 50 observations from each group</p></li>
+<li><p>Every individual is different and every observation is different</p></li>
+<li><p>If I were to do this again, the distributions would look different</p></li>
+<li><p>What are the odds that this result just happened by chance?</p></li>
+</ul>
+<section id="null-hypothesis">
+<h3><span class="section-number">16.2.1. </span>Null Hypothesis<a class="headerlink" href="#null-hypothesis" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Always start by assuming that there is no real difference</p></li>
+<li><p>This is called the <em>Null Hypothesis</em></p></li>
+<li><p>It may feel like an arbitrary position to take, but with this assumption, it allows one to start to form an argument</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Assume the drug has no actual impact on the recovery time</p></li>
+<li><p>If the drug has no impact, then it could be expected that the average recovery time would be no different than the placebo</p></li>
+<li><p>If both groups had the placebo, it really would not have mattered which person was assigned to which group</p></li>
+<li><p>Thus, it should be possible to assign each individual and their corresponding recovery time to one of the two groups randomly</p></li>
+<li><p>Therefore, the difference in the average recovery times between the two randomly assigned groups would be an example of what one would get by dumb luck</p></li>
+</ol>
+</section>
+<section id="permutation-randomization-test">
+<h3><span class="section-number">16.2.2. </span>Permutation/Randomization Test<a class="headerlink" href="#permutation-randomization-test" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Assuming the null hypothesis</p></li>
+<li><p>Shuffling the groups once and calculating the difference between the group averages will give one example of a <em>chance</em> difference</p></li>
+<li><p>It is possible to generate all possible combinations of assigning the 100 people to two groups</p></li>
+<li><p>If all possible combinations are generated, all possible average <em>by chance</em> differences can be calculated</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Although, in this example, there are a lot</p></li>
+<li><p>A total of <span class="math notranslate nohighlight">\(1.01 \times 10^{29}\)</span> combinations of splitting 100 people into two groups of 50</p></li>
+<li><p>In cases where it is intractable to generate all combinations, simply generate some large number of combinations</p></li>
+<li><p>Here, <span class="math notranslate nohighlight">\(1,000,000\)</span> combinations will be generated</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/chance_average_group_differences.png"><img alt="../../_images/chance_average_group_differences.png" src="../../_images/chance_average_group_differences.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Distribution of the “by chance” average group differences after 1,000,000 shuffles of the two groups. This
+distribution is <strong>not</strong> the recovery times like in the above distributions.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="interpreting-results">
+<h3><span class="section-number">16.2.3. </span>Interpreting Results<a class="headerlink" href="#interpreting-results" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The key question to ask now is, <em>how likely is it that the original observation actually happened by chance?</em></p></li>
+</ul>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/chance_average_group_differences_with_observation.png"><img alt="../../_images/chance_average_group_differences_with_observation.png" src="../../_images/chance_average_group_differences_with_observation.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Original observed average group difference in recovery time between the drug group and the placebo group shown on
+the distribution of the chance average group differences. The number of chance observations with the same or lower
+recovery times than the originally observed will inform how likely our observation could happen by chance.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Of the <span class="math notranslate nohighlight">\(1,000,000\)</span> combinations randomly generated</p></li>
+<li><p>There were <span class="math notranslate nohighlight">\(205\)</span> with a by chance recovery time the same or better than the originally observed 1.6 days faster</p></li>
+<li><p>In other words, there is a 0.0205% chance that the original observation happened by dumb luck</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{205}{1000000} = 0.000205 = 0.0205\%\)</span></p></li>
+<li><p>There is a roughly one in 50,000 chance this would have happened by dumb luck</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>This is where the idea of a probability value (p-value) comes in</p></li>
+<li><p>There is a 0.000205 probability that the drug’s improved recovery time happened by chance</p></li>
+</ul>
+<section id="t-tests-and-mann-whitney-u-tests">
+<h4><span class="section-number">16.2.3.1. </span>T-Tests and Mann-Whitney U tests<a class="headerlink" href="#t-tests-and-mann-whitney-u-tests" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>The permutation test is explained to provide the intuition into what p-values actually mean</p></li>
+<li><p>In practice, using a t-test or Mann-Whitney U test is sufficient for this course</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="for-next-class">
+<h2><span class="section-number">16.3. </span>For Next Class<a class="headerlink" href="#for-next-class" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Although not entirely related, <a class="reference external" href="https://www.youtube.com/watch?v=lG4VkPoG3ko">check out 3 Blue 1 Brown’s video on Bayes’ Rule</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tuning.html" class="btn btn-neutral float-left" title="15. Tuning Hyperparameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../problems/multi-objective.html" class="btn btn-neutral float-right" title="17. Multi-Objective Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

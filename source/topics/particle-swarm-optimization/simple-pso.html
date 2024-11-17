@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19. Implementing PSO &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../../_static/duck_face.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Student Lecture Task Description" href="../../student-lectures/description.html" />
+    <link rel="prev" title="18. Particle Swarm Optimization" href="pso.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19. Implementing PSO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#problem">19.1. Problem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#matyas-function">19.1.1. Matyas Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialization">19.2. Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluation">19.3. Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-velocity-speed">19.4. Update Velocity &amp; Speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#termination-requirement">19.5. Termination Requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-next-class">19.6. For Next Class</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">19. </span>Implementing PSO</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/topics/particle-swarm-optimization/simple-pso.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="implementing-pso">
+<h1><span class="section-number">19. </span>Implementing PSO<a class="headerlink" href="#implementing-pso" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>The purpose of this topic is to see an implementation of particle swarm optimization (PSO)</p></li>
+<li><p>It is a simple implementation that incorporates no enhancements</p></li>
+<li><p>The problem PSO is being applied to in this example is some arbitrary benchmark real number optimization problem</p></li>
+<li><p>Despite how simple the implementation is, it will still perform well</p></li>
+</ul>
+<section id="problem">
+<h2><span class="section-number">19.1. </span>Problem<a class="headerlink" href="#problem" title="Link to this heading"></a></h2>
+<ul>
+<li><p>PSO is often used for real/floating point number optimization</p></li>
+<li><p>Any real number optimization problem would work, but there there exist several benchmark test functions</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Test_functions_for_optimization">Wikipedia has a list of popular test functions</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The goal is</p>
+<blockquote>
+<div><ul>
+<li><p>Given some <span class="math notranslate nohighlight">\(n\)</span> dimensional real/floating point number function</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The function takes <span class="math notranslate nohighlight">\(n\)</span> real/floating point numbers as arguments</p></li>
+<li><p>The function returns a single real/floating point number</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Find the arguments for the function that produces the smallest/largest output</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Depending on if it is a minimization or maximization problem</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="matyas-function">
+<h3><span class="section-number">19.1.1. </span>Matyas Function<a class="headerlink" href="#matyas-function" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Here, the Matyas function is used</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x, y) = 0.26(x^{2} + y^{2}) - 0.48xy\)</span></p></li>
+<li><p>The optimal values for the function’s arguments are <span class="math notranslate nohighlight">\((0, 0)\)</span></p></li>
+<li><p>This function was arbitrary selected</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Test_functions_for_optimization"><img alt="../../_images/matyas_function.png" src="../../_images/matyas_function.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Three-dimensional representation of the Matyas function. The function’s arguments (<span class="math notranslate nohighlight">\(x, y\)</span>) are represented in
+a two-dimensional Cartesian space and the function’s output, the third dimension, is represented by colour.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>The Matyas function is used as a minimization problem that takes two arguments</p></li>
+<li><p>Thus, the goal is to find the values of those arguments that result in the smallest value</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Although it is known <em>pre hoc</em> that the optimal solution is <span class="math notranslate nohighlight">\((0, 0)\)</span></p></li>
+<li><p>The point is to see if PSO can find this solution</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">25</span><span class="k">def</span> <span class="nf">matyas_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">26</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">27</span><span class="sd">    Optimization function being searched through for the minimum value. This function&#39;s minimum value is at f(0,0) = 0</span>
+<span class="linenos">28</span><span class="sd">    and has a search domain of -10 &lt;= x,y &lt;= 10. This function was taken from the wikipedia article on &quot;Test functions</span>
+<span class="linenos">29</span><span class="sd">    for optimization&quot;: https://en.wikipedia.org/wiki/Test_functions_for_optimization</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="sd">    :param x: X value</span>
+<span class="linenos">32</span><span class="sd">    :param y: Y value</span>
+<span class="linenos">33</span><span class="sd">    :return: Result of the matyas function</span>
+<span class="linenos">34</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">35</span>    <span class="k">return</span> <span class="mf">0.26</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.48</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="initialization">
+<h2><span class="section-number">19.2. </span>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Here, all particle positions and velocities are assigned random values to start</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>However, any form of initialization may be used</p></li>
+<li><p>For example, seeding the particle positions with already known <em>good</em> points in space</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">40</span>    <span class="n">particles</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">41</span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUMBER_OF_PARTICLES</span><span class="p">):</span>
+<span class="linenos">42</span>        <span class="n">particle</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">43</span>            <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">START_POSITION_LOW_BOUND</span><span class="p">,</span> <span class="n">START_POSITION_HIGH_BOUND</span><span class="p">,</span> <span class="n">FUNCTION_DIMENSIONS</span><span class="p">),</span>
+<span class="linenos">44</span>            <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">START_VELOCITY_LOW_BOUND</span><span class="p">,</span> <span class="n">START_VELOCITY_HIGH_BOUND</span><span class="p">,</span> <span class="n">FUNCTION_DIMENSIONS</span><span class="p">),</span>
+<span class="linenos">45</span>        <span class="p">}</span>
+<span class="linenos">46</span>        <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+<span class="linenos">47</span>        <span class="n">particles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">particle</span><span class="p">)</span>
+<span class="linenos">48</span>    <span class="n">global_best</span> <span class="o">=</span> <span class="n">particles</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Notice in the above code that the particles’ starting positions, although randomly selected, are bounded</p></li>
+<li><p>Also notice that the particles’ best and global best positions are initialized</p></li>
+</ul>
+<ul class="simple">
+<li><p>For reference, below are the hyperparameters selected</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">12</span><span class="n">FUNCTION_DIMENSIONS</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">13</span><span class="n">START_POSITION_LOW_BOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="linenos">14</span><span class="n">START_POSITION_HIGH_BOUND</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">15</span><span class="n">START_VELOCITY_LOW_BOUND</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span>
+<span class="linenos">16</span><span class="n">START_VELOCITY_HIGH_BOUND</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="linenos">17</span><span class="n">NUMBER_OF_PARTICLES</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">18</span><span class="n">ITERATIONS</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos">19</span><span class="n">INERTIA</span> <span class="o">=</span> <span class="mf">0.729844</span>
+<span class="linenos">20</span><span class="n">COGNITIVE</span> <span class="o">=</span> <span class="mf">1.496180</span>
+<span class="linenos">21</span><span class="n">SOCIAL</span> <span class="o">=</span> <span class="mf">1.496180</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The inertia, social, and cognitive terms are set to the values suggested bu <a class="reference external" href="https://repository.up.ac.za/bitstream/handle/2263/24297/00thesis.pdf?sequence=1">van den Bergh</a></p></li>
+<li><p>The number of dimensions is dictated by the Matyas function</p></li>
+<li><p>The other values are arbitrary selected</p></li>
+</ul>
+</section>
+<section id="evaluation">
+<h2><span class="section-number">19.3. </span>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading"></a></h2>
+<ul>
+<li><p>A particle’s position corresponds to the arguments that are to be provided to the function</p></li>
+<li><p>Therefore, provide the particle’s coordinates to the function to evaluate</p></li>
+<li><p>Once the function’s value is returned, update the particle’s best known position and global best position if necessary</p></li>
+<li><p>Notice that each particle does not need to know what it’s fitness value is</p></li>
+<li><p>The algorithm only cares about</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Each particle’s best known <em>position</em></p></li>
+<li><p>The global best <em>position</em></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">54</span>        <span class="k">for</span> <span class="n">particle</span> <span class="ow">in</span> <span class="n">particles</span><span class="p">:</span>
+<span class="linenos">55</span>            <span class="n">particle_value</span> <span class="o">=</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">56</span>            <span class="k">if</span> <span class="n">particle_value</span> <span class="o">&lt;</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]):</span>
+<span class="linenos">57</span>                <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+<span class="linenos">58</span>            <span class="k">if</span> <span class="n">particle_value</span> <span class="o">&lt;</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">global_best</span><span class="p">):</span>
+<span class="linenos">59</span>                <span class="n">global_best</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="update-velocity-speed">
+<h2><span class="section-number">19.4. </span>Update Velocity &amp; Speed<a class="headerlink" href="#update-velocity-speed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Once the random vectors for the cognitive and social terms are determined</p></li>
+<li><p><a class="reference internal" href="pso.html#pso-velocity"><span class="std std-ref">Each particle’s velocity is updated</span></a></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{v_{i}}(t+1) = \omega\vec{v_{i}}(t)
+    + c_{1}\vec{r_{1}}(\vec{p_{i}}_{best} - \vec{x_{i}}(t))
+    + c_{2}\vec{r_{2}}(\vec{g}_{best} - \vec{x_{i}}(t))\]</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="pso.html#pso-position"><span class="std std-ref">And with an updated velocity, the particle’s position can then be updated</span></a></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\vec{x_{i}}(t+1) = \vec{x_{i}}(t) + \vec{v_{i}}(t+1)\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">63</span>        <span class="k">for</span> <span class="n">particle</span> <span class="ow">in</span> <span class="n">particles</span><span class="p">:</span>
+<span class="linenos">64</span>            <span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">FUNCTION_DIMENSIONS</span><span class="p">)</span>
+<span class="linenos">65</span>            <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">FUNCTION_DIMENSIONS</span><span class="p">)</span>
+<span class="linenos">66</span>            <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos">67</span>                <span class="n">INERTIA</span> <span class="o">*</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span>
+<span class="linenos">68</span>                <span class="o">+</span> <span class="n">COGNITIVE</span> <span class="o">*</span> <span class="n">r1</span> <span class="o">*</span> <span class="p">(</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">69</span>                <span class="o">+</span> <span class="n">SOCIAL</span> <span class="o">*</span> <span class="n">r2</span> <span class="o">*</span> <span class="p">(</span><span class="n">global_best</span> <span class="o">-</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">70</span>            <span class="p">)</span>
+<span class="linenos">71</span>            <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="termination-requirement">
+<h2><span class="section-number">19.5. </span>Termination Requirement<a class="headerlink" href="#termination-requirement" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Any stopping criteria could be used</p></li>
+<li><p>Here, a predetermined set of iterations was specified</p></li>
+<li><p>In other words, the fitness and position update processes are repeated within a loop until all iterations complete</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">52</span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ITERATIONS</span><span class="p">):</span>
+<span class="linenos">53</span>        <span class="c1"># [begin-evaluation]</span>
+<span class="linenos">54</span>        <span class="k">for</span> <span class="n">particle</span> <span class="ow">in</span> <span class="n">particles</span><span class="p">:</span>
+<span class="linenos">55</span>            <span class="n">particle_value</span> <span class="o">=</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">56</span>            <span class="k">if</span> <span class="n">particle_value</span> <span class="o">&lt;</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]):</span>
+<span class="linenos">57</span>                <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+<span class="linenos">58</span>            <span class="k">if</span> <span class="n">particle_value</span> <span class="o">&lt;</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">global_best</span><span class="p">):</span>
+<span class="linenos">59</span>                <span class="n">global_best</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+<span class="linenos">60</span>        <span class="c1"># [end-evaluation]</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span>        <span class="c1"># [begin-position-update]</span>
+<span class="linenos">63</span>        <span class="k">for</span> <span class="n">particle</span> <span class="ow">in</span> <span class="n">particles</span><span class="p">:</span>
+<span class="linenos">64</span>            <span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">FUNCTION_DIMENSIONS</span><span class="p">)</span>
+<span class="linenos">65</span>            <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">FUNCTION_DIMENSIONS</span><span class="p">)</span>
+<span class="linenos">66</span>            <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos">67</span>                <span class="n">INERTIA</span> <span class="o">*</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span>
+<span class="linenos">68</span>                <span class="o">+</span> <span class="n">COGNITIVE</span> <span class="o">*</span> <span class="n">r1</span> <span class="o">*</span> <span class="p">(</span><span class="n">particle</span><span class="p">[</span><span class="s2">&quot;best_known_position&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">69</span>                <span class="o">+</span> <span class="n">SOCIAL</span> <span class="o">*</span> <span class="n">r2</span> <span class="o">*</span> <span class="p">(</span><span class="n">global_best</span> <span class="o">-</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="linenos">70</span>            <span class="p">)</span>
+<span class="linenos">71</span>            <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]</span>
+<span class="linenos">72</span>        <span class="c1"># [end-position-update]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Finally, once complete, the global best position will be the best position found by the PSO algorithm</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">76</span>    <span class="nb">print</span><span class="p">(</span><span class="n">global_best</span><span class="p">,</span> <span class="n">matyas_function</span><span class="p">(</span><span class="o">*</span><span class="n">global_best</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="for-next-class">
+<h2><span class="section-number">19.6. </span>For Next Class<a class="headerlink" href="#for-next-class" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>TBD</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pso.html" class="btn btn-neutral float-left" title="18. Particle Swarm Optimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../student-lectures/description.html" class="btn btn-neutral float-right" title="1. Student Lecture Task Description" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

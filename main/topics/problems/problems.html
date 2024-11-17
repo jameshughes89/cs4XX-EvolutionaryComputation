@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Problems &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../../_static/duck_face.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Origin" href="../origin/origin.html" />
+    <link rel="prev" title="3. Experimenting with a Genetic Algorithm" href="../genetic-algorithms/simple-ga-experiment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Problems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#systems">4.1. Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimization">4.2. Optimization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#travelling-salesman-problem">4.2.1. Travelling Salesman Problem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-many-cycles-are-there">4.2.1.1. How Many Cycles are There?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#n-queens">4.2.2. <span class="math notranslate nohighlight">\(n\)</span> Queens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-many-board-configurations-are-there">4.2.2.1. How Many Board Configurations are There?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nasa-s-problems">4.2.3. NASA’s Problems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modelling">4.3. Modelling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#real-world-problem">4.3.1. Real World Problem</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation">4.4. Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search-problems">4.5. Search Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimization-vs-constraints">4.6. Optimization vs Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardness">4.7. Hardness</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#continuous-vs-discrete">4.7.1. Continuous vs Discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-to-know-about-hardness">4.7.2. What to Know About Hardness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-to-really-know-about-hardness">4.7.3. What to <em>Really</em> Know about Hardness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#for-next-class">4.8. For Next Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Problems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/topics/problems/problems.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="problems">
+<h1><span class="section-number">4. </span>Problems<a class="headerlink" href="#problems" title="Link to this heading"></a></h1>
+<ul>
+<li><p>The maximization of the decimal integer value of an unsigned binary number was a <em>toy problem</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is a trivial problem that, in practice, one would not use evolutionary computation for</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Evolutionary computation is typically used for problems with no known reasonable approach to address</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It’s a strategy to be used as a last resort</p></li>
+<li><p>It is computationally expensive</p></li>
+<li><p>It’s often harder to understand compared to other algorithms</p></li>
+<li><p>Depending on the problem, it is notorious for overfitting</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>For learning purposes, classic toy problems will be used in this course</p></li>
+<li><p>But it is important to know which types of problems evolutionary computation is appropriate for</p></li>
+</ul>
+<section id="systems">
+<h2><span class="section-number">4.1. </span>Systems<a class="headerlink" href="#systems" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/system_box.png"><img alt="../../_images/system_box.png" src="../../_images/system_box.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Abstract representation of a general system. Systems typically receive some input, perform some function, and
+produce some form of output.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Above is a simple black-box representation is a system</p></li>
+<li><p>The system receives some number of inputs</p></li>
+<li><p>The system performs some operation on the input</p></li>
+<li><p>The system produces some form of output</p></li>
+<li><p>Thinking of a system in this way helps distinguish the three important components</p></li>
+<li><p>For concrete examples, consider</p>
+<blockquote>
+<div><ul>
+<li><p>Calculating a grocery bill</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Input — Prices of the items being purchased</p></li>
+<li><p>Model — Sum the prices plus a sales tax calculation</p></li>
+<li><p>Output — A grocery bill</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Designing an aircraft wing</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Input — Shape of the wing</p></li>
+<li><p>Model — Equations of complex fluid dynamics</p></li>
+<li><p>Output — Estimates of drag and lift</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Photosynthesis</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Input — Light, carbon dioxide, and water</p></li>
+<li><p>Model — Light reactions and the Calvin cycle</p></li>
+<li><p>Output — Oxygen and sugar</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Calculating the time it takes to drive to work</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Input — Route taken</p></li>
+<li><p>Model — Spacetime</p></li>
+<li><p>Output — Time taken</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>As computer scientists, we often like to think of the model as some function</p></li>
+<li><p>Take some real world thing (<em>in vivo</em>) and try to model it with a computer (<em>in silico</em>)</p></li>
+<li><p>With a known model, the output can be computer for any valid input</p></li>
+</ul>
+</section>
+<section id="optimization">
+<h2><span class="section-number">4.2. </span>Optimization<a class="headerlink" href="#optimization" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/system_optimization.png"><img alt="../../_images/system_optimization.png" src="../../_images/system_optimization.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Given a system, if the goal is to find the best set of inputs, then it is called an optimization problem.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Optimization takes place when the model and output objectives are known, but the input is not</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <strong>search space</strong> is the set of all possible inputs</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>For example, finding the path to work that results in the smallest amount of time possible</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The search space would be all possible paths to work</p></li>
+<li><p>Though, most of the paths would be terrible, so it is common to constrain the search space</p></li>
+<li><p>For example, assuming living and working in the same town, do not consider paths that go out of town</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="travelling-salesman-problem">
+<h3><span class="section-number">4.2.1. </span>Travelling Salesman Problem<a class="headerlink" href="#travelling-salesman-problem" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The <em>Travelling Salesman Problem</em> (TSP) is a classic optimization problem</p>
+<blockquote>
+<div><p>TSP can be modelled as an undirected weighted graph, such that cities are the graph’s vertices, paths are the
+graph’s edges, and a path’s distance is the edge’s weight. It is a minimization problem starting and finishing at a
+specified vertex after having visited each other vertex exactly once <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+</div></blockquote>
+</li>
+<li><p>Effectively, the problem is to find the shortest <strong>Hamiltonian cycle</strong> within the graph</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Travelling_salesman_problem"><img alt="../../_images/tsp_example1.png" src="../../_images/tsp_example1.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example of a small TSP instance with four cities (vertices). In this example, each city has a path (edge) to all
+other cities that has an associated weight.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>To think of this in terms of the three parts of a system</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given a Hamiltonian cycle (input)</p></li>
+<li><p>Sum the edges of the weights in the cycle (model)</p></li>
+<li><p>Return the total cycle length (output)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>But this is just a description of the system, not the description of an optimization problem</p></li>
+<li><p>To frame this as an optimization problem, find the Hamiltonian cycle that produces the smallest possible cycle length</p></li>
+<li><p>There is a trivial algorithm to solve any instance of this problem</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Find the length of all possible Hamiltonian cycles</p></li>
+<li><p>Pick the path with the smallest cycle length</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Given a set of vertices <span class="math notranslate nohighlight">\(V\)</span>, the computational complexity of calculating a cycle length is <span class="math notranslate nohighlight">\(O(|V|)\)</span></p></li>
+<li><p>Thus, it’s only a matter of applying a linear time algorithm to each cycle</p></li>
+</ul>
+<section id="how-many-cycles-are-there">
+<h4><span class="section-number">4.2.1.1. </span>How Many Cycles are There?<a class="headerlink" href="#how-many-cycles-are-there" title="Link to this heading"></a></h4>
+<ul>
+<li><p>The starting/ending city is always fixed</p></li>
+<li><p>Given the four city example above and a set starting city, how many cities are there that could be visited next?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(3\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>After the next city is picked, how many possible cities are there to visit next?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>After that, there is only <span class="math notranslate nohighlight">\(1\)</span> city remaining</p></li>
+<li><p>Therefore, there should be a total of 6 possible cycles (<span class="math notranslate nohighlight">\(3 \times 2 \times 1 = (4 - 1)!\)</span>)</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow B \rightarrow C \rightarrow D \rightarrow A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow B \rightarrow D \rightarrow C \rightarrow A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow C \rightarrow B \rightarrow D \rightarrow A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow D \rightarrow C \rightarrow B \rightarrow A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow C \rightarrow D \rightarrow B \rightarrow A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A \rightarrow D \rightarrow B \rightarrow C \rightarrow A\)</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Half of these cycles are just the reverse of another cycles, so they can be ignored</p></li>
+<li><p>To generalize this, the number of possible cycles is <span class="math notranslate nohighlight">\(\frac{(|V|-1)!}{2}\)</span></p></li>
+<li><p>How many possible cycles are there for an instance of <span class="math notranslate nohighlight">\(100\)</span> cities then?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{(100-1)!}{2} = \frac{99!}{2} = 4.666311\times10^{155}\)</span></p></li>
+<li><p>For a point of reference, there are about <span class="math notranslate nohighlight">\(2.4\times10^{67}\)</span> atoms in the Milky Way</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="n-queens">
+<h3><span class="section-number">4.2.2. </span><span class="math notranslate nohighlight">\(n\)</span> Queens<a class="headerlink" href="#n-queens" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Place <span class="math notranslate nohighlight">\(n\)</span> queens on an <span class="math notranslate nohighlight">\(n \times n\)</span> chess board such that no two queens can attack each other</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No two queens share the same row, column, or diagonal</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id6">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Eight_queens_puzzle"><img alt="../../_images/8_queens_example.gif" src="../../_images/8_queens_example.gif" style="width: 352px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example of a backtracking algorithm searching for an admissible solution to the 8 queens problem. The 8 queens
+problem is a specific case of the <span class="math notranslate nohighlight">\(n\)</span> queens problem.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Unlike TSP, this problem is a little different for optimization</p></li>
+<li><p>There is nothing being minimized</p></li>
+<li><p>Instead, all that is needed is a valid board configuration</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It’s binary — valid or not</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="how-many-board-configurations-are-there">
+<h4><span class="section-number">4.2.2.1. </span>How Many Board Configurations are There?<a class="headerlink" href="#how-many-board-configurations-are-there" title="Link to this heading"></a></h4>
+<ul>
+<li><p>How many configurations of <span class="math notranslate nohighlight">\(8\)</span> queens are there on an <span class="math notranslate nohighlight">\(8 \times 8\)</span> board?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(64\)</span> choose <span class="math notranslate nohighlight">\(8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\({64 \choose 8} = 4,426,165,368\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>However, there are only <span class="math notranslate nohighlight">\(92\)</span> valid board configurations</p></li>
+<li><p>To generalize this, it would be <span class="math notranslate nohighlight">\(n \times n \choose n\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="nasa-s-problems">
+<h3><span class="section-number">4.2.3. </span>NASA’s Problems<a class="headerlink" href="#nasa-s-problems" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<a class="reference external image-reference" href="http://www.soton.ac.uk/~ajk/truss/welcome.html"><img alt="../../_images/nasa_truss.png" src="../../_images/nasa_truss.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">Image of a truss structure in space. Versions of this structure were designed with a GA to enhance vibration
+isolation characteristics.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Genetic_algorithm"><img alt="../../_images/nasa_antenna.png" src="../../_images/nasa_antenna.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">NASA’s ST5 spacecraft Antenna designed with evolutionary computation. This design maximizes the radiation pattern.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="modelling">
+<h2><span class="section-number">4.3. </span>Modelling<a class="headerlink" href="#modelling" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/system_modelling.png"><img alt="../../_images/system_modelling.png" src="../../_images/system_modelling.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Given a system, if the goal is to define the functionality and processes to produce the output, then it is called
+modelling.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Writing software is modelling</p></li>
+<li><p>Sometimes it’s a simple problem, like writing a program to calculate a grocery bill</p></li>
+<li><p>But sometimes it’s complex, like writing a classifier for iris classification based on petal and sepal sizes</p></li>
+</ul>
+<figure class="align-center" id="id10">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Iris_flower_data_set"><img alt="../../_images/iris_classification.png" src="../../_images/iris_classification.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example iris flowers. Iris classification is a classic toy machine learning problem</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>When using machine learning and AI for modelling, one can think of this modelling as an optimization problem</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Find the best classifier setup</p></li>
+<li><p>For example, find a classifier (model) to classify the irises (input) such that the error (output) is minimized</p></li>
+<li><p>The search space is the set of all possible models</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="real-world-problem">
+<h3><span class="section-number">4.3.1. </span>Real World Problem<a class="headerlink" href="#real-world-problem" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../../_images/brain_modelling.png"><img alt="../../_images/brain_modelling.png" src="../../_images/brain_modelling.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">Find a model that best describes the relationships between regions of interest within a human brain during some
+task.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="simulation">
+<h2><span class="section-number">4.4. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../../_images/system_simulation.png"><img alt="../../_images/system_simulation.png" src="../../_images/system_simulation.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Given a system, if the goal is to know the output of applying some input to a model, then it is called simulation.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Simulation occurs when the input and model is known, but the output is not known</p></li>
+<li><p>Simulation is used when real world experiments may not be feasible</p></li>
+</ul>
+</section>
+<section id="search-problems">
+<h2><span class="section-number">4.5. </span>Search Problems<a class="headerlink" href="#search-problems" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id13">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Fitness_landscape"><img alt="../../_images/search_space.png" src="../../_images/search_space.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example search space, or, <em>fitness landscape</em>. This example has two dimensions plus the z-dimension representing
+fitness. As the location in 2D space changes, the fitness value changes.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>If the search space is small enough, then it may be possible to enumerate all possible configurations</p></li>
+<li><p>However, the search space can be enormous, or even infinite</p></li>
+<li><p>When framing problems as a search problem, one can think of the problem solver as a mechanism to traverse that space</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For example, a GA traversing the search space of all possible Hamiltonian cycles for a TSP instance</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>It also allows for asking questions like</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>What is a <em>good</em> way to traverse the space?</p></li>
+<li><p>Can the search be changed?</p></li>
+<li><p>Can a feature of the search space be exploited?</p></li>
+<li><p>Can the space be constrained or simplified?</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="optimization-vs-constraints">
+<h2><span class="section-number">4.6. </span>Optimization vs Constraints<a class="headerlink" href="#optimization-vs-constraints" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Objective functions (fitness functions in the context of evolutionary computation) are used for <em>optimization</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>With TSP, minimize the total distance of the Hamiltonian cycle</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>A binary evaluation checks if a given <em>constraint</em> holds</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>With <span class="math notranslate nohighlight">\(n\)</span>-queens, are all queens safe?</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Sometimes optimization problems have constraints</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Consider TSP with a requirement that some city <span class="math notranslate nohighlight">\(X\)</span> is visited before city <span class="math notranslate nohighlight">\(Y\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>It is also sometimes possible to convert constraint problems</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Instead of finding a chess board configuration with no attacking queens, minimize the number of attacking queens</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Further, it is sometimes possible to add constrains to an optimization problem to reduce the size of the search space</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Like in the example above — not looking for paths to work that go out of town</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="hardness">
+<h2><span class="section-number">4.7. </span>Hardness<a class="headerlink" href="#hardness" title="Link to this heading"></a></h2>
+<ul>
+<li><p>For simplicity</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A problem is <em>easy</em> if there is some <em>fast</em> solver for it</p></li>
+<li><p>A problem is <em>hard</em> if there is no <em>fast</em> solver for it</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="continuous-vs-discrete">
+<h3><span class="section-number">4.7.1. </span>Continuous vs Discrete<a class="headerlink" href="#continuous-vs-discrete" title="Link to this heading"></a></h3>
+<ul>
+<li><p>If the problem is defined in terms of continuous values (like real numbers), it is called <em>numerical optimization</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>These problems have uncountably infinite search spaces</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>If the problem is defined in terms of discrete values (like integers), then it is called <em>combinatorial optimization</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>These problems have finite or countably infinite search spaces</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="what-to-know-about-hardness">
+<h3><span class="section-number">4.7.2. </span>What to Know About Hardness<a class="headerlink" href="#what-to-know-about-hardness" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>Class P</strong> are decision problems that can be solved in polynomial time</p></li>
+<li><p><strong>Class NP</strong> are decision problems with positive solutions that can be <em>verified</em> in polynomial time</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For example, restricted subset sum — does there exist a subset of a set of integers that sums to <span class="math notranslate nohighlight">\(0\)</span>?</p></li>
+<li><p>Class P <span class="math notranslate nohighlight">\(\subseteq\)</span> Class NP</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Class NP-Complete</strong> are decision problems with no <em>known</em> polynomial time algorithm but can be verified in polynomial time</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All NP-Complete problems are reducible to one another</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Class NP-Hard</strong> are decision problems with no <em>known</em> polynomial time algorithm and <em>can’t</em> be verified in polynomial time</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For example, the decision version of TSP</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id14">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/P_versus_NP_problem"><img alt="../../_images/p_np.png" src="../../_images/p_np.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Relationships between P, NP, NP-Complete, and NP-Hard class problems. Both assumptions of P <span class="math notranslate nohighlight">\(\ne\)</span> NP and P <span class="math notranslate nohighlight">\(=\)</span>
+NP are included.</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="what-to-really-know-about-hardness">
+<h3><span class="section-number">4.7.3. </span>What to <em>Really</em> Know about Hardness<a class="headerlink" href="#what-to-really-know-about-hardness" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>There are some very hard problems out there</p></li>
+<li><p>Given this, the goal is often to find a <em>good enough</em> solution to these hard problems</p></li>
+<li><p>This is where tools like evolutionary computation comes in</p></li>
+</ul>
+</section>
+</section>
+<section id="for-next-class">
+<h2><span class="section-number">4.8. </span>For Next Class<a class="headerlink" href="#for-next-class" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>TBD</p></li>
+</ul>
+<hr class="docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Travelling_salesman_problem#Description">From Wikipedia</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../genetic-algorithms/simple-ga-experiment.html" class="btn btn-neutral float-left" title="3. Experimenting with a Genetic Algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../origin/origin.html" class="btn btn-neutral float-right" title="5. Origin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

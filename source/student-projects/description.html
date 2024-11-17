@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Project Description &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../_static/duck_face.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Travelling Salesperson Problem" href="../assignments/tsp/tsp.html" />
+    <link rel="prev" title="2. Ant Colony Optimization (ACO)" href="../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student-lectures/description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-task">1.1. Base Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marking-details">1.2. Marking Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-topics">1.3. Project Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modifications-enhancements-novelty-etc">1.3.1. Modifications, Enhancements, Novelty , Etc.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#project-presentation-or-report">1.4. Project Presentation or Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-presentation">1.4.1. Project Presentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#presentation-dates">1.4.1.1. Presentation Dates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#points">1.4.1.2. Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#presentation-format">1.4.1.3. Presentation Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitting-a-pull-request">1.4.1.4. Submitting a Pull Request</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#report">1.4.2. Report</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#latex">1.4.2.1. LaTeX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references-and-citations">1.4.2.2. References and Citations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figures-and-tables">1.4.2.3. Figures and Tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statistical-analysis">1.4.2.4. Statistical Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-submit-to-moodle">1.5. What to Submit to Moodle</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Project Description</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/student-projects/description.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="project-description">
+<h1><span class="section-number">1. </span>Project Description<a class="headerlink" href="#project-description" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>Maximum Points</strong>: 30</p></li>
+<li><p><strong>Topic Selection Due Date</strong>: Friday November 8, 2024 at 11:55pm; submitted via email</p></li>
+<li><p><strong>PR Merge Date</strong>: If Applicable, At Least One Day Before the Presentation Date</p></li>
+<li><p><strong>Presentation Date</strong>: TBD</p></li>
+<li><p><strong>DUE</strong>: December 6, 2024 at 11:55pm (accept until December 8 at 11:55pm with no penalty); submitted on MOODLE.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Claiming that objectives/tasks/enhancements were complete within the report when in reality they were not is (a) a
+serious form of academic misconduct — falsifying results — and (b) against the student code of conduct.</p>
+<p>These violations are subject to severe penalty. All violations will be reported and investigated fully.</p>
+</div>
+<section id="base-task">
+<h2><span class="section-number">1.1. </span>Base Task<a class="headerlink" href="#base-task" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Select a topic for a project</p></li>
+<li><p>Implement the project idea</p></li>
+<li><p>Produce a report or give a presentation</p></li>
+<li><p>Submit the final implementation</p></li>
+<li><p>Groups of up to two are permitted</p></li>
+</ul>
+</section>
+<section id="marking-details">
+<h2><span class="section-number">1.2. </span>Marking Details<a class="headerlink" href="#marking-details" title="Link to this heading"></a></h2>
+<p>A total of 30 points may be obtained for the project. Although it is not required to complete all portions of the
+project (one may choose to only try to obtain, for example, 20 points), all portions must be completed correctly and
+effectively to receive all 30 points.</p>
+<p>Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
+description.</p>
+<ul>
+<li><p>A total of <strong>10</strong> points will be awarded for having a working implementation of the project topic</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>10</strong> additional points may be awarded for enhancements/modifications, novelty, interesting-ness, analysis, etc.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>A total of <strong>10</strong> additional points may be awarded for completing a project presentation <em>or</em> report</p>
+<blockquote>
+<div><ul>
+<li><p>A project presentation will award up to <strong>4</strong> points</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Including proper references/citations awards an additional <strong>2</strong> points</p></li>
+<li><p>Including figures and tables awards an additional <strong>2</strong> points</p></li>
+<li><p>Performing an effective statistical analysis will award an additional <strong>2</strong> points</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>A complete report will award up to <strong>2</strong> points</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Using LaTeX to generate the report will award an additional <strong>2</strong> points</p></li>
+<li><p>Including proper references/citations awards an additional <strong>2</strong> points</p></li>
+<li><p>Including figures and tables awards an additional <strong>2</strong> points</p></li>
+<li><p>Performing an effective statistical analysis will award an additional <strong>2</strong> points</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Points will be awarded for <em>either</em> a project presentation <em>or</em> a final report. In other words, it is only necessary
+to complete one of the two options (presentation or report).</p>
+</div>
+</section>
+<section id="project-topics">
+<h2><span class="section-number">1.3. </span>Project Topics<a class="headerlink" href="#project-topics" title="Link to this heading"></a></h2>
+<p>It is the students’ responsibility to select a project topic and have it approved by the instructor. Once approved, the
+project direction is up to the students. Students are encouraged to be creative and ambitious. Further, marks will not
+be lost due to the quality of the final results.</p>
+<p>Most project ideas fall under one of the following categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Application — Apply an algorithm to a particular problem of interest</p></li>
+<li><p>Enhancements/Modifications — Implement a novel idea into an algorithm and analyze results</p></li>
+<li><p>New Algorithm — Create a new algorithm tha follows the high-level idea of evolutionary computation</p></li>
+</ul>
+</div></blockquote>
+<p>Do not be afraid to try something different. The instructor values creativity will make every attempt to be as accepting
+of project ideas as possible.</p>
+<p>Topics will be selected on a first-come first-served basis, however, if multiple groups want to do the same project, the
+instructor will work the the groups to direct them such that the details differ between groups.</p>
+<p>All topic choices, along with preferred presentation date (if choosing to give a presentation) are to be submitted to
+the instructor via email.</p>
+<section id="modifications-enhancements-novelty-etc">
+<h3><span class="section-number">1.3.1. </span>Modifications, Enhancements, Novelty , Etc.<a class="headerlink" href="#modifications-enhancements-novelty-etc" title="Link to this heading"></a></h3>
+<p>How the points for the modifications, enhancements, etc. are awarded will depend heavily on the specific project. Thus
+it is difficult to be specific about how the points will be awarded. As a starting place, consider that the points will
+be awarded for a combination of modifications, enhancements, novelty, analysis, interesting-ness, etc.</p>
+<p>Like with most aspects of the course, the instructor and marker will be looking for excuses to award points to students
+for their work. In other words, be creative, emphasize what is felt to be worth points, and make clear <em>why</em> it is felt
+that what was done is worth the points.</p>
+</section>
+</section>
+<section id="project-presentation-or-report">
+<h2><span class="section-number">1.4. </span>Project Presentation or Report<a class="headerlink" href="#project-presentation-or-report" title="Link to this heading"></a></h2>
+<p>Points will only be awarded for either a final report or a project presentation.</p>
+<section id="project-presentation">
+<h3><span class="section-number">1.4.1. </span>Project Presentation<a class="headerlink" href="#project-presentation" title="Link to this heading"></a></h3>
+<p>Groups may choose to give a 15 – 20 minute project presentation. The presentations will follow the same general format
+as a report (intro, literature review, problem description, etc.) but will be presented as a webpage on the course
+website.</p>
+<section id="presentation-dates">
+<h4><span class="section-number">1.4.1.1. </span>Presentation Dates<a class="headerlink" href="#presentation-dates" title="Link to this heading"></a></h4>
+<p>It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
+on a first-come first-served basis. Any groups unable to select a date will be assigned one by the instructor.</p>
+<p>All project topic choices along with preferred presentation dates, if applicable, are to be submitted to the instructor
+via email.</p>
+<p>Group Presentation Dates:</p>
+<ul class="simple">
+<li><p>November 26: B &amp; C</p></li>
+<li><p>November 27: K</p></li>
+<li><p>November 29: AJ</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No presentation dates need to be selected for those groups choosing not to give a project presentation.</p>
+</div>
+</section>
+<section id="points">
+<h4><span class="section-number">1.4.1.2. </span>Points<a class="headerlink" href="#points" title="Link to this heading"></a></h4>
+<p>Giving a project presentation will provide up to <strong>4</strong> additional points; however, a total of <strong>10</strong> points may be
+obtained by effectively giving a presentation.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Including proper references/citations may award an additional <strong>2</strong> points</p></li>
+<li><p>Including figures and tables may award an additional <strong>2</strong> points</p></li>
+<li><p>Performing an effective statistical analysis may award an additional <strong>2</strong> points</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="presentation-format">
+<h4><span class="section-number">1.4.1.3. </span>Presentation Format<a class="headerlink" href="#presentation-format" title="Link to this heading"></a></h4>
+<p>The format of the presentation is up to the groups, but they should be similar to the layout of the reports (discussed
+in detail in the following section). For a high-level idea of what to include, see the below list:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Intro</p></li>
+<li><p>Related Works</p></li>
+<li><p>Project Topic Description</p></li>
+<li><p>Methodology</p></li>
+<li><p>Results &amp; Discussion</p></li>
+<li><p>Conclusions and Future Work</p></li>
+</ul>
+</div></blockquote>
+<p>It is up to the groups to decide how best to communicate their project idea and results. Like the lectures, be sure
+that the presentation is not boring. Points may be lost if the presentation does not effectively communicate what was
+done.</p>
+</section>
+<section id="submitting-a-pull-request">
+<h4><span class="section-number">1.4.1.4. </span>Submitting a Pull Request<a class="headerlink" href="#submitting-a-pull-request" title="Link to this heading"></a></h4>
+<p>Like the student lectures, project presentations are to be submitted via a pull request to the course GitHub repository.
+<a class="reference internal" href="../student-lectures/description.html"><span class="doc">Refer to the Student Lecture Description page for more details.</span></a> The only major
+difference is that the group will make a sub-directory for their project under the “student-projects” directory as
+opposed to the “student-lectures” directory.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Although the pull request merge date is required to be at least one day before the presentation date, note that
+pull requests will not be accepted unless deemed acceptable by the instructor. This means that <em>submitting</em> a pull
+should be done sufficiently early that any required changes can be adequately addressed before the merging deadline.</p>
+</div>
+</section>
+</section>
+<section id="report">
+<h3><span class="section-number">1.4.2. </span>Report<a class="headerlink" href="#report" title="Link to this heading"></a></h3>
+<p>Writing a simple report will award up to <strong>2</strong> additional points; however, a total of <strong>10</strong> points may be obtained by
+completing all portions of the report sufficiently.</p>
+<p>The base report will consider spelling, grammar, prose, etc. for marking, thus, the marker will be analysing the report
+both quantitatively and qualitatively.</p>
+<p>There is no <em>right</em> way to write a report, nor is there a definitive structure. The most correct way is to write a
+report that most effectively communicates what needs to be communicated.</p>
+<p>Below is a list of things to consider including in the report. This list is a collection of suggested ideas to consider
+and is not intended to be the standard template.</p>
+<ul>
+<li><p>Introduction</p></li>
+<li><p>Related Works</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>What have others done that is related to the project idea</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Problem description</p></li>
+<li><p>Algorithm description</p>
+<blockquote>
+<div><ul>
+<li><p>What enhancements/modifications were included?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Why were they done?</p></li>
+<li><p>How were they done?</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Explain how the results will be analysed</p></li>
+<li><p>Explains the results and discuss</p></li>
+<li><p>Conclusions and possible future directions</p></li>
+<li><p>Bibliography</p></li>
+</ul>
+<section id="latex">
+<h4><span class="section-number">1.4.2.1. </span>LaTeX<a class="headerlink" href="#latex" title="Link to this heading"></a></h4>
+<p>An additional <strong>2</strong> points may be obtained if the report is written in LaTeX.</p>
+<p>If using LaTeX, it is recommended that the report be written with the
+<a class="reference external" href="https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn">IEEE</a>  conference template. Overleaf
+makes it simple to start using the template.</p>
+</section>
+<section id="references-and-citations">
+<h4><span class="section-number">1.4.2.2. </span>References and Citations<a class="headerlink" href="#references-and-citations" title="Link to this heading"></a></h4>
+<p>Including effective and proper references/citations may award an additional <strong>2</strong> points.</p>
+<p>There is no correct number of references to include as that depends on the report itself.</p>
+<p>LaTeX and BibTeX makes references and citations relatively simple. Further, with
+<a class="reference external" href="https://scholar.google.com/">Google Scholar</a>, getting references correct is trivial.</p>
+</section>
+<section id="figures-and-tables">
+<h4><span class="section-number">1.4.2.3. </span>Figures and Tables<a class="headerlink" href="#figures-and-tables" title="Link to this heading"></a></h4>
+<p>Effectively including figures, tables, etc. in the report may award an additional <strong>2</strong> points. Examples include an
+algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
+distributions of results, etc.</p>
+</section>
+<section id="statistical-analysis">
+<h4><span class="section-number">1.4.2.4. </span>Statistical Analysis<a class="headerlink" href="#statistical-analysis" title="Link to this heading"></a></h4>
+<p>Including proper statistical comparisons of results may award an additional <strong>2</strong> points.</p>
+<p>Typically, different results will be obtained every time the algorithm is run. This is due to the stochastic nature of
+these algorithms. For this reason, it is not possible to run these algorithms once to compare the results. Instead,
+<em>distributions</em> of results need to be obtained and these distributions are then compared to one another.</p>
+<p>In evolutionary computation, it is common to see 30 runs of each algorithm to obtain the distributions (30 runs of the
+same algorithm with the same setup and hyperparameters).</p>
+</section>
+</section>
+</section>
+<section id="what-to-submit-to-moodle">
+<h2><span class="section-number">1.5. </span>What to Submit to Moodle<a class="headerlink" href="#what-to-submit-to-moodle" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Completing a requirement does not guarantee that the corresponding points will be awarded. Each requirement must be
+completed to the satisfaction of the marker.</p>
+</div>
+<ul>
+<li><p>Submit relevant implementations via Moodle by 11:55pm on the due date</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Include the report is applicable</p></li>
+<li><p>Include anything else the marker may need for effectively evaluating the work</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html" class="btn btn-neutral float-left" title="2. Ant Colony Optimization (ACO)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../assignments/tsp/tsp.html" class="btn btn-neutral float-right" title="1. Travelling Salesperson Problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

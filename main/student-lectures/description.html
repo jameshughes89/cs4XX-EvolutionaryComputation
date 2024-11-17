@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Student Lecture Task Description &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../_static/duck_face.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Ant Colony Optimization (ACO)" href="Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html" />
+    <link rel="prev" title="19. Implementing PSO" href="../topics/particle-swarm-optimization/simple-pso.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Student Lecture Task Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-task">1.1. Base Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potential-lecture-topics">1.2. Potential Lecture Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lecture-dates">1.3. Lecture Dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-a-pull-request">1.4. Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#provided-files">1.5. Provided Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#format">1.6. Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marking-details">1.7. Marking Details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Student Lecture Task Description</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/student-lectures/description.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="student-lecture-task-description">
+<h1><span class="section-number">1. </span>Student Lecture Task Description<a class="headerlink" href="#student-lecture-task-description" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>Maximum Points</strong>: 10</p></li>
+<li><p><strong>Topic Selection Due Date</strong>: Friday November 1, 2024 at 11:55pm; submitted via email</p></li>
+<li><p><strong>PR Merge Date</strong>: At Least One Day Before the Lecture Date</p></li>
+<li><p><strong>Lecture Date</strong>: TBD</p></li>
+</ul>
+<section id="base-task">
+<h2><span class="section-number">1.1. </span>Base Task<a class="headerlink" href="#base-task" title="Link to this heading"></a></h2>
+<p>Each student may give a 15 – 20 minute lecture on a topic of their choice. All lectures must be created as a webpage
+using <em>reStructuredText</em> and Sphinx. Lectures will be submitted as pull requests to the course GitHub repository and all
+lectures must be posted to the course website. The lectures will only be posted once approved by the instructor.</p>
+</section>
+<section id="potential-lecture-topics">
+<h2><span class="section-number">1.2. </span>Potential Lecture Topics<a class="headerlink" href="#potential-lecture-topics" title="Link to this heading"></a></h2>
+<p>Below is a list of possible topics, but students may pick other topics as long as they are approved by the instructor.</p>
+<p>Only one student may do a lecture on a particular topic. Topics will be selected on a first-come first-served basis. All
+topic choices along with preferred lecture date are to be submitted to the instructor via email.</p>
+<ul class="simple">
+<li><p>Ant Colony Optimization — TAKEN</p></li>
+<li><p>Artificial Immune Systems — TAKEN</p></li>
+<li><p>Artificial Life — TAKEN</p></li>
+<li><p>Coevolution</p></li>
+<li><p>Cultural Algorithms</p></li>
+<li><p>Differential Evolution</p></li>
+<li><p>Evolutionary Art — TAKEN</p></li>
+<li><p>Evolutionary Programming</p></li>
+<li><p>Evolutionary Strategies</p></li>
+<li><p>Fitness Predictors — TAKEN</p></li>
+<li><p>Grammatical Evolution</p></li>
+<li><p>Learning Classifier Systems</p></li>
+<li><p>Memetic Algorithms</p></li>
+<li><p>Neuroevolution</p></li>
+<li><p>Novelty Search — TAKEN</p></li>
+<li><p>Search Space Analysis</p></li>
+<li><p>Self Organization</p></li>
+</ul>
+</section>
+<section id="lecture-dates">
+<h2><span class="section-number">1.3. </span>Lecture Dates<a class="headerlink" href="#lecture-dates" title="Link to this heading"></a></h2>
+<p>It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
+on a first-come first-served basis. Any students unable to select a date will be assigned one by the instructor.</p>
+<p>All topic choices along with preferred lecture date are to be submitted to the instructor via email.</p>
+<p>Student Lecture Dates:</p>
+<ul class="simple">
+<li><p>November 19: CG &amp; KR</p></li>
+<li><p>November 20: AJ &amp; GD</p></li>
+<li><p>November 22: TDC &amp; XH</p></li>
+</ul>
+</section>
+<section id="submitting-a-pull-request">
+<h2><span class="section-number">1.4. </span>Submitting a Pull Request<a class="headerlink" href="#submitting-a-pull-request" title="Link to this heading"></a></h2>
+<p>Each lecture will be submitted via a pull request for the course’s GitHub repository. The pull request must be approved
+by the instructor before it can be added to the course website and ultimately presented.</p>
+<p>Pull requests must be <strong>merged</strong> at least one day before the date of the lecture. Pull requests will <strong>not</strong> be merged
+if they are deemed inadequate.</p>
+<p>When a pull request is submitted, the instructor will review the pull request and provide feedback and request chances.
+It is possible that there will be several series of changes requested that take multiple attempts before being approved
+and merged. For this reason, submit pull requests early. A total of <strong>0</strong> points may be awarded if the pull request is
+not merged before the deadline.</p>
+<p>Once the pull request is merged, the GitHub repository will automatically create the webpage with Sphinx and update the
+course website with the new content.</p>
+<p>The reStructuredText files that are to be submitted via a pull request are to be added under the “student-lectures”
+directory within the GitHub repository. Create a sub-directory with an appropriate name for the specific lecture being
+created. This sub-directory will contain (a) the reStructuredText (.rst) file along with (b) any related resources such
+as images or data files. <strong>Note:</strong> Keep the files small as large files may be rejected.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Although the pull request merge date is required to be at least one day before the presentation date, note that pull
+requests will not be accepted unless deemed acceptable by the instructor. This means that submitting a pull should
+be done sufficiently early that any required changes can be adequately addressed before the merging deadline.</p>
+</div>
+</section>
+<section id="provided-files">
+<h2><span class="section-number">1.5. </span>Provided Files<a class="headerlink" href="#provided-files" title="Link to this heading"></a></h2>
+<p>The course content is written in reStructuredText and the website is generated using Sphinx. Given this, the  GitHub
+repository is full of content in reStructuredText that may be used as reference for how to write lectures in this style.</p>
+</section>
+<section id="format">
+<h2><span class="section-number">1.6. </span>Format<a class="headerlink" href="#format" title="Link to this heading"></a></h2>
+<p>Other than using reStructuredText, there is no format for how the lecture should be laid out — this is up to each
+student. Reference the existing course lectures for ideas.</p>
+</section>
+<section id="marking-details">
+<h2><span class="section-number">1.7. </span>Marking Details<a class="headerlink" href="#marking-details" title="Link to this heading"></a></h2>
+<p>Points will be awarded based on the lecture quality and clarity. Points are awarded for both the content of the lecture
+itself along with how the content is delivered.</p>
+<p>The key to making a <em>good</em> lecture is to ensure that it is not <em>boring</em>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../topics/particle-swarm-optimization/simple-pso.html" class="btn btn-neutral float-left" title="19. Implementing PSO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html" class="btn btn-neutral float-right" title="2. Ant Colony Optimization (ACO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

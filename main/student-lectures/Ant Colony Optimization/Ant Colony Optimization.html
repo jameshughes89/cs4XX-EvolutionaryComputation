@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Ant Colony Optimization (ACO) &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../../_static/duck_face.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Project Description" href="../../student-projects/description.html" />
+    <link rel="prev" title="1. Student Lecture Task Description" href="../description.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/origin/origin.html">5. Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Ant Colony Optimization (ACO)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ants">2.1. Ants!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#traveling-salesant-problem">2.2. Traveling SalesAnt Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-ants-go-marching-1x1">2.3. The Ants Go Marching 1x1</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Ant Colony Optimization (ACO)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/student-lectures/Ant Colony Optimization/Ant Colony Optimization.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-colony-optimization-aco">
+<h1><span class="section-number">2. </span>Ant Colony Optimization (ACO)<a class="headerlink" href="#ant-colony-optimization-aco" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Ant Colony Optimization (ACO) is a bio inspired optimization technique</p></li>
+<li><p>Based on the foraging behavior of ant colonies, it mimics how ants find the shortest path to food</p></li>
+</ul>
+<section id="ants">
+<h2><span class="section-number">2.1. </span>Ants!<a class="headerlink" href="#ants" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This “backyard” will help visualize the ACO</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/backyard.jpg"><img alt="../../_images/backyard.jpg" src="../../_images/backyard.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Ants leave pheromone trails as they travel to guide other ants</p></li>
+<li><p>The other ants are attracted to the pheromones</p></li>
+<li><p>more pheromones attract more ants reinforcing the shorter routes</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant1.jpg"><img alt="../../_images/ant1.jpg" src="../../_images/ant1.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>More pheromones accumulate on the shorter paths making them more favored by the ants</p></li>
+<li><p>The longer it takes an ant to travel a path the more time the pheromones have to evaporate</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant2.jpg"><img alt="../../_images/ant2.jpg" src="../../_images/ant2.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Over time pheromone evaporate from paths</p></li>
+<li><p>This allows for the exploration of newer alternative paths</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant3.jpg"><img alt="../../_images/ant3.jpg" src="../../_images/ant3.jpg" style="width: 500px;" /></a>
+</figure>
+</section>
+<section id="traveling-salesant-problem">
+<h2><span class="section-number">2.2. </span>Traveling SalesAnt Problem<a class="headerlink" href="#traveling-salesant-problem" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The best way to understand this is to apply it to an already know problem like TSP</p></li>
+<li><p>But this time the S stands fro SalesAnt</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant4.jpg"><img alt="../../_images/ant4.jpg" src="../../_images/ant4.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Now our back yard is a city and our ants are here to do some business</p></li>
+<li><p>The goal is the same as in normal TSP, visit every city in the shortest route and return to start</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant5.jpg"><img alt="../../_images/ant5.jpg" src="../../_images/ant5.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>To start Ants wil travel to random locations</p></li>
+<li><p>While traveling the ants will leave a pheromone trail,</p></li>
+<li><p>the longer it took them to travel to the city the weaker the pheromones will be when the next ant detects them</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant6.jpg"><img alt="../../_images/ant6.jpg" src="../../_images/ant6.jpg" style="width: 500px;" /></a>
+</figure>
+<ul>
+<li><p>These starter ants will randomly finish their routes and return home</p></li>
+<li><p>This sets up a base pheromone trail for the rest of the ants</p></li>
+<li><p>The pheromone trail on the left has gotten stronger because multiple ants used it in their paths</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The strength of a pheromone trail is determined by the following formula</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\tau_{xy} \leftarrow (1 - \rho) \tau_{xy}+{\sum_k^m \Delta\tau_{xy}^k}\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\tau_{xy}\)</span> is the amount of pheromone deposited from city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> is the pheromone evaporation coefficient</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the number of ants who traversed the path from city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\tau_{xy}^k\)</span> is the amount of pheromone deposited by the <span class="math notranslate nohighlight">\(k\)</span> th ant between city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p>In a TSP, the value of <span class="math notranslate nohighlight">\(\Delta\tau_{xy}^k\)</span> is determined by the how long the path is</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For example:</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta \tau_{xy}^k =\begin{cases}\frac{Q}{L_k} &amp; \text{if ant } k \text{ uses path } xy \text{ in its tour}\\0 &amp; \text{otherwise}\end{cases}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> is a constant</p></li>
+<li><p><span class="math notranslate nohighlight">\(L_k\)</span> is the distance between city <span class="math notranslate nohighlight">\(x\)</span> and city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to update pheromones based on the ants&#39; paths</span>
+<span class="k">def</span> <span class="nf">update_pheromones</span><span class="p">(</span><span class="n">pheromones</span><span class="p">,</span> <span class="n">ants_paths</span><span class="p">,</span> <span class="n">ants_distances</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cities</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cities</span><span class="p">):</span>
+            <span class="n">pheromones</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span>  <span class="c1"># Evaporate pheromones</span>
+
+    <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">dist</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ants_paths</span><span class="p">,</span> <span class="n">ants_distances</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">pheromones</span><span class="p">[</span><span class="n">path</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">path</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">Q</span> <span class="o">/</span> <span class="n">dist</span>  <span class="c1"># Deposit pheromones</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This function <code class="docutils literal notranslate"><span class="pre">update_pheromones</span></code> is an implementation of the formula above for pheromone deposition</p></li>
+<li><p>The pheromone trails are updated once the current wave of ants have finished their paths</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/ant7.jpg"><img alt="../../_images/ant7.jpg" src="../../_images/ant7.jpg" style="width: 500px;" /></a>
+</figure>
+<ul class="simple">
+<li><p>The graph part way through the runs would look like this</p></li>
+<li><p>The middle path has less pheromones on it because to take that path you would also need to take the longest path</p></li>
+<li><p>The shortest route is made up of the paths with the most pheromones on them</p></li>
+</ul>
+<p></p>
+<ul>
+<li><p>But how did the ants decide which way to go?</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When an ant decides which way to go it follow this probability function</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P_{xy} = \frac{(\tau_{xy}^\alpha) (\eta_{xy}^\beta)}{\sum_{z \in \text{allowed}} (\tau_{xz}^\alpha)  (\eta_{xz}^\beta)}\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(P_{xy}\)</span> is the probability that the ant will go from city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{xy}\)</span> is the amount of pheromone to be deposited between city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha \geq 0\)</span> is a constant variable to change how strong <span class="math notranslate nohighlight">\(\tau_{xy}\)</span> is</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta_{xy}\)</span> is the attractiveness of a route,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>in a tsp is the inverse of the distance from city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p>Can be represented as <span class="math notranslate nohighlight">\(\frac{1}{d_{xy}}\)</span> where <span class="math notranslate nohighlight">\(d\)</span> is the distance from city <span class="math notranslate nohighlight">\(x\)</span> to city <span class="math notranslate nohighlight">\(y\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is information is not known to normal ants, however these ants are business ants and are each given a GPS when they are hired</p>
+</div>
+<ul>
+<li><p>the sum <span class="math notranslate nohighlight">\(\sum_{z \in \text{allowed}}\)</span> sums the values of other routes from city <span class="math notranslate nohighlight">\(x\)</span></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z \in \text{allowed}\)</span> makes sure only cities that have not been visited by this ant are included in the summation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\geq1\)</span> is a constant like <span class="math notranslate nohighlight">\(\alpha\)</span> used too change how strong <span class="math notranslate nohighlight">\(\eta_{xy}\)</span> is</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{xz}\)</span> and <span class="math notranslate nohighlight">\(\eta_{xz}\)</span> represent the pheromone level and distance of other possible routes from city <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to select the next city for an ant based on pheromone and distance</span>
+<span class="k">def</span> <span class="nf">select_next_city</span><span class="p">(</span><span class="n">current_city</span><span class="p">,</span> <span class="n">visited_cities</span><span class="p">,</span> <span class="n">pheromones</span><span class="p">,</span> <span class="n">distances</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cities</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">city</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited_cities</span><span class="p">:</span>
+            <span class="n">pheromone</span> <span class="o">=</span> <span class="n">pheromones</span><span class="p">[</span><span class="n">current_city</span><span class="p">][</span><span class="n">city</span><span class="p">]</span> <span class="o">**</span> <span class="n">alpha</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">distances</span><span class="p">[</span><span class="n">current_city</span><span class="p">][</span><span class="n">city</span><span class="p">])</span> <span class="o">**</span> <span class="n">beta</span>
+            <span class="n">probability</span> <span class="o">=</span> <span class="n">pheromone</span> <span class="o">*</span> <span class="n">distance</span>
+            <span class="n">probabilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">probability</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">probabilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Normalize probabilities</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="o">/</span> <span class="n">total</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probabilities</span><span class="p">]</span>
+
+    <span class="c1"># Select the next city based on probabilities</span>
+    <span class="n">next_city</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_cities</span><span class="p">),</span> <span class="n">probabilities</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">next_city</span>
+</pre></div>
+</div>
+<p>This Function <code class="docutils literal notranslate"><span class="pre">select_next_city</span></code> is an implementation of the above formula for ants picking a path</p>
+</section>
+<section id="the-ants-go-marching-1x1">
+<h2><span class="section-number">2.3. </span>The Ants Go Marching 1x1<a class="headerlink" href="#the-ants-go-marching-1x1" title="Link to this heading"></a></h2>
+<p>When this is all put together a sequence of ACO goes as followed</p>
+<ol class="arabic simple">
+<li><p>First wave of ants travel a complete route randomly</p></li>
+<li><p>The pheromones are updated based on the first wave of routes</p></li>
+<li><p>Another wave of ants begin their routes from the first city</p></li>
+<li><p>The ants probabilistically chose their paths based on the pheromones and distance between the cities</p></li>
+<li><p>The wave of ants return to the first city and the pheromones are updated based on the paths taken</p></li>
+<li><p>Repeat steps 3-5 as many times as you want</p></li>
+<li><p>End the loop</p></li>
+<li><p>The most efficient route will have been found by our trusty business ants</p></li>
+</ol>
+<p>A basic python implementation of ACO is available on the <a class="reference external" href="https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/site/student-projects">GitHub</a> under Ant Colony Optimization</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../description.html" class="btn btn-neutral float-left" title="1. Student Lecture Task Description" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../student-projects/description.html" class="btn btn-neutral float-right" title="1. Project Description" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

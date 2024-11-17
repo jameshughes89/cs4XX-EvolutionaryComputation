@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. Origin &mdash; CSCI 340 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=fa70396c" />
+
+  
+    <link rel="shortcut icon" href="../../_static/duck_face.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Overview" href="../overview/overview.html" />
+    <link rel="prev" title="4. Problems" href="../problems/problems.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CSCI 340
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Course Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga.html">2. Implementing a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/simple-ga-experiment.html">3. Experimenting with a Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/problems.html">4. Problems</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Origin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inspiration-from-biology">5.1. Inspiration from Biology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diversity">5.1.1. Diversity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#competition">5.1.2. Competition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#individual-vs-population">5.1.3. Individual vs. Population</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#systems">5.2. Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cellular-automata">5.2.1. Cellular Automata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conway-s-game-of-life">5.2.2. Conway’s Game of Life</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turing-completeness-in-simple-systems">5.2.3. Turing Completeness in Simple Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-invisible-hand">5.3. The Invisible Hand</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learning-to-walk">5.3.1. Learning to Walk</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#for-next-class">5.4. For Next Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">6. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../representation/representation.html">7. Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga.html">8. <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-algorithms/n-queens-ga-experiment.html">9. Experimenting with the <span class="math notranslate nohighlight">\(n\)</span> Queens Genetic Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-operators/genetic-operators.html">10. Genetic Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selection/selection.html">11. Selection and Population Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/genetic-programming.html">12. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp.html">13. Symbolic Regression with Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genetic-programming/symbolic-regression-gp-experiment.html">14. Experimenting with Symbolic Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/tuning.html">15. Tuning Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/comparing.html">16. What Comparing Distributions <em>Means</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/multi-objective.html">17. Multi-Objective Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/pso.html">18. Particle Swarm Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../particle-swarm-optimization/simple-pso.html">19. Implementing PSO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/description.html">1. Student Lecture Task Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student-lectures/Ant%20Colony%20Optimization/Ant%20Colony%20Optimization.html">2. Ant Colony Optimization (ACO)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student-projects/description.html">1. Project Description</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/tsp/tsp.html">1. Travelling Salesperson Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/gp/gp.html">2. Genetic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/pso/pso.html">3. Particle Swarm Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Outline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../outline/outline.html">Computer Science 340 — Evolutionary Computation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CSCI 340</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>Origin</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/topics/origin/origin.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="origin">
+<h1><span class="section-number">5. </span>Origin<a class="headerlink" href="#origin" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Evolutionary computation is inspired by the natural process of evolution</p></li>
+<li><p>However, although it uses jargon from biological evolution, it is important to not focus too much on living organisms</p></li>
+</ul>
+<section id="inspiration-from-biology">
+<h2><span class="section-number">5.1. </span>Inspiration from Biology<a class="headerlink" href="#inspiration-from-biology" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Tree_of_life_(biology)"><img alt="../../_images/phylogenetic_tree.png" src="../../_images/phylogenetic_tree.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Phylogenetic tree of three life domains: Bacteria, Archaea, and Eukaryota. The root of the tree is the “Last
+Universal Common Ancestor” (LUCA).</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>The power of biological evolution is evident by the diversity of the living things on Earth</p></li>
+<li><p>Environments are filled with <em>populations</em> of individuals that strive for persistence</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Survival</p></li>
+<li><p>Reproduction</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The <em>fitness</em> of an individual is a measure of its ability to persist</p></li>
+<li><p>The fitness is determined by the individual’s interactions with the environment and other individuals</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Other individuals are often thought of as part of the environment</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>With evolutionary computation, populations of <em>candidate solutions</em> are evolved</p></li>
+<li><p>The fitness of the candidate solution is a measure of how <em>good</em> it is at addressing the problem at hand</p></li>
+<li><p>The candidate solutions’ fitness dictates its probability of survival and reproduction</p></li>
+</ul>
+<section id="diversity">
+<h3><span class="section-number">5.1.1. </span>Diversity<a class="headerlink" href="#diversity" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Reproduction creates imperfect copies of individuals</p></li>
+<li><p>Sexual reproduction incorporates genetic information from both parents</p></li>
+<li><p>Mutations occur in both sexual and asexual reproductions</p></li>
+<li><p>Sometimes these changes are harmful</p></li>
+<li><p>Sometimes these changes are neutral</p></li>
+<li><p>Sometimes these changes are beneficial</p></li>
+</ul>
+</section>
+<section id="competition">
+<h3><span class="section-number">5.1.2. </span>Competition<a class="headerlink" href="#competition" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Given that</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Environments have limited resources</p></li>
+<li><p>Individuals often have an intrinsic interest in persisting</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Competition and selection becomes inevitable</p></li>
+<li><p>Natural selection favours individuals that compete more effectively</p></li>
+</ul>
+</section>
+<section id="individual-vs-population">
+<h3><span class="section-number">5.1.3. </span>Individual vs. Population<a class="headerlink" href="#individual-vs-population" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The ideas of diversity and competition exist within the <em>population</em></p></li>
+<li><p>It is often helpful to think of the population evolving instead of the individuals themselves</p></li>
+<li><p>Having a balance of competition and diversity is important for populations</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Having too much competition often lowers diversity</p></li>
+<li><p>Having too little diversity can limit a population’s ability to adapt to changes</p></li>
+<li><p>Having too little competition can increase diversity</p></li>
+<li><p>Having too much diversity may stagnate specialization</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="systems">
+<h2><span class="section-number">5.2. </span>Systems<a class="headerlink" href="#systems" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Populations of living things evolve</p></li>
+<li><p>But a population of living things is just system</p></li>
+<li><p>And a system exists within some environment, which is a system</p></li>
+<li><p>And the population is made up individuals, which are themselves systems</p></li>
+<li><p>Each individual is made up of many more systems</p></li>
+<li><p>Each of those smaller systems are made up of more systems</p></li>
+<li><p>…</p></li>
+</ul>
+<figure class="align-center" id="id2">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Turtles_all_the_way_down"><img alt="../../_images/turtles_turtles.png" src="../../_images/turtles_turtles.png" style="width: 250px;" /></a>
+<figcaption>
+<p><span class="caption-text">It’s turtles all the way down.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Systems can evolve — not just biological systems</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Don’t put life on a pedestal</p></li>
+<li><p>It’s just another system within the universe</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>It really only needs mechanisms for persisting and changing</p></li>
+<li><p>Systems evolve as a consequence of it’s relationship with it’s environment</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sometimes the environment has some intention behind it</p></li>
+<li><p>Sometimes it’s aimless</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="cellular-automata">
+<h3><span class="section-number">5.2.1. </span>Cellular Automata<a class="headerlink" href="#cellular-automata" title="Link to this heading"></a></h3>
+<ul>
+<li><p>An elementary cellular automata is a very simple system of rules</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given a one-dimensional (linear) sequence of binary values (cells)</p></li>
+<li><p>Create the sequence’s next <em>generation</em> based on each cell’s current state and state of its neighbours</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id3">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton"><img alt="../../_images/rule_30.gif" src="../../_images/rule_30.gif" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example of rule 30 being applied to some arbitrary sequence.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p>Since each cell’s value is determined by three cells’ previous state, there are a total of eight (8) patterns</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Three since it’s based on the current cell and its tow neighbours</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Each of the eight patterns can produce either a 0 or a 1, meaning there are a total of 256 possible rules</p></li>
+<li><p>The above rule is named “Rule 30” since <span class="math notranslate nohighlight">\(00011110\)</span> is the pattern, which has a decimal value of 30</p></li>
+<li><p>By repeatedly applying these very simple rules to each new sequence, interesting and complex patterns may emerge</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<a class="reference external image-reference" href="https://www.wolframalpha.com/input?i=rule+22"><img alt="../../_images/rule_22.png" src="../../_images/rule_22.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example of Rule 22 being applied 200 times. This was created with the initial condition of a single cell being
+active.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Visit <a class="reference external" href="https://www.wolframalpha.com/input?i=rule+0">Wolfram Alpha</a> and create the patterns for some rules</p>
+<ul class="simple">
+<li><p>The above link is the result of running Rule 0</p></li>
+</ul>
+</li>
+<li><p>Take the time to generate the patterns for a few dozen rules and keep track of the most interesting ones found</p></li>
+<li><p>What makes the patterns interesting?</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Rule_30"><img alt="../../_images/rule_30_shell.png" src="../../_images/rule_30_shell.png" style="width: 333px;" /></a>
+<figcaption>
+<p><span class="caption-text">A conus textile, a small venomous sea snail. The shell of the snail has a naturally occurring interesting pattern.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="conway-s-game-of-life">
+<h3><span class="section-number">5.2.2. </span>Conway’s Game of Life<a class="headerlink" href="#conway-s-game-of-life" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Conway’s Game of Life is another interesting simple system, but works in a two-dimensions grid of cells</p></li>
+<li><p>The rules are</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Any live cell with fewer than two live neighbours dies off</p></li>
+<li><p>Any live cell with two or three live neighbours survives</p></li>
+<li><p>Any live cell with more than three live neighbours dies off</p></li>
+<li><p>Any dead cell with exactly three live neighbours becomes live</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Visit <a class="reference external" href="https://conwaylife.com/">this website</a> and play with Conway’s Game of Life</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://conwaylife.com/wiki/Category:Patterns">Feel free to look up initial condition patterns</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<figure class="align-center" id="id6">
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"><img alt="../../_images/game_of_life_puffer.gif" src="../../_images/game_of_life_puffer.gif" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-text">Execution of Conway’s Game of Life. The initial conditions for this execution created a “puffer”.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p><a class="reference external" href="https://nicholas.carlini.com/writing/2020/digital-logic-game-of-life.html">With Conway’s Game of Life, one can create logic gates, and with logic gates, it is possible to simulate a computer</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=xP5-iIeKXE8">This means it’s possible to simulate Conway’s Game of Life in Conway’s Game of Life</a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Which means it’s possible to also simulate Conway’s Game of Life in Conway’s Game of Life in Conway’s Game of Life</p></li>
+<li><p>Which means …</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="turing-completeness-in-simple-systems">
+<h3><span class="section-number">5.2.3. </span>Turing Completeness in Simple Systems<a class="headerlink" href="#turing-completeness-in-simple-systems" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Both Conway’s Game of Life and Rule 110 are Turing complete</p></li>
+<li><p>Both are remarkably simple systems that can produce remarkably complex and seemingly chaotic random behaviour</p></li>
+<li><p>Both do not have any intelligence; they just follow their rules starting from initial conditions</p></li>
+<li><p>But they’re Turing complete — they can perform any computation any other Turing complete system can</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Like a typical desktop computer</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="the-invisible-hand">
+<h2><span class="section-number">5.3. </span>The Invisible Hand<a class="headerlink" href="#the-invisible-hand" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Beware of <em>teleology</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Explaining phenomena in terms of the purpose they serve rather than of the cause by which they arise</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Virtually nothing within the universe exists for a purpose</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The exceptions being things like human created things</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Things only exist because they don’t not exist</p></li>
+<li><p>Evolution has no intelligence guiding it</p></li>
+<li><p>Yet, things seem to <em>work</em></p></li>
+<li><p>However, the things work because if they did not, they would not exist</p></li>
+</ul>
+<section id="learning-to-walk">
+<h3><span class="section-number">5.3.1. </span>Learning to Walk<a class="headerlink" href="#learning-to-walk" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Consider the problem of training a robot to walk</p></li>
+<li><p>Deep learning is an absolutely terrible idea for finding the <em>best</em> way for a robot to walk</p></li>
+<li><p>As artificial neural networks grow in size, the number of parameters within the network grows rapidly</p></li>
+<li><p>As the number of parameters grows, the odds of finding the best configuration of parameters becomes astronomically low</p></li>
+<li><p>However, with deep learning, something interesting happens</p></li>
+<li><p>As the number of parameters grows, it seems that the number of <em>good</em> configurations increases</p></li>
+<li><p>Finding the <em>best</em> way to walk is not the goal; finding a way to walk is the goal</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>What does the <em>best</em> way to walk even mean?</p></li>
+<li><p>Does there even exist a <em>best</em> way to walk?</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Thus, deep learning is an absolutely brilliant idea for finding a good way for a robot to walk</p></li>
+</ul>
+</section>
+</section>
+<section id="for-next-class">
+<h2><span class="section-number">5.4. </span>For Next Class<a class="headerlink" href="#for-next-class" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Spend some time thinking about how systems exist and try to explain their existence in terms of <em>how</em> instead of <em>why</em></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../problems/problems.html" class="btn btn-neutral float-left" title="4. Problems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../overview/overview.html" class="btn btn-neutral float-right" title="6. Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Hughes &amp; Taras Mychaskiw.
+      <span class="lastupdated">Last updated on Nov 17, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
