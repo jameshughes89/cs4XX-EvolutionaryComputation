@@ -83,7 +83,7 @@ Traveling SalesAnt Problem
     * :math:`Q` is a constant
     * :math:`L_k` is the distance between city :math:`x` and city :math:`y`
 
-.. literalinclude:: \..\site\student-lectures\Ant Colony Optimization\ACO.py
+.. literalinclude:: \..\src\ACO.py
     :language: python
     :start-after: # [BEGIN PHEROMONE UPDATE]
     :end-before: # [END PHEROMONE UPDATE]
@@ -127,7 +127,7 @@ Traveling SalesAnt Problem
     * :math:`\beta\geq1` is a constant like :math:`\alpha` used too change how strong :math:`\eta_{xy}` is
     * :math:`\tau_{xz}` and :math:`\eta_{xz}` represent the pheromone level and distance of other possible routes from city :math:`x`
 
-.. literalinclude:: \..\site\student-lectures\Ant Colony Optimization\ACO.py
+.. literalinclude:: \..\src\ACO.py
     :language: python
     :start-after: # [START SELECT PATH]
     :end-before: # [END SELECT PATH]
@@ -150,4 +150,4 @@ When this is all put together a sequence of ACO goes as followed
 #. End the loop
 #. The most efficient route will have been found by our trusty business ants
 
-A basic python implementation of ACO is available on the `GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/site/student-projects>`_ under Ant Colony Optimization
+A basic python implementation of ACO is available on the `GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/site/student-lectures/Ant%20Colony%20Optimization>`_
