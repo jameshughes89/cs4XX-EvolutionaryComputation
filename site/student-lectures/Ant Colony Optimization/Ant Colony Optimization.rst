@@ -127,6 +127,7 @@ Traveling SalesAnt Problem
     * :math:`\beta\geq1` is a constant like :math:`\alpha` used too change how strong :math:`\eta_{xy}` is
     * :math:`\tau_{xz}` and :math:`\eta_{xz}` represent the pheromone level and distance of other possible routes from city :math:`x`
 
+
 .. literalinclude:: \..\src\ACO.py
     :language: python
     :start-after: # [START SELECT PATH]
