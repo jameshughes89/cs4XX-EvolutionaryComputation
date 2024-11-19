@@ -79,7 +79,6 @@ YouTube
     student-lectures/Ant Colony Optimization/Ant Colony Optimization
     student-lectures/Evolutionary Art/Evolutionary Art
 
-
 .. toctree::
     :caption: Student Projects
     :maxdepth: 1
