@@ -150,4 +150,4 @@ When this is all put together a sequence of ACO goes as followed
 #. End the loop
 #. The most efficient route will have been found by our trusty business ants
 
-A basic python implementation of ACO is available on the `GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/site/student-projects>`_ under Ant Colony Optimization
+A basic python implementation of ACO is available on the `GitHub <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/site/student-lectures/Ant%20Colony%20Optimization>`_

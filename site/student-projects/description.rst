@@ -128,7 +128,7 @@ via email.
 
 Group Presentation Dates:
 
-* November 26: B & C
+* November 26: C
 * November 27: K
 * November 29: AJ
 
