@@ -86,6 +86,7 @@ YouTube
     :numbered:
 
     student-projects/description
+    student-projects/snake/Snake
 
 
 .. toctree::
