@@ -56,11 +56,8 @@ Particles
     :align: center
     :target: https://en.wikipedia.org/wiki/Particle_swarm_optimization
 
-    Particles moving through a two-dimensional space with a third dimension, a function of the two-dimensions, being
-    represented by colour. In this example, the particles are trying to move towards positions that minimize the the
-    third dimension. Arrows associated with each particle represents the particle's velocity. Over time, the particles,
-    although acting independent, while also being influenced by particles within the population, cluster around the
-    global minimum.
+    Particles moving through a two-dimensional space moving towards, in this example, points that minimize some function
+    :math:`f(x, y)`. Arrows associated with each particle represents its velocity.
 
 
 Representation
