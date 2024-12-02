@@ -76,7 +76,9 @@ YouTube
     :numbered:
 
     student-lectures/description
-
+    student-lectures/Ant Colony Optimization/Ant Colony Optimization
+    student-lectures/Evolutionary Art/Evolutionary Art
+    student-lectures/neuroevolution/neuroevolution
 
 .. toctree::
     :caption: Student Projects
@@ -84,6 +86,7 @@ YouTube
     :numbered:
 
     student-projects/description
+    student-projects/snake/Snake
 
 
 .. toctree::
