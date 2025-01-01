@@ -36,7 +36,7 @@ if __name__ == "__main__":
             "flake8-isort==6.1.1",
             "isort==5.13.2",
             "matplotlib==3.9.3",
-            "mdformat==0.7.19",
+            "mdformat==0.7.21",
             "mdformat-gfm==0.3.7",
             "mdformat-black==0.1.1",
             "numpy==2.1.3",
