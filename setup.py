@@ -37,7 +37,7 @@ if __name__ == "__main__":
             "isort==5.13.2",
             "matplotlib==3.10.0",
             "mdformat==0.7.21",
-            "mdformat-gfm==0.3.7",
+            "mdformat-gfm==0.4.1",
             "mdformat-black==0.1.1",
             "numpy==2.2.1",
             "sphinx==8.1.3",
