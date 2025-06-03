@@ -18,7 +18,7 @@ multi_line_output = 3
 
 [tool.flake8]
 max-line-length = 120
-max-complexity = 15
+max-complexity = 10
 
 [project]
 name = "cs4XX-EvolutionaryComputation"
