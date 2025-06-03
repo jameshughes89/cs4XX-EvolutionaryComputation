@@ -55,4 +55,4 @@ dependencies = [
 [project.scripts]
 format = "console_scripts.cli:run_code_formatters"
 verify = "console_scripts.cli:run_code_verification"
-sphinx = "console_scripts.cli:run_sphinx_build"
+site = "console_scripts.cli:run_sphinx_build"
