@@ -1,6 +1,12 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel", "setuptools-git-versioning<3"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools-git-versioning]
+enabled = true
 
 [tool.black]
 line-length = 120
@@ -9,3 +15,44 @@ target-version = ["py310"]
 [tool.isort]
 profile = "black"
 multi_line_output = 3
+
+[tool.flake8]
+max-line-length = 120
+max-complexity = 10
+
+[project]
+name = "cs4XX-EvolutionaryComputation"
+dynamic = ["version"]
+authors = [
+  { name = "J Hughes", email = "jhughes@stfx.ca" }
+]
+description = "Evolutionary Computation Course"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0" }
+urls = { "Homepage" = "https://github.com/jameshughes89/cs4XX-EvolutionaryComputation" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "black[jupyter]==25.1.0",
+  "deap==1.4.1",
+  "flake8==7.2.0",
+  "flake8-black==0.3.6",
+  "flake8-isort==6.1.1",
+  "isort==5.13.2",
+  "matplotlib==3.10.0",
+  "mdformat==0.7.21",
+  "mdformat-gfm==0.4.1",
+  "mdformat-black==0.1.1",
+  "numpy==2.2.1",
+  "sphinx==8.2.1",
+  "sphinx-rtd-theme==3.0.2",
+]
+
+[project.scripts]
+format = "console_scripts.cli:run_code_formatters"
+verify = "console_scripts.cli:run_code_verification"
+site = "console_scripts.cli:run_sphinx_build"
