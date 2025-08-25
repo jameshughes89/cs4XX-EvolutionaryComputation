@@ -3,7 +3,7 @@ Computer Science 340 --- Evolutionary Computation
 =================================================
 
 
-Fall 2024
+Fall 2025
 =========
 
 
@@ -35,10 +35,10 @@ Lecture Section 11
 * Office: Annex 20B
 * Office Hours: 
 
-    * Tuesday, 12:30 -- 13:30
-    * Wednesday, 12:30 -- 13:30
-    * Thursday, 13:30 -- 14:30
-    * Friday, 13:30 -- 14:00
+    * Tue 10:00 -- 11:00, Annex 20B
+    * Wed 10:00 -- 11:00, Annex 20B
+    * Thr 10:00 -- 11:00, Annex 20B
+    * Fri 10:00 -- 11:00, Annex 20B
 
 
 * Email: jhughes at stfx.ca
@@ -48,9 +48,9 @@ Lecture Section 11
 Class Times
 ===========
 
-* Tue 8:30 - 9:25 (K1), MULH 4024
-* Wed 10:30 - 11:25 (K2), MULH 4024
-* Fri 9:30 - 10:25 (K3), MULH 4024
+* Mon 13:30 -- 14:25 (C4), MULH 4024
+* Wed 12:30 -- 13:25 (C5), MULH 4024
+* Fri 11:30 -- 12:25 (C6), MULH 4024
 
 
 
@@ -131,10 +131,10 @@ from mistakes.
       - 30
       - ``True``
       - End of November-ish
-    * - Lecture
+    * - Lecture Activities
       - 10
       - ``False``
-      - Second Half of Semester
+      - Ongoing, in class
 
 
 * Each *point* equals one percent of the final grade
@@ -223,12 +223,40 @@ Each student will complete a final project. The topic and enhancements will be d
 with the professor.
 
 
-Lecture
--------
 
-Each student will complete and present a lecture. The student, in consultation with the professor, will decide on the
-topic.
+Lecture & Lab Activities
+========================
 
+Lecture & lab activities will take during certain lectures and labs.
+
+* The date and time of each activity will be determined *ad hoc*
+* These activities may take place during lecture or lab
+* Questions will be related to important concepts covered in their respective lecture or lab
+* Answers must be written legibly by hand, on a clean letter/A4 size blank paper
+
+    * Paper will not be provided
+    * Students must have their own paper
+
+
+* All submissions must include the student's name, student number, stfx email address, and date
+* All submissions must be made by the student completing the task
+
+    * You may not submit an activity on behalf of another student
+    * Similarly, you may not have another student submit an activity on your behalf
+    * Violations are considered academic misconduct and a grade of 0 will be applied to all lecture & lab activities
+
+
+* Activities are to be submitted to the lecturer within the allowed time
+
+If any of the requirements are violated, a mark of 0 will be applied to the specific activity. The only exception to
+this is if academic misconduct is detected, in which case a grade of 0 will be applied to the entire lecture and lab
+activity portion of the final grade.
+
+These activities are open book, students are strongly encouraged to collaborate and share ideas, and students may check
+the course content and internet; however, all submitted work must ultimately be done individually.
+
+There are no make-up activities. If a student misses an activity and obtains an approved accommodation, the weight of
+the missed activity will be shifted to the final exam.
 
 
 Email Contact
