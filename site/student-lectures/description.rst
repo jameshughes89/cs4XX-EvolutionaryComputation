@@ -3,7 +3,7 @@ Student Lecture Task Description
 ********************************
 
 * **Maximum Points**: 10
-* **Topic Selection Due Date**: Friday November 1, 2024 at 11:55pm; submitted via email
+* **Topic Selection Due Date**: TBD, 2025 at 11:55pm; submitted via email
 * **PR Merge Date**: At Least One Day Before the Lecture Date
 * **Lecture Date**: TBD
 
@@ -56,9 +56,9 @@ All topic choices along with preferred lecture date are to be submitted to the i
 
 Student Lecture Dates:
 
-* November 19: CG & KR
-* November 20: AJ & GD
-* November 22: TDC & XH
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
 
 
 
