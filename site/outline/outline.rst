@@ -48,9 +48,9 @@ Lecture Section 11
 Class Times
 ===========
 
-* Mon 13:30 - 14:25 (C4), MULH 4024
-* Wed 12:30 - 13:25 (C5), MULH 4024
-* Fri 11:30 - 12:25 (C6), MULH 4024
+* Mon 13:30 -- 14:25 (C4), MULH 4024
+* Wed 12:30 -- 13:25 (C5), MULH 4024
+* Fri 11:30 -- 12:25 (C6), MULH 4024
 
 
 
