@@ -35,10 +35,10 @@ Lecture Section 11
 * Office: Annex 20B
 * Office Hours: 
 
-    * Tuesday, 12:30 -- 13:30
-    * Wednesday, 12:30 -- 13:30
-    * Thursday, 13:30 -- 14:30
-    * Friday, 13:30 -- 14:00
+    * Tue 10:00 -- 11:00, Annex 20B
+    * Wed 10:00 -- 11:00, Annex 20B
+    * Thr 10:00 -- 11:00, Annex 20B
+    * Fri 10:00 -- 11:00, Annex 20B
 
 
 * Email: jhughes at stfx.ca
@@ -48,9 +48,9 @@ Lecture Section 11
 Class Times
 ===========
 
-* Tue 8:30 - 9:25 (K1), MULH 4024
-* Wed 10:30 - 11:25 (K2), MULH 4024
-* Fri 9:30 - 10:25 (K3), MULH 4024
+* Mon 13:30 - 14:25 (C4), MULH 4024
+* Wed 12:30 - 13:25 (C5), MULH 4024
+* Fri 11:30 - 12:25 (C6), MULH 4024
 
 
 

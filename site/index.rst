@@ -70,12 +70,16 @@ YouTube
     topics/particle-swarm-optimization/simple-pso
 
 
+
 .. toctree::
-    :caption: Student Lectures
+    :caption: Assignments
     :maxdepth: 1
     :numbered:
 
-    student-lectures/description
+    assignments/tsp/tsp
+    assignments/gp/gp
+    assignments/pso/pso
+
 
 
 .. toctree::
@@ -88,17 +92,7 @@ YouTube
 
 
 .. toctree::
-    :caption: Assignments
-    :maxdepth: 1
-    :numbered:
-
-    assignments/tsp/tsp
-    assignments/gp/gp
-    assignments/pso/pso
-
-
-.. toctree::
     :caption: Outline
     :maxdepth: 1
 
-    /outline/outline
+    outline/outline
