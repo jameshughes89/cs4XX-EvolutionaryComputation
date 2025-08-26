@@ -3,10 +3,10 @@ Project Description
 *******************
 
 * **Maximum Points**: 30
-* **Topic Selection Due Date**: Friday November 8, 2024 at 11:55pm; submitted via email
+* **Topic Selection Due Date**: TBD, 2025 at 11:55pm; submitted via email
 * **PR Merge Date**: If Applicable, At Least One Day Before the Presentation Date
 * **Presentation Date**: TBD
-* **DUE**: December 6, 2024 at 11:55pm (accept until December 8 at 11:55pm with no penalty); submitted on MOODLE.
+* **DUE**: TBD, 2025 at 11:55pm (accept until TBD at 11:55pm with no penalty); submitted on MOODLE.
 
 .. warning::
 
@@ -128,9 +128,9 @@ via email.
 
 Group Presentation Dates:
 
-* November 26: C
-* November 27: K
-* November 29: AJ
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
 
 
 

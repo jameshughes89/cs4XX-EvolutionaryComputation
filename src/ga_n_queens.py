@@ -6,6 +6,7 @@ ensures that no two queens are in the same row or column, thus the only potentia
 is calculated as the number of attacking queens (each pair of attacking queens is counted only once). Crossover is a
 permutation safe order crossover and mutation is a permutation safe swap mutation.
 """
+
 from random import choices, random, randrange, sample
 
 from src.crossover import order_crossover
