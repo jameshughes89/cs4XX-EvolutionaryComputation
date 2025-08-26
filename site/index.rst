@@ -1,5 +1,5 @@
 *********************************
-Welcome to CSCI 340 --- Fall 2024
+Welcome to CSCI 340 --- Fall 2025
 *********************************
 
 Evolutionary computation is a family of powerful optimization algorithms often used to find solutions to computationally
@@ -24,18 +24,18 @@ Dr. James Hughes
 Lecture
 ^^^^^^^
 
-* Tue 8:30 - 9:25 (K1), MULH 4024
-* Wed 10:30 - 11:25 (K2), MULH 4024
-* Fri 9:30 - 10:25 (K3), MULH 4024
+* Mon 13:30 -- 14:25 (C4), MULH 4024
+* Wed 12:30 -- 13:25 (C5), MULH 4024
+* Fri 11:30 -- 12:25 (C6), MULH 4024
 
 
 `Office Hours <https://www.youtube.com/watch?v=lOTyUfOHgas>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Tue, 12:30 -- 13:30
-* Wed, 12:30 -- 13:30
-* Thr, 13:30 -- 14:30
-* Fri, 13:30 -- 14:00
+* Tue 10:00 -- 11:00, Annex 20B
+* Wed 10:00 -- 11:00, Annex 20B
+* Thr 10:00 -- 11:00, Annex 20B
+* Fri 10:00 -- 11:00, Annex 20B
 
 
 YouTube
@@ -70,24 +70,6 @@ YouTube
     topics/particle-swarm-optimization/simple-pso
 
 
-.. toctree::
-    :caption: Student Lectures
-    :maxdepth: 1
-    :numbered:
-
-    student-lectures/description
-    student-lectures/Ant Colony Optimization/Ant Colony Optimization
-    student-lectures/Evolutionary Art/Evolutionary Art
-    student-lectures/neuroevolution/neuroevolution
-
-.. toctree::
-    :caption: Student Projects
-    :maxdepth: 1
-    :numbered:
-
-    student-projects/description
-    student-projects/snake/Snake
-
 
 .. toctree::
     :caption: Assignments
@@ -99,8 +81,18 @@ YouTube
     assignments/pso/pso
 
 
+
+.. toctree::
+    :caption: Student Projects
+    :maxdepth: 1
+    :numbered:
+
+    ..student-projects/description
+
+
+
 .. toctree::
     :caption: Outline
     :maxdepth: 1
 
-    /outline/outline
+    outline/outline
