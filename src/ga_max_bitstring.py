@@ -5,6 +5,7 @@ The integer is encoded as a bitstring (list of 0s or 1s). Fitness is calculated 
 or the number of 1s in the bitstring (both are included for a comparison). Crossover is a single point crossover and
 mutation is a bit flip mutation.
 """
+
 from random import choices, random, randrange
 
 import matplotlib.pyplot as plt
