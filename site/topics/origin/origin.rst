@@ -128,7 +128,7 @@ Cellular Automata
 
 * Since each cell's value is determined by three cells' previous state, there are a total of eight (8) patterns
 
-    * Three since it's based on the current cell and its tow neighbours
+    * Three since it's based on the current cell and its two neighbours
 
 * Each of the eight patterns can produce either a 0 or a 1, meaning there are a total of 256 possible rules
 * The above rule is named "Rule 30" since :math:`00011110` is the pattern, which has a decimal value of 30
