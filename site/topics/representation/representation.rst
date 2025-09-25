@@ -497,7 +497,7 @@ Tree Representation
 
 
 * Many of the common representations for evolutionary computation have a fixed size
-* However, tree so not, and they can have odd shapes
+* However, trees do not, and they can have odd shapes
 
 
 
