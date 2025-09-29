@@ -1,7 +1,9 @@
 import os
+import time
 import math
 import json
 import random
+import matplotlib.pyplot as plt
 
 def load_cities(filename):
     filepath = os.path.join(os.path.dirname(__file__), filename)
@@ -82,6 +84,8 @@ def genetic_algorithm(filename, pop_size=100, generations=500, mutation_rate=0.0
     best_route = min(population, key=lambda r: route_dist(r, cities))
     best_distance = route_dist(best_route, cities)
 
+    progress = [best_distance]  
+
     for gen in range(generations):
         population = bright_future(population, cities, elite_size=1, mutation_rate=mutation_rate)
         current_best = min(population, key=lambda r: route_dist(r, cities))
@@ -90,12 +94,44 @@ def genetic_algorithm(filename, pop_size=100, generations=500, mutation_rate=0.0
         if current_distance < best_distance:
             best_route, best_distance = current_best, current_distance
 
+        progress.append(best_distance)
+
         if gen % 50 == 0:
             print(f"Gen {gen}: Best distance = {best_distance:.2f}")
 
-    return best_route, best_distance
+    return best_route, best_distance, progress, cities
+
+def plot_route(cities, route, filename="best_route.png"):
+    x = [cities[city][0] for city in route] + [cities[route[0]][0]]
+    y = [cities[city][1] for city in route] + [cities[route[0]][1]]
+    plt.figure(figsize=(8,6))
+    plt.plot(x, y, 'o-r')
+    for i, city in enumerate(route):
+        plt.text(cities[city][0], cities[city][1], str(city))
+    plt.title("Best Route Found")
+    plt.xlabel("X Coordinate")
+    plt.ylabel("Y Coordinate")
+    plt.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close()
+
+
+def plot_convergence(progress, filename="convergence.png"):
+    plt.figure(figsize=(8,6))
+    plt.plot(progress, 'b-')
+    plt.title("Convergence of GA")
+    plt.xlabel("Generation")
+    plt.ylabel("Distance")
+    plt.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close()
+
 
 if __name__ == "__main__":
-    best_route, best_distance = genetic_algorithm("../resources/tsp/berlin52.json", pop_size=200, generations=500)
-    print("Best Route:", best_route)
+    start = time.time()
+    best_route, best_distance, progress, cities = genetic_algorithm(
+        "../resources/tsp/berlin52.json", pop_size=200, generations=500
+    )
+    runtime = time.time() - start
+    
     print("Best Distance:", best_distance)
+    plot_convergence(progress, "convergence.png")
+    plot_route(cities, best_route, "best_route.png")
