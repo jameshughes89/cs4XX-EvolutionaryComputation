@@ -1,8 +1,11 @@
 import os
-import time
 import math
 import json
 import random
+import time
+import itertools
+import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 def load_cities(filename):
@@ -20,12 +23,10 @@ def route_dist(route, cities):
     dist = 0
     for i in range(len(route)):
         city_a = cities[route[i]]
-        city_b = cities[route[(i + 1) % len(route)]] 
+        city_b = cities[route[(i + 1) % len(route)]]
         dist += euclid_dist(city_a, city_b)
     return dist
 
-def fitness(route, cities):
-    return 1 / route_dist(route, cities)
 
 def initial_population(pop_size, cities):
     city_ids = list(cities.keys())
@@ -44,10 +45,10 @@ def sorry_loosers(population, cities, k=5):
 def crossover(daddy, mommy):
     size = len(daddy)
     start, end = sorted(random.sample(range(size), 2))
-    
+
     child = [None] * size
     child[start:end] = daddy[start:end]
-    
+
     mommy_el = [city for city in mommy if city not in child]
     pos = 0
     for i in range(size):
@@ -56,7 +57,7 @@ def crossover(daddy, mommy):
             pos += 1
     return child
 
-def ninja_turtles(route, mutation_rate = 0.01): # that's the mutation btw :D 
+def ninja_turtles(route, mutation_rate=0.01):
     route = route[:]
     for i in range(len(route)):
         if random.random() < mutation_rate:
@@ -64,9 +65,9 @@ def ninja_turtles(route, mutation_rate = 0.01): # that's the mutation btw :D
             route[i], route[j] = route[j], route[i]
     return route
 
-def bright_future(population, cities, elite_size=1, mutation_rate=0.01): # the next gen :D
+def bright_future(population, cities, elite_size=1, mutation_rate=0.01):
     population.sort(key=lambda r: route_dist(r, cities))
-    natural_selection = population[:elite_size] 
+    natural_selection = population[:elite_size]
 
     while len(natural_selection) < len(population):
         daddy = sorry_loosers(population, cities)
@@ -84,7 +85,7 @@ def genetic_algorithm(filename, pop_size=100, generations=500, mutation_rate=0.0
     best_route = min(population, key=lambda r: route_dist(r, cities))
     best_distance = route_dist(best_route, cities)
 
-    progress = [best_distance]  
+    progress = [best_distance]
 
     for gen in range(generations):
         population = bright_future(population, cities, elite_size=1, mutation_rate=mutation_rate)
@@ -96,42 +97,139 @@ def genetic_algorithm(filename, pop_size=100, generations=500, mutation_rate=0.0
 
         progress.append(best_distance)
 
-        if gen % 50 == 0:
-            print(f"Gen {gen}: Best distance = {best_distance:.2f}")
-
     return best_route, best_distance, progress, cities
 
-def plot_route(cities, route, filename="best_route.png"):
+def nearest_neighbor(cities, start_city=1):
+    unvisited = set(cities.keys())
+    route = [start_city]
+    unvisited.remove(start_city)
+
+    while unvisited:
+        last = route[-1]
+        next_city = min(unvisited, key=lambda c: euclid_dist(cities[last], cities[c]))
+        route.append(next_city)
+        unvisited.remove(next_city)
+
+    return route, route_dist(route, cities)
+
+def plot_convergence(progress, label, filename=None):
+    plt.plot(progress, label=label)
+    if filename:
+        plt.savefig(filename, dpi=300, bbox_inches="tight")
+        plt.close()
+
+
+def plot_all_convergences(all_progress, filename="all_convergences.png"):
+    plt.figure(figsize=(8,6))
+    for label, progress in all_progress:
+        plt.plot(progress, label=label)
+    plt.title("Convergence of GA with Different Parameters")
+    plt.xlabel("Generation")
+    plt.ylabel("Best Distance")
+    plt.legend()
+    plt.savefig(filename, dpi=300, bbox_inches="tight")
+    plt.close()
+
+
+def plot_route(cities, route, filename=None, title="Best Route"):
     x = [cities[city][0] for city in route] + [cities[route[0]][0]]
     y = [cities[city][1] for city in route] + [cities[route[0]][1]]
-    plt.figure(figsize=(8,6))
-    plt.plot(x, y, 'o-r')
+
+    plt.figure(figsize=(6,6))
+    plt.scatter(x, y, c="red")
+    plt.plot(x, y, c="blue", linewidth=1.2)
+
     for i, city in enumerate(route):
-        plt.text(cities[city][0], cities[city][1], str(city))
-    plt.title("Best Route Found")
-    plt.xlabel("X Coordinate")
-    plt.ylabel("Y Coordinate")
-    plt.savefig(filename, dpi=300, bbox_inches="tight")
-    plt.close()
+        plt.text(cities[city][0], cities[city][1], str(city), fontsize=6)
+
+    plt.title(title)
+    if filename:
+        plt.savefig(filename, dpi=300, bbox_inches="tight")
+        plt.close()
+    else:
+        plt.show()
 
 
-def plot_convergence(progress, filename="convergence.png"):
+def plot_boxplot(all_results, labels, filename="boxplot.png"):
     plt.figure(figsize=(8,6))
-    plt.plot(progress, 'b-')
-    plt.title("Convergence of GA")
-    plt.xlabel("Generation")
-    plt.ylabel("Distance")
+    plt.boxplot(all_results, labels=labels)
+    plt.ylabel("Best Distance")
+    plt.title("GA Performance Variability Across Runs")
     plt.savefig(filename, dpi=300, bbox_inches="tight")
     plt.close()
 
+
+def run_multiple(filename, pop_size, mutation_rate, generations, runs=10):
+    distances = []
+    runtimes = []
+    cities = load_cities(filename)
+    best_route = None
+
+    for r in range(runs):
+        start = time.time()
+        route, dist, _, _ = genetic_algorithm(
+            filename, pop_size=pop_size, generations=generations, mutation_rate=mutation_rate
+        )
+        runtime = time.time() - start
+        distances.append(dist)
+        runtimes.append(runtime)
+
+        if best_route is None or dist < min(distances):
+            best_route = route
+
+    stats = {
+        "mean_distance": np.mean(distances),
+        "std_distance": np.std(distances),
+        "best_distance": np.min(distances),
+        "worst_distance": np.max(distances),
+        "mean_runtime": np.mean(runtimes),
+    }
+    return stats, distances, best_route, cities
+
+def run_full_experiments():
+    tsp_files = {
+        "berlin52": "../resources/tsp/berlin52.json",
+        "a280": "../resources/tsp/a280.json",
+        "pcb442": "../resources/tsp/pcb442.json"
+    }
+
+    results = []
+
+    for name, file in tsp_files.items():
+        print(f"\nRunning experiments on {name}...")
+
+        cities = load_cities(file)
+        nn_route, nn_dist = nearest_neighbor(cities, start_city=1)
+        results.append({
+            "instance": name,
+            "method": "nearest_neighbor",
+            "best_distance": nn_dist,
+            "runtime": 0
+        })
+        plot_route(cities, nn_route, filename=f"{name}_nearest_neighbor.png", title=f"{name} - NN Route")
+
+        all_results = []
+        labels = []
+        for mut in [0.01, 0.05]:
+            stats, distances, best_route, cities = run_multiple(file, 200, mut, 500, runs=10)
+            results.append({
+                "instance": name,
+                "method": "genetic_algorithm",
+                "mutation_rate": mut,
+                **stats
+            })
+            all_results.append(distances)
+            labels.append(f"mut={mut}")
+            plot_route(cities, best_route, filename=f"{name}_ga_mut{mut}.png", title=f"{name} - GA mut={mut}")
+
+        plot_boxplot(all_results, labels, filename=f"{name}_boxplot.png")
+
+    df = pd.DataFrame(results)
+    df.to_csv("final_experiment_results.csv", index=False)
+    print("\nAll experiments completed. Results saved to final_experiment_results.csv")
+    return df
 
 if __name__ == "__main__":
-    start = time.time()
-    best_route, best_distance, progress, cities = genetic_algorithm(
-        "../resources/tsp/berlin52.json", pop_size=200, generations=500
-    )
-    runtime = time.time() - start
-    
-    print("Best Distance:", best_distance)
-    plot_convergence(progress, "convergence.png")
-    plot_route(cities, best_route, "best_route.png")
+    df = run_full_experiments()
+    print(df)
+
