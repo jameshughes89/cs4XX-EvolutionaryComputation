@@ -102,16 +102,16 @@ via email.
 
 Presentation Dates:
 
-* Monday Nov 10: Someone
-* Wednesday Nov 12: Someone
-* Friday Nov 14: Someone
-* Monday Nov 17: Someone
-* Wednesday Nov 19: Someone
-* Friday Nov 21: Someone
-* Monday Nov Nov 24: Someone
-* Wednesday Nov 26: Someone
-* Friday Nov 28: Someone
-* Monday Dec 1: Someone
+* Monday Nov 10: Available
+* Wednesday Nov 12: Available
+* Friday Nov 14: Available
+* Monday Nov 17: Available
+* Wednesday Nov 19: Available
+* Friday Nov 21: Available
+* Monday Nov Nov 24: Available
+* Wednesday Nov 26: Available
+* Friday Nov 28: Available
+* Monday Dec 1: Available
 
 
 Points
