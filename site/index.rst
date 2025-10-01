@@ -87,7 +87,7 @@ YouTube
     :maxdepth: 1
     :numbered:
 
-    ..student-projects/description
+    student-projects/description
 
 
 
