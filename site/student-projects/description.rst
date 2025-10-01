@@ -3,10 +3,10 @@ Project Description
 *******************
 
 * **Maximum Points**: 30
-* **Topic Selection Due Date**: TBD, 2025 at 11:55pm; submitted via email
-* **PR Merge Date**: If Applicable, At Least One Day Before the Presentation Date
-* **Presentation Date**: TBD
-* **DUE**: TBD, 2025 at 11:55pm (accept until TBD at 11:55pm with no penalty); submitted on MOODLE.
+* **Topic Selection Approval Due Date**: October, 2025 at 11:55pm; submitted via email
+* **Presentation Date**: To Be Scheduled
+* **Code Due Date**: Before Presentation; submit on MOODLE
+* **FINAL DUE**: TBD, 2025 at 11:55pm; submitted on MOODLE
 
 .. warning::
 
@@ -22,9 +22,9 @@ Base Task
 
 * Select a topic for a project
 * Implement the project idea
-* Produce a report or give a presentation
+* Give a presentation
+* Submit code before presentation
 * Submit the final implementation
-* Groups of up to two are permitted
 
 
 
@@ -38,32 +38,10 @@ effectively to receive all 30 points.
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **10** points will be awarded for having a working implementation of the project topic
+* A total of **5** points will be awarded for having a working implementation of the project topic
 
-    * **10** additional points may be awarded for enhancements/modifications, novelty, interesting-ness, analysis, etc.
+* A total of **25** will be awarded for the project presentation
 
-
-* A total of **10** additional points may be awarded for completing a project presentation *or* report
-
-    * A project presentation will award up to **4** points
-
-        * Including proper references/citations awards an additional **2** points
-        * Including figures and tables awards an additional **2** points
-        * Performing an effective statistical analysis will award an additional **2** points
-
-
-    * A complete report will award up to **2** points
-
-        * Using LaTeX to generate the report will award an additional **2** points
-        * Including proper references/citations awards an additional **2** points
-        * Including figures and tables awards an additional **2** points
-        * Performing an effective statistical analysis will award an additional **2** points
-
-
-.. note::
-
-    Points will be awarded for *either* a project presentation *or* a final report. In other words, it is only necessary
-    to complete one of the two options (presentation or report).
 
 
 Project Topics
