@@ -5,7 +5,7 @@ Project Description
 * **Maximum Points**: 30
 * **Topic Selection Approval Due Date**: October, 2025 at 11:55pm; submitted via email
 * **Presentation Date**: To Be Scheduled
-* **Code Due Date**: Before Presentation; submit on MOODLE
+* **Code Due Date**: One Day Before Presentation; submit on MOODLE
 * **FINAL DUE**: TBD, 2025 at 11:55pm; submitted on MOODLE
 
 .. warning::
@@ -61,8 +61,8 @@ Most project ideas fall under one of the following categories:
 Do not be afraid to try something different. The instructor values creativity will make every attempt to be as accepting
 of project ideas as possible.
 
-Topics will be selected on a first-come first-served basis, however, if multiple groups want to do the same project, the
-instructor will work the the groups to direct them such that the details differ between groups.
+Topics will be selected on a first-come first-served basis, however, if multiple individuals want to do the same
+project, the instructor will work the the individual to direct them such that the details differ between individuals.
 
 All topic choices, along with preferred presentation date (if choosing to give a presentation) are to be submitted to
 the instructor via email.
@@ -87,155 +87,72 @@ Project Presentation
 Project Presentation
 --------------------
 
-Groups may choose to give a 15 -- 20 minute project presentation. The presentations will follow the same general format
-as a report (intro, literature review, problem description, etc.) but will be presented as a webpage on the course
-website.
+Presentations should be 40 minutes with 10 minutes for questions. The presentations will follow the same general format
+as a report (intro, literature review, problem description, enhancements, notable ideas and creativity, etc.).
 
 
 Presentation Dates
 ^^^^^^^^^^^^^^^^^^
 
 It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
-on a first-come first-served basis. Any groups unable to select a date will be assigned one by the instructor.
+on a first-come first-served basis. Anyone unable to select a date will be assigned one by the instructor.
 
 All project topic choices along with preferred presentation dates, if applicable, are to be submitted to the instructor
 via email.
 
-Group Presentation Dates:
+Presentation Dates:
 
 * TBD: Someone
 * TBD: Someone
 * TBD: Someone
-
-
-
-.. note::
-
-    No presentation dates need to be selected for those groups choosing not to give a project presentation.
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
+* TBD: Someone
 
 
 Points
 ^^^^^^
 
-Giving a project presentation will provide up to **4** additional points; however, a total of **10** points may be
-obtained by effectively giving a presentation.
+A total of 25 points may be obtained from the project presentation and the ability to answer questions about the
+project during the question period. As every project is different, it is difficult to create a concrete set of points,
+thus the marks will be determined by the instructor on a per project basis. General ideas to keep in mind:
 
-    * Including proper references/citations may award an additional **2** points
-    * Including figures and tables may award an additional **2** points
-    * Performing an effective statistical analysis may award an additional **2** points
+    * References
+    * Figures
+    * Statistical analysis
+    * High-quality visualizations
+    * Polished content
+    * Clarity and flow
+    * Accuracy
+    * Time management
+    * Questions and Answer
 
+
+Do note that many of these points will be obtained by answering questions about the project. The code used to generate
+work that is presented will be submitted before the project presentation in order to allow the instrtuctor to come up
+with compelling questions.
 
 
 Presentation Format
 ^^^^^^^^^^^^^^^^^^^
 
-The format of the presentation is up to the groups, but they should be similar to the layout of the reports (discussed
-in detail in the following section). For a high-level idea of what to include, see the below list:
+The format of the presentation is up to the individual, but they should be similar to the layout of the reports
+(discussed in detail in the following section). For a high-level idea of what to include, see the below list:
 
     * Intro
-    * Related Works
     * Project Topic Description
+    * Related Works
     * Methodology
     * Results & Discussion
     * Conclusions and Future Work
 
 
-It is up to the groups to decide how best to communicate their project idea and results. Like the lectures, be sure
-that the presentation is not boring. Points may be lost if the presentation does not effectively communicate what was
-done.
-
-
-Submitting a Pull Request
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Like the student lectures, project presentations are to be submitted via a pull request to the course GitHub repository.
-:doc:`Refer to the Student Lecture Description page for more details. </student-lectures/description>` The only major
-difference is that the group will make a sub-directory for their project under the "student-projects" directory as
-opposed to the "student-lectures" directory.
-
-.. warning::
-
-    Although the pull request merge date is required to be at least one day before the presentation date, note that
-    pull requests will not be accepted unless deemed acceptable by the instructor. This means that *submitting* a pull
-    should be done sufficiently early that any required changes can be adequately addressed before the merging deadline.
-
-
-Report
-------
-
-Writing a simple report will award up to **2** additional points; however, a total of **10** points may be obtained by
-completing all portions of the report sufficiently.
-
-The base report will consider spelling, grammar, prose, etc. for marking, thus, the marker will be analysing the report
-both quantitatively and qualitatively.
-
-There is no *right* way to write a report, nor is there a definitive structure. The most correct way is to write a
-report that most effectively communicates what needs to be communicated.
-
-Below is a list of things to consider including in the report. This list is a collection of suggested ideas to consider
-and is not intended to be the standard template.
-
-* Introduction
-* Related Works
-
-    * What have others done that is related to the project idea
-
-
-* Problem description
-* Algorithm description
-
-    * What enhancements/modifications were included?
-
-        * Why were they done?
-        * How were they done?
-
-
-* Explain how the results will be analysed
-* Explains the results and discuss
-* Conclusions and possible future directions
-* Bibliography
-
-
-LaTeX
-^^^^^
-
-An additional **2** points may be obtained if the report is written in LaTeX.
-
-If using LaTeX, it is recommended that the report be written with the
-`IEEE <https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn>`_  conference template. Overleaf
-makes it simple to start using the template.
-
-
-References and Citations
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Including effective and proper references/citations may award an additional **2** points.
-
-There is no correct number of references to include as that depends on the report itself.
-
-LaTeX and BibTeX makes references and citations relatively simple. Further, with
-`Google Scholar <https://scholar.google.com/>`_, getting references correct is trivial.
-
-
-Figures and Tables
-^^^^^^^^^^^^^^^^^^
-
-Effectively including figures, tables, etc. in the report may award an additional **2** points. Examples include an
-algorithm flow diagram, a table of parameter settings, tables of results, result visualization, learning curves,
-distributions of results, etc.
-
-
-Statistical Analysis
-^^^^^^^^^^^^^^^^^^^^
-
-Including proper statistical comparisons of results may award an additional **2** points.
-
-Typically, different results will be obtained every time the algorithm is run. This is due to the stochastic nature of
-these algorithms. For this reason, it is not possible to run these algorithms once to compare the results. Instead,
-*distributions* of results need to be obtained and these distributions are then compared to one another.
-
-In evolutionary computation, it is common to see 30 runs of each algorithm to obtain the distributions (30 runs of the
-same algorithm with the same setup and hyperparameters).
+It is up to the individual to decide how best to communicate their project idea and results. Be sure that the
+presentation is not boring. Points may be lost if the presentation does not effectively communicate what was done.
 
 
 
@@ -250,6 +167,5 @@ What to Submit to Moodle
 
 * Submit relevant implementations via Moodle by 11:55pm on the due date
 
-    * Include the report is applicable
-    * Include anything else the marker may need for effectively evaluating the work
+    * Include anything the marker may need for effectively evaluating the work
 
