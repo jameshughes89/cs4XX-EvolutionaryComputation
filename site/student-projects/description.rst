@@ -3,7 +3,7 @@ Project Description
 *******************
 
 * **Maximum Points**: 30
-* **Topic Selection Approval Due Date**: October, 2025 at 11:55pm; submitted via email
+* **Topic Selection Approval Due Date**: October 10, 2025 at 11:55pm; submitted via email
 * **Presentation Date**: To Be Scheduled
 * **Code Due Date**: One Day Before Presentation; submit on MOODLE
 * **FINAL DUE**: TBD, 2025 at 11:55pm; submitted on MOODLE
@@ -102,16 +102,16 @@ via email.
 
 Presentation Dates:
 
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
-* TBD: Someone
+* Monday Nov 10: Someone
+* Wednesday Nov 12: Someone
+* Friday Nov 14: Someone
+* Monday Nov 17: Someone
+* Wednesday Nov 19: Someone
+* Friday Nov 21: Someone
+* Monday Nov Nov 24: Someone
+* Wednesday Nov 26: Someone
+* Friday Nov 28: Someone
+* Monday Dec 1: Someone
 
 
 Points
