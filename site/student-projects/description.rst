@@ -51,7 +51,7 @@ It is the students' responsibility to select a project topic and have it approve
 project direction is up to the students. Students are encouraged to be creative and ambitious. Further, marks will not
 be lost due to the quality of the final results.
 
-Most project ideas fall under one of the following categories:
+Most project ideas usually fall under one of the following categories:
 
     * Application --- Apply an algorithm to a particular problem of interest
     * Enhancements/Modifications --- Implement a novel idea into an algorithm and analyze results
@@ -65,7 +65,7 @@ Topics will be selected on a first-come first-served basis, however, if multiple
 project, the instructor will work the the individual to direct them such that the details differ between individuals.
 
 All topic choices, along with preferred presentation date (if choosing to give a presentation) are to be submitted to
-the instructor via email.
+the instructor via email and approved before the approval date.
 
 
 Implementation Marks
@@ -82,7 +82,7 @@ that what was done is worth the points.
 
 
 Project Presentation
-==============================
+=====================
 
 Project Presentation
 --------------------
