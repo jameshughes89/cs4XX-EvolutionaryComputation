@@ -38,7 +38,7 @@ effectively to receive all 30 points.
 Below is a high-level overview of how points will be awarded. Details on each task are provided later in the assignment
 description.
 
-* A total of **5** points will be awarded for having a working implementation of the project topic
+* A total of **5** points may be awarded for having a working implementation of the project topic
 
 * A total of **25** will be awarded for the project presentation
 
@@ -68,12 +68,12 @@ All topic choices, along with preferred presentation date (if choosing to give a
 the instructor via email.
 
 
-Modifications, Enhancements, Novelty , Etc.
--------------------------------------------
+Implementation Marks
+--------------------
 
-How the points for the modifications, enhancements, etc. are awarded will depend heavily on the specific project. Thus
-it is difficult to be specific about how the points will be awarded. As a starting place, consider that the points will
-be awarded for a combination of modifications, enhancements, novelty, analysis, interesting-ness, etc.
+How the points for the implementation will be awarded will depend heavily on the specific project. Thus it is difficult
+to be specific about how exactly the points will be awarded. As a starting place, consider that the points will be
+awarded for a combination of modifications, enhancements, novelty, analysis, interesting-ness, etc.
 
 Like with most aspects of the course, the instructor and marker will be looking for excuses to award points to students
 for their work. In other words, be creative, emphasize what is felt to be worth points, and make clear *why* it is felt
@@ -81,11 +81,8 @@ that what was done is worth the points.
 
 
 
-Project Presentation or Report
+Project Presentation
 ==============================
-
-Points will only be awarded for either a final report or a project presentation.
-
 
 Project Presentation
 --------------------
