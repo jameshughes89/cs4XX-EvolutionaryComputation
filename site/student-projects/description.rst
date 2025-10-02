@@ -102,9 +102,9 @@ via email.
 
 Presentation Dates:
 
-* Monday Nov 10: Available
-* Wednesday Nov 12: Available
-* Friday Nov 14: Available
+* Monday Nov 3: Available
+* Wednesday Nov 5: Available
+* Friday Nov 7: Available
 * Monday Nov 17: Available
 * Wednesday Nov 19: Available
 * Friday Nov 21: Available
