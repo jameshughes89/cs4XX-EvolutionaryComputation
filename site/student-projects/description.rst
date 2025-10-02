@@ -110,7 +110,7 @@ Presentation Dates:
 * Friday Nov 21: Available
 * Monday Nov Nov 24: Available
 * Wednesday Nov 26: Available
-* Friday Nov 28: Available
+* Friday Nov 28: A.D. --- NHL Scheduling
 * Monday Dec 1: Available
 
 
