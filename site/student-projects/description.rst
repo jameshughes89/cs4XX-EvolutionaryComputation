@@ -111,7 +111,7 @@ Presentation Dates:
 * Monday Nov Nov 24: Available
 * Wednesday Nov 26: Available
 * Friday Nov 28: A.D. --- NHL Scheduling
-* Monday Dec 1: Available
+* Monday Dec 1: K.R. --- GP + RL Agents for D&D
 
 
 Points
