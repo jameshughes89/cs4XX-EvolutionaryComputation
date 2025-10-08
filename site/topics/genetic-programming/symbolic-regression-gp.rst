@@ -127,7 +127,7 @@ DEAP
 * DEAP is not only for genetic programming, but many evolutionary computation algorithms
 * It includes algorithm and tools for implementing multiple types of algorithms, enhancements, and analysis
 
-* Although any genetic program could be used, DEAP will be used here
+* Although any genetic programming system could be used, DEAP will be used here
 
     * `The GitHub page is available here <https://github.com/deap/deap>`_
     * It is encouraged to contribute to the repository if possible
