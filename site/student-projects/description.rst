@@ -107,11 +107,11 @@ Presentation Dates:
 * Friday Nov 7: Available
 * Monday Nov 17: Available
 * Wednesday Nov 19: Available
-* Friday Nov 21: Available
+* Friday Nov 21: C.A. --- 2D Walking Creatures
 * Monday Nov Nov 24: Available
 * Wednesday Nov 26: Available
 * Friday Nov 28: A.D. --- NHL Scheduling
-* Monday Dec 1: Available
+* Monday Dec 1: K.R. --- GP + RL Agents for D&D
 
 
 Points
