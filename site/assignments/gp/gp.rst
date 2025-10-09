@@ -3,7 +3,7 @@ Genetic Programming
 *******************
 
 * **Maximum Points**: 25
-* **DUE**: Monday TBD, 2025 at 11:55pm; submitted on MOODLE.
+* **DUE**: Monday October 20, 2025 at 11:55pm; submitted on MOODLE.
 * **Files**: `Files available on the GitHub repository <https://github.com/jameshughes89/cs4XX-EvolutionaryComputation/tree/main/resources/regression-data>`_
 
 .. warning::
