@@ -108,7 +108,7 @@ Presentation Dates:
 * Monday Nov 17: V. --- Smart Building Layout
 * Wednesday Nov 19: Available
 * Friday Nov 21: C.A. --- 2D Walking Creatures
-* Monday Nov Nov 24: Available
+* Monday Nov Nov 24: J.L. --- Workshop Production Scheduling
 * Wednesday Nov 26: C.W. --- Satellite Distribution
 * Friday Nov 28: A.D. --- NHL Scheduling
 * Monday Dec 1: K.R. --- GP + RL Agents for D&D
