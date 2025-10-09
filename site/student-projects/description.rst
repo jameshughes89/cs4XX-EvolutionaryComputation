@@ -109,7 +109,7 @@ Presentation Dates:
 * Wednesday Nov 19: Available
 * Friday Nov 21: C.A. --- 2D Walking Creatures
 * Monday Nov Nov 24: Available
-* Wednesday Nov 26: Available
+* Wednesday Nov 26: C.W. --- Satellite Distribution
 * Friday Nov 28: A.D. --- NHL Scheduling
 * Monday Dec 1: K.R. --- GP + RL Agents for D&D
 
