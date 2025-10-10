@@ -106,7 +106,7 @@ Presentation Dates:
 * Wednesday Nov 5: O.J. --- Evolving Race Tracks
 * Friday Nov 7: L.M. --- Something About Chemicals
 * Monday Nov 17: V. --- Smart Building Layout
-* Wednesday Nov 19: Available
+* Wednesday Nov 19: I.B. --- Workout Plans for Muscle Growth
 * Friday Nov 21: C.A. --- 2D Walking Creatures
 * Monday Nov Nov 24: J.L. --- Workshop Production Scheduling
 * Wednesday Nov 26: C.W. --- Satellite Distribution
