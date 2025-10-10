@@ -103,8 +103,8 @@ via email.
 Presentation Dates:
 
 * Monday Nov 3: Available
-* Wednesday Nov 5: Available
-* Friday Nov 7: Available
+* Wednesday Nov 5: O.J. --- Evolving Race Tracks
+* Friday Nov 7: L.M. --- Something About Chemicals
 * Monday Nov 17: V. --- Smart Building Layout
 * Wednesday Nov 19: Available
 * Friday Nov 21: C.A. --- 2D Walking Creatures
@@ -112,7 +112,7 @@ Presentation Dates:
 * Wednesday Nov 26: C.W. --- Satellite Distribution
 * Friday Nov 28: A.D. --- NHL Scheduling
 * Monday Dec 1: K.R. --- GP + RL Agents for D&D
-
+* Friday Dec 5: Available
 
 Points
 ^^^^^^
