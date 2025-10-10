@@ -112,7 +112,7 @@ Presentation Dates:
 * Wednesday Nov 26: C.W. --- Satellite Distribution
 * Friday Nov 28: A.D. --- NHL Scheduling
 * Monday Dec 1: K.R. --- GP + RL Agents for D&D
-* Friday Dec 5: Available
+* Friday Dec 5: L.A. --- Real-Time Cloud Resource Scheduling
 
 Points
 ^^^^^^
