@@ -104,7 +104,7 @@ Presentation Dates:
 
 * Monday Nov 3: Available
 * Wednesday Nov 5: Available
-* Friday Nov 7: Available
+* Friday Nov 7: L.M. --- Something About Chemicals
 * Monday Nov 17: V. --- Smart Building Layout
 * Wednesday Nov 19: Available
 * Friday Nov 21: C.A. --- 2D Walking Creatures
