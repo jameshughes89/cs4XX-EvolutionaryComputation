@@ -103,7 +103,7 @@ via email.
 Presentation Dates:
 
 * Monday Nov 3: Available
-* Wednesday Nov 5: Available
+* Wednesday Nov 5: O.J. --- Evolving Race Tracks
 * Friday Nov 7: L.M. --- Something About Chemicals
 * Monday Nov 17: V. --- Smart Building Layout
 * Wednesday Nov 19: Available
