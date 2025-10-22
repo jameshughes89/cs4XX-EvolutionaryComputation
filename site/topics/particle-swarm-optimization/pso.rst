@@ -36,7 +36,7 @@ Particles
 
 
 * Unlike chromosomes, these particles do not have the traditional variation operators of mutation and crossover
-* Instead, the particles have a propensity to more towards areas that the particles *likes*
+* Instead, the particles have a propensity to move towards areas that the particles *likes*
 * However, these particles are also influenced by the population of particles
 
     * They also have a propensity to move towards areas that the population *likes*
