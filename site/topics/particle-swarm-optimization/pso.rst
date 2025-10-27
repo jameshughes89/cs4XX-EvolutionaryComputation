@@ -363,4 +363,4 @@ For Next Class
 
 * Check out the following script
 
-    * :download:`The Selection Script </../src/pso.py>`
+    * :download:`The PSO Script </../src/pso.py>`
