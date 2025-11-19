@@ -84,15 +84,13 @@ that what was done is worth the points.
 Project Presentation
 =====================
 
-Project Presentation
---------------------
 
 Presentations should be 40 minutes with 10 minutes for questions. The presentations will follow the same general format
 as a report (intro, literature review, problem description, enhancements, notable ideas and creativity, etc.).
 
 
 Presentation Dates
-^^^^^^^^^^^^^^^^^^
+------------------
 
 It may be the case that it is natural for some topics to come before others, but in general, the date will be selected
 on a first-come first-served basis. Anyone unable to select a date will be assigned one by the instructor.
@@ -114,8 +112,10 @@ Presentation Dates:
 * Monday Dec 1: K.R. --- GP + RL Agents for D&D
 * Friday Dec 5: L.A. --- Real-Time Cloud Resource Scheduling
 
+
+
 Points
-^^^^^^
+------
 
 A total of 25 points may be obtained from the project presentation and the ability to answer questions about the
 project during the question period. As every project is different, it is difficult to create a concrete set of points,
@@ -138,7 +138,7 @@ with compelling questions.
 
 
 Presentation Format
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 The format of the presentation is up to the individual, but they should be similar to the layout of the reports
 (discussed in detail in the following section). For a high-level idea of what to include, see the below list:
