@@ -115,7 +115,7 @@ Presentation Dates:
 
 
 Points
------
+------
 
 A total of 25 points may be obtained from the project presentation and the ability to answer questions about the
 project during the question period. As every project is different, it is difficult to create a concrete set of points,
