@@ -50,7 +50,7 @@ dependencies = [
   "mdformat-black==0.1.1",
   "numpy==2.4.2",
   "sphinx==8.2.3",
-  "sphinx-rtd-theme==3.0.2",
+  "sphinx-rtd-theme==3.1.0",
 ]
 
 [project.scripts]
