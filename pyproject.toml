@@ -37,7 +37,7 @@ classifiers = [
   "Operating System :: OS Independent",
 ]
 dependencies = [
-  "black[jupyter]==26.3.1",
+  "black[jupyter]==26.5.1",
   "deap==1.4.4",
   "flake8==7.3.0",
   "flake8-black==0.4.0",
@@ -48,7 +48,7 @@ dependencies = [
   "mdformat==1.0.0",
   "mdformat-gfm==1.0.0",
   "mdformat-black==0.1.1",
-  "numpy==2.4.4",
+  "numpy==2.4.6",
   "sphinx==9.0.4",
   "sphinx-rtd-theme==3.1.0",
 ]
